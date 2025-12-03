@@ -725,8 +725,14 @@ img {
 /* Model Slider Bar */
 .category-bar.model-slider-bar {
     background: linear-gradient(180deg, #fafafa 0%, #fff 100%);
-    overflow: hidden;
+    overflow: visible;
     border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.category-bar.model-slider-bar .category-icons {
+    display: block;
+    max-width: none;
+    padding: 0;
 }
 
 .model-slider-container {
@@ -742,6 +748,12 @@ img {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    touch-action: pan-x;
+    cursor: grab;
+}
+
+.model-slider-wrapper:active {
+    cursor: grabbing;
 }
 
 .model-slider-wrapper::-webkit-scrollbar {
@@ -886,7 +898,7 @@ img {
 @media (max-width: 768px) {
     .category-bar.model-slider-bar {
         padding: 0;
-        overflow: hidden;
+        overflow: visible;
     }
 
     .model-slider-container {
@@ -894,13 +906,30 @@ img {
         align-items: center;
         gap: 8px;
         padding: 0 12px;
+        overflow: visible;
     }
 
     .model-slider-wrapper {
         -webkit-overflow-scrolling: touch;
         flex: 1;
         overflow-x: auto;
+        overflow-y: hidden;
         min-width: 0;
+        touch-action: pan-x;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .model-slider-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Override category-icons styles for model slider */
+    .category-bar.model-slider-bar .category-icons {
+        display: block;
+        flex-wrap: nowrap;
+        overflow: visible;
     }
 
     .model-slider-nav {
@@ -6064,8 +6093,28 @@ a.category-item {
     object-position: center top;
 }
 
-/* Agriplot Hero Responsive */
+/* Agriplot Hero Responsive - Tablet Only (iPad Air vb.) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .agriplot-hero {
+        min-height: auto;
+    }
+
+    .agriplot-hero-content {
+        padding: 50px 20px 30px;
+    }
+
+    .agriplot-hero-image {
+        min-height: 350px;
+        margin-top: -120px;
+    }
+}
+
+/* Agriplot Hero Responsive - Mobile */
 @media (max-width: 768px) {
+    .agriplot-hero {
+        min-height: auto;
+    }
+
     .agriplot-hero-content {
         padding: 40px 16px 30px;
     }
@@ -6091,8 +6140,8 @@ a.category-item {
     }
 
     .agriplot-hero-image {
-        min-height: 300px;
-        margin-top: -70px;
+        min-height: 280px;
+        margin-top: 0;
     }
 }
 
@@ -7468,7 +7517,7 @@ a.category-item {
         font-size: clamp(40px, 12vw, 80px);
     }
 
-    /* Reduce top spacing on mobile */
+    /* Reduce top spacing on mobile - for resized desktop browser */
     .focofirm-features {
         padding-top: 20px;
         margin-top: -100px;
@@ -7596,6 +7645,8 @@ a.category-item {
         gap: 30px;
     }
 }
+
+
 
 @media (max-width: 480px) {
     .focofirm-hero {
@@ -9259,7 +9310,7 @@ a.category-item {
 
 /* ===== HOMEPAGE STATS SECTION - FOOTER ÜSTÜ ===== */
 .homepage-stats {
-    padding: 60px 0;
+    padding: clamp(30px, 5vw, 60px) 0;
     background: var(--primary-yellow, #FABF1E);
     border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
@@ -9267,14 +9318,17 @@ a.category-item {
 .homepage-stats-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 60px;
+    gap: clamp(10px, 4vw, 60px);
     max-width: 1000px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 .homepage-stat-card {
     text-align: center;
     transition: opacity 0.3s ease;
+    min-width: 0;
+    overflow: hidden;
 }
 
 .homepage-stat-card:hover {
@@ -9282,21 +9336,24 @@ a.category-item {
 }
 
 .homepage-stat-value {
-    font-size: 48px;
+    font-size: clamp(18px, 5vw, 48px);
     font-weight: 700;
     color: #1a1a1a;
     line-height: 1.2;
-    margin-bottom: 8px;
+    margin-bottom: clamp(4px, 1vw, 8px);
     letter-spacing: -0.01em;
+    white-space: nowrap;
 }
 
 .homepage-stat-label {
-    font-size: 13px;
+    font-size: clamp(8px, 1.5vw, 13px);
     font-weight: 500;
     color: #1a1a1a;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    line-height: 1.5;
+    letter-spacing: clamp(0.02em, 0.5vw, 0.08em);
+    line-height: 1.4;
+    word-break: break-word;
+    hyphens: auto;
 }
 
 /* ===== HOMEPAGE CONTACT CTA - FOOTER HEMEN ÜSTÜ ===== */
@@ -9348,38 +9405,9 @@ a.category-item {
 }
 
 /* Responsive Stats & Contact CTA */
-@media (max-width: 1024px) {
-    .homepage-stats {
-        padding: 50px 0;
-    }
-
-    .homepage-stats-grid {
-        gap: 40px;
-    }
-
-    .homepage-contact-cta {
-        padding: 70px 0;
-    }
-}
-
 @media (max-width: 768px) {
-    .homepage-stats {
-        padding: 40px 20px;
-    }
-
     .homepage-stats-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
         max-width: 100%;
-    }
-
-    .homepage-stat-value {
-        font-size: 28px;
-    }
-
-    .homepage-stat-label {
-        font-size: 10px;
-        letter-spacing: 0.03em;
     }
 
     .homepage-contact-cta {
@@ -9397,23 +9425,6 @@ a.category-item {
 }
 
 @media (max-width: 480px) {
-    .homepage-stats {
-        padding: 36px 15px;
-    }
-
-    .homepage-stats-grid {
-        gap: 12px;
-    }
-
-    .homepage-stat-value {
-        font-size: 22px;
-    }
-
-    .homepage-stat-label {
-        font-size: 8px;
-        letter-spacing: 0.02em;
-    }
-
     .homepage-contact-cta {
         padding: 50px 0;
     }
@@ -9424,24 +9435,6 @@ a.category-item {
 
     .homepage-contact-cta-text {
         font-size: 14px;
-    }
-}
-
-@media (max-width: 360px) {
-    .homepage-stats {
-        padding: 30px 10px;
-    }
-
-    .homepage-stats-grid {
-        gap: 8px;
-    }
-
-    .homepage-stat-value {
-        font-size: 18px;
-    }
-
-    .homepage-stat-label {
-        font-size: 7px;
     }
 }
 

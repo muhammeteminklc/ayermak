@@ -109,11 +109,11 @@ function generateDetailsHTML(details, category, productId) {
                                 <p class="catalog-subtitle">${window.i18n?.t('details.catalogDescription') || 'Detaylı teknik bilgiler ve özellikler için kataloğumuzu indirin'}</p>
                             </div>
                         </div>
-                        <a href="/images/products/${fileName}" class="catalog-download-btn" download target="_blank">
+                        <a href="/images/products/${fileName}" class="catalog-download-btn" target="_blank" rel="noopener noreferrer">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                <polyline points="7 10 12 15 17 10"/>
-                                <line x1="12" y1="15" x2="12" y2="3"/>
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                <polyline points="15 3 21 3 21 9"/>
+                                <line x1="10" y1="14" x2="21" y2="3"/>
                             </svg>
                             <span>PDF</span>
                         </a>
@@ -842,6 +842,97 @@ function initModelSlider(models, categoryBar, productImage, baseImage, tableColu
         });
         container.addEventListener('mouseleave', () => {
             modelSliderState.isPaused = false;
+        });
+    }
+
+    // Touch/Swipe support for mobile
+    if (wrapper) {
+        let touchStartX = 0;
+        let touchEndX = 0;
+        let isDragging = false;
+        let startScrollLeft = 0;
+
+        wrapper.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+            startScrollLeft = wrapper.scrollLeft;
+            isDragging = true;
+            modelSliderState.isPaused = true;
+            wrapper.style.scrollBehavior = 'auto';
+        }, { passive: true });
+
+        wrapper.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            const touchX = e.touches[0].clientX;
+            const diff = touchStartX - touchX;
+            wrapper.scrollLeft = startScrollLeft + diff;
+        }, { passive: true });
+
+        wrapper.addEventListener('touchend', (e) => {
+            if (!isDragging) return;
+            isDragging = false;
+            touchEndX = e.changedTouches[0].clientX;
+            wrapper.style.scrollBehavior = 'smooth';
+
+            const swipeDistance = touchStartX - touchEndX;
+            const threshold = 50;
+
+            if (Math.abs(swipeDistance) > threshold) {
+                if (swipeDistance > 0) {
+                    // Swipe left - next model
+                    goToModel(modelSliderState.currentIndex + 1);
+                } else {
+                    // Swipe right - previous model
+                    goToModel(modelSliderState.currentIndex - 1);
+                }
+            }
+
+            modelSliderState.isPaused = false;
+            scheduleNextSlide();
+        }, { passive: true });
+
+        // Mouse drag support for desktop
+        let mouseStartX = 0;
+        let mouseDown = false;
+
+        wrapper.addEventListener('mousedown', (e) => {
+            mouseDown = true;
+            mouseStartX = e.clientX;
+            startScrollLeft = wrapper.scrollLeft;
+            wrapper.style.scrollBehavior = 'auto';
+            wrapper.style.cursor = 'grabbing';
+        });
+
+        wrapper.addEventListener('mousemove', (e) => {
+            if (!mouseDown) return;
+            e.preventDefault();
+            const diff = mouseStartX - e.clientX;
+            wrapper.scrollLeft = startScrollLeft + diff;
+        });
+
+        wrapper.addEventListener('mouseup', (e) => {
+            if (!mouseDown) return;
+            mouseDown = false;
+            wrapper.style.scrollBehavior = 'smooth';
+            wrapper.style.cursor = 'grab';
+
+            const swipeDistance = mouseStartX - e.clientX;
+            const threshold = 50;
+
+            if (Math.abs(swipeDistance) > threshold) {
+                if (swipeDistance > 0) {
+                    goToModel(modelSliderState.currentIndex + 1);
+                } else {
+                    goToModel(modelSliderState.currentIndex - 1);
+                }
+            }
+        });
+
+        wrapper.addEventListener('mouseleave', () => {
+            if (mouseDown) {
+                mouseDown = false;
+                wrapper.style.scrollBehavior = 'smooth';
+                wrapper.style.cursor = 'grab';
+            }
         });
     }
 
