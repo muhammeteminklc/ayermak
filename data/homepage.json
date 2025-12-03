@@ -1,0 +1,272 @@
+{
+  "hero": {
+    "backgroundImage": "homepage-1764465360521-980233237.jpg",
+    "badge": {
+      "tr": "Tarım Uzmanı",
+      "en": "Agriculture Expert",
+      "ru": "Эксперт по сельскому хозяйству"
+    },
+    "title": {
+      "tr": "Sürdürülebilir Tarım İçin Güçlü Çözümler",
+      "en": "Powerful Solutions for Sustainable Agriculture",
+      "ru": "Мощные решения для устойчивого сельского хозяйства"
+    },
+    "description": {
+      "tr": "AYERMAK, 35 yılı aşkın tecrübesiyle modern tarım makineleri üretmekte ve çiftçilere güvenilir çözümler sunmaktadır.",
+      "en": "AYERMAK has been producing modern agricultural machinery for over 35 years, providing reliable solutions to farmers.",
+      "ru": "AYERMAK производит современную сельскохозяйственную технику уже более 35 лет, предоставляя надежные решения фермерам."
+    },
+    "primaryButton": {
+      "text": {
+        "tr": "Ürünleri İncele",
+        "en": "View Products",
+        "ru": "Посмотреть продукцию"
+      },
+      "link": {
+        "tr": "/tr/urunler",
+        "en": "/en/products",
+        "ru": "/ru/produkty"
+      }
+    },
+    "secondaryButton": {
+      "text": {
+        "tr": "İletişim",
+        "en": "Contact",
+        "ru": "Контакт"
+      },
+      "link": {
+        "tr": "/tr/iletisim",
+        "en": "/en/contact",
+        "ru": "/ru/kontakt"
+      }
+    }
+  },
+  "quickActions": {
+    "enabled": true,
+    "items": [
+      {
+        "id": "dealer",
+        "icon": "map-pin",
+        "title": {
+          "tr": "Bayi Bul",
+          "en": "Find Dealer",
+          "ru": "Найти дилера"
+        },
+        "description": {
+          "tr": "Size en yakın bayimizi bulun",
+          "en": "Find your nearest dealer",
+          "ru": "Найдите ближайшего дилера"
+        },
+        "link": "/bayiler",
+        "color": "#FABF1E"
+      },
+      {
+        "id": "contact",
+        "icon": "phone",
+        "title": {
+          "tr": "İletişim",
+          "en": "Contact",
+          "ru": "Контакт"
+        },
+        "description": {
+          "tr": "Bize ulaşın",
+          "en": "Get in touch",
+          "ru": "Свяжитесь с нами"
+        },
+        "link": "#contact",
+        "color": "#5D3A1A"
+      },
+      {
+        "id": "catalog",
+        "icon": "download",
+        "title": {
+          "tr": "Katalog İndir",
+          "en": "Download Catalog",
+          "ru": "Скачать каталог"
+        },
+        "description": {
+          "tr": "Ürün kataloğumuzu indirin",
+          "en": "Download product catalog",
+          "ru": "Скачать каталог продукции"
+        },
+        "link": "/documents/catalog.pdf",
+        "color": "#2D2D2D"
+      },
+      {
+        "id": "quote",
+        "icon": "file-text",
+        "title": {
+          "tr": "Teklif Al",
+          "en": "Get Quote",
+          "ru": "Получить цену"
+        },
+        "description": {
+          "tr": "Fiyat teklifi isteyin",
+          "en": "Request a price quote",
+          "ru": "Запросить цену"
+        },
+        "link": "#contact",
+        "color": "#FABF1E"
+      }
+    ]
+  },
+  "featuredProducts": {
+    "enabled": true,
+    "title": {
+      "tr": "Öne Çıkan Ürünleri İncelemek İster misiniz?",
+      "en": "Would You Like to Explore Featured Products?",
+      "ru": "Хотите ознакомиться с популярными продуктами?"
+    },
+    "subtitle": {
+      "tr": "AYERMAK ürünleri ile kalite ve güç bir arada.",
+      "en": "Quality and power combined with AYERMAK products.",
+      "ru": "Качество и мощь объединены в продуктах AYERMAK."
+    },
+    "productIds": [
+      "diskli-kultivator",
+      "tandem-romork",
+      "patlatma"
+    ],
+    "showMax": 3,
+    "badge": {
+      "tr": "",
+      "en": "",
+      "ru": ""
+    }
+  },
+  "companyBanner": {
+    "enabled": true,
+    "badge": {
+      "tr": "HAKKIMIZDA",
+      "en": "ABOUT US",
+      "ru": "О НАС"
+    },
+    "title": {
+      "tr": "35+ Yıllık Tecrübe",
+      "en": "35+ Years Experience",
+      "ru": "35+ лет опыта"
+    },
+    "description": {
+      "tr": "1990'dan beri Türk çiftçilerine ve dünyaya kaliteli tarım makineleri sunuyoruz. Modern tarımda yepyeni keşiflerin önünü açarak, daha verimli daha kolay bir tarımın standartlarını oluşturuyoruz.",
+      "en": "Since 1990, we have been providing quality agricultural machinery to Turkish farmers and the world. By paving the way for brand new discoveries in modern agriculture, we are setting the standards for more efficient and easier farming.",
+      "ru": "С 1990 года мы поставляем качественную сельскохозяйственную технику турецким фермерам и всему миру. Открывая путь для новых открытий в современном сельском хозяйстве, мы устанавливаем стандарты более эффективного и простого земледелия."
+    },
+    "image": "homepage-1764435078191-9116583.jpg",
+    "buttonText": {
+      "tr": "Daha Fazla",
+      "en": "Learn More",
+      "ru": "Узнать больше"
+    },
+    "buttonLink": {
+      "tr": "/tr/hakkimizda",
+      "en": "/en/about",
+      "ru": "/ru/o-nas"
+    },
+    "stats": [
+      {
+        "value": "35+",
+        "label": {
+          "tr": "Yıl Tecrübe",
+          "en": "Years Experience",
+          "ru": "Лет опыта"
+        }
+      },
+      {
+        "value": "5000+",
+        "label": {
+          "tr": "Üretilen Makine",
+          "en": "Machines Produced",
+          "ru": "Произведено машин"
+        }
+      },
+      {
+        "value": "25+",
+        "label": {
+          "tr": "İhracat Ülkesi",
+          "en": "Export Countries",
+          "ru": "Стран экспорта"
+        }
+      }
+    ]
+  },
+  "newsSection": {
+    "enabled": true,
+    "badge": {
+      "tr": "HABERLER",
+      "en": "NEWS",
+      "ru": "НОВОСТИ"
+    },
+    "title": {
+      "tr": "Son Haberler",
+      "en": "Latest News",
+      "ru": "Последние новости"
+    },
+    "showMax": 4,
+    "videoUrl": "",
+    "videoTitle": {
+      "tr": "",
+      "en": "",
+      "ru": ""
+    }
+  },
+  "cta": {
+    "enabled": true,
+    "title": {
+      "tr": "Sizden Haber Bekliyoruz!",
+      "en": "We'd Love to Hear From You!",
+      "ru": "Мы будем рады услышать вас!"
+    },
+    "text": {
+      "tr": "Sorularınız veya ek bilgi için bize ulaşmaktan çekinmeyin. Size yardımcı olmak için buradayız.",
+      "en": "Don't hesitate to reach out with questions or for more information. We're here to help you.",
+      "ru": "Не стесняйтесь обращаться к нам с вопросами или за дополнительной информацией. Мы здесь, чтобы помочь вам."
+    },
+    "buttonText": {
+      "tr": "İLETİŞİM",
+      "en": "CONTACT",
+      "ru": "КОНТАКТ"
+    },
+    "buttonLink": {
+      "tr": "/tr/iletisim",
+      "en": "/en/contact",
+      "ru": "/ru/kontakt"
+    },
+    "backgroundImage": ""
+  },
+  "partners": [
+    {
+      "name": "Partner 1",
+      "logo": "partner1.png"
+    },
+    {
+      "name": "Partner 2",
+      "logo": "partner2.png"
+    },
+    {
+      "name": "Partner 3",
+      "logo": "partner3.png"
+    },
+    {
+      "name": "Partner 4",
+      "logo": "partner4.png"
+    },
+    {
+      "name": "Partner 5",
+      "logo": "partner5.png"
+    }
+  ],
+  "video": {
+    "enabled": true,
+    "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "title": {
+      "tr": "AYERMAK Tanıtım Videosu",
+      "en": "AYERMAK Introduction Video",
+      "ru": "Видео презентация AYERMAK"
+    }
+  },
+  "updatedAt": "2025-12-02T15:17:36.659Z",
+  "blog": {
+    "displayMode": "latest",
+    "selectedNews": []
+  }
+}

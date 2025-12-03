@@ -1,0 +1,61 @@
+{
+  "pages": {
+    "home": {
+      "tr": "",
+      "en": "",
+      "ru": ""
+    },
+    "products": {
+      "tr": "urunler",
+      "en": "products",
+      "ru": "produkty"
+    },
+    "news": {
+      "tr": "haberler",
+      "en": "news",
+      "ru": "novosti"
+    },
+    "about": {
+      "tr": "hakkimizda",
+      "en": "about",
+      "ru": "o-nas"
+    },
+    "dealers": {
+      "tr": "bayiler",
+      "en": "dealers",
+      "ru": "dilery"
+    },
+    "contact": {
+      "tr": "iletisim",
+      "en": "contact",
+      "ru": "kontakt"
+    }
+  },
+  "products": {
+    "patlatma": {
+      "tr": "patlatma",
+      "en": "subsoiler",
+      "ru": "glubokorykhlitel"
+    },
+    "diskli-kultivator": {
+      "tr": "diskli-kultivator",
+      "en": "disc-cultivator",
+      "ru": "diskovyy-kultivator"
+    },
+    "tandem-romork": {
+      "tr": "tandem-romork",
+      "en": "tandem-trailer",
+      "ru": "tandemnyy-pritsep"
+    },
+    "dingilli-romork": {
+      "tr": "dingilli-romork",
+      "en": "single-axle-trailer",
+      "ru": "odnoosnyy-pritsep"
+    },
+    "tiller": {
+      "tr": "tiller",
+      "en": "tiller",
+      "ru": "kultivator-tiller"
+    }
+  }
+}

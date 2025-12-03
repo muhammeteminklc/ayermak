@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYERMAK Admin - Anasayfa</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/admin-urun.css">
+    <link rel="stylesheet" href="/css/admin-about.css">
+    <link rel="icon" href="/images/ayermak.png" type="image/png">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Tab Panel Display */
+        .tab-panel {
+            display: none;
+        }
+        .tab-panel.active {
+            display: block;
+        }
+
+        /* Lang Content Display */
+        .lang-content {
+            display: none;
+        }
+        .lang-content.active {
+            display: block;
+        }
+
+        /* Homepage specific styles */
+        .slides-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .slide-item {
+            background: var(--admin-card-bg);
+            border: 1px solid var(--admin-border);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .slide-item.dragging {
+            opacity: 0.5;
+        }
+
+        .slide-drag-handle {
+            cursor: grab;
+            color: var(--admin-text-muted);
+            padding: 8px;
+        }
+
+        .slide-preview {
+            width: 120px;
+            height: 80px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--admin-bg);
+            flex-shrink: 0;
+        }
+
+        .slide-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-preview-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--admin-text-muted);
+        }
+
+        .slide-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .slide-type-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .slide-type-badge.custom {
+            background: #FABF1E20;
+            color: #FABF1E;
+        }
+
+        .slide-type-badge.product {
+            background: #5D3A1A20;
+            color: #5D3A1A;
+        }
+
+        .slide-type-badge.news {
+            background: #2D2D2D20;
+            color: #2D2D2D;
+        }
+
+        .slide-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .slide-subtitle {
+            font-size: 13px;
+            color: var(--admin-text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .slide-actions {
+            display: flex;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .slide-actions button {
+            padding: 8px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            background: var(--admin-bg);
+            color: var(--admin-text);
+            transition: all 0.2s;
+        }
+
+        .slide-actions button:hover {
+            background: var(--admin-primary);
+            color: white;
+        }
+
+        .slide-actions button.delete:hover {
+            background: #dc3545;
+        }
+
+        .add-slide-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px;
+            border: 2px dashed var(--admin-border);
+            border-radius: 12px;
+            background: transparent;
+            color: var(--admin-text-muted);
+            cursor: pointer;
+            transition: all 0.2s;
+            width: 100%;
+        }
+
+        .add-slide-btn:hover {
+            border-color: var(--admin-primary);
+            color: var(--admin-primary);
+        }
+
+        /* Quick Actions Grid */
+        .quick-actions-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .quick-action-item {
+            background: var(--admin-bg);
+            border: 1px solid var(--admin-border);
+            border-radius: 12px;
+            padding: 16px;
+        }
+
+        .quick-action-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .quick-action-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        /* Products selector */
+        .products-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .product-checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: var(--admin-bg);
+            border: 1px solid var(--admin-border);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .product-checkbox-item:hover {
+            border-color: var(--admin-primary);
+        }
+
+        .product-checkbox-item.selected {
+            border-color: var(--admin-primary);
+            background: var(--admin-primary-light);
+        }
+
+        .product-checkbox-item input {
+            display: none;
+        }
+
+        .product-checkbox-item img {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        /* Stats editor */
+        .stats-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .stat-item {
+            display: grid;
+            grid-template-columns: 100px 1fr 1fr 1fr auto;
+            gap: 12px;
+            align-items: center;
+            padding: 12px;
+            background: var(--admin-bg);
+            border-radius: 10px;
+        }
+
+        .stat-item input {
+            padding: 8px 12px;
+            border: 1px solid var(--admin-border);
+            border-radius: 8px;
+            background: var(--admin-card-bg);
+        }
+
+        /* Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #ffffff;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 24px;
+            border-bottom: 1px solid #e5e7eb;
+            background: #f9fafb;
+            border-radius: 16px 16px 0 0;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1f36;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #6b7280;
+            padding: 8px;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .modal-close:hover {
+            background: #e5e7eb;
+            color: #1a1f36;
+        }
+
+        .modal-body {
+            padding: 24px;
+            background: #ffffff;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            padding: 16px 24px;
+            border-top: 1px solid #e5e7eb;
+            background: #f9fafb;
+            border-radius: 0 0 16px 16px;
+        }
+
+        .slide-type-selector {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .slide-type-option {
+            padding: 16px;
+            border: 2px solid var(--admin-border);
+            border-radius: 12px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .slide-type-option:hover {
+            border-color: var(--admin-primary);
+        }
+
+        .slide-type-option.selected {
+            border-color: var(--admin-primary);
+            background: var(--admin-primary-light);
+        }
+
+        .slide-type-option i {
+            display: block;
+            margin: 0 auto 8px;
+        }
+
+        .slide-type-option span {
+            font-weight: 600;
+            display: block;
+        }
+
+        .slide-type-option small {
+            color: var(--admin-text-muted);
+            font-size: 12px;
+        }
+
+        /* Toggle switch */
+        .toggle-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--admin-border);
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 48px;
+            height: 26px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--admin-border);
+            transition: 0.3s;
+            border-radius: 26px;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.3s;
+            border-radius: 50%;
+        }
+
+        .toggle-switch input:checked + .toggle-slider {
+            background-color: var(--admin-primary);
+        }
+
+        .toggle-switch input:checked + .toggle-slider:before {
+            transform: translateX(22px);
+        }
+
+        @media (max-width: 768px) {
+            .quick-actions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-item {
+                grid-template-columns: 1fr;
+            }
+
+            .slide-type-selector {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body class="admin-body">
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <div id="adminSidebar" data-active="homepage"></div>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Top Bar -->
+            <div class="editor-topbar">
+                <div class="topbar-left">
+                    <h1 class="editor-title">Anasayfa Yonetimi</h1>
+                </div>
+                <div class="topbar-right">
+                    <a href="/" target="_blank" class="preview-btn" style="margin-right: 12px;">
+                        <i data-lucide="external-link"></i>
+                        Onizle
+                    </a>
+                    <button class="save-btn" id="saveBtn" onclick="saveHomepage()">
+                        <i data-lucide="save"></i>
+                        Kaydet
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="about-tabs">
+                <button class="about-tab active" data-tab="hero" onclick="switchTab('hero')">
+                    <i data-lucide="image"></i>
+                    Hero Bolumu
+                </button>
+                <button class="about-tab" data-tab="featuredProducts" onclick="switchTab('featuredProducts')">
+                    <i data-lucide="star"></i>
+                    One Cikan Urunler
+                </button>
+                <button class="about-tab" data-tab="companyBanner" onclick="switchTab('companyBanner')">
+                    <i data-lucide="bar-chart-3"></i>
+                    Sirket Istatistikleri
+                </button>
+                <button class="about-tab" data-tab="newsSection" onclick="switchTab('newsSection')">
+                    <i data-lucide="newspaper"></i>
+                    Haberler
+                </button>
+            </div>
+
+            <!-- Editor Content -->
+            <div class="editor-layout single-column">
+                <div class="editor-content">
+
+                    <!-- HERO SECTION TAB -->
+                    <div id="tab-hero" class="tab-panel active">
+                        <div class="card">
+                            <div class="card-title">Hero Bolumu</div>
+                            <p class="card-desc">Anasayfanin ust kisminda gorunecek hero bolumu icerikleri</p>
+
+                            <!-- Hero Image -->
+                            <div class="form-field">
+                                <label>Arka Plan Gorseli</label>
+                                <div class="gallery-upload-zone" id="heroImageUpload" style="margin-top: 8px;">
+                                    <input type="file" id="heroImageInput" accept="image/*" hidden>
+                                    <div class="upload-content">
+                                        <i data-lucide="image-plus"></i>
+                                        <span>Gorsel yukle</span>
+                                    </div>
+                                </div>
+                                <div id="heroImagePreview" style="margin-top: 12px;"></div>
+                            </div>
+
+                            <!-- Language Tabs -->
+                            <div class="lang-tabs" style="margin-top: 20px;">
+                                <button class="lang-tab active" data-lang="tr" onclick="switchLang('tr', 'hero')">
+                                    <span class="flag flag-tr">TR</span> Turkce
+                                </button>
+                                <button class="lang-tab" data-lang="en" onclick="switchLang('en', 'hero')">
+                                    <span class="flag flag-en">EN</span> English
+                                </button>
+                                <button class="lang-tab" data-lang="ru" onclick="switchLang('ru', 'hero')">
+                                    <span class="flag flag-ru">RU</span> Russki
+                                </button>
+                            </div>
+
+                            <!-- TR Fields -->
+                            <div id="hero-fields-tr" class="lang-content active">
+                                <div class="form-field">
+                                    <label>Badge (TR)</label>
+                                    <input type="text" id="heroBadgeTr" placeholder="Tarım Uzmanı">
+                                </div>
+                                <div class="form-field">
+                                    <label>Baslik (TR)</label>
+                                    <input type="text" id="heroTitleTr" placeholder="Sürdürülebilir Tarım İçin Güçlü Çözümler">
+                                </div>
+                                <div class="form-field">
+                                    <label>Aciklama (TR)</label>
+                                    <textarea id="heroDescTr" rows="3" placeholder="AYERMAK, 35 yılı aşkın tecrübesiyle..."></textarea>
+                                </div>
+                                <div class="form-field">
+                                    <label>Birincil Buton Metni (TR)</label>
+                                    <input type="text" id="heroPrimaryBtnTr" placeholder="Ürünleri İncele">
+                                </div>
+                                <div class="form-field">
+                                    <label>Birincil Buton Linki (TR)</label>
+                                    <input type="text" id="heroPrimaryBtnLinkTr" placeholder="/urunler">
+                                </div>
+                                <div class="form-field">
+                                    <label>Ikincil Buton Metni (TR)</label>
+                                    <input type="text" id="heroSecondaryBtnTr" placeholder="İletişim">
+                                </div>
+                                <div class="form-field">
+                                    <label>Ikincil Buton Linki (TR)</label>
+                                    <input type="text" id="heroSecondaryBtnLinkTr" placeholder="/iletisim">
+                                </div>
+                            </div>
+
+                            <!-- EN Fields -->
+                            <div id="hero-fields-en" class="lang-content">
+                                <div class="form-field">
+                                    <label>Badge (EN)</label>
+                                    <input type="text" id="heroBadgeEn" placeholder="Agriculture Expert">
+                                </div>
+                                <div class="form-field">
+                                    <label>Title (EN)</label>
+                                    <input type="text" id="heroTitleEn" placeholder="Powerful Solutions for Sustainable Agriculture">
+                                </div>
+                                <div class="form-field">
+                                    <label>Description (EN)</label>
+                                    <textarea id="heroDescEn" rows="3" placeholder="AYERMAK has been producing..."></textarea>
+                                </div>
+                                <div class="form-field">
+                                    <label>Primary Button Text (EN)</label>
+                                    <input type="text" id="heroPrimaryBtnEn" placeholder="View Products">
+                                </div>
+                                <div class="form-field">
+                                    <label>Primary Button Link (EN)</label>
+                                    <input type="text" id="heroPrimaryBtnLinkEn" placeholder="/en/products">
+                                </div>
+                                <div class="form-field">
+                                    <label>Secondary Button Text (EN)</label>
+                                    <input type="text" id="heroSecondaryBtnEn" placeholder="Contact">
+                                </div>
+                                <div class="form-field">
+                                    <label>Secondary Button Link (EN)</label>
+                                    <input type="text" id="heroSecondaryBtnLinkEn" placeholder="/en/contact">
+                                </div>
+                            </div>
+
+                            <!-- RU Fields -->
+                            <div id="hero-fields-ru" class="lang-content">
+                                <div class="form-field">
+                                    <label>Badge (RU)</label>
+                                    <input type="text" id="heroBadgeRu" placeholder="Эксперт по сельскому хозяйству">
+                                </div>
+                                <div class="form-field">
+                                    <label>Title (RU)</label>
+                                    <input type="text" id="heroTitleRu" placeholder="Мощные решения для устойчивого сельского хозяйства">
+                                </div>
+                                <div class="form-field">
+                                    <label>Description (RU)</label>
+                                    <textarea id="heroDescRu" rows="3" placeholder="AYERMAK производит современную..."></textarea>
+                                </div>
+                                <div class="form-field">
+                                    <label>Primary Button Text (RU)</label>
+                                    <input type="text" id="heroPrimaryBtnRu" placeholder="Посмотреть продукцию">
+                                </div>
+                                <div class="form-field">
+                                    <label>Primary Button Link (RU)</label>
+                                    <input type="text" id="heroPrimaryBtnLinkRu" placeholder="/ru/products">
+                                </div>
+                                <div class="form-field">
+                                    <label>Secondary Button Text (RU)</label>
+                                    <input type="text" id="heroSecondaryBtnRu" placeholder="Контакт">
+                                </div>
+                                <div class="form-field">
+                                    <label>Secondary Button Link (RU)</label>
+                                    <input type="text" id="heroSecondaryBtnLinkRu" placeholder="/ru/contact">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FEATURED PRODUCTS TAB -->
+                    <div id="tab-featuredProducts" class="tab-panel">
+                        <div class="card">
+                            <div class="card-title">One Cikan Urunler</div>
+                            <p class="card-desc">Anasayfada ozellikle gosterilecek urunleri secin</p>
+
+                            <div class="toggle-row">
+                                <div>
+                                    <strong>Bolumu Goster</strong>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="featuredProductsEnabled" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="lang-tabs" style="margin-top: 20px;">
+                                <button class="lang-tab active" data-lang="tr" onclick="switchLang('tr', 'featured')">
+                                    <span class="flag flag-tr">TR</span> Turkce
+                                </button>
+                                <button class="lang-tab" data-lang="en" onclick="switchLang('en', 'featured')">
+                                    <span class="flag flag-en">EN</span> English
+                                </button>
+                                <button class="lang-tab" data-lang="ru" onclick="switchLang('ru', 'featured')">
+                                    <span class="flag flag-ru">RU</span> Russki
+                                </button>
+                            </div>
+
+                            <div id="featured-fields-tr" class="lang-content active">
+                                <div class="form-field">
+                                    <label>Badge (TR)</label>
+                                    <input type="text" id="featuredBadgeTr" placeholder="ÖNE ÇIKANLAR">
+                                </div>
+                                <div class="form-field">
+                                    <label>Baslik (TR)</label>
+                                    <input type="text" id="featuredTitleTr" placeholder="Popüler Ürünlerimiz">
+                                </div>
+                                <div class="form-field">
+                                    <label>Alt Baslik (TR)</label>
+                                    <input type="text" id="featuredSubtitleTr" placeholder="En çok tercih edilen tarım makineleri">
+                                </div>
+                            </div>
+
+                            <div id="featured-fields-en" class="lang-content">
+                                <div class="form-field">
+                                    <label>Badge (EN)</label>
+                                    <input type="text" id="featuredBadgeEn" placeholder="FEATURED">
+                                </div>
+                                <div class="form-field">
+                                    <label>Title (EN)</label>
+                                    <input type="text" id="featuredTitleEn" placeholder="Our Popular Products">
+                                </div>
+                                <div class="form-field">
+                                    <label>Subtitle (EN)</label>
+                                    <input type="text" id="featuredSubtitleEn" placeholder="Most preferred agricultural machinery">
+                                </div>
+                            </div>
+
+                            <div id="featured-fields-ru" class="lang-content">
+                                <div class="form-field">
+                                    <label>Badge (RU)</label>
+                                    <input type="text" id="featuredBadgeRu" placeholder="ИЗБРАННОЕ">
+                                </div>
+                                <div class="form-field">
+                                    <label>Title (RU)</label>
+                                    <input type="text" id="featuredTitleRu" placeholder="Наши популярные продукты">
+                                </div>
+                                <div class="form-field">
+                                    <label>Subtitle (RU)</label>
+                                    <input type="text" id="featuredSubtitleRu" placeholder="Самая предпочитаемая сельхозтехника">
+                                </div>
+                            </div>
+
+                            <div class="form-field" style="margin-top: 20px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                    <label style="margin-bottom: 0;">Urun Secimi</label>
+                                    <span id="productSelectionCounter" style="font-size: 14px; font-weight: 600; padding: 4px 12px; border-radius: 20px; background: #fff3cd; color: #856404;">0/3 secili</span>
+                                </div>
+                                <p class="card-desc">Anasayfada gosterilecek urunleri secin (maksimum 3 adet)</p>
+                            </div>
+                            <div class="products-selector" id="productsSelector">
+                                <!-- Products will be rendered here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COMPANY STATS TAB -->
+                    <div id="tab-companyBanner" class="tab-panel">
+                        <div class="card">
+                            <div class="card-title">Sirket Istatistikleri</div>
+                            <p class="card-desc">Anasayfada gosterilecek sirket istatistikleri (35+ Yıl, 5000+ Makine vb.)</p>
+
+                            <div class="stats-list" id="companyStatsList">
+                                <!-- Stats will be rendered here -->
+                            </div>
+
+                            <button type="button" class="add-slide-btn" onclick="addCompanyStat()" style="margin-top: 16px;">
+                                <i data-lucide="plus"></i>
+                                Istatistik Ekle
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- NEWS SECTION TAB -->
+                    <div id="tab-newsSection" class="tab-panel">
+                        <div class="card">
+                            <div class="card-title">Son Haberler Bolumu</div>
+                            <p class="card-desc">Son haberler otomatik olarak cekilir</p>
+
+                            <div class="toggle-row">
+                                <div>
+                                    <strong>Bolumu Goster</strong>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="newsSectionEnabled" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="lang-tabs" style="margin-top: 20px;">
+                                <button class="lang-tab active" data-lang="tr" onclick="switchLang('tr', 'news')">
+                                    <span class="flag flag-tr">TR</span> Turkce
+                                </button>
+                                <button class="lang-tab" data-lang="en" onclick="switchLang('en', 'news')">
+                                    <span class="flag flag-en">EN</span> English
+                                </button>
+                                <button class="lang-tab" data-lang="ru" onclick="switchLang('ru', 'news')">
+                                    <span class="flag flag-ru">RU</span> Russki
+                                </button>
+                            </div>
+
+                            <div id="news-fields-tr" class="lang-content active">
+                                <div class="form-field">
+                                    <label>Badge (TR)</label>
+                                    <input type="text" id="newsBadgeTr" placeholder="HABERLER">
+                                </div>
+                                <div class="form-field">
+                                    <label>Baslik (TR)</label>
+                                    <input type="text" id="newsTitleTr" placeholder="Son Haberler">
+                                </div>
+                            </div>
+
+                            <div id="news-fields-en" class="lang-content">
+                                <div class="form-field">
+                                    <label>Badge (EN)</label>
+                                    <input type="text" id="newsBadgeEn" placeholder="NEWS">
+                                </div>
+                                <div class="form-field">
+                                    <label>Title (EN)</label>
+                                    <input type="text" id="newsTitleEn" placeholder="Latest News">
+                                </div>
+                            </div>
+
+                            <div id="news-fields-ru" class="lang-content">
+                                <div class="form-field">
+                                    <label>Badge (RU)</label>
+                                    <input type="text" id="newsBadgeRu" placeholder="НОВОСТИ">
+                                </div>
+                                <div class="form-field">
+                                    <label>Title (RU)</label>
+                                    <input type="text" id="newsTitleRu" placeholder="Последние новости">
+                                </div>
+                            </div>
+
+                            <div class="form-field" style="margin-top: 20px;">
+                                <label>Haber Gösterim Modu</label>
+                                <select id="blogDisplayMode" onchange="toggleBlogSelectionMode()">
+                                    <option value="latest">Son 3 Haber (Otomatik)</option>
+                                    <option value="custom">Özel 3 Haber Seç</option>
+                                </select>
+                            </div>
+
+                            <div id="customBlogSelection" style="display: none; margin-top: 20px;">
+                                <div class="card-title">Özel Haber Seçimi</div>
+                                <p class="card-desc">Anasayfada gösterilecek 3 haberi seçin</p>
+                                <div id="blogNewsList" style="margin-top: 16px;">
+                                    <!-- News items will be loaded here -->
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Slide Modal -->
+    <div class="modal-overlay" id="slideModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="slideModalTitle">Yeni Slide Ekle</h3>
+                <button class="modal-close" onclick="closeSlideModal()">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="slide-type-selector" id="slideTypeSelector">
+                    <div class="slide-type-option selected" data-type="custom" onclick="selectSlideType('custom')">
+                        <i data-lucide="edit-3"></i>
+                        <span>Ozel Icerik</span>
+                        <small>Manuel baslik, gorsel</small>
+                    </div>
+                    <div class="slide-type-option" data-type="product" onclick="selectSlideType('product')">
+                        <i data-lucide="package"></i>
+                        <span>Urun Tanitimi</span>
+                        <small>Urun sec, otomatik</small>
+                    </div>
+                    <div class="slide-type-option" data-type="news" onclick="selectSlideType('news')">
+                        <i data-lucide="newspaper"></i>
+                        <span>Haber</span>
+                        <small>Son haber veya sec</small>
+                    </div>
+                </div>
+
+                <!-- Custom slide fields -->
+                <div id="slideFields-custom" class="slide-fields">
+                    <div class="form-field">
+                        <label>Gorsel</label>
+                        <div class="gallery-upload-zone" id="slideImageUpload">
+                            <input type="file" id="slideImageInput" accept="image/*" hidden>
+                            <div class="upload-content">
+                                <i data-lucide="image-plus"></i>
+                                <span>Gorsel yukle</span>
+                            </div>
+                        </div>
+                        <div id="slideImagePreview" style="margin-top: 12px;"></div>
+                    </div>
+
+                    <div class="lang-tabs" style="margin-top: 16px;">
+                        <button class="lang-tab active" data-lang="tr" onclick="switchSlideLang('tr')">TR</button>
+                        <button class="lang-tab" data-lang="en" onclick="switchSlideLang('en')">EN</button>
+                        <button class="lang-tab" data-lang="ru" onclick="switchSlideLang('ru')">RU</button>
+                    </div>
+
+                    <div id="slide-lang-tr" class="lang-content active">
+                        <div class="form-field">
+                            <label>Baslik (TR)</label>
+                            <input type="text" id="slideTitleTr">
+                        </div>
+                        <div class="form-field">
+                            <label>Alt Baslik (TR)</label>
+                            <textarea id="slideSubtitleTr" rows="2"></textarea>
+                        </div>
+                        <div class="form-field">
+                            <label>Buton Metni (TR)</label>
+                            <input type="text" id="slideButtonTr" placeholder="İncele">
+                        </div>
+                    </div>
+
+                    <div id="slide-lang-en" class="lang-content">
+                        <div class="form-field">
+                            <label>Title (EN)</label>
+                            <input type="text" id="slideTitleEn">
+                        </div>
+                        <div class="form-field">
+                            <label>Subtitle (EN)</label>
+                            <textarea id="slideSubtitleEn" rows="2"></textarea>
+                        </div>
+                        <div class="form-field">
+                            <label>Button Text (EN)</label>
+                            <input type="text" id="slideButtonEn" placeholder="View">
+                        </div>
+                    </div>
+
+                    <div id="slide-lang-ru" class="lang-content">
+                        <div class="form-field">
+                            <label>Title (RU)</label>
+                            <input type="text" id="slideTitleRu">
+                        </div>
+                        <div class="form-field">
+                            <label>Subtitle (RU)</label>
+                            <textarea id="slideSubtitleRu" rows="2"></textarea>
+                        </div>
+                        <div class="form-field">
+                            <label>Button Text (RU)</label>
+                            <input type="text" id="slideButtonRu" placeholder="Просмотр">
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label>Buton Linki</label>
+                        <input type="text" id="slideButtonLink" placeholder="/urunler">
+                    </div>
+                </div>
+
+                <!-- Product slide fields -->
+                <div id="slideFields-product" class="slide-fields" style="display: none;">
+                    <div class="form-field">
+                        <label>Urun Secin</label>
+                        <select id="slideProductSelect" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--admin-border);" onchange="onProductSelect()">
+                            <!-- Products will be loaded here -->
+                        </select>
+                    </div>
+                    <p class="card-desc" style="margin-bottom: 16px;">Urun secildiginde bilgiler otomatik doldurulur. Dilediginiz gibi duzenleyebilirsiniz.</p>
+
+                    <!-- Override toggle -->
+                    <div class="toggle-row" style="margin-bottom: 16px; padding: 12px; background: var(--admin-bg); border-radius: 8px;">
+                        <div>
+                            <strong>Ozel Icerik Kullan</strong>
+                            <small style="display: block; color: var(--admin-text-muted);">Acik: Asagidaki degerler kullanilir. Kapali: Urun verileri otomatik cekilir.</small>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="productOverrideEnabled" onchange="toggleProductOverride()">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <!-- Editable fields for product -->
+                    <div id="productOverrideFields" style="display: none;">
+                        <div class="form-field">
+                            <label>Gorsel (Opsiyonel - bos birakirsaniz urun gorseli kullanilir)</label>
+                            <div class="gallery-upload-zone" id="productSlideImageUpload">
+                                <input type="file" id="productSlideImageInput" accept="image/*" hidden>
+                                <div class="upload-content">
+                                    <i data-lucide="image-plus"></i>
+                                    <span>Ozel gorsel yukle</span>
+                                </div>
+                            </div>
+                            <div id="productSlideImagePreview" style="margin-top: 12px;"></div>
+                        </div>
+
+                        <div class="lang-tabs" style="margin-top: 16px;">
+                            <button class="lang-tab active" data-lang="tr" onclick="switchProductSlideLang('tr')">TR</button>
+                            <button class="lang-tab" data-lang="en" onclick="switchProductSlideLang('en')">EN</button>
+                            <button class="lang-tab" data-lang="ru" onclick="switchProductSlideLang('ru')">RU</button>
+                        </div>
+
+                        <div id="product-slide-lang-tr" class="lang-content active">
+                            <div class="form-field">
+                                <label>Baslik (TR)</label>
+                                <input type="text" id="productSlideTitleTr">
+                            </div>
+                            <div class="form-field">
+                                <label>Alt Baslik (TR)</label>
+                                <textarea id="productSlideSubtitleTr" rows="2"></textarea>
+                            </div>
+                            <div class="form-field">
+                                <label>Buton Metni (TR)</label>
+                                <input type="text" id="productSlideButtonTr" placeholder="Incele">
+                            </div>
+                        </div>
+
+                        <div id="product-slide-lang-en" class="lang-content">
+                            <div class="form-field">
+                                <label>Title (EN)</label>
+                                <input type="text" id="productSlideTitleEn">
+                            </div>
+                            <div class="form-field">
+                                <label>Subtitle (EN)</label>
+                                <textarea id="productSlideSubtitleEn" rows="2"></textarea>
+                            </div>
+                            <div class="form-field">
+                                <label>Button Text (EN)</label>
+                                <input type="text" id="productSlideButtonEn" placeholder="View">
+                            </div>
+                        </div>
+
+                        <div id="product-slide-lang-ru" class="lang-content">
+                            <div class="form-field">
+                                <label>Title (RU)</label>
+                                <input type="text" id="productSlideTitleRu">
+                            </div>
+                            <div class="form-field">
+                                <label>Subtitle (RU)</label>
+                                <textarea id="productSlideSubtitleRu" rows="2"></textarea>
+                            </div>
+                            <div class="form-field">
+                                <label>Button Text (RU)</label>
+                                <input type="text" id="productSlideButtonRu" placeholder="Просмотр">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News slide fields -->
+                <div id="slideFields-news" class="slide-fields" style="display: none;">
+                    <div class="form-field">
+                        <label>Haber Secin</label>
+                        <select id="slideNewsSelect" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--admin-border);" onchange="onNewsSelect()">
+                            <option value="auto-latest">Son Haber (Otomatik)</option>
+                            <!-- News will be loaded here -->
+                        </select>
+                    </div>
+                    <p class="card-desc" style="margin-bottom: 16px;">"Son Haber" secerseniz en guncel haber otomatik gosterilir. Isterseniz icerigi ozellestirin.</p>
+
+                    <!-- Override toggle -->
+                    <div class="toggle-row" style="margin-bottom: 16px; padding: 12px; background: var(--admin-bg); border-radius: 8px;">
+                        <div>
+                            <strong>Ozel Icerik Kullan</strong>
+                            <small style="display: block; color: var(--admin-text-muted);">Acik: Asagidaki degerler kullanilir. Kapali: Haber verileri otomatik cekilir.</small>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="newsOverrideEnabled" onchange="toggleNewsOverride()">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <!-- Editable fields for news -->
+                    <div id="newsOverrideFields" style="display: none;">
+                        <div class="form-field">
+                            <label>Gorsel (Opsiyonel - bos birakirsaniz haber gorseli kullanilir)</label>
+                            <div class="gallery-upload-zone" id="newsSlideImageUpload">
+                                <input type="file" id="newsSlideImageInput" accept="image/*" hidden>
+                                <div class="upload-content">
+                                    <i data-lucide="image-plus"></i>
+                                    <span>Ozel gorsel yukle</span>
+                                </div>
+                            </div>
+                            <div id="newsSlideImagePreview" style="margin-top: 12px;"></div>
+                        </div>
+
+                        <div class="lang-tabs" style="margin-top: 16px;">
+                            <button class="lang-tab active" data-lang="tr" onclick="switchNewsSlideLang('tr')">TR</button>
+                            <button class="lang-tab" data-lang="en" onclick="switchNewsSlideLang('en')">EN</button>
+                            <button class="lang-tab" data-lang="ru" onclick="switchNewsSlideLang('ru')">RU</button>
+                        </div>
+
+                        <div id="news-slide-lang-tr" class="lang-content active">
+                            <div class="form-field">
+                                <label>Baslik (TR)</label>
+                                <input type="text" id="newsSlideTitleTr">
+                            </div>
+                            <div class="form-field">
+                                <label>Alt Baslik (TR)</label>
+                                <textarea id="newsSlideSubtitleTr" rows="2"></textarea>
+                            </div>
+                            <div class="form-field">
+                                <label>Buton Metni (TR)</label>
+                                <input type="text" id="newsSlideButtonTr" placeholder="Devamini Oku">
+                            </div>
+                        </div>
+
+                        <div id="news-slide-lang-en" class="lang-content">
+                            <div class="form-field">
+                                <label>Title (EN)</label>
+                                <input type="text" id="newsSlideTitleEn">
+                            </div>
+                            <div class="form-field">
+                                <label>Subtitle (EN)</label>
+                                <textarea id="newsSlideSubtitleEn" rows="2"></textarea>
+                            </div>
+                            <div class="form-field">
+                                <label>Button Text (EN)</label>
+                                <input type="text" id="newsSlideButtonEn" placeholder="Read More">
+                            </div>
+                        </div>
+
+                        <div id="news-slide-lang-ru" class="lang-content">
+                            <div class="form-field">
+                                <label>Title (RU)</label>
+                                <input type="text" id="newsSlideTitleRu">
+                            </div>
+                            <div class="form-field">
+                                <label>Subtitle (RU)</label>
+                                <textarea id="newsSlideSubtitleRu" rows="2"></textarea>
+                            </div>
+                            <div class="form-field">
+                                <label>Button Text (RU)</label>
+                                <input type="text" id="newsSlideButtonRu" placeholder="Читать далее">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" onclick="closeSlideModal()">Iptal</button>
+                <button type="button" class="save-btn" onclick="saveSlide()">
+                    <i data-lucide="check"></i>
+                    Kaydet
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/admin-sidebar.js"></script>
+    <script src="/js/admin.js"></script>
+    <script src="/js/admin-homepage.js"></script>
+</body>
+
+</html>

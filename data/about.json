@@ -1,0 +1,159 @@
+{
+  "featuresHeader": {
+    "badge": {
+      "tr": "POLİTİKAMIZ",
+      "en": "OUR POLICY",
+      "ru": "НАША ПОЛИТИКА"
+    },
+    "title": {
+      "tr": "Neden",
+      "en": "Why",
+      "ru": "Почему"
+    },
+    "titleHighlight": {
+      "tr": "AyErmak?",
+      "en": "AyErmak?",
+      "ru": "AyErmak?"
+    }
+  },
+  "cta": {
+    "title": {
+      "tr": "Ürünlerimizi Keşfedin",
+      "en": "Explore Our Products",
+      "ru": "Изучите нашу продукцию"
+    },
+    "text": {
+      "tr": "Tarım makineleri ihtiyaçlarınız için doğru çözümü bulun.",
+      "en": "Find the right solution for your agricultural machinery needs.",
+      "ru": "Найдите правильное решение для ваших потребностей в сельхозтехнике."
+    },
+    "button": {
+      "tr": "Tüm Ürünler",
+      "en": "All Products",
+      "ru": "Все продукты"
+    }
+  },
+  "hero": {
+    "badge": {
+      "tr": "HAKKIMIZDA",
+      "en": "ABOUT US",
+      "ru": "О НАС"
+    },
+    "title": {
+      "tr": "AyErmak Tarım Ürünleri",
+      "en": "AyErmak Agricultural Products",
+      "ru": "Сельхозтехника AyErmak"
+    },
+    "subtitle": {
+      "tr": "1990 yılından bugüne çiftçilerimizin topraktan daha iyi verim alabilmesi için buradayız!",
+      "en": "Since 1990, we've been here to help our farmers get better yields from the soil!",
+      "ru": "С 1990 года мы помогаем нашим фермерам получать лучший урожай!"
+    }
+  },
+  "story": {
+    "badge": {
+      "tr": "HİKAYEMİZ",
+      "en": "OUR STORY",
+      "ru": "НАША ИСТОРИЯS"
+    },
+    "title": {
+      "tr": "Dünyanın Her Yerindeyiz",
+      "en": "We Are Everywhere in the World",
+      "ru": "Мы по всему миру"
+    },
+    "gallery": [
+      "fabrika1.png",
+      "fabrika2.png",
+      "fabrika3.png"
+    ],
+    "paragraphs": [
+      {
+        "tr": "Modern tarımda yepyeni keşiflerin önünü açarak, daha verimli daha kolay bir tarımın standartlarını oluşturuyoruz. Son teknolojik ekipmanlara sahip fabrikamızda, alanında uzman mühendislerimiz ve tecrübeli teknik ekibimizle güçlü, hassas ve kaliteli toprak işleme makinelerinin üretimini gerçekleştiriyoruz. Fonksiyonel kullanım özelliklerine sahip makinelerimiz ile tarım faaliyetlerinde kaliteyi artırmak ve çiftçilerimize zaman kazandırmak asli görevimiz.",
+        "en": "By paving the way for brand new discoveries in modern agriculture, we are setting the standards for more efficient and easier farming. In our factory equipped with the latest technological equipment, we produce strong, precise and quality tillage machines with our expert engineers and experienced technical team. Our main duty is to increase quality in agricultural activities and save time for our farmers with our machines that have functional usage features.",
+        "ru": "Открывая путь для новых открытий в современном сельском хозяйстве, мы устанавливаем стандарты более эффективного и простого земледелия. На нашем заводе, оснащённом новейшим технологическим оборудованием, мы производим прочные, точные и качественные почвообрабатывающие машины силами наших инженеров-экспертов и опытной технической команды."
+      },
+      {
+        "tr": "AyErmak markası olarak bugün yurt içi ve yurt dışında en çok tercih edilen markalar arasındayız. Toprak işleme alanında dünya pazarında lider kuruluşların arasında olmaktan gurur duyuyor, Türkiye'yi tüm dünyada temsil etmenin onurunu yaşıyoruz. Müşteri odaklı ve verimliliği merkez alan yönetimle birleşen profesyonel yaklaşımımız; başarımızın ardındaki en önemli neden.",
+        "en": "As AyErmak brand, we are among the most preferred brands both domestically and internationally today. We are proud to be among the leading organizations in the world market in the field of tillage, and we are honored to represent Turkey all over the world. Our professional approach combined with customer-focused and efficiency-centered management is the most important reason behind our success.",
+        "ru": "Как бренд AyErmak, сегодня мы входим в число наиболее предпочитаемых брендов как внутри страны, так и за рубежом. Мы гордимся тем, что являемся одной из ведущих организаций на мировом рынке в области обработки почвы, и считаем за честь представлять Турцию во всём мире."
+      }
+    ]
+  },
+  "features": [
+    {
+      "id": "quality",
+      "icon": "shield-check",
+      "title": {
+        "tr": "Kalite",
+        "en": "Quality",
+        "ru": "Качество"
+      },
+      "description": {
+        "tr": "Firmamız, dünyadaki yenilikleri takip etmeyi, değişen müşteri beklentilerini kalite ve istikrarla karşılamayı hedeflemektedir.",
+        "en": "Our company aims to follow innovations in the world and meet changing customer expectations with quality and stability.",
+        "ru": "Наша компания стремится следовать мировым инновациям и удовлетворять меняющиеся ожидания клиентов с качеством и стабильностью."
+      }
+    },
+    {
+      "id": "satisfaction",
+      "icon": "users",
+      "title": {
+        "tr": "%100 Müşteri Memnuniyeti",
+        "en": "100% Customer Satisfaction",
+        "ru": "100% Удовлетворённость клиентов"
+      },
+      "description": {
+        "tr": "Müşterilerimizin ihtiyaç ve taleplerinin, mümkün olan en hızlı şekilde çözüme kavuşturulması ve uzun soluklu ticari ilişkilerin geliştirilmesidir.",
+        "en": "To resolve our customers' needs and demands as quickly as possible and to develop long-term commercial relationships.",
+        "ru": "Максимально быстрое решение потребностей и запросов наших клиентов и развитие долгосрочных коммерческих отношений."
+      }
+    },
+    {
+      "id": "rnd",
+      "icon": "lightbulb",
+      "title": {
+        "tr": "Ar-Ge",
+        "en": "R&D",
+        "ru": "НИОКР"
+      },
+      "description": {
+        "tr": "Firmamız her kademesinde sürekli gelişerek, ar-ge çalışmaları ile her sene ürün yelpazesini genişletmektedir.",
+        "en": "Our company continuously develops at every level and expands its product range every year with R&D studies.",
+        "ru": "Наша компания постоянно развивается на всех уровнях и ежегодно расширяет ассортимент продукции благодаря исследованиям и разработкам."
+      }
+    }
+  ],
+  "stats": [
+    {
+      "id": "experience",
+      "value": 35,
+      "suffix": "+",
+      "label": {
+        "tr": "Yıllık Deneyim",
+        "en": "Years of Experience",
+        "ru": "Лет опыта"
+      }
+    },
+    {
+      "id": "machines",
+      "value": 5000,
+      "suffix": "+",
+      "label": {
+        "tr": "Üretilen Makine",
+        "en": "Machines Produced",
+        "ru": "Произведённых машин"
+      }
+    },
+    {
+      "id": "countries",
+      "value": 25,
+      "suffix": "+",
+      "label": {
+        "tr": "İhracat Ülkesi",
+        "en": "Export Countries",
+        "ru": "Стран экспорта"
+      }
+    }
+  ],
+  "updatedAt": "2025-11-28T11:14:19.930Z"
+}

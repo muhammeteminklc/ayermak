@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AYERMAK Tarım Makineleri - Ürünler">
+    <title>AYERMAK - Ürünler</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/images/ayermak.png" type="image/png">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Products Hero Section -->
+    <section class="products-hero">
+        <div class="products-hero-bg"></div>
+        <div class="products-hero-content">
+            <span class="products-hero-badge" data-i18n="productsPage.badge">ÜRÜN KATALOĞU</span>
+            <h1 class="products-hero-title" data-i18n="productsPage.title">Tarım Makinelerimiz</h1>
+            <p class="products-hero-subtitle" data-i18n="productsPage.subtitle">Kaliteli ve güvenilir tarım ekipmanları
+            </p>
+        </div>
+    </section>
+
+    <!-- Category Filter Bar - Dynamic -->
+    <section class="products-filter-section">
+        <div class="products-filter-wrapper">
+            <!-- Search Box -->
+            <div class="products-search-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="productSearch" placeholder="Ürün ara..." data-i18n-placeholder="productsPage.searchPlaceholder">
+            </div>
+            <!-- Category Filters -->
+            <div class="products-filter-container">
+                <button class="category-filter-nav prev" id="categoryNavPrev">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                </button>
+                <div class="category-filters" id="categoryFilters">
+                    <!-- Category filters will be loaded dynamically -->
+                </div>
+                <button class="category-filter-nav next" id="categoryNavNext">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid Section -->
+    <section class="products-section products-page-section">
+        <div class="products-grid-wrapper">
+            <div class="products-grid products-page-grid">
+                <!-- Products will be loaded dynamically -->
+                <div class="loading">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="/js/i18n.js"></script>
+    <script src="/js/layout.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/products.js"></script>
+</body>
+
+</html>

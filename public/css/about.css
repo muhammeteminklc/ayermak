@@ -1,0 +1,503 @@
+/* ===== ABOUT PAGE STYLES ===== */
+/* Diger sayfalarla uyumlu acik tema tasarim */
+
+/* Hide content until JS renders - prevents language flicker */
+.about-content-hidden {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.about-content-hidden.visible {
+    opacity: 1;
+}
+
+/* Hero Override - products-hero'yu biraz uzatma */
+.about-hero.products-hero {
+    height: 350px;
+}
+
+/* Story Section - Clean & Minimal */
+.story-section {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.story-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Gallery - Smooth Auto Slider */
+.story-gallery {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+}
+
+.gallery-slider {
+    position: relative;
+    height: 420px;
+}
+
+.gallery-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+}
+
+.gallery-slide.active {
+    opacity: 1;
+}
+
+.gallery-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Progress Indicators */
+.gallery-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.gallery-indicator {
+    width: 32px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 2px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background 0.3s ease;
+}
+
+.gallery-indicator:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.gallery-indicator.active {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.gallery-indicator.active::after {
+    content: '';
+    display: block;
+    height: 100%;
+    background: var(--primary-yellow);
+    animation: indicatorProgress 5s linear forwards;
+}
+
+@keyframes indicatorProgress {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Story Content */
+.story-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.story-header {
+    margin-bottom: 24px;
+}
+
+.story-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(250, 191, 30, 0.15);
+    color: #b8860b;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+}
+
+.story-title {
+    font-size: clamp(28px, 3vw, 36px);
+    font-weight: 800;
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.story-paragraphs {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.story-paragraphs p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #555;
+    margin: 0;
+}
+
+/* Features Section - Acik arka plan */
+.about-features-section {
+    padding: 80px 0;
+    background: #f8f8f8;
+}
+
+.about-features-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.about-features-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.about-features-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(250, 191, 30, 0.15);
+    color: #b8860b;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+}
+
+.about-features-title {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    color: var(--dark-brown, #2D2D2D);
+    letter-spacing: -0.5px;
+}
+
+.about-features-title span {
+    color: #b8860b;
+}
+
+.about-features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.about-feature-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 16px;
+    padding: 36px 28px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.about-feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-yellow), #d4a824);
+    border-radius: 16px 16px 0 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.about-feature-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(-5px);
+    border-color: rgba(250, 191, 30, 0.3);
+}
+
+.about-feature-card:hover::before {
+    transform: scaleX(1);
+}
+
+.about-feature-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--primary-yellow) 0%, #d4a824 100%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 20px rgba(212, 168, 36, 0.25);
+    transition: transform 0.3s ease;
+}
+
+.about-feature-card:hover .about-feature-icon {
+    transform: scale(1.08);
+}
+
+.about-feature-icon svg {
+    width: 28px;
+    height: 28px;
+    color: #1a1a1a;
+    stroke-width: 2;
+}
+
+.about-feature-card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--dark-brown, #2D2D2D);
+    margin-bottom: 10px;
+}
+
+.about-feature-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Stats Section - Sari arka plan */
+.stats-section {
+    padding: 60px 0;
+    background: linear-gradient(135deg, var(--primary-yellow) 0%, #d4a824 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.stats-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: clamp(36px, 4vw, 48px);
+    font-weight: 900;
+    color: #1a1a1a;
+    display: block;
+    line-height: 1;
+    margin-bottom: 6px;
+    letter-spacing: -1px;
+}
+
+.stat-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.65);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .story-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .story-gallery {
+        max-width: 600px;
+    }
+
+    .gallery-slider {
+        height: 350px;
+    }
+
+    .about-features-grid {
+        grid-template-columns: 1fr;
+        max-width: 380px;
+        margin: 0 auto;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero.products-hero {
+        height: 280px;
+    }
+
+    .story-section,
+    .about-features-section {
+        padding: 50px 0;
+    }
+
+    .story-container,
+    .about-features-container,
+    .stats-container {
+        padding: 0 20px;
+    }
+
+    .gallery-slider {
+        height: 280px;
+    }
+
+    .stats-section {
+        padding: 40px 0;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .stat-value {
+        font-size: 32px;
+    }
+
+    .stat-label {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-hero.products-hero {
+        height: 220px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .stat-value {
+        font-size: 28px;
+    }
+}
+
+/* ===== CTA SECTION ===== */
+.cta-section {
+    padding: 80px 40px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 70%, rgba(250, 191, 30, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-title {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.cta-text {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 32px;
+    line-height: 1.6;
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, var(--primary-yellow) 0%, #d4a824 100%);
+    color: #1a1a1a;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 8px 25px rgba(250, 191, 30, 0.3);
+}
+
+.cta-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(250, 191, 30, 0.45);
+}
+
+.cta-btn svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2.5;
+    transition: transform 0.3s ease;
+}
+
+.cta-btn:hover svg {
+    transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+    .cta-section {
+        padding: 60px 20px;
+    }
+
+    .cta-btn {
+        padding: 16px 32px;
+        font-size: 13px;
+    }
+}
+
+/* Scroll Animations */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

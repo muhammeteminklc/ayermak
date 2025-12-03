@@ -1,0 +1,332 @@
+<header class="header header-premium">
+    <div class="header-container">
+        <!-- Logo -->
+        <a href="/" class="logo" data-nav-page="home">
+            <img src="/images/ayermak.png" alt="AYERMAK Logo" width="1100" height="310" loading="eager" decoding="async">
+        </a>
+
+        <!-- Navigasyon -->
+        <nav class="nav-menu nav-menu-center">
+            <div class="nav-links">
+                <a href="/" class="nav-link" data-nav-page="home" data-i18n="nav.home">Anasayfa</a>
+
+                <!-- Ürünler Dropdown -->
+                <div class="nav-dropdown">
+                    <a href="/tr/urunler" class="nav-link has-dropdown" data-nav-page="products" data-i18n="nav.products">
+                        Ürünler
+                        <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+
+                    <!-- Mega Dropdown -->
+                    <div class="mega-dropdown">
+                        <!-- Sol: Kategoriler -->
+                        <div class="mega-categories">
+                            <a href="/tr/urunler/patlatma" class="mega-category active" data-category="patlatma">
+                                <span data-i18n="categories.patlatma">Patlatma</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <a href="/tr/urunler/kultivator" class="mega-category" data-category="kultivator">
+                                <span data-i18n="categories.kultivator">Kültüvatör</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <a href="/tr/urunler/romork" class="mega-category" data-category="romork">
+                                <span data-i18n="categories.romork">Römork</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <a href="/tr/urunler/tiller" class="mega-category" data-category="tiller">
+                                <span data-i18n="categories.tiller">Tiller</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <a href="/tr/urunler" class="mega-view-all">
+                                <span data-i18n="nav.allProducts">Tüm Ürünler</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <!-- Sağ: Ürünler -->
+                        <div class="mega-products">
+                            <!-- Patlatma -->
+                            <div class="mega-product-list active" data-products="patlatma">
+                                <a href="/tr/urunler/patlatma" class="mega-product-item">
+                                    <img src="/images/products/ürün1.png" alt="Patlatma">
+                                    <span data-i18n="productNames.patlatma">Patlatma</span>
+                                </a>
+                            </div>
+
+                            <!-- Kültüvatör -->
+                            <div class="mega-product-list" data-products="kultivator">
+                                <a href="/tr/urunler/diskli-kultivatort" class="mega-product-item">
+                                    <img src="/images/products/ürün2.png" alt="Diskli Kültüvatör">
+                                    <span data-i18n="productNames.diskli-kultivator">Diskli Kültüvatör</span>
+                                </a>
+                            </div>
+
+                            <!-- Römork -->
+                            <div class="mega-product-list" data-products="romork">
+                                <a href="/tr/urunler/tandem-romork" class="mega-product-item">
+                                    <img src="/images/products/ürün3.png" alt="Tandem Römork">
+                                    <span data-i18n="productShortNames.tandem-romork">Tandem Römork</span>
+                                </a>
+                                <a href="/tr/urunler/dingilli-romork" class="mega-product-item">
+                                    <img src="/images/products/ürün4.png" alt="Dingilli Römork">
+                                    <span data-i18n="productShortNames.dingilli-romork">Dingilli Römork</span>
+                                </a>
+                            </div>
+
+                            <!-- Tiller -->
+                            <div class="mega-product-list" data-products="tiller">
+                                <a href="/tr/urunler/tirmik" class="mega-product-item">
+                                    <img src="/images/products/ürün5.jpg" alt="Tiller">
+                                    <span data-i18n="productNames.tiller">Tiller</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="/tr/bayiler" class="nav-link" data-nav-page="dealers" data-i18n="nav.dealers">Bayilerimiz</a>
+                <a href="/tr/hakkimizda" class="nav-link" data-nav-page="about" data-i18n="nav.about">Hakkımızda</a>
+                <a href="/tr/haberler" class="nav-link" data-nav-page="news" data-i18n="nav.news">Haberler</a>
+                <a href="/tr/iletisim" class="nav-link" data-nav-page="contact" data-i18n="nav.contact">İletişim</a>
+            </div>
+
+            <!-- Mobil Dil Seçici (Menü İçinde) -->
+            <div class="mobile-lang-selector">
+                <span class="mobile-lang-label">Dil / Language</span>
+                <div class="mobile-lang-buttons">
+                    <a href="/tr/" class="mobile-lang-btn" data-lang="tr">Türkçe</a>
+                    <a href="/en/" class="mobile-lang-btn" data-lang="en">English</a>
+                    <a href="/ru/" class="mobile-lang-btn" data-lang="ru">Русский</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Dil Seçici -->
+        <div class="header-right">
+            <div class="language-selector">
+                <a href="/tr/" class="lang-btn" data-lang="tr">TR</a>
+                <a href="/en/" class="lang-btn" data-lang="en">EN</a>
+                <a href="/ru/" class="lang-btn" data-lang="ru">RU</a>
+            </div>
+        </div>
+
+        <!-- Mobil Menü Butonu -->
+        <button class="mobile-menu-btn" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
+
+<!-- Mobil Menü Sistemi -->
+<div class="mobile-menu-container">
+    <!-- Overlay -->
+    <div class="mobile-overlay"></div>
+
+    <!-- Ana Menü Paneli -->
+    <div class="mobile-panel" data-panel="main">
+        <div class="mobile-panel-header">
+            <span class="mobile-panel-title">Menü</span>
+            <button class="mobile-close-btn" aria-label="Kapat">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="mobile-panel-content">
+            <a href="/" class="mobile-menu-item" data-nav-page="home">
+                <span>Anasayfa</span>
+            </a>
+            <button class="mobile-menu-item has-submenu" data-target="products">
+                <span>Ürünler</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+            <a href="/tr/bayiler" class="mobile-menu-item" data-nav-page="dealers">
+                <span>Bayilerimiz</span>
+            </a>
+            <a href="/tr/hakkimizda" class="mobile-menu-item" data-nav-page="about">
+                <span>Hakkımızda</span>
+            </a>
+            <a href="/tr/haberler" class="mobile-menu-item" data-nav-page="news">
+                <span>Haberler</span>
+            </a>
+            <a href="/tr/iletisim" class="mobile-menu-item" data-nav-page="contact">
+                <span>İletişim</span>
+            </a>
+        </div>
+        <div class="mobile-panel-footer">
+            <div class="mobile-lang-selector">
+                <a href="/tr/" class="mobile-lang-btn" data-lang="tr">TR</a>
+                <a href="/en/" class="mobile-lang-btn" data-lang="en">EN</a>
+                <a href="/ru/" class="mobile-lang-btn" data-lang="ru">RU</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kategoriler Paneli -->
+    <div class="mobile-panel" data-panel="products">
+        <div class="mobile-panel-header">
+            <button class="mobile-back-btn" data-target="main">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                <span>Geri</span>
+            </button>
+            <span class="mobile-panel-title">Ürünler</span>
+        </div>
+        <div class="mobile-panel-content">
+            <button class="mobile-menu-item has-submenu" data-target="cat-patlatma">
+                <span>Patlatma</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+            <button class="mobile-menu-item has-submenu" data-target="cat-kultivator">
+                <span>Kültüvatör</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+            <button class="mobile-menu-item has-submenu" data-target="cat-romork">
+                <span>Römork</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+            <button class="mobile-menu-item has-submenu" data-target="cat-tiller">
+                <span>Tiller</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+
+            <a href="/tr/urunler" class="mobile-menu-item mobile-view-all">
+                <span>Tüm Ürünleri Gör</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- Patlatma Paneli -->
+    <div class="mobile-panel" data-panel="cat-patlatma">
+        <div class="mobile-panel-header">
+            <button class="mobile-back-btn" data-target="products">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                <span>Geri</span>
+            </button>
+            <span class="mobile-panel-title">Patlatma</span>
+        </div>
+        <div class="mobile-panel-content">
+            <a href="/tr/urunler/patlatma" class="mobile-menu-item">
+                <span>Patlatma</span>
+            </a>
+            <a href="/tr/urunler/patlatma" class="mobile-menu-item mobile-view-all">
+                <span>Tümünü Gör</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- Kültüvatör Paneli -->
+    <div class="mobile-panel" data-panel="cat-kultivator">
+        <div class="mobile-panel-header">
+            <button class="mobile-back-btn" data-target="products">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                <span>Geri</span>
+            </button>
+            <span class="mobile-panel-title">Kültüvatör</span>
+        </div>
+        <div class="mobile-panel-content">
+            <a href="/tr/urunler/diskli-kultivator" class="mobile-menu-item">
+                <span>Diskli Kültüvatör</span>
+            </a>
+            <a href="/tr/urunler/kultivator" class="mobile-menu-item mobile-view-all">
+                <span>Tümünü Gör</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- Römork Paneli -->
+    <div class="mobile-panel" data-panel="cat-romork">
+        <div class="mobile-panel-header">
+            <button class="mobile-back-btn" data-target="products">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                <span>Geri</span>
+            </button>
+            <span class="mobile-panel-title">Römork</span>
+        </div>
+        <div class="mobile-panel-content">
+            <a href="/tr/urunler/tandem-romork" class="mobile-menu-item">
+                <span>Tandem Römork</span>
+            </a>
+            <a href="/tr/urunler/dingilli-romork" class="mobile-menu-item">
+                <span>Dingilli Römork</span>
+            </a>
+            <a href="/tr/urunler/romork" class="mobile-menu-item mobile-view-all">
+                <span>Tümünü Gör</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- Tiller Paneli -->
+    <div class="mobile-panel" data-panel="cat-tiller">
+        <div class="mobile-panel-header">
+            <button class="mobile-back-btn" data-target="products">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                <span>Geri</span>
+            </button>
+            <span class="mobile-panel-title">Tiller</span>
+        </div>
+        <div class="mobile-panel-content">
+            <a href="/tr/urunler/tirmik" class="mobile-menu-item">
+                <span>Tırmık</span>
+            </a>
+            <a href="/tr/urunler/tiller" class="mobile-menu-item mobile-view-all">
+                <span>Tümünü Gör</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bayi Yönetimi - AYERMAK Admin</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/admin-news.css">
+    <link rel="stylesheet" href="/css/admin-dealers.css">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <link rel="icon" href="/images/ayermak.png" type="image/png">
+</head>
+
+<body class="admin-body">
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <div id="adminSidebar" data-active="dealers"></div>
+
+        <!-- Main Content -->
+        <main class="admin-main news-page">
+            <!-- Header -->
+            <header class="news-header" style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <p class="eyebrow">Bayi Yönetimi</p>
+                    <h1 class="admin-title">Bayiler & Sertifikalar</h1>
+                    <p class="admin-subtitle">Yurt içi, yurt dışı bayileri ve sertifikaları yönetin.</p>
+                </div>
+                <a href="/dealers.html" class="btn-secondary" target="_blank"
+                    style="padding: 10px 20px; border-radius: 8px; text-decoration: none; background: #f0f0f0; color: #666; font-weight: 600; font-size: 14px;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        style="width: 16px; height: 16px; margin-right: 8px;">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    Sayfayı Görüntüle
+                </a>
+            </header>
+
+            <!-- Tabs -->
+            <div class="tabs-container">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="domestic">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        Yurt İçi Bayiler
+                    </button>
+                    <button class="tab-btn" data-tab="international">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path
+                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                            </path>
+                        </svg>
+                        Yurt Dışı Bayiler
+                    </button>
+                    <button class="tab-btn" data-tab="certificates">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                        Sertifikalar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Domestic Dealers Tab -->
+            <div class="tab-content active" data-tab-content="domestic">
+                <div class="admin-card" style="border: 1px solid #f0f0f0; box-shadow: none;">
+                    <div class="card-header">
+                        <h2 class="card-title">Yurt İçi Bayiler</h2>
+                        <button class="btn btn-primary" onclick="openDealerModal('domestic')">
+                            + Yeni Bayi Ekle
+                        </button>
+                    </div>
+                    <div class="dealers-grid" id="domesticDealersGrid" style="padding: 24px;">
+                        <div class="loading-spinner">Yükleniyor...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- International Dealers Tab -->
+            <div class="tab-content" data-tab-content="international">
+                <div class="admin-card" style="border: 1px solid #f0f0f0; box-shadow: none;">
+                    <div class="card-header">
+                        <h2 class="card-title">Yurt Dışı Bayiler</h2>
+                        <button class="btn btn-primary" onclick="openDealerModal('international')">
+                            + Yeni Bayi Ekle
+                        </button>
+                    </div>
+                    <div class="dealers-grid" id="internationalDealersGrid" style="padding: 24px;">
+                        <div class="loading-spinner">Yükleniyor...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certificates Tab -->
+            <div class="tab-content" data-tab-content="certificates">
+                <div class="admin-card" style="border: 1px solid #f0f0f0; box-shadow: none;">
+                    <div class="card-header">
+                        <h2 class="card-title">Bayi Sertifikaları</h2>
+                        <button class="btn btn-primary" onclick="openCertificateModal()">
+                            + Yeni Sertifika Ekle
+                        </button>
+                    </div>
+                    <div class="certificates-grid" id="certificatesGrid" style="padding: 24px;">
+                        <div class="loading-spinner">Yükleniyor...</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Dealer Modal -->
+    <div id="dealerModal" class="modal-overlay">
+        <div class="modal modal-wide">
+            <div class="modal-header">
+                <h2 class="modal-title" id="dealerModalTitle">
+                    <span class="modal-title-icon">📍</span>
+                    Yeni Bayi Ekle
+                </h2>
+                <button class="modal-close" onclick="closeDealerModal()">&times;</button>
+            </div>
+            <form id="dealerForm" class="modal-body">
+                <input type="hidden" id="dealerId" name="id">
+                <input type="hidden" id="dealerType" name="type">
+                <input type="hidden" id="dealerLatitude" name="latitude">
+                <input type="hidden" id="dealerLongitude" name="longitude">
+
+                <div class="dealer-form-layout">
+                    <!-- Left Column: Form Fields -->
+                    <div class="dealer-form-fields">
+                        <!-- Basic Info Section -->
+                        <div class="form-section">
+                            <div class="form-section-header">
+                                <span class="form-section-icon">🏢</span>
+                                <h3 class="form-section-title">Temel Bilgiler</h3>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dealerName" class="form-label">Bayi Adı *</label>
+                                <input type="text" id="dealerName" name="name" class="form-input"
+                                    placeholder="Örn: Ankara Tarım Makineleri" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="dealerCity" class="form-label">Şehir *</label>
+                                    <input type="text" id="dealerCity" name="city" class="form-input"
+                                        placeholder="Örn: Ankara" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="dealerCountry" class="form-label">Ülke *</label>
+                                    <input type="text" id="dealerCountry" name="country" class="form-input"
+                                        placeholder="Örn: Türkiye" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dealerAddress" class="form-label">Adres *</label>
+                                <textarea id="dealerAddress" name="address" class="form-input" rows="2"
+                                    placeholder="Tam adres bilgisi..." required></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Contact Info Section -->
+                        <div class="form-section">
+                            <div class="form-section-header">
+                                <span class="form-section-icon">📞</span>
+                                <h3 class="form-section-title">İletişim Bilgileri</h3>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="dealerPhone" class="form-label">Telefon</label>
+                                    <input type="tel" id="dealerPhone" name="phone" class="form-input"
+                                        placeholder="+90 XXX XXX XX XX">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="dealerEmail" class="form-label">E-posta</label>
+                                    <input type="email" id="dealerEmail" name="email" class="form-input"
+                                        placeholder="ornek@email.com">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dealerWebsite" class="form-label">Web Sitesi</label>
+                                <input type="url" id="dealerWebsite" name="website" class="form-input"
+                                    placeholder="https://www.ornek.com">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Map -->
+                    <div class="dealer-form-map">
+                        <div class="map-section">
+                            <div class="map-section-header">
+                                <span class="map-section-icon">🗺️</span>
+                                <h3 class="map-section-title">Konum Seçimi</h3>
+                            </div>
+
+                            <div class="location-search">
+                                <input type="text" id="locationSearch" class="location-search-input"
+                                    placeholder="Adres ara ve haritada bul...">
+                                <button type="button" class="location-search-btn" onclick="searchLocation()">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div id="dealerModalMap" class="modal-map"></div>
+
+                            <div class="map-instructions">
+                                <div class="map-instruction-item">
+                                    <span class="instruction-icon">🔍</span>
+                                    <span>Arama kutusundan adres arayın</span>
+                                </div>
+                                <div class="map-instruction-item">
+                                    <span class="instruction-icon">📍</span>
+                                    <span>Haritada konum seçmek için tıklayın</span>
+                                </div>
+                                <div class="map-instruction-item">
+                                    <span class="instruction-icon">🎯</span>
+                                    <span>İşaretçiyi sürükleyerek ayarlayın</span>
+                                </div>
+                            </div>
+
+                            <div class="selected-location" id="selectedLocation">
+                                <div class="selected-location-icon">📍</div>
+                                <div class="selected-location-label">Seçili Konum:</div>
+                                <div class="selected-location-coords" id="selectedCoords">
+                                    Haritada bir konum seçin
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeDealerModal()">İptal</button>
+                    <button type="submit" class="btn btn-primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                            <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                            <polyline points="7 3 7 8 15 8"></polyline>
+                        </svg>
+                        Bayiyi Kaydet
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Certificate Modal -->
+    <div id="certificateModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title" id="certificateModalTitle">
+                    <span class="modal-title-icon">🏆</span>
+                    Yeni Sertifika Ekle
+                </h2>
+                <button class="modal-close" onclick="closeCertificateModal()">&times;</button>
+            </div>
+            <form id="certificateForm" class="modal-body">
+                <input type="hidden" id="certificateId" name="id">
+
+                <div class="form-section">
+                    <div class="form-section-header">
+                        <span class="form-section-icon">📋</span>
+                        <h3 class="form-section-title">Sertifika Bilgileri</h3>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="certificateTitle" class="form-label">Sertifika Başlığı *</label>
+                        <input type="text" id="certificateTitle" name="title" class="form-input"
+                            placeholder="Örn: ISO 9001 Kalite Yönetim Sistemi" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="certificateDescription" class="form-label">Açıklama</label>
+                        <textarea id="certificateDescription" name="description" class="form-input" rows="3"
+                            placeholder="Sertifika hakkında kısa açıklama..."></textarea>
+                    </div>
+
+
+                </div>
+
+                <div class="form-section">
+                    <div class="form-section-header">
+                        <span class="form-section-icon">📎</span>
+                        <h3 class="form-section-title">Dosyalar</h3>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="certificateImage" class="form-label">Sertifika Görseli</label>
+                        <div class="file-upload-area" id="certificateFileUploadArea">
+                            <input type="file" id="certificateImage" name="image" class="file-input" accept="image/*">
+                            <div class="file-upload-content">
+                                <span class="file-upload-icon">🖼️</span>
+                                <p class="file-upload-text">Görsel yüklemek için tıklayın</p>
+                                <p class="file-upload-hint">JPG, PNG, GIF (Maks. 10MB)</p>
+                            </div>
+                        </div>
+                        <div id="certificateImagePreview" class="image-preview-modern"></div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeCertificateModal()">İptal</button>
+                    <button type="submit" class="btn btn-primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                            <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                            <polyline points="7 3 7 8 15 8"></polyline>
+                        </svg>
+                        Sertifikayı Kaydet
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Admin Core -->
+    <script src="/js/admin.js"></script>
+    <script src="/js/admin-sidebar.js"></script>
+    <script>
+        // Render sidebar
+        const sidebarContainer = document.getElementById('adminSidebar');
+        if (sidebarContainer && typeof renderAdminSidebar === 'function') {
+            renderAdminSidebar(sidebarContainer);
+        }
+    </script>
+    <script src="/js/admin-dealers.js"></script>
+</body>
+
+</html>

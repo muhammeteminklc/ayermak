@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYERMAK - Haber Detay</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/images/ayermak.png" type="image/png">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .news-detail-section {
+            padding: 4rem 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .news-detail-header {
+            margin-bottom: 2rem;
+        }
+
+        .news-detail-date {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .news-detail-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+            line-height: 1.2;
+            margin-bottom: 2rem;
+        }
+
+        .news-detail-image {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+
+        .news-detail-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .news-detail-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- News Detail Content -->
+    <article class="news-detail-section">
+        <a href="/tr/haberler" class="back-btn" data-nav-page="news">
+            <i data-lucide="arrow-left"></i>
+            <span data-i18n="newsPage.backToNews">Haberlere Don</span>
+        </a>
+
+        <div id="newsDetailContent">
+            <div class="loading">
+                <div class="spinner"></div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="/js/i18n.js"></script>
+    <script src="/js/layout.js"></script>
+    <script src="/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Update back button with localized URL
+            const backBtn = document.querySelector('.back-btn[data-nav-page="news"]');
+            if (backBtn && window.i18n) {
+                backBtn.href = window.i18n.getNewsUrl();
+            }
+
+            // Get news slug from page data (injected by server) or URL
+            let newsSlug = window.__PAGE_DATA__?.newsSlug;
+
+            // Fallback: try to get from URL query param (for backwards compatibility)
+            if (!newsSlug) {
+                const urlParams = new URLSearchParams(window.location.search);
+                newsSlug = urlParams.get('id');
+            }
+
+            if (!newsSlug) {
+                window.location.href = window.i18n?.getNewsUrl() || '/tr/haberler';
+                return;
+            }
+
+            try {
+                // Try to find news by slug first, then by ID
+                let news = null;
+                const allNewsResponse = await fetch('/api/news');
+                const allNews = await allNewsResponse.json();
+
+                const currentLang = window.i18n?.currentLang || 'tr';
+
+                // Find by slug
+                news = allNews.find(n =>
+                    n.slug?.[currentLang] === newsSlug ||
+                    n.slug?.tr === newsSlug ||
+                    n.id === newsSlug
+                );
+
+                if (!news) {
+                    throw new Error('News not found');
+                }
+
+                renderNewsDetail(news);
+
+                window.addEventListener('languageChanged', () => {
+                    // Update back button on language change
+                    if (backBtn && window.i18n) {
+                        backBtn.href = window.i18n.getNewsUrl();
+                    }
+                    renderNewsDetail(news);
+                });
+
+            } catch (error) {
+                console.error('Error loading news detail:', error);
+                document.getElementById('newsDetailContent').innerHTML = '<p>Haber bulunamadi.</p>';
+            }
+        });
+
+        function renderNewsDetail(news) {
+            const currentLang = window.i18n?.currentLang || 'tr';
+            const title = news.title?.[currentLang] || news.title?.tr || '';
+            const content = news.content?.[currentLang] || news.content?.tr || '';
+            const date = new Date(news.date).toLocaleDateString(currentLang === 'tr' ? 'tr-TR' : (currentLang === 'en' ? 'en-US' : 'ru-RU'), {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            document.title = `${title} - AYERMAK`;
+
+            // Format content paragraphs
+            const formattedContent = content.split('\n').map(p => p.trim() ? `<p>${p}</p>` : '').join('');
+
+            document.getElementById('newsDetailContent').innerHTML = `
+                <header class="news-detail-header">
+                    <div class="news-detail-date">
+                        <i data-lucide="calendar"></i>
+                        ${date}
+                    </div>
+                    <h1 class="news-detail-title">${title}</h1>
+                </header>
+
+                ${news.image ? `<img src="/images/news/${news.image}" alt="${title}" class="news-detail-image">` : ''}
+
+                <div class="news-detail-content">
+                    ${formattedContent}
+                </div>
+            `;
+
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        }
+    </script>
+</body>
+
+</html>

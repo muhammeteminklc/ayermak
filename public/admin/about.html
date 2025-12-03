@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYERMAK Admin - Hakkimizda</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/admin-urun.css">
+    <link rel="stylesheet" href="/css/admin-about.css">
+    <link rel="icon" href="/images/ayermak.png" type="image/png">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="admin-body">
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <div id="adminSidebar" data-active="about"></div>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Top Bar -->
+            <div class="editor-topbar">
+                <div class="topbar-left">
+                    <h1 class="editor-title">Hakkimizda Sayfasi</h1>
+                </div>
+                <div class="topbar-right">
+                    <button class="save-btn" id="saveBtn" onclick="saveAbout()">
+                        <i data-lucide="save"></i>
+                        Kaydet
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="about-tabs">
+                <button class="about-tab active" data-tab="hero" onclick="switchTab('hero')">
+                    <i data-lucide="home"></i>
+                    Hero
+                </button>
+                <button class="about-tab" data-tab="story" onclick="switchTab('story')">
+                    <i data-lucide="book-open"></i>
+                    Hikaye
+                </button>
+                <button class="about-tab" data-tab="features" onclick="switchTab('features')">
+                    <i data-lucide="star"></i>
+                    Ozellikler
+                </button>
+                <button class="about-tab" data-tab="stats" onclick="switchTab('stats')">
+                    <i data-lucide="bar-chart-2"></i>
+                    Istatistikler
+                </button>
+            </div>
+
+            <!-- Editor Content -->
+            <div class="editor-layout single-column">
+                <div class="editor-content">
+
+                    <!-- HERO TAB -->
+                    <div id="tab-hero" class="tab-panel active">
+                        <div class="card">
+                            <div class="card-title">Hero Bolumu</div>
+                            <p class="card-desc">Sayfanin ust kisminda gorunecek baslik ve aciklama</p>
+
+                            <div class="lang-tabs">
+                                <button class="lang-tab active" data-lang="tr" onclick="switchLang('tr', 'hero')">
+                                    <span class="flag flag-tr">TR</span> Turkce
+                                </button>
+                                <button class="lang-tab" data-lang="en" onclick="switchLang('en', 'hero')">
+                                    <span class="flag flag-en">EN</span> English
+                                </button>
+                                <button class="lang-tab" data-lang="ru" onclick="switchLang('ru', 'hero')">
+                                    <span class="flag flag-ru">RU</span> Russki
+                                </button>
+                            </div>
+
+                            <!-- TR Fields -->
+                            <div id="hero-fields-tr" class="lang-content active">
+                                <div class="form-field">
+                                    <label>Badge (TR)</label>
+                                    <input type="text" id="heroBadgeTr" placeholder="HAKKIMIZDA">
+                                </div>
+                                <div class="form-field">
+                                    <label>Baslik (TR)</label>
+                                    <input type="text" id="heroTitleTr" placeholder="AyErmak Tarim Urunleri">
+                                </div>
+                                <div class="form-field">
+                                    <label>Alt Baslik (TR)</label>
+                                    <textarea id="heroSubtitleTr" rows="3" placeholder="1990 yilindan bugune..."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- EN Fields -->
+                            <div id="hero-fields-en" class="lang-content">
+                                <div class="form-field">
+                                    <label>Badge (EN)</label>
+                                    <input type="text" id="heroBadgeEn" placeholder="ABOUT US">
+                                </div>
+                                <div class="form-field">
+                                    <label>Title (EN)</label>
+                                    <input type="text" id="heroTitleEn" placeholder="AyErmak Agricultural Products">
+                                </div>
+                                <div class="form-field">
+                                    <label>Subtitle (EN)</label>
+                                    <textarea id="heroSubtitleEn" rows="3" placeholder="Since 1990..."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- RU Fields -->
+                            <div id="hero-fields-ru" class="lang-content">
+                                <div class="form-field">
+                                    <label>Badge (RU)</label>
+                                    <input type="text" id="heroBadgeRu" placeholder="О НАС">
+                                </div>
+                                <div class="form-field">
+                                    <label>Title (RU)</label>
+                                    <input type="text" id="heroTitleRu" placeholder="Сельхозтехника AyErmak">
+                                </div>
+                                <div class="form-field">
+                                    <label>Subtitle (RU)</label>
+                                    <textarea id="heroSubtitleRu" rows="3" placeholder="С 1990 года..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STORY TAB -->
+                    <div id="tab-story" class="tab-panel">
+                        <!-- Story Header Section -->
+                        <div class="card">
+                            <div class="card-title">Hikaye Basligi</div>
+                            <p class="card-desc">Hikaye bolumunun badge ve baslik metinleri</p>
+
+                            <div class="lang-tabs">
+                                <button class="lang-tab active" data-lang="tr" onclick="switchStoryHeaderLang('tr')">
+                                    <span class="flag flag-tr">TR</span> Turkce
+                                </button>
+                                <button class="lang-tab" data-lang="en" onclick="switchStoryHeaderLang('en')">
+                                    <span class="flag flag-en">EN</span> English
+                                </button>
+                                <button class="lang-tab" data-lang="ru" onclick="switchStoryHeaderLang('ru')">
+                                    <span class="flag flag-ru">RU</span> Russki
+                                </button>
+                            </div>
+
+                            <div id="storyHeader-fields-tr" class="lang-content active">
+                                <div class="form-field">
+                                    <label>Badge (TR)</label>
+                                    <input type="text" id="storyBadgeTr" placeholder="HİKAYEMİZ">
+                                </div>
+                                <div class="form-field">
+                                    <label>Baslik (TR)</label>
+                                    <input type="text" id="storyTitleTr" placeholder="Dünyanın Her Yerindeyiz">
+                                </div>
+                            </div>
+
+                            <div id="storyHeader-fields-en" class="lang-content">
+                                <div class="form-field">
+                                    <label>Badge (EN)</label>
+                                    <input type="text" id="storyBadgeEn" placeholder="OUR STORY">
+                                </div>
+                                <div class="form-field">
+                                    <label>Title (EN)</label>
+                                    <input type="text" id="storyTitleEn" placeholder="We Are Everywhere in the World">
+                                </div>
+                            </div>
+
+                            <div id="storyHeader-fields-ru" class="lang-content">
+                                <div class="form-field">
+                                    <label>Badge (RU)</label>
+                                    <input type="text" id="storyBadgeRu" placeholder="НАША ИСТОРИЯ">
+                                </div>
+                                <div class="form-field">
+                                    <label>Title (RU)</label>
+                                    <input type="text" id="storyTitleRu" placeholder="Мы по всему миру">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gallery Section -->
+                        <div class="card">
+                            <div class="card-title">Galeri</div>
+                            <p class="card-desc">Hikaye bolumunde gosterilecek gorseller</p>
+
+                            <div class="gallery-upload-zone" id="galleryUploadZone">
+                                <input type="file" id="galleryInput" accept="image/*" multiple hidden>
+                                <div class="upload-content">
+                                    <i data-lucide="image-plus"></i>
+                                    <span>Gorsel eklemek icin tiklayin veya suruklein</span>
+                                </div>
+                            </div>
+
+                            <div class="gallery-grid" id="galleryGrid"></div>
+                        </div>
+
+                        <!-- Paragraphs Section -->
+                        <div class="card">
+                            <div class="card-title">Paragraflar</div>
+                            <p class="card-desc">Hikaye bolumunde gorunecek metinler</p>
+
+                            <div class="lang-tabs">
+                                <button class="lang-tab active" data-lang="tr" onclick="switchLang('tr', 'story')">
+                                    <span class="flag flag-tr">TR</span> Turkce
+                                </button>
+                                <button class="lang-tab" data-lang="en" onclick="switchLang('en', 'story')">
+                                    <span class="flag flag-en">EN</span> English
+                                </button>
+                                <button class="lang-tab" data-lang="ru" onclick="switchLang('ru', 'story')">
+                                    <span class="flag flag-ru">RU</span> Russki
+                                </button>
+                            </div>
+
+                            <div id="story-fields-tr" class="lang-content active">
+                                <div id="paragraphsTr" class="paragraphs-list"></div>
+                                <button type="button" class="add-paragraph-btn" onclick="addParagraph('tr')">
+                                    <i data-lucide="plus"></i> Paragraf Ekle
+                                </button>
+                            </div>
+
+                            <div id="story-fields-en" class="lang-content">
+                                <div id="paragraphsEn" class="paragraphs-list"></div>
+                                <button type="button" class="add-paragraph-btn" onclick="addParagraph('en')">
+                                    <i data-lucide="plus"></i> Add Paragraph
+                                </button>
+                            </div>
+
+                            <div id="story-fields-ru" class="lang-content">
+                                <div id="paragraphsRu" class="paragraphs-list"></div>
+                                <button type="button" class="add-paragraph-btn" onclick="addParagraph('ru')">
+                                    <i data-lucide="plus"></i> Добавить абзац
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FEATURES TAB -->
+                    <div id="tab-features" class="tab-panel">
+                        <div class="card">
+                            <div class="card-title">Neden AyErmak? Ozellikleri</div>
+                            <p class="card-desc">3 ozellik karti duzenleyin</p>
+
+                            <div id="featuresContainer"></div>
+                        </div>
+                    </div>
+
+                    <!-- STATS TAB -->
+                    <div id="tab-stats" class="tab-panel">
+                        <div class="card">
+                            <div class="card-title">Istatistikler</div>
+                            <p class="card-desc">Sayac animasyonlu istatistik kutulari</p>
+
+                            <div id="statsContainer" class="stats-editor"></div>
+
+                            <button type="button" class="add-stat-btn" onclick="addStat()">
+                                <i data-lucide="plus"></i> Istatistik Ekle
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/admin-sidebar.js"></script>
+    <script src="/js/admin.js"></script>
+    <script src="/js/admin-about.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYERMAK Admin - Urun Duzenle</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/admin-urun.css">
+    <link rel="icon" href="/images/ayermak.png" type="image/png">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="admin-body">
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <div id="adminSidebar" data-active="products"></div>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Top Bar -->
+            <div class="editor-topbar">
+                <div class="topbar-left">
+                    <a href="/admin/products.html" class="back-link">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                        Urunlere Don
+                    </a>
+                </div>
+                <div class="topbar-center">
+                    <h1 class="editor-title" id="pageTitle">Urun Duzenle</h1>
+                    <span class="product-id-badge" id="productIdBadge"></span>
+                </div>
+                <div class="topbar-right">
+                    <button class="save-btn" id="saveBtn">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                            <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                            <polyline points="7 3 7 8 15 8"></polyline>
+                        </svg>
+                        Kaydet
+                    </button>
+                </div>
+            </div>
+
+            <!-- Editor Content -->
+            <div class="editor-layout">
+                <!-- Left Sidebar - Navigation -->
+                <nav class="editor-nav">
+                    <div class="nav-section">
+                        <div class="nav-section-title">TEMEL</div>
+                        <button class="nav-item active" data-section="genel">
+                            <svg viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                </path>
+                            </svg>
+                            Genel Bilgiler
+                        </button>
+                        <button class="nav-item" data-section="modeller">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="3" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="14" width="7" height="7"></rect>
+                                <rect x="3" y="14" width="7" height="7"></rect>
+                            </svg>
+                            Modeller
+                            <span class="nav-badge" id="modelCount">0</span>
+                        </button>
+                    </div>
+                    <div class="nav-section">
+                        <div class="nav-section-title">ICERIK</div>
+                        <button class="nav-item" data-section="ozellikler">
+                            <svg viewBox="0 0 24 24">
+                                <polyline points="9 11 12 14 22 4"></polyline>
+                                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                            </svg>
+                            Ozellikler
+                        </button>
+                        <button class="nav-item" data-section="teknik">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                                </path>
+                            </svg>
+                            Teknik Bilgi
+                        </button>
+                        <button class="nav-item" data-section="secenekler">
+                            <svg viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <circle cx="12" cy="12" r="4"></circle>
+                            </svg>
+                            Merdane Secenekleri
+                        </button>
+                    </div>
+                    <div class="nav-section">
+                        <div class="nav-section-title">MEDYA</div>
+                        <button class="nav-item" data-section="medya">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                <polyline points="21 15 16 10 5 21"></polyline>
+                            </svg>
+                            Medya
+                        </button>
+                    </div>
+                </nav>
+
+                <!-- Right Content Area -->
+                <div class="editor-content">
+                    <!-- Section: Genel -->
+                    <section class="editor-section active" id="section-genel">
+                        <div class="section-header">
+                            <h2>Genel Bilgiler</h2>
+                            <p>Urunun temel bilgilerini ve fotografini duzenleyin</p>
+                        </div>
+
+                        <!-- Product ID & Category -->
+                        <div class="card">
+                            <div class="card-title">Urun Tanimlama</div>
+                            <div class="form-grid">
+                                <input type="hidden" id="productId">
+                                <div class="form-field">
+                                    <label>Kategori</label>
+                                    <div class="category-select-wrapper">
+                                        <select id="productCategory" class="form-select">
+                                            <option value="">Kategori secin...</option>
+                                        </select>
+                                        <button type="button" class="btn-icon" id="addCategoryBtn"
+                                            title="Yeni Kategori">
+                                            <svg viewBox="0 0 24 24">
+                                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <span class="field-hint">Mevcut kategorilerden secin veya yeni ekleyin</span>
+                                </div>
+                                <div class="form-field">
+                                    <label>Kategori Ikonu</label>
+                                    <div class="icon-select-wrapper">
+                                        <button type="button" class="icon-select-btn" id="categoryIconBtn">
+                                            <i data-lucide="package" id="categoryIconPreview"></i>
+                                            <span id="categoryIconName">package</span>
+                                        </button>
+                                        <input type="hidden" id="categoryIcon" value="package">
+                                    </div>
+                                    <span class="field-hint">Urun listesinde bu kategori icin gosterilecek ikon</span>
+                                </div>
+                                <div class="form-field">
+                                    <label>Siralama</label>
+                                    <input type="number" id="productOrder" value="1" min="1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Names -->
+                        <div class="card">
+                            <div class="card-title">
+                                Urun Adi
+                                <span class="lang-indicator">3 Dil</span>
+                            </div>
+                            <div class="lang-fields">
+                                <div class="lang-field">
+                                    <div class="lang-label"><span class="flag flag-tr">TR</span> Turkce</div>
+                                    <input type="text" id="nameTr" placeholder="Diskli Kultivator">
+                                </div>
+                                <div class="lang-field">
+                                    <div class="lang-label"><span class="flag flag-en">EN</span> English</div>
+                                    <input type="text" id="nameEn" placeholder="Disc Cultivator">
+                                </div>
+                                <div class="lang-field">
+                                    <div class="lang-label"><span class="flag flag-ru">RU</span> Russki</div>
+                                    <input type="text" id="nameRu" placeholder="Дисковый культиватор">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Short Names -->
+                        <div class="card">
+                            <div class="card-title">
+                                Kisa Isim (Menu icin)
+                                <span class="lang-indicator">3 Dil</span>
+                            </div>
+                            <div class="lang-fields">
+                                <div class="lang-field">
+                                    <div class="lang-label"><span class="flag flag-tr">TR</span></div>
+                                    <input type="text" id="shortNameTr" placeholder="Kultivator">
+                                </div>
+                                <div class="lang-field">
+                                    <div class="lang-label"><span class="flag flag-en">EN</span></div>
+                                    <input type="text" id="shortNameEn" placeholder="Cultivator">
+                                </div>
+                                <div class="lang-field">
+                                    <div class="lang-label"><span class="flag flag-ru">RU</span></div>
+                                    <input type="text" id="shortNameRu" placeholder="Культив.">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Description -->
+                        <div class="card">
+                            <div class="card-title">
+                                Urun Aciklamasi
+                                <span class="lang-indicator">3 Dil</span>
+                            </div>
+                            <p class="card-desc">Urun detay sayfasinda basligin altinda gosterilecek kisa aciklama.</p>
+                            <div class="lang-fields">
+                                <div class="lang-field">
+                                    <div class="lang-label"><span class="flag flag-tr">TR</span> Turkce</div>
+                                    <textarea id="descriptionTr" rows="2" placeholder="Sert ve sikismis topraklari derin isleyerek havalandiran profesyonel tarim ekipmani."></textarea>
+                                </div>
+                                <div class="lang-field">
+                                    <div class="lang-label"><span class="flag flag-en">EN</span> English</div>
+                                    <textarea id="descriptionEn" rows="2" placeholder="Professional agricultural equipment that aerates hard and compacted soils."></textarea>
+                                </div>
+                                <div class="lang-field">
+                                    <div class="lang-label"><span class="flag flag-ru">RU</span> Russki</div>
+                                    <textarea id="descriptionRu" rows="2" placeholder="Профессиональное сельскохозяйственное оборудование."></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- URL Slugs -->
+                        <div class="card">
+                            <div class="card-title">
+                                URL Slug (SEO)
+                                <span class="lang-indicator">3 Dil</span>
+                            </div>
+                            <p class="card-desc">Her dil icin SEO uyumlu URL yapisi. Kucuk harf ve tire kullanin.</p>
+                            <div class="lang-fields">
+                                <div class="lang-field">
+                                    <div class="lang-label"><span class="flag flag-tr">TR</span></div>
+                                    <input type="text" id="slugTr" placeholder="diskli-kultivator">
+                                </div>
+                                <div class="lang-field">
+                                    <div class="lang-label"><span class="flag flag-en">EN</span></div>
+                                    <input type="text" id="slugEn" placeholder="disc-cultivator">
+                                </div>
+                                <div class="lang-field">
+                                    <div class="lang-label"><span class="flag flag-ru">RU</span></div>
+                                    <input type="text" id="slugRu" placeholder="diskovyy-kultivator">
+                                </div>
+                            </div>
+                            <span class="field-hint">Ornek URL: /tr/urunler/<strong>diskli-kultivator</strong></span>
+                        </div>
+
+                        <!-- Default Image -->
+                        <div class="card">
+                            <div class="card-title">Varsayilan Urun Fotografl</div>
+                            <div class="image-uploader">
+                                <div class="upload-zone" id="defaultImageUpload">
+                                    <input type="file" id="defaultImageInput" accept="image/*" hidden>
+                                    <div class="upload-content">
+                                        <svg viewBox="0 0 24 24">
+                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                            <polyline points="17 8 12 3 7 8"></polyline>
+                                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                                        </svg>
+                                        <span>Fotograf yuklemek icin tiklayin</span>
+                                        <small>veya surukleyip birakin</small>
+                                    </div>
+                                </div>
+                                <div class="image-preview" id="defaultImagePreview"></div>
+                                <input type="hidden" id="defaultImage">
+                            </div>
+                        </div>
+
+                        <!-- Specs -->
+                        <div class="card">
+                            <div class="card-title">
+                                Teknik Ozellikler (Specs)
+                                <button type="button" class="card-action" id="addSpecBtn">+ Ekle</button>
+                            </div>
+                            <div class="specs-list" id="specsEditor">
+                                <div class="empty-placeholder">
+                                    <span>Henuz teknik ozellik eklenmemis</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section: Modeller -->
+                    <section class="editor-section" id="section-modeller">
+                        <div class="section-header">
+                            <h2>Urun Modelleri</h2>
+                            <p>Tablo sutunlarini ve model varyantlarini duzenleyin</p>
+                        </div>
+
+                        <!-- Table Columns Card -->
+                        <div class="card">
+                            <div class="card-title">
+                                Tablo Sutunlari
+                                <button type="button" class="card-action" id="addColumnBtn">+ Sutun Ekle</button>
+                            </div>
+                            <p class="card-desc">Bu sutunlar model karsilastirma tablosunda gosterilecek</p>
+                            <div class="columns-list" id="columnsEditor">
+                                <div class="empty-placeholder">
+                                    <span>Henuz sutun eklenmemis</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Models Card -->
+                        <div class="card">
+                            <div class="card-title">
+                                Modeller
+                                <button type="button" class="card-action" id="addModelBtn">+ Model Ekle</button>
+                            </div>
+                            <div class="models-table-wrapper" id="modelsTableWrapper">
+                                <div class="empty-placeholder">
+                                    <span>Henuz model eklenmemis</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section: Ozellikler -->
+                    <section class="editor-section" id="section-ozellikler">
+                        <div class="section-header">
+                            <h2>Urun Ozellikleri</h2>
+                            <p>Urunun one cikan ozelliklerini 3 dilde tanimlayin</p>
+                        </div>
+
+                        <div class="card">
+                            <div class="lang-tabs">
+                                <button class="lang-tab active" data-lang="tr">
+                                    <span class="flag flag-tr">TR</span> Turkce
+                                </button>
+                                <button class="lang-tab" data-lang="en">
+                                    <span class="flag flag-en">EN</span> English
+                                </button>
+                                <button class="lang-tab" data-lang="ru">
+                                    <span class="flag flag-ru">RU</span> Russki
+                                </button>
+                            </div>
+
+                            <div class="features-list" id="featuresEditor">
+                                <div class="empty-placeholder">
+                                    <span>Henuz ozellik eklenmemis</span>
+                                </div>
+                            </div>
+
+                            <button type="button" class="add-item-btn" id="addFeatureBtn">
+                                <svg viewBox="0 0 24 24">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                                Ozellik Ekle
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- Section: Teknik -->
+                    <section class="editor-section" id="section-teknik">
+                        <div class="section-header">
+                            <h2>Teknik Bilgiler</h2>
+                            <p>Detayli teknik aciklamalari 3 dilde ekleyin</p>
+                            <button type="button" class="primary-action" id="addTechnicalBtn">
+                                <svg viewBox="0 0 24 24">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                                Teknik Bilgi Ekle
+                            </button>
+                        </div>
+
+                        <div class="technical-list" id="technicalEditor">
+                            <div class="empty-state">
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                                    </path>
+                                </svg>
+                                <h3>Henuz teknik bilgi eklenmemis</h3>
+                                <p>Rulman sistemi, disk yapisi gibi detayli bilgiler ekleyin</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section: Secenekler (Merdane) -->
+                    <section class="editor-section" id="section-secenekler">
+                        <div class="section-header">
+                            <h2>Merdane Secenekleri</h2>
+                            <p>Urun icin uygun merdane tiplerini tanimlayin</p>
+                            <button type="button" class="primary-action" id="addRollerBtn">
+                                <svg viewBox="0 0 24 24">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                                Merdane Ekle
+                            </button>
+                        </div>
+
+                        <div class="rollers-list" id="rollersEditor">
+                            <div class="empty-state">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <circle cx="12" cy="12" r="4"></circle>
+                                </svg>
+                                <h3>Henuz merdane eklenmemis</h3>
+                                <p>Bu bolum istege baglidir</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section: Medya -->
+                    <section class="editor-section" id="section-medya">
+                        <div class="section-header">
+                            <h2>Medya</h2>
+                            <p>Video ve galeri fotograflari ekleyin</p>
+                        </div>
+
+                        <!-- Video -->
+                        <div class="card">
+                            <div class="card-title">YouTube Video</div>
+                            <div class="form-field">
+                                <label>Video URL (Istege bagli)</label>
+                                <input type="url" id="videoUrl" placeholder="https://www.youtube.com/watch?v=...">
+                                <span class="field-hint">Bos birakirsaniz video bolumu gosterilmez</span>
+                            </div>
+                            <div class="form-field">
+                                <label>Video Basligi (3 Dil)</label>
+                                <div class="lang-fields vertical">
+                                    <div class="lang-field">
+                                        <span class="flag flag-tr">TR</span>
+                                        <input type="text" id="videoTitleTr" placeholder="Urun Tanitimi">
+                                    </div>
+                                    <div class="lang-field">
+                                        <span class="flag flag-en">EN</span>
+                                        <input type="text" id="videoTitleEn" placeholder="Product Introduction">
+                                    </div>
+                                    <div class="lang-field">
+                                        <span class="flag flag-ru">RU</span>
+                                        <input type="text" id="videoTitleRu" placeholder="Презентация продукта">
+                                    </div>
+                                </div>
+                                <span class="field-hint">Bos birakirsaniz varsayilan baslik kullanilir</span>
+                            </div>
+                            <div class="form-field">
+                                <label>Video Alt Basligi (3 Dil)</label>
+                                <div class="lang-fields vertical">
+                                    <div class="lang-field">
+                                        <span class="flag flag-tr">TR</span>
+                                        <input type="text" id="videoSubtitleTr"
+                                            placeholder="Urunumuzu calisirken izleyin">
+                                    </div>
+                                    <div class="lang-field">
+                                        <span class="flag flag-en">EN</span>
+                                        <input type="text" id="videoSubtitleEn"
+                                            placeholder="Watch our product in action">
+                                    </div>
+                                    <div class="lang-field">
+                                        <span class="flag flag-ru">RU</span>
+                                        <input type="text" id="videoSubtitleRu"
+                                            placeholder="Смотрите наш продукт в работе">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gallery -->
+                        <div class="card">
+                            <div class="card-title">
+                                Galeri
+                                <button type="button" class="card-action" id="addGalleryBtn">+ Fotograf Ekle</button>
+                            </div>
+                            <div class="gallery-grid" id="galleryEditor">
+                                <div class="empty-placeholder">
+                                    <span>Henuz galeri fotografl eklenmemis</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Documents -->
+                        <div class="card">
+                            <div class="card-title">
+                                Dokumanlar
+                                <button type="button" class="card-action" id="addDocumentBtn">+ Dokuman Ekle</button>
+                            </div>
+                            <div class="documents-list" id="documentsEditor">
+                                <div class="empty-placeholder">
+                                    <span>Henuz dokuman eklenmemis</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Model Modal -->
+    <div class="modal-overlay" id="modelModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modelModalTitle">Yeni Model</h3>
+                <button class="modal-close" onclick="closeModal('modelModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label>Model ID</label>
+                        <input type="text" id="modelId" placeholder="ck-3001">
+                    </div>
+                    <div class="form-field">
+                        <label>Model Adi</label>
+                        <input type="text" id="modelName" placeholder="CK 3001">
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label>Model Fotografl (Istege bagli)</label>
+                    <div class="image-uploader small">
+                        <div class="upload-zone" id="modelImageUpload">
+                            <input type="file" id="modelImageInput" accept="image/*" hidden>
+                            <div class="upload-content">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                <span>Fotograf yukle</span>
+                            </div>
+                        </div>
+                        <div class="image-preview small" id="modelImagePreview"></div>
+                        <input type="hidden" id="modelImage">
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label>Tablo Degerleri</label>
+                    <p class="field-hint">Tablo sutunlarinda belirlediginiz alanlarin degerlerini girin</p>
+                    <div class="model-specs-grid" id="modelSpecsEditor">
+                        <p class="empty-hint">Once tablo sutunlarini tanimlayin</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" onclick="closeModal('modelModal')">Iptal</button>
+                <button type="button" class="btn-primary" id="saveModelBtn">Kaydet</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Column Modal -->
+    <div class="modal-overlay" id="columnModal">
+        <div class="modal modal-wide">
+            <div class="modal-header">
+                <h3 id="columnModalTitle">Sutun Ekle</h3>
+                <button class="modal-close" onclick="closeModal('columnModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="columnKey">
+                <input type="hidden" id="columnIcon" value="tag">
+
+                <div class="form-grid">
+                    <div class="form-field autocomplete-wrapper">
+                        <label>Sutun Adi (Turkce) *</label>
+                        <input type="text" id="columnLabelTr" placeholder="Is Genisligi" autocomplete="off">
+                        <div class="autocomplete-dropdown" id="columnAutocomplete"></div>
+                    </div>
+                    <div class="form-field">
+                        <label>Ikon</label>
+                        <div class="icon-select-wrapper">
+                            <button type="button" class="icon-select-btn" id="columnIconBtn">
+                                <i data-lucide="tag" id="columnIconPreview"></i>
+                                <span>Ikon Sec</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label>Birim</label>
+                        <input type="text" id="columnUnit" placeholder="m, HP, kg, Adet...">
+                    </div>
+                    <div class="form-field">
+                        <label class="checkbox-label" style="margin-top: 28px;">
+                            <input type="checkbox" id="columnHighlight">
+                            <span class="checkbox-text">Vurgulu Goster (Sari badge)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label>Diger Diller (Istege bagli)</label>
+                    <div class="lang-fields vertical">
+                        <div class="lang-field">
+                            <span class="flag flag-en">EN</span>
+                            <input type="text" id="columnLabelEn" placeholder="Working Width">
+                        </div>
+                        <div class="lang-field">
+                            <span class="flag flag-ru">RU</span>
+                            <input type="text" id="columnLabelRu" placeholder="Рабочая ширина">
+                        </div>
+                    </div>
+                    <span class="field-hint">Bos birakirsaniz Turkce etiket kullanilir</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" onclick="closeModal('columnModal')">Iptal</button>
+                <button type="button" class="btn-primary" id="saveColumnBtn">Kaydet</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Column Preset Modal -->
+    <div class="modal-overlay" id="columnPresetModal">
+        <div class="modal modal-wide">
+            <div class="modal-header">
+                <h3>Hazir Sutunlardan Sec</h3>
+                <button class="modal-close" onclick="closeModal('columnPresetModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="preset-search">
+                    <input type="text" id="columnPresetSearchInput" placeholder="Sutun ara...">
+                </div>
+                <div class="preset-list" id="columnPresetList">
+                    <!-- Presets will be populated by JS -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" onclick="closeModal('columnPresetModal')">Iptal</button>
+                <button type="button" class="btn-link" onclick="openManualColumnModal()">Manuel Ekle</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Technical Modal -->
+    <div class="modal-overlay" id="technicalModal">
+        <div class="modal modal-wide">
+            <div class="modal-header">
+                <h3 id="technicalModalTitle">Teknik Bilgi Ekle</h3>
+                <button class="modal-close" onclick="closeModal('technicalModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="technicalKey">
+                <input type="hidden" id="technicalIcon" value="settings">
+
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label>Baslik (Turkce) *</label>
+                        <input type="text" id="technicalLabelTr" placeholder="Rulman Sistemi">
+                    </div>
+                    <div class="form-field">
+                        <label>Ikon</label>
+                        <div class="icon-select-wrapper">
+                            <button type="button" class="icon-select-btn" id="technicalIconBtn">
+                                <i data-lucide="settings" id="technicalIconPreview"></i>
+                                <span>Ikon Sec</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label>Diger Diller (Istege bagli)</label>
+                    <div class="lang-fields vertical">
+                        <div class="lang-field">
+                            <span class="flag flag-en">EN</span>
+                            <input type="text" id="technicalLabelEn" placeholder="Bearing System">
+                        </div>
+                        <div class="lang-field">
+                            <span class="flag flag-ru">RU</span>
+                            <input type="text" id="technicalLabelRu" placeholder="Подшипниковая система">
+                        </div>
+                    </div>
+                    <span class="field-hint">Bos birakirsaniz Turkce baslik kullanilir</span>
+                </div>
+
+                <div class="form-field">
+                    <label>Aciklama (3 Dil)</label>
+                    <div class="lang-fields vertical">
+                        <div class="lang-field">
+                            <span class="flag flag-tr">TR</span>
+                            <textarea id="technicalDescTr" rows="2" placeholder="Turkce aciklama..."></textarea>
+                        </div>
+                        <div class="lang-field">
+                            <span class="flag flag-en">EN</span>
+                            <textarea id="technicalDescEn" rows="2" placeholder="English description..."></textarea>
+                        </div>
+                        <div class="lang-field">
+                            <span class="flag flag-ru">RU</span>
+                            <textarea id="technicalDescRu" rows="2" placeholder="Описание на русском..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" onclick="closeModal('technicalModal')">Iptal</button>
+                <button type="button" class="btn-primary" id="saveTechnicalBtn">Kaydet</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Roller Modal -->
+    <div class="modal-overlay" id="rollerModal">
+        <div class="modal modal-wide">
+            <div class="modal-header">
+                <h3 id="rollerModalTitle">Merdane Ekle</h3>
+                <button class="modal-close" onclick="closeModal('rollerModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="rollerId">
+                <input type="hidden" id="rollerIcon" value="circle">
+
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label>Merdane Tipi (Turkce) *</label>
+                        <input type="text" id="rollerTypeTr" placeholder="Lastik Halkali Merdane">
+                    </div>
+                    <div class="form-field">
+                        <label>Ikon</label>
+                        <div class="icon-select-wrapper">
+                            <button type="button" class="icon-select-btn" id="rollerIconBtn">
+                                <i data-lucide="circle" id="rollerIconPreview"></i>
+                                <span>Ikon Sec</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label>Diger Diller (Istege bagli)</label>
+                    <div class="lang-fields vertical">
+                        <div class="lang-field">
+                            <span class="flag flag-en">EN</span>
+                            <input type="text" id="rollerTypeEn" placeholder="Rubber Ring Roller">
+                        </div>
+                        <div class="lang-field">
+                            <span class="flag flag-ru">RU</span>
+                            <input type="text" id="rollerTypeRu" placeholder="Резиновый кольцевой каток">
+                        </div>
+                    </div>
+                    <span class="field-hint">Bos birakirsaniz Turkce tip kullanilir</span>
+                </div>
+
+                <div class="form-field">
+                    <label>Aciklama (3 Dil)</label>
+                    <div class="lang-fields vertical">
+                        <div class="lang-field">
+                            <span class="flag flag-tr">TR</span>
+                            <textarea id="rollerDescTr" rows="2" placeholder="Turkce aciklama..."></textarea>
+                        </div>
+                        <div class="lang-field">
+                            <span class="flag flag-en">EN</span>
+                            <textarea id="rollerDescEn" rows="2" placeholder="English description..."></textarea>
+                        </div>
+                        <div class="lang-field">
+                            <span class="flag flag-ru">RU</span>
+                            <textarea id="rollerDescRu" rows="2" placeholder="Описание на русском..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" onclick="closeModal('rollerModal')">Iptal</button>
+                <button type="button" class="btn-primary" id="saveRollerBtn">Kaydet</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spec Modal -->
+    <div class="modal-overlay" id="specModal">
+        <div class="modal modal-wide">
+            <div class="modal-header">
+                <h3 id="specModalTitle">Teknik Ozellik Ekle</h3>
+                <button class="modal-close" onclick="closeModal('specModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="specKey">
+                <input type="hidden" id="specIcon" value="tag">
+
+                <div class="form-grid">
+                    <div class="form-field autocomplete-wrapper">
+                        <label>Ozellik Adi (Turkce) *</label>
+                        <input type="text" id="specLabelTr" placeholder="Calisma Genisligi" autocomplete="off">
+                        <div class="autocomplete-dropdown" id="specAutocomplete"></div>
+                    </div>
+                    <div class="form-field">
+                        <label>Ikon</label>
+                        <div class="icon-select-wrapper">
+                            <button type="button" class="icon-select-btn" id="specIconBtn">
+                                <i data-lucide="tag" id="specIconPreview"></i>
+                                <span>Ikon Sec</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label>Diger Diller (Istege bagli)</label>
+                    <div class="lang-fields vertical">
+                        <div class="lang-field">
+                            <span class="flag flag-en">EN</span>
+                            <input type="text" id="specLabelEn" placeholder="Working Width">
+                        </div>
+                        <div class="lang-field">
+                            <span class="flag flag-ru">RU</span>
+                            <input type="text" id="specLabelRu" placeholder="Рабочая ширина">
+                        </div>
+                    </div>
+                    <span class="field-hint">Bos birakirsaniz Turkce etiket kullanilir</span>
+                </div>
+
+                <div class="form-field">
+                    <label>Deger ve Birim (Her Dil Icin)</label>
+                    <p class="field-hint">Farkli dillerde farkli degerler ve birimler girebilirsiniz (ornek: 3.0 m =
+                        9.84 ft)</p>
+                    <div class="lang-values-grid">
+                        <div class="lang-value-row">
+                            <span class="flag flag-tr">TR</span>
+                            <input type="text" id="specValueTr" placeholder="3.0" class="value-input">
+                            <input type="text" id="specUnitTr" placeholder="m" class="unit-input">
+                        </div>
+                        <div class="lang-value-row">
+                            <span class="flag flag-en">EN</span>
+                            <input type="text" id="specValueEn" placeholder="9.84" class="value-input">
+                            <input type="text" id="specUnitEn" placeholder="ft" class="unit-input">
+                        </div>
+                        <div class="lang-value-row">
+                            <span class="flag flag-ru">RU</span>
+                            <input type="text" id="specValueRu" placeholder="3.0" class="value-input">
+                            <input type="text" id="specUnitRu" placeholder="м" class="unit-input">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" onclick="closeModal('specModal')">Iptal</button>
+                <button type="button" class="btn-primary" id="saveSpecBtn">Kaydet</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Document Modal -->
+    <div class="modal-overlay" id="documentModal">
+        <div class="modal modal-wide">
+            <div class="modal-header">
+                <h3 id="documentModalTitle">Dokuman Ekle</h3>
+                <button class="modal-close" onclick="closeModal('documentModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-field">
+                    <label>Dokuman Adi (3 Dil) *</label>
+                    <div class="lang-fields vertical">
+                        <div class="lang-field">
+                            <span class="flag flag-tr">TR</span>
+                            <input type="text" id="documentNameTr" placeholder="Urun Katalogu">
+                        </div>
+                        <div class="lang-field">
+                            <span class="flag flag-en">EN</span>
+                            <input type="text" id="documentNameEn" placeholder="Product Catalog">
+                        </div>
+                        <div class="lang-field">
+                            <span class="flag flag-ru">RU</span>
+                            <input type="text" id="documentNameRu" placeholder="Каталог продукции">
+                        </div>
+                    </div>
+                    <span class="field-hint">Bu isim indirme butonunda gosterilecek</span>
+                </div>
+
+                <!-- Existing PDFs Selection -->
+                <div class="form-field">
+                    <label>Mevcut PDF'lerden Sec</label>
+                    <div class="existing-pdfs-list" id="existingPdfsList">
+                        <div class="empty-placeholder"><span>Yuklu PDF bulunamadi</span></div>
+                    </div>
+                </div>
+
+                <div class="form-field-divider">
+                    <span>veya</span>
+                </div>
+
+                <div class="form-field">
+                    <label>Yeni Dosya Yukle</label>
+                    <div class="file-upload-zone" id="documentUploadZone">
+                        <input type="file" id="documentFile" accept=".pdf,.doc,.docx" hidden>
+                        <div class="upload-placeholder" id="documentPlaceholder">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                                <line x1="12" y1="18" x2="12" y2="12" />
+                                <polyline points="9 15 12 12 15 15" />
+                            </svg>
+                            <span>PDF, DOC veya DOCX dosyasi secin</span>
+                            <small>Max 10MB</small>
+                        </div>
+                        <div class="upload-preview" id="documentPreview" style="display: none;">
+                            <div class="file-icon pdf">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                    <polyline points="14 2 14 8 20 8" />
+                                </svg>
+                            </div>
+                            <span class="file-name" id="documentFileName"></span>
+                            <button type="button" class="file-remove" onclick="clearDocumentFile()">
+                                <svg viewBox="0 0 24 24">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" onclick="closeModal('documentModal')">Iptal</button>
+                <button type="button" class="btn-primary" id="saveDocumentBtn">Kaydet</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Icon Picker Modal -->
+    <div class="modal-overlay" id="iconPickerModal">
+        <div class="modal modal-wide">
+            <div class="modal-header">
+                <h3>Ikon Sec</h3>
+                <button class="modal-close" onclick="closeModal('iconPickerModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="icon-search">
+                    <input type="text" id="iconSearchInput" placeholder="Ikon ara...">
+                </div>
+                <div class="icon-categories">
+                    <button class="icon-category active" data-category="all">Tumu</button>
+                    <button class="icon-category" data-category="measurement">Olcum</button>
+                    <button class="icon-category" data-category="power">Guc</button>
+                    <button class="icon-category" data-category="structure">Yapi</button>
+                    <button class="icon-category" data-category="wheel">Disk/Tekerlek</button>
+                    <button class="icon-category" data-category="general">Genel</button>
+                </div>
+                <div class="icon-grid" id="iconGrid">
+                    <!-- Icons will be populated by JS -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" onclick="closeModal('iconPickerModal')">Iptal</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category Modal -->
+    <div class="modal-overlay" id="categoryModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Yeni Kategori Ekle</h3>
+                <button class="modal-close" onclick="closeModal('categoryModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-field">
+                    <label>Kategori ID *</label>
+                    <input type="text" id="newCategoryId" placeholder="ornek: kultivator">
+                    <span class="field-hint">Kucuk harf, bosluksuz (URL'de kullanilir)</span>
+                </div>
+                <div class="form-field">
+                    <label>Kategori Adi (3 Dil) *</label>
+                    <div class="lang-fields vertical">
+                        <div class="lang-field">
+                            <span class="flag flag-tr">TR</span>
+                            <input type="text" id="newCategoryTr" placeholder="Kultivator">
+                        </div>
+                        <div class="lang-field">
+                            <span class="flag flag-en">EN</span>
+                            <input type="text" id="newCategoryEn" placeholder="Cultivator">
+                        </div>
+                        <div class="lang-field">
+                            <span class="flag flag-ru">RU</span>
+                            <input type="text" id="newCategoryRu" placeholder="Культиватор">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" onclick="closeModal('categoryModal')">Iptal</button>
+                <button type="button" class="btn-primary" id="saveCategoryBtn">Kaydet</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spec Preset Modal -->
+    <div class="modal-overlay" id="specPresetModal">
+        <div class="modal modal-wide">
+            <div class="modal-header">
+                <h3>Hazir Ozelliklerden Sec</h3>
+                <button class="modal-close" onclick="closeModal('specPresetModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="preset-search">
+                    <input type="text" id="presetSearchInput" placeholder="Ozellik ara...">
+                </div>
+                <div class="preset-list" id="presetList">
+                    <!-- Presets will be populated by JS -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" onclick="closeModal('specPresetModal')">Iptal</button>
+                <button type="button" class="btn-link" onclick="openManualSpecModal()">Manuel Ekle</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        <div class="toast-icon success">
+            <svg viewBox="0 0 24 24">
+                <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+        </div>
+        <div class="toast-icon error">
+            <svg viewBox="0 0 24 24">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </div>
+        <span class="toast-message"></span>
+    </div>
+
+    <script src="/js/admin-sidebar.js"></script>
+    <script src="/js/admin.js"></script>
+    <script src="/js/admin-urun.js"></script>
+    <script>
+        // Initialize Lucide icons
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+    </script>
+</body>
+
+</html>

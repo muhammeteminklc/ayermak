@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYERMAK Admin - İletişim</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/admin-urun.css">
+    <link rel="stylesheet" href="/css/admin-about.css">
+    <link rel="icon" href="/images/ayermak.png" type="image/png">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="admin-body">
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <div id="adminSidebar" data-active="contact"></div>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Top Bar -->
+            <div class="editor-topbar">
+                <div class="topbar-left">
+                    <h1 class="editor-title">İletişim Sayfası</h1>
+                </div>
+                <div class="topbar-right">
+                    <button class="save-btn" id="saveBtn" onclick="saveContact()">
+                        <i data-lucide="save"></i>
+                        Kaydet
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="about-tabs">
+                <button class="about-tab active" data-tab="hero" onclick="switchTab('hero')">
+                    <i data-lucide="home"></i>
+                    Hero
+                </button>
+                <button class="about-tab" data-tab="info" onclick="switchTab('info')">
+                    <i data-lucide="info"></i>
+                    Bilgiler
+                </button>
+                <button class="about-tab" data-tab="form" onclick="switchTab('form')">
+                    <i data-lucide="mail"></i>
+                    Form
+                </button>
+                <button class="about-tab" data-tab="map" onclick="switchTab('map')">
+                    <i data-lucide="map-pin"></i>
+                    Harita
+                </button>
+            </div>
+
+            <!-- Editor Content -->
+            <div class="editor-layout single-column">
+                <div class="editor-content">
+
+                    <!-- HERO TAB -->
+                    <div id="tab-hero" class="tab-panel active">
+                        <div class="card">
+                            <div class="card-title">Hero Bölümü</div>
+                            <p class="card-desc">Sayfanın üst kısmında görünecek başlık ve açıklama</p>
+
+                            <div class="lang-tabs">
+                                <button class="lang-tab active" data-lang="tr" onclick="switchLang('tr', 'hero')">
+                                    <span class="flag flag-tr">TR</span> Türkçe
+                                </button>
+                                <button class="lang-tab" data-lang="en" onclick="switchLang('en', 'hero')">
+                                    <span class="flag flag-en">EN</span> English
+                                </button>
+                                <button class="lang-tab" data-lang="ru" onclick="switchLang('ru', 'hero')">
+                                    <span class="flag flag-ru">RU</span> Русский
+                                </button>
+                            </div>
+
+                            <!-- TR Fields -->
+                            <div id="hero-fields-tr" class="lang-content active">
+                                <div class="form-field">
+                                    <label>Başlık (TR)</label>
+                                    <input type="text" id="heroTitleTr" placeholder="İletişim">
+                                </div>
+                                <div class="form-field">
+                                    <label>Alt Başlık (TR)</label>
+                                    <textarea id="heroSubtitleTr" rows="3" placeholder="Sorularınız için..."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- EN Fields -->
+                            <div id="hero-fields-en" class="lang-content">
+                                <div class="form-field">
+                                    <label>Title (EN)</label>
+                                    <input type="text" id="heroTitleEn" placeholder="Contact">
+                                </div>
+                                <div class="form-field">
+                                    <label>Subtitle (EN)</label>
+                                    <textarea id="heroSubtitleEn" rows="3" placeholder="Feel free to..."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- RU Fields -->
+                            <div id="hero-fields-ru" class="lang-content">
+                                <div class="form-field">
+                                    <label>Заголовок (RU)</label>
+                                    <input type="text" id="heroTitleRu" placeholder="Контакты">
+                                </div>
+                                <div class="form-field">
+                                    <label>Подзаголовок (RU)</label>
+                                    <textarea id="heroSubtitleRu" rows="3" placeholder="Свяжитесь с нами..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- INFO TAB -->
+                    <div id="tab-info" class="tab-panel">
+                        <div class="card">
+                            <div class="card-title">İletişim Bilgileri</div>
+                            <p class="card-desc">Adres, telefon, e-posta ve çalışma saatleri</p>
+
+                            <div class="lang-tabs">
+                                <button class="lang-tab active" data-lang="tr" onclick="switchLang('tr', 'info')">
+                                    <span class="flag flag-tr">TR</span> Türkçe
+                                </button>
+                                <button class="lang-tab" data-lang="en" onclick="switchLang('en', 'info')">
+                                    <span class="flag flag-en">EN</span> English
+                                </button>
+                                <button class="lang-tab" data-lang="ru" onclick="switchLang('ru', 'info')">
+                                    <span class="flag flag-ru">RU</span> Русский
+                                </button>
+                            </div>
+
+                            <!-- TR Fields -->
+                            <div id="info-fields-tr" class="lang-content active">
+                                <div class="form-field">
+                                    <label>Bölüm Başlığı (TR)</label>
+                                    <input type="text" id="infoTitleTr" placeholder="Bize Ulaşın">
+                                </div>
+                                <div class="form-field">
+                                    <label>Adres (TR)</label>
+                                    <textarea id="infoAddressTr" rows="2" placeholder="Organize Sanayi Bölgesi..."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- EN Fields -->
+                            <div id="info-fields-en" class="lang-content">
+                                <div class="form-field">
+                                    <label>Section Title (EN)</label>
+                                    <input type="text" id="infoTitleEn" placeholder="Get in Touch">
+                                </div>
+                                <div class="form-field">
+                                    <label>Address (EN)</label>
+                                    <textarea id="infoAddressEn" rows="2" placeholder="Organized Industrial Zone..."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- RU Fields -->
+                            <div id="info-fields-ru" class="lang-content">
+                                <div class="form-field">
+                                    <label>Заголовок раздела (RU)</label>
+                                    <input type="text" id="infoTitleRu" placeholder="Свяжитесь с нами">
+                                </div>
+                                <div class="form-field">
+                                    <label>Адрес (RU)</label>
+                                    <textarea id="infoAddressRu" rows="2" placeholder="Организованная промышленная зона..."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Phone Numbers -->
+                            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee;">
+                                <h4 style="margin-bottom: 15px; color: #333;">Telefon Numaraları</h4>
+
+                                <!-- Phone 1 -->
+                                <div style="background: #f9f9f9; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                                    <div class="form-field">
+                                        <label>Telefon 1 - Numara</label>
+                                        <input type="text" id="infoPhone1" placeholder="0 282 673 67 39">
+                                    </div>
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                                        <div class="form-field">
+                                            <label>Etiket (TR)</label>
+                                            <input type="text" id="infoPhone1LabelTr" placeholder="Sabit Hat">
+                                        </div>
+                                        <div class="form-field">
+                                            <label>Label (EN)</label>
+                                            <input type="text" id="infoPhone1LabelEn" placeholder="Landline">
+                                        </div>
+                                        <div class="form-field">
+                                            <label>Метка (RU)</label>
+                                            <input type="text" id="infoPhone1LabelRu" placeholder="Стационарный">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Phone 2 -->
+                                <div style="background: #f9f9f9; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                                    <div class="form-field">
+                                        <label>Telefon 2 - Numara</label>
+                                        <input type="text" id="infoPhone2" placeholder="0 544 897 12 27">
+                                    </div>
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                                        <div class="form-field">
+                                            <label>Etiket (TR)</label>
+                                            <input type="text" id="infoPhone2LabelTr" placeholder="Mobil">
+                                        </div>
+                                        <div class="form-field">
+                                            <label>Label (EN)</label>
+                                            <input type="text" id="infoPhone2LabelEn" placeholder="Mobile">
+                                        </div>
+                                        <div class="form-field">
+                                            <label>Метка (RU)</label>
+                                            <input type="text" id="infoPhone2LabelRu" placeholder="Мобильный">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-field">
+                                <label>E-posta</label>
+                                <input type="email" id="infoEmail" placeholder="info@ayermak.com">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FORM TAB -->
+                    <div id="tab-form" class="tab-panel">
+                        <div class="card">
+                            <div class="card-title">Form Etiketleri</div>
+                            <p class="card-desc">İletişim formundaki etiketler ve mesajlar</p>
+
+                            <div class="lang-tabs">
+                                <button class="lang-tab active" data-lang="tr" onclick="switchLang('tr', 'form')">
+                                    <span class="flag flag-tr">TR</span> Türkçe
+                                </button>
+                                <button class="lang-tab" data-lang="en" onclick="switchLang('en', 'form')">
+                                    <span class="flag flag-en">EN</span> English
+                                </button>
+                                <button class="lang-tab" data-lang="ru" onclick="switchLang('ru', 'form')">
+                                    <span class="flag flag-ru">RU</span> Русский
+                                </button>
+                            </div>
+
+                            <!-- TR Fields -->
+                            <div id="form-fields-tr" class="lang-content active">
+                                <div class="form-field">
+                                    <label>Form Başlığı (TR)</label>
+                                    <input type="text" id="formTitleTr" placeholder="Mesaj Gönderin">
+                                </div>
+                                <div class="form-field">
+                                    <label>Ad Soyad Etiketi (TR)</label>
+                                    <input type="text" id="formNameTr" placeholder="Adınız Soyadınız">
+                                </div>
+                                <div class="form-field">
+                                    <label>E-posta Etiketi (TR)</label>
+                                    <input type="text" id="formEmailTr" placeholder="E-posta Adresiniz">
+                                </div>
+                                <div class="form-field">
+                                    <label>Telefon Etiketi (TR)</label>
+                                    <input type="text" id="formPhoneTr" placeholder="Telefon Numaranız">
+                                </div>
+                                <div class="form-field">
+                                    <label>Mesaj Etiketi (TR)</label>
+                                    <input type="text" id="formMessageTr" placeholder="Mesajınız">
+                                </div>
+                                <div class="form-field">
+                                    <label>Gönder Butonu (TR)</label>
+                                    <input type="text" id="formSendTr" placeholder="Mesaj Gönder">
+                                </div>
+                                <div class="form-field">
+                                    <label>Başarı Mesajı (TR)</label>
+                                    <textarea id="formSuccessTr" rows="2" placeholder="Mesajınız gönderildi!"></textarea>
+                                </div>
+                            </div>
+
+                            <!-- EN Fields -->
+                            <div id="form-fields-en" class="lang-content">
+                                <div class="form-field">
+                                    <label>Form Title (EN)</label>
+                                    <input type="text" id="formTitleEn" placeholder="Send a Message">
+                                </div>
+                                <div class="form-field">
+                                    <label>Name Label (EN)</label>
+                                    <input type="text" id="formNameEn" placeholder="Your Name">
+                                </div>
+                                <div class="form-field">
+                                    <label>Email Label (EN)</label>
+                                    <input type="text" id="formEmailEn" placeholder="Your Email">
+                                </div>
+                                <div class="form-field">
+                                    <label>Phone Label (EN)</label>
+                                    <input type="text" id="formPhoneEn" placeholder="Your Phone">
+                                </div>
+                                <div class="form-field">
+                                    <label>Message Label (EN)</label>
+                                    <input type="text" id="formMessageEn" placeholder="Your Message">
+                                </div>
+                                <div class="form-field">
+                                    <label>Send Button (EN)</label>
+                                    <input type="text" id="formSendEn" placeholder="Send Message">
+                                </div>
+                                <div class="form-field">
+                                    <label>Success Message (EN)</label>
+                                    <textarea id="formSuccessEn" rows="2" placeholder="Your message has been sent!"></textarea>
+                                </div>
+                            </div>
+
+                            <!-- RU Fields -->
+                            <div id="form-fields-ru" class="lang-content">
+                                <div class="form-field">
+                                    <label>Заголовок формы (RU)</label>
+                                    <input type="text" id="formTitleRu" placeholder="Отправить сообщение">
+                                </div>
+                                <div class="form-field">
+                                    <label>Метка имени (RU)</label>
+                                    <input type="text" id="formNameRu" placeholder="Ваше имя">
+                                </div>
+                                <div class="form-field">
+                                    <label>Метка email (RU)</label>
+                                    <input type="text" id="formEmailRu" placeholder="Ваш email">
+                                </div>
+                                <div class="form-field">
+                                    <label>Метка телефона (RU)</label>
+                                    <input type="text" id="formPhoneRu" placeholder="Ваш телефон">
+                                </div>
+                                <div class="form-field">
+                                    <label>Метка сообщения (RU)</label>
+                                    <input type="text" id="formMessageRu" placeholder="Ваше сообщение">
+                                </div>
+                                <div class="form-field">
+                                    <label>Кнопка отправки (RU)</label>
+                                    <input type="text" id="formSendRu" placeholder="Отправить">
+                                </div>
+                                <div class="form-field">
+                                    <label>Сообщение об успехе (RU)</label>
+                                    <textarea id="formSuccessRu" rows="2" placeholder="Ваше сообщение отправлено!"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MAP TAB -->
+                    <div id="tab-map" class="tab-panel">
+                        <div class="card">
+                            <div class="card-title">Harita Ayarları</div>
+                            <p class="card-desc">Google Maps embed URL'si</p>
+
+                            <div class="form-field">
+                                <label>Google Maps Embed URL</label>
+                                <textarea id="mapEmbedUrl" rows="4" placeholder="https://www.google.com/maps/embed?pb=..."></textarea>
+                                <small style="color: #888; display: block; margin-top: 8px;">
+                                    Google Maps'ten "Paylaş" > "Haritayı yerleştir" > "HTML'yi kopyala" seçip sadece src="..." içindeki URL'yi yapıştırın.
+                                </small>
+                            </div>
+
+                            <div class="map-preview" style="margin-top: 20px;">
+                                <label style="display: block; margin-bottom: 10px; font-weight: 600;">Önizleme</label>
+                                <div id="mapPreview" style="width: 100%; height: 300px; background: #f0f0f0; border-radius: 12px; overflow: hidden;">
+                                    <iframe id="mapIframe" style="width: 100%; height: 100%; border: none;"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/admin-sidebar.js"></script>
+    <script src="/js/admin.js"></script>
+    <script src="/js/admin-contact.js"></script>
+</body>
+
+</html>

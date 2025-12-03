@@ -1,0 +1,1070 @@
+/* ===== ADMIN DEALERS STYLES ===== */
+
+/* Fix SVG Sizes */
+.dealer-item-icon svg {
+    width: 24px !important;
+    height: 24px !important;
+    flex-shrink: 0;
+}
+
+.certificate-item-meta svg,
+.dealer-info-row svg {
+    width: 16px !important;
+    height: 16px !important;
+    flex-shrink: 0;
+}
+
+.tab-btn svg {
+    width: 20px !important;
+    height: 20px !important;
+    flex-shrink: 0;
+}
+
+.btn-sm svg {
+    width: 16px !important;
+    height: 16px !important;
+    flex-shrink: 0;
+}
+
+.empty-state svg {
+    width: 80px !important;
+    height: 80px !important;
+    margin: 0 auto 20px;
+}
+
+/* Tabs */
+.tabs-container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.tabs {
+    display: flex;
+    gap: 12px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 0;
+}
+
+.tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 24px;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    color: #666;
+    transition: all 0.3s ease;
+    margin-bottom: -2px;
+}
+
+.tab-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    stroke-width: 2;
+}
+
+.tab-btn:hover {
+    color: #1a1a1a;
+    background: rgba(250, 191, 30, 0.05);
+}
+
+.tab-btn.active {
+    color: var(--primary-yellow);
+    border-bottom-color: var(--primary-yellow);
+    background: rgba(250, 191, 30, 0.05);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content .admin-card {
+    margin-top: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Dealers Grid */
+.dealers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 24px;
+    margin-top: 0;
+}
+
+.dealer-item {
+    background: #fff;
+    border: 2px solid #f0f0f0;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.dealer-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-yellow);
+}
+
+.dealer-item-header {
+    background: linear-gradient(135deg, #fafafa 0%, #fff 100%);
+    padding: 20px;
+    border-bottom: 2px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.dealer-item-icon {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    background: linear-gradient(135deg, var(--primary-yellow) 0%, #e6a800 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(250, 191, 30, 0.3);
+}
+
+.dealer-item-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: #fff;
+    stroke-width: 2;
+}
+
+.dealer-item-title {
+    flex: 1;
+    min-width: 0;
+}
+
+.dealer-item-title h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 4px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dealer-item-title p {
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+}
+
+.dealer-item-body {
+    padding: 20px;
+}
+
+.dealer-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.dealer-info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.dealer-info-row svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--primary-yellow);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.dealer-info-row strong {
+    color: #1a1a1a;
+    font-weight: 600;
+    min-width: 90px;
+}
+
+.dealer-item-footer {
+    padding: 16px 20px;
+    background: #fafafa;
+    border-top: 2px solid #f0f0f0;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 13px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-sm svg {
+    width: 16px;
+    height: 16px;
+}
+
+.btn-edit {
+    background: #fff;
+    color: #666;
+    border: 2px solid #e0e0e0;
+}
+
+.btn-edit:hover {
+    background: var(--primary-yellow);
+    color: #1a1a1a;
+    border-color: var(--primary-yellow);
+}
+
+.btn-delete {
+    background: #fff;
+    color: #dc3545;
+    border: 2px solid #e0e0e0;
+}
+
+.btn-delete:hover {
+    background: #dc3545;
+    color: #fff;
+    border-color: #dc3545;
+}
+
+/* Certificates Grid */
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 0;
+}
+
+.certificate-item {
+    background: #fff;
+    border: 2px solid #f0f0f0;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.certificate-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-yellow);
+}
+
+.certificate-item-image {
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.certificate-item-image::before {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 140px;
+    font-weight: 900;
+    color: rgba(250, 191, 30, 0.05);
+}
+
+.certificate-item-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+}
+
+.certificate-item-body {
+    padding: 20px;
+}
+
+.certificate-item-body h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 8px 0;
+}
+
+.certificate-item-body p {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 12px 0;
+    line-height: 1.5;
+}
+
+.certificate-item-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 12px;
+}
+
+.certificate-item-meta svg {
+    width: 16px;
+    height: 16px;
+    stroke: var(--primary-yellow);
+}
+
+.certificate-item-footer {
+    padding: 16px 20px;
+    background: #fafafa;
+    border-top: 2px solid #f0f0f0;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+/* Modal Enhancements */
+.modal-lg {
+    max-width: 700px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-grid .full-width {
+    grid-column: 1 / -1;
+}
+
+.form-help {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: #888;
+}
+
+.image-preview {
+    margin-top: 12px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: none;
+}
+
+.image-preview.active {
+    display: block;
+}
+
+.image-preview img {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    background: #f5f5f5;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    text-align: center;
+    padding: 60px 20px;
+    color: #999;
+    font-size: 14px;
+    grid-column: 1 / -1;
+}
+
+.loading-spinner::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 40px;
+    border: 3px solid #f0f0f0;
+    border-top-color: var(--primary-yellow);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 16px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.empty-state svg {
+    width: 80px;
+    height: 80px;
+    stroke: #ddd;
+    margin-bottom: 20px;
+}
+
+.empty-state h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #666;
+    margin: 0 0 8px 0;
+}
+
+.empty-state p {
+    font-size: 14px;
+    color: #999;
+    margin: 0 0 20px 0;
+}
+
+/* Card Header Styles */
+.admin-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.admin-card .card-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+/* Modal customizations for dealers page */
+.modal {
+    max-width: 700px;
+}
+
+.modal-wide {
+    max-width: 1100px;
+}
+
+.modal-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.modal-title-icon {
+    font-size: 24px;
+}
+
+/* Dealer Form Layout - Two Column */
+.dealer-form-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.dealer-form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.dealer-form-map {
+    position: sticky;
+    top: 0;
+    height: fit-content;
+}
+
+/* Form Sections */
+.form-section {
+    background: #fafafa;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #f0f0f0;
+}
+
+.form-section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e8e8e8;
+}
+
+.form-section-icon {
+    font-size: 20px;
+}
+
+.form-section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+.form-input {
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(232, 168, 36, 0.2);
+}
+
+/* File Upload Area */
+.file-upload-area {
+    position: relative;
+    border: 2px dashed #d0d0d0;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #fff;
+}
+
+.file-upload-area:hover {
+    border-color: var(--admin-primary);
+    background: #fffbf0;
+}
+
+.file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-upload-icon {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.file-upload-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 4px 0;
+}
+
+.file-upload-hint {
+    font-size: 12px;
+    color: #888;
+    margin: 0;
+}
+
+.file-upload-pdf {
+    border-color: #dc3545;
+}
+
+.file-upload-pdf:hover {
+    border-color: #dc3545;
+    background: #fff5f5;
+}
+
+.image-preview-modern {
+    margin-top: 16px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: none;
+}
+
+.image-preview-modern.active {
+    display: block;
+}
+
+.image-preview-modern img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #e8e8e8;
+}
+
+/* Map Section */
+.map-section {
+    background: #fafafa;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #f0f0f0;
+}
+
+.map-section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e8e8e8;
+}
+
+.map-section-icon {
+    font-size: 20px;
+}
+
+.map-section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+/* Location Search */
+.location-search {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.location-search-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.location-search-input:focus {
+    outline: none;
+    border-color: var(--admin-primary);
+}
+
+.location-search-btn {
+    padding: 12px 16px;
+    background: var(--admin-primary);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.location-search-btn:hover {
+    background: #d49920;
+    transform: scale(1.05);
+}
+
+.location-search-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke: white;
+}
+
+/* Modal Map */
+.modal-map {
+    width: 100%;
+    height: 350px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #e8e8e8;
+    margin-bottom: 16px;
+    cursor: crosshair;
+}
+
+.modal-map.zoom-mode {
+    cursor: zoom-in;
+}
+
+/* Map Instructions */
+.map-instructions {
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    border: 1px solid #e8e8e8;
+}
+
+.map-instruction-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    font-size: 13px;
+    color: #666;
+}
+
+.map-instruction-item:not(:last-child) {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.instruction-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+/* Selected Location */
+.selected-location {
+    background: linear-gradient(135deg, var(--admin-primary) 0%, #d49920 100%);
+    color: white;
+    padding: 18px;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.selected-location::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.selected-location-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.selected-location-label {
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.selected-location-coords {
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    background: rgba(0, 0, 0, 0.15);
+    padding: 8px 12px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+/* Modal Footer Enhancements */
+.modal-footer .btn {
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.modal-footer .btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.modal-footer .btn-primary {
+    background: linear-gradient(135deg, var(--admin-primary) 0%, #d49920 100%);
+    color: white;
+    border: none;
+}
+
+.modal-footer .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(232, 168, 36, 0.4);
+}
+
+/* Form Grid */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-grid .full-width {
+    grid-column: 1 / -1;
+}
+
+.form-help {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: #888;
+}
+
+/* Image Preview */
+.image-preview {
+    margin-top: 12px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: none;
+}
+
+.image-preview.active {
+    display: block;
+}
+
+.image-preview img {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    background: #f5f5f5;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* Loading state for map */
+.modal-map.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+}
+
+.modal-map.loading::before {
+    content: '🗺️ Harita yükleniyor...';
+    font-size: 14px;
+    color: #888;
+}
+
+/* Custom modal marker fix */
+.custom-modal-marker {
+    background: transparent;
+    border: none;
+}
+
+/* Leaflet popup adjustments */
+.leaflet-popup-content-wrapper {
+    border-radius: 8px;
+}
+
+.leaflet-popup-content {
+    margin: 12px;
+}
+
+/* Certificate Placeholder */
+.certificate-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-size: 60px;
+    opacity: 0.5;
+}
+
+/* Toast Notifications */
+.custom-toast {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    padding: 14px 24px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 100000;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+}
+
+.custom-toast-success {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.custom-toast-error {
+    background: linear-gradient(135deg, #ee0979 0%, #ff6a00 100%);
+}
+
+.custom-toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Responsive - Modal */
+@media (max-width: 992px) {
+    .modal-wide {
+        max-width: 90%;
+    }
+
+    .dealer-form-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .dealer-form-map {
+        position: static;
+    }
+
+    .modal-map {
+        height: 300px;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tabs {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tab-btn {
+        padding: 12px 18px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .tab-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .dealers-grid,
+    .certificates-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .modal-wide {
+        max-width: 95%;
+        margin: 10px;
+    }
+
+    .map-section,
+    .form-section {
+        padding: 16px;
+    }
+
+    .modal-map {
+        height: 250px;
+    }
+
+    .file-upload-area {
+        padding: 20px;
+    }
+
+    .file-upload-icon {
+        font-size: 36px;
+    }
+
+    .map-instruction-item {
+        font-size: 12px;
+        padding: 6px 0;
+    }
+
+    .instruction-icon {
+        font-size: 16px;
+    }
+
+    .dealer-item-header {
+        padding: 16px;
+    }
+
+    .dealer-item-body {
+        padding: 16px;
+    }
+
+    .dealer-item-footer {
+        padding: 12px 16px;
+        flex-wrap: wrap;
+    }
+
+    .btn-sm {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .certificate-item-image {
+        height: 180px;
+    }
+
+    .certificate-item-body {
+        padding: 16px;
+    }
+
+    .certificate-item-footer {
+        padding: 12px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tab-btn span {
+        display: none;
+    }
+
+    .tab-btn {
+        padding: 12px;
+    }
+
+    .dealer-item-title h3 {
+        font-size: 16px;
+    }
+
+    .certificate-item-body h3 {
+        font-size: 16px;
+    }
+}
+

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYERMAK Admin - Popup Duyuru</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="icon" href="/images/ayermak.png" type="image/png">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Page Header */
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 28px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--admin-border);
+        }
+
+        .page-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--admin-dark);
+            margin: 0;
+        }
+
+        .page-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Status Badge */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .status-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: currentColor;
+        }
+
+        .status-badge.active {
+            background: rgba(40, 167, 69, 0.15);
+            color: #28a745;
+        }
+
+        .status-badge.inactive {
+            background: rgba(108, 117, 125, 0.15);
+            color: #6c757d;
+        }
+
+        /* Section Card */
+        .section-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--admin-border);
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--admin-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0;
+        }
+
+        .section-title svg {
+            width: 20px;
+            height: 20px;
+            color: var(--admin-primary);
+        }
+
+        .section-desc {
+            font-size: 13px;
+            color: #6c757d;
+            margin: -8px 0 16px 0;
+        }
+
+        /* Toggle Switch */
+        .toggle-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            background: var(--admin-light);
+            border-radius: 10px;
+            border: 1px solid var(--admin-border);
+        }
+
+        .toggle-info strong {
+            display: block;
+            font-size: 14px;
+            color: var(--admin-dark);
+            margin-bottom: 4px;
+        }
+
+        .toggle-info small {
+            font-size: 12px;
+            color: #6c757d;
+        }
+
+        .switch {
+            position: relative;
+            width: 52px;
+            height: 28px;
+            flex-shrink: 0;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .switch-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.3s;
+            border-radius: 28px;
+        }
+
+        .switch-slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.3s;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .switch input:checked + .switch-slider {
+            background-color: var(--admin-primary);
+        }
+
+        .switch input:checked + .switch-slider:before {
+            transform: translateX(24px);
+        }
+
+        /* Image Upload */
+        .image-upload-zone {
+            border: 2px dashed var(--admin-border);
+            border-radius: 12px;
+            padding: 40px 24px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--admin-light);
+        }
+
+        .image-upload-zone:hover {
+            border-color: var(--admin-primary);
+            background: rgba(232, 168, 36, 0.05);
+        }
+
+        .image-upload-zone.has-image {
+            padding: 16px;
+            border-style: solid;
+        }
+
+        .upload-placeholder svg {
+            width: 48px;
+            height: 48px;
+            color: #adb5bd;
+            margin-bottom: 12px;
+        }
+
+        .upload-placeholder p {
+            color: #6c757d;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .image-preview-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .image-preview-container img {
+            max-width: 100%;
+            max-height: 280px;
+            border-radius: 8px;
+            display: block;
+        }
+
+        .image-remove-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--admin-danger);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .image-remove-btn:hover {
+            background: #c82333;
+            transform: scale(1.1);
+        }
+
+        .image-remove-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Lang Tabs */
+        .lang-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .lang-tab {
+            padding: 10px 18px;
+            background: var(--admin-light);
+            border: 1px solid var(--admin-border);
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            color: var(--admin-dark);
+        }
+
+        .lang-tab:hover {
+            border-color: var(--admin-primary);
+        }
+
+        .lang-tab.active {
+            background: var(--admin-primary);
+            border-color: var(--admin-primary);
+            color: white;
+        }
+
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        /* Form Groups */
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 13px;
+            color: var(--admin-dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--admin-border);
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--admin-primary);
+            box-shadow: 0 0 0 3px rgba(232, 168, 36, 0.15);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-group .help-text {
+            font-size: 12px;
+            color: #6c757d;
+            margin-top: 6px;
+        }
+
+        /* Settings Grid */
+        .settings-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .setting-item {
+            background: var(--admin-light);
+            border: 1px solid var(--admin-border);
+            border-radius: 10px;
+            padding: 16px;
+        }
+
+        .setting-item label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #6c757d;
+            margin-bottom: 10px;
+        }
+
+        .setting-item input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--admin-border);
+            border-radius: 8px;
+            font-size: 14px;
+            background: white;
+        }
+
+        .setting-item input:focus {
+            outline: none;
+            border-color: var(--admin-primary);
+        }
+
+        .setting-item .help-text {
+            font-size: 11px;
+            color: #868e96;
+            margin-top: 8px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            .settings-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lang-tabs {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body class="admin-body">
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <div id="adminSidebar" data-active="announcement"></div>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1 class="page-title">Popup Duyuru Yonetimi</h1>
+                <div class="page-actions">
+                    <span class="status-badge inactive" id="statusBadge">Pasif</span>
+                    <button class="btn btn-primary" id="saveBtn">
+                        <i data-lucide="save"></i>
+                        Kaydet
+                    </button>
+                </div>
+            </div>
+
+            <!-- Enable/Disable Section -->
+            <div class="section-card">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i data-lucide="toggle-left"></i>
+                        Popup Durumu
+                    </h2>
+                </div>
+                <div class="toggle-row">
+                    <div class="toggle-info">
+                        <strong>Popup Duyuruyu Aktif Et</strong>
+                        <small>Aktif edildiginde ziyaretcilere anasayfada popup gosterilir</small>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="popupEnabled">
+                        <span class="switch-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Image Upload Section -->
+            <div class="section-card">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i data-lucide="image"></i>
+                        Popup Gorseli
+                    </h2>
+                </div>
+                <p class="section-desc">Popup icinde gosterilecek ana gorsel (onerilen: 600x400px)</p>
+                <div class="image-upload-zone" id="imageUploadZone">
+                    <input type="file" id="imageInput" accept="image/*" hidden>
+                    <div class="upload-placeholder" id="uploadPlaceholder">
+                        <i data-lucide="upload-cloud"></i>
+                        <p>Gorsel yuklemek icin tiklayin veya surukleyin</p>
+                    </div>
+                    <div class="image-preview-container" id="imagePreview" style="display: none;">
+                        <img src="" alt="Popup gorseli" id="previewImage">
+                        <button type="button" class="image-remove-btn" id="removeImageBtn">
+                            <i data-lucide="x"></i>
+                        </button>
+                    </div>
+                </div>
+                <input type="hidden" id="popupImage">
+            </div>
+
+            <!-- Content Section -->
+            <div class="section-card">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i data-lucide="file-text"></i>
+                        Icerik (3 Dil)
+                    </h2>
+                </div>
+                <p class="section-desc">Popup basligi, aciklamasi ve buton metni</p>
+
+                <div class="lang-tabs">
+                    <button class="lang-tab active" data-lang="tr">Turkce</button>
+                    <button class="lang-tab" data-lang="en">English</button>
+                    <button class="lang-tab" data-lang="ru">Rusca</button>
+                </div>
+
+                <!-- TR Fields -->
+                <div id="fields-tr" class="lang-content active">
+                    <div class="form-group">
+                        <label>Baslik (TR)</label>
+                        <input type="text" id="titleTr" placeholder="Ornek: Ozel Kampanya!">
+                    </div>
+                    <div class="form-group">
+                        <label>Aciklama (TR)</label>
+                        <textarea id="descriptionTr" placeholder="Kampanya detaylari..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Buton Metni (TR)</label>
+                        <input type="text" id="buttonTextTr" placeholder="Detaylar">
+                    </div>
+                </div>
+
+                <!-- EN Fields -->
+                <div id="fields-en" class="lang-content">
+                    <div class="form-group">
+                        <label>Title (EN)</label>
+                        <input type="text" id="titleEn" placeholder="Example: Special Campaign!">
+                    </div>
+                    <div class="form-group">
+                        <label>Description (EN)</label>
+                        <textarea id="descriptionEn" placeholder="Campaign details..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Button Text (EN)</label>
+                        <input type="text" id="buttonTextEn" placeholder="Details">
+                    </div>
+                </div>
+
+                <!-- RU Fields -->
+                <div id="fields-ru" class="lang-content">
+                    <div class="form-group">
+                        <label>Zagolovok (RU)</label>
+                        <input type="text" id="titleRu" placeholder="Primer: Spetsialnaya aktsiya!">
+                    </div>
+                    <div class="form-group">
+                        <label>Opisanie (RU)</label>
+                        <textarea id="descriptionRu" placeholder="Detali aktsii..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Tekst knopki (RU)</label>
+                        <input type="text" id="buttonTextRu" placeholder="Podrobnosti">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button Settings Section -->
+            <div class="section-card">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i data-lucide="link"></i>
+                        Buton Linkleri
+                    </h2>
+                </div>
+                <p class="section-desc">Her dil icin ayri buton linki belirleyin</p>
+
+                <div class="form-group">
+                    <label>Turkce Link</label>
+                    <input type="text" id="buttonLinkTr" placeholder="/tr/urunler veya https://...">
+                </div>
+                <div class="form-group">
+                    <label>English Link</label>
+                    <input type="text" id="buttonLinkEn" placeholder="/en/products or https://...">
+                </div>
+                <div class="form-group">
+                    <label>Rusca Link</label>
+                    <input type="text" id="buttonLinkRu" placeholder="/ru/produkty veya https://...">
+                </div>
+            </div>
+
+            <!-- Display Settings Section -->
+            <div class="section-card">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i data-lucide="settings"></i>
+                        Gosterim Ayarlari
+                    </h2>
+                </div>
+                <p class="section-desc">Popup'in ne siklikta gosterilecegini ayarlayin</p>
+
+                <div class="settings-grid">
+                    <div class="setting-item">
+                        <label>Maksimum Gosterim Sayisi</label>
+                        <input type="number" id="maxShowCount" min="1" max="100" value="3">
+                        <p class="help-text">Kullaniciya kac kez gosterilsin</p>
+                    </div>
+                    <div class="setting-item">
+                        <label>Sifirlama Suresi (Saat)</label>
+                        <input type="number" id="resetIntervalHours" min="1" max="720" value="3">
+                        <p class="help-text">Kac saat sonra tekrar gosterilsin</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/admin-sidebar.js"></script>
+    <script src="/js/admin.js"></script>
+    <script src="/js/admin-announcement.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebarContainer = document.getElementById('adminSidebar');
+            if (sidebarContainer && typeof renderAdminSidebar === 'function') {
+                renderAdminSidebar(sidebarContainer);
+            }
+            lucide.createIcons();
+        });
+    </script>
+</body>
+
+</html>

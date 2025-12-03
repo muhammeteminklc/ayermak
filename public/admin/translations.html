@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYERMAK Admin - Çeviriler</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="icon" href="/images/ayermak.png" type="image/png">
+</head>
+
+<body class="admin-body">
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <div id="adminSidebar" data-active="translations"></div>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <div class="admin-header">
+                <h1 class="admin-title">Çeviri Yönetimi</h1>
+                <button class="btn btn-success" id="saveTranslationsBtn">Kaydet</button>
+            </div>
+
+            <div class="success-message"></div>
+
+            <div class="admin-card">
+                <!-- Category Tabs -->
+                <div class="translation-tabs">
+                    <button class="translation-tab active" data-category="nav">Navigasyon</button>
+                    <button class="translation-tab" data-category="categories">Kategoriler</button>
+                    <button class="translation-tab" data-category="productNames">Ürün İsimleri</button>
+                    <button class="translation-tab" data-category="specs">Özellikler</button>
+                    <button class="translation-tab" data-category="general">Genel</button>
+                    <button class="translation-tab" data-category="admin">Admin</button>
+                </div>
+
+                <!-- Translations Container -->
+                <div id="translationsContainer">
+                    <p style="text-align: center; color: #6c757d;">Yükleniyor...</p>
+                </div>
+            </div>
+
+            <div class="admin-card">
+                <div class="card-header">
+                    <h2 class="card-title">Bilgi</h2>
+                </div>
+                <p style="color: #6c757d; font-size: 14px;">
+                    Bu sayfada tüm site çevirilerini yönetebilirsiniz. Değişikliklerinizi yaptıktan sonra
+                    "Kaydet" butonuna tıklamayı unutmayın. Çeviriler anında siteye yansıyacaktır.
+                </p>
+                <p style="color: #6c757d; font-size: 14px; margin-top: 10px;">
+                    <strong>Desteklenen Diller:</strong> Türkçe (TR), İngilizce (EN), Rusça (RU)
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/admin-sidebar.js"></script>
+    <script src="/js/admin.js"></script>
+</body>
+
+</html>

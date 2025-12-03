@@ -1,0 +1,197 @@
+{
+  "companyInfo": {
+    "logo": "/images/ayermak.png",
+    "description": {
+      "tr": "35 yılı aşkın tecrübesiyle tarım makineleri üretimi yapan AYERMAK, kaliteli ve güvenilir çözümler sunmaktadır.",
+      "en": "With over 35 years of experience, AYERMAK manufactures agricultural machinery and provides quality and reliable solutions.",
+      "ru": "Имея более чем 35-летний опыт, AYERMAK производит сельскохозяйственную технику и предоставляет качественные и надежные решения."
+    }
+  },
+  "socialLinks": {
+    "enabled": true,
+    "items": [
+      {
+        "id": "facebook",
+        "name": "Facebook",
+        "url": "https://www.facebook.com/p/AY-ERMAK-61557386786939/?locale=tr_TR",
+        "icon": "facebook",
+        "enabled": true
+      },
+      {
+        "id": "instagram",
+        "name": "Instagram",
+        "url": "https://www.instagram.com/ayermaktarimaletleri/",
+        "icon": "instagram",
+        "enabled": true
+      },
+      {
+        "id": "linkedin",
+        "name": "Whatsapp",
+        "url": "https://api.whatsapp.com/send/?phone=905448971227&text&type=phone_number&app_absent=0",
+        "icon": "whatsapp",
+        "enabled": true
+      }
+    ]
+  },
+  "contactInfo": {
+    "enabled": true,
+    "address": {
+      "tr": "Çorlu Çerkezköy Yolu Üzeri, Yulaflı Cad. No: 88, ERGENE / TEKİRDAĞ",
+      "en": "Çorlu Çerkezköy Road, Yulaflı St. No: 88, ERGENE / TEKİRDAĞ, Turkey",
+      "ru": "Дорога Чорлу Черкезкёй, ул. Юлафлы № 88, ЭРГЕНЕ / ТЕКИРДАГ, Турция"
+    },
+    "phones": [
+      {
+        "number": "+90 282 673 67 39",
+        "label": {
+          "tr": "Sabit Hat",
+          "en": "Landline",
+          "ru": "Стационарный"
+        }
+      },
+      {
+        "number": "+90 544 897 12 27",
+        "label": {
+          "tr": "Mobil",
+          "en": "Mobile",
+          "ru": "Мобильный"
+        }
+      }
+    ],
+    "email": "info@ayermak.com"
+  },
+  "menuSections": [
+    {
+      "id": "products",
+      "title": {
+        "tr": "Ürünler",
+        "en": "Products",
+        "ru": "Продукция"
+      },
+      "links": [
+        {
+          "id": "all-products",
+          "text": {
+            "tr": "Tüm Ürünler",
+            "en": "All Products",
+            "ru": "Все продукты"
+          },
+          "url": "/urunler"
+        },
+        {
+          "id": "cultivators",
+          "text": {
+            "tr": "Kültivatörler",
+            "en": "Cultivators",
+            "ru": "Культиваторы"
+          },
+          "url": "/urunler?category=kultivator"
+        },
+        {
+          "id": "trailers",
+          "text": {
+            "tr": "Römorklar",
+            "en": "Trailers",
+            "ru": "Прицепы"
+          },
+          "url": "/urunler?category=romork"
+        }
+      ]
+    },
+    {
+      "id": "corporate",
+      "title": {
+        "tr": "Kurumsal",
+        "en": "Corporate",
+        "ru": "Корпоративный"
+      },
+      "links": [
+        {
+          "id": "about",
+          "text": {
+            "tr": "Hakkımızda",
+            "en": "About Us",
+            "ru": "О нас"
+          },
+          "url": "/hakkimizda"
+        },
+        {
+          "id": "news",
+          "text": {
+            "tr": "Haberler",
+            "en": "News",
+            "ru": "Новости"
+          },
+          "url": "/haberler"
+        },
+        {
+          "id": "dealers",
+          "text": {
+            "tr": "Bayilerimiz",
+            "en": "Our Dealers",
+            "ru": "Наши дилеры"
+          },
+          "url": "/bayiler"
+        }
+      ]
+    }
+  ],
+  "legalLinks": {
+    "enabled": true,
+    "items": [
+      {
+        "id": "terms",
+        "text": {
+          "tr": "Kullanım Şartları",
+          "en": "Terms of Use",
+          "ru": "Условия использования"
+        },
+        "url": "/kullanim-sartlari"
+      },
+      {
+        "id": "privacy",
+        "text": {
+          "tr": "Gizlilik Politikası",
+          "en": "Privacy Policy",
+          "ru": "Политика конфиденциальности"
+        },
+        "url": "/gizlilik-politikasi"
+      },
+      {
+        "id": "cookies",
+        "text": {
+          "tr": "Çerez Politikası",
+          "en": "Cookie Policy",
+          "ru": "Политика файлов cookie"
+        },
+        "url": "/cerez-politikasi"
+      }
+    ]
+  },
+  "copyright": {
+    "text": {
+      "tr": "© {year} AYERMAK Tarım Makineleri. Tüm hakları saklıdır.",
+      "en": "© {year} AYERMAK Agricultural Machinery. All rights reserved.",
+      "ru": "© {year} AYERMAK Сельскохозяйственная техника. Все права защищены."
+    }
+  },
+  "newsletter": {
+    "enabled": false,
+    "title": {
+      "tr": "Bültenimize Abone Olun",
+      "en": "Subscribe to Our Newsletter",
+      "ru": "Подпишитесь на нашу рассылку"
+    },
+    "placeholder": {
+      "tr": "E-posta adresiniz",
+      "en": "Your email address",
+      "ru": "Ваш адрес электронной почты"
+    },
+    "buttonText": {
+      "tr": "Abone Ol",
+      "en": "Subscribe",
+      "ru": "Подписаться"
+    }
+  },
+  "updatedAt": "2025-12-02T17:00:31.665Z"
+}

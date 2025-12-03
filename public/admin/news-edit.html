@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYERMAK Admin - Haber Duzenle</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/admin-urun.css"> <!-- Reusing product editor styles -->
+    <link rel="icon" href="/images/ayermak.png" type="image/png">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="admin-body">
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <div id="adminSidebar" data-active="news"></div>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Top Bar -->
+            <div class="editor-topbar">
+                <div class="topbar-left">
+                    <a href="/admin/news.html" class="back-link">
+                        <i data-lucide="arrow-left"></i>
+                        Haberlere Don
+                    </a>
+                </div>
+                <div class="topbar-center">
+                    <h1 class="editor-title" id="pageTitle">Haber Ekle</h1>
+                </div>
+                <div class="topbar-right">
+                    <button class="save-btn" id="saveBtn" onclick="saveNews()">
+                        <i data-lucide="save"></i>
+                        Kaydet
+                    </button>
+                </div>
+            </div>
+
+            <!-- Editor Content -->
+            <div class="editor-layout single-column">
+                <div class="editor-content">
+
+                    <!-- Image Upload -->
+                    <div class="card">
+                        <div class="card-title">Haber Gorseli</div>
+                        <div class="image-uploader">
+                            <div class="upload-zone" id="imageUploadZone">
+                                <input type="file" id="imageInput" accept="image/*" hidden>
+                                <div class="upload-content">
+                                    <i data-lucide="upload-cloud"></i>
+                                    <span>Fotograf yuklemek icin tiklayin</span>
+                                </div>
+                            </div>
+                            <div class="image-preview" id="imagePreview"></div>
+                            <input type="hidden" id="newsImage">
+                        </div>
+                    </div>
+
+                    <!-- Content Tabs -->
+                    <div class="card">
+                        <div class="card-title">Icerik (3 Dil)</div>
+                        <div class="lang-tabs">
+                            <button class="lang-tab active" onclick="switchLang('tr')">
+                                <span class="flag flag-tr">TR</span> Turkce
+                            </button>
+                            <button class="lang-tab" onclick="switchLang('en')">
+                                <span class="flag flag-en">EN</span> English
+                            </button>
+                            <button class="lang-tab" onclick="switchLang('ru')">
+                                <span class="flag flag-ru">RU</span> Russki
+                            </button>
+                        </div>
+
+                        <!-- TR Fields -->
+                        <div id="fields-tr" class="lang-content active">
+                            <div class="form-field">
+                                <label>Baslik (TR)</label>
+                                <input type="text" id="titleTr" placeholder="Haber basligi">
+                            </div>
+                            <div class="form-field">
+                                <label>URL Slug (TR) <small style="color: #888;">- SEO icin URL yapisi (kucuk harf, tire ile ayrilmis)</small></label>
+                                <input type="text" id="slugTr" placeholder="ornek-haber-basligi">
+                            </div>
+                            <div class="form-field">
+                                <label>Ozet (TR)</label>
+                                <textarea id="summaryTr" rows="3"
+                                    placeholder="Kisa ozet (liste sayfasinda gorunecek)"></textarea>
+                            </div>
+                            <div class="form-field">
+                                <label>Icerik (TR)</label>
+                                <textarea id="contentTr" rows="10" placeholder="Haber icerigi..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- EN Fields -->
+                        <div id="fields-en" class="lang-content" style="display:none;">
+                            <div class="form-field">
+                                <label>Title (EN)</label>
+                                <input type="text" id="titleEn" placeholder="News title">
+                            </div>
+                            <div class="form-field">
+                                <label>URL Slug (EN) <small style="color: #888;">- SEO friendly URL (lowercase, hyphen-separated)</small></label>
+                                <input type="text" id="slugEn" placeholder="example-news-title">
+                            </div>
+                            <div class="form-field">
+                                <label>Summary (EN)</label>
+                                <textarea id="summaryEn" rows="3" placeholder="Short summary"></textarea>
+                            </div>
+                            <div class="form-field">
+                                <label>Content (EN)</label>
+                                <textarea id="contentEn" rows="10" placeholder="News content..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- RU Fields -->
+                        <div id="fields-ru" class="lang-content" style="display:none;">
+                            <div class="form-field">
+                                <label>Title (RU)</label>
+                                <input type="text" id="titleRu" placeholder="Заголовок новости">
+                            </div>
+                            <div class="form-field">
+                                <label>URL Slug (RU) <small style="color: #888;">- SEO URL (lowercase, hyphen-separated)</small></label>
+                                <input type="text" id="slugRu" placeholder="primer-zagolovka-novosti">
+                            </div>
+                            <div class="form-field">
+                                <label>Summary (RU)</label>
+                                <textarea id="summaryRu" rows="3" placeholder="Краткое содержание"></textarea>
+                            </div>
+                            <div class="form-field">
+                                <label>Content (RU)</label>
+                                <textarea id="contentRu" rows="10" placeholder="Содержание новости..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/admin-sidebar.js"></script>
+    <script src="/js/admin.js"></script>
+    <script src="/js/admin-news.js"></script>
+</body>
+
+</html>

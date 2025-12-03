@@ -1,0 +1,48 @@
+{
+  "emailSettings": {
+    "enabled": false,
+    "resendApiKey": "",
+    "notifyEmail": "",
+    "fromEmail": "AYERMAK <onboarding@resend.dev>",
+    "emailSubject": "Yeni İletişim Formu Mesajı"
+  },
+  "messages": [
+    {
+      "id": "miotryi4lt94qzvmy3h",
+      "name": "adsads",
+      "email": "restedrelaxed@gmail.com",
+      "phone": "05313150027",
+      "message": "dasadads",
+      "read": true,
+      "createdAt": "2025-12-02T17:01:33.676Z"
+    },
+    {
+      "id": "miotaib2e6hpwxuywf",
+      "name": "Test",
+      "email": "test@test.com",
+      "phone": "123456",
+      "message": "Test toast",
+      "read": true,
+      "createdAt": "2025-12-02T16:47:59.534Z"
+    },
+    {
+      "id": "miot5lbbywwmibmasu",
+      "name": "Muhammed Emin Kılıç",
+      "email": "deneme@gmail.com",
+      "phone": "0531232113",
+      "message": "1123123",
+      "read": false,
+      "createdAt": "2025-12-02T16:44:10.151Z"
+    },
+    {
+      "id": "miot2pfhkkjcydffnf",
+      "name": "Muhammed Kılıç",
+      "email": "restedrelaxed@gmail.com",
+      "phone": "05313150027",
+      "message": "Deneme mesaj içeriği",
+      "read": true,
+      "createdAt": "2025-12-02T16:41:55.517Z"
+    }
+  ],
+  "updatedAt": "2025-12-02T17:02:09.532Z"
+}

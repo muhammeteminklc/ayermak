@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYERMAK Admin - Footer Yönetimi</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="icon" href="/images/ayermak.png" type="image/png">
+    <style>
+        .footer-section {
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--admin-border);
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--admin-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title svg {
+            width: 20px;
+            height: 20px;
+            color: var(--admin-primary);
+        }
+
+        .lang-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .lang-tab {
+            padding: 8px 16px;
+            background: var(--admin-light);
+            border: 1px solid var(--admin-border);
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .lang-tab:hover {
+            border-color: var(--admin-primary);
+        }
+
+        .lang-tab.active {
+            background: var(--admin-primary);
+            border-color: var(--admin-primary);
+            color: white;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .form-row.single {
+            grid-template-columns: 1fr;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+            font-size: 13px;
+            color: var(--admin-dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid var(--admin-border);
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--admin-primary);
+            box-shadow: 0 0 0 3px rgba(232, 168, 36, 0.15);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .switch-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .switch {
+            position: relative;
+            width: 48px;
+            height: 26px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .switch-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #ccc;
+            border-radius: 26px;
+            transition: 0.3s;
+        }
+
+        .switch-slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 3px;
+            background: white;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        input:checked+.switch-slider {
+            background: var(--admin-primary);
+        }
+
+        input:checked+.switch-slider:before {
+            transform: translateX(22px);
+        }
+
+        .switch-label {
+            font-size: 14px;
+            color: var(--admin-dark);
+        }
+
+        .items-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .item-card {
+            background: var(--admin-light);
+            border: 1px solid var(--admin-border);
+            border-radius: 10px;
+            padding: 16px;
+        }
+
+        .item-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .item-card-title {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--admin-dark);
+        }
+
+        .item-card-actions {
+            display: flex;
+            gap: 6px;
+        }
+
+        .menu-section-card {
+            background: white;
+            border: 1px solid var(--admin-border);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        .menu-section-header {
+            padding: 16px;
+            background: var(--admin-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--admin-border);
+        }
+
+        .menu-section-body {
+            padding: 16px;
+        }
+
+        .link-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr auto;
+            gap: 12px;
+            align-items: center;
+            padding: 10px;
+            background: var(--admin-light);
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+
+        .link-item input {
+            padding: 8px 12px;
+            border: 1px solid var(--admin-border);
+            border-radius: 6px;
+            font-size: 13px;
+        }
+
+        .add-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 16px;
+            background: transparent;
+            border: 1px dashed var(--admin-border);
+            border-radius: 8px;
+            color: #6c757d;
+            cursor: pointer;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+
+        .add-btn:hover {
+            border-color: var(--admin-primary);
+            color: var(--admin-primary);
+        }
+
+        .add-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .preview-box {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 24px;
+            color: white;
+        }
+
+        .preview-title {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .preview-footer {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 24px;
+        }
+
+        .preview-col h4 {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .preview-col a,
+        .preview-col p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 13px;
+            display: block;
+            margin-bottom: 8px;
+            text-decoration: none;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 24px;
+        }
+
+        @media (max-width: 1200px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .sticky-preview {
+            position: sticky;
+            top: 28px;
+        }
+
+        .social-icon-picker {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .social-icon-btn {
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--admin-border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background: white;
+            transition: all 0.2s ease;
+        }
+
+        .social-icon-btn:hover {
+            border-color: var(--admin-primary);
+        }
+
+        .social-icon-btn.active {
+            background: var(--admin-primary);
+            border-color: var(--admin-primary);
+            color: white;
+        }
+
+        .social-icon-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .help-text {
+            font-size: 12px;
+            color: #6c757d;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+
+<body class="admin-body">
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <div id="adminSidebar" data-active="footer"></div>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <div class="admin-header">
+                <div>
+                    <p class="eyebrow">Site Yönetimi</p>
+                    <h1 class="admin-title">Footer Yönetimi</h1>
+                    <p class="admin-subtitle">Web sitenizin alt bilgi alanını düzenleyin</p>
+                </div>
+                <div class="header-actions">
+                    <button type="button" class="btn btn-secondary" onclick="resetChanges()">
+                        <span class="btn-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 12a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3L21 8M21 3v5h-5M21 12a9 9 0 0 1-9 9 9 9 0 0 1-6-2.3L3 16M3 21v-5h5"/>
+                            </svg>
+                        </span>
+                        Sıfırla
+                    </button>
+                    <button type="button" class="btn btn-primary" onclick="saveFooter()">
+                        <span class="btn-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+                                <polyline points="17 21 17 13 7 13 7 21"/>
+                                <polyline points="7 3 7 8 15 8"/>
+                            </svg>
+                        </span>
+                        Kaydet
+                    </button>
+                </div>
+            </div>
+
+            <!-- Language Tabs -->
+            <div class="lang-tabs">
+                <button type="button" class="lang-tab active" data-lang="tr">🇹🇷 Türkçe</button>
+                <button type="button" class="lang-tab" data-lang="en">🇬🇧 English</button>
+                <button type="button" class="lang-tab" data-lang="ru">🇷🇺 Русский</button>
+            </div>
+
+            <div class="content-grid">
+                <div class="main-content">
+                    <!-- Company Info Section -->
+                    <div class="admin-card footer-section">
+                        <div class="section-header">
+                            <h2 class="section-title">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5m-4 0h4"/>
+                                </svg>
+                                Firma Bilgileri
+                            </h2>
+                        </div>
+                        <div class="form-group">
+                            <label>Firma Açıklaması</label>
+                            <textarea id="companyDescription" rows="3" placeholder="Firma hakkında kısa açıklama..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info Section -->
+                    <div class="admin-card footer-section">
+                        <div class="section-header">
+                            <h2 class="section-title">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                İletişim Bilgileri
+                            </h2>
+                            <div class="switch-container">
+                                <label class="switch">
+                                    <input type="checkbox" id="contactEnabled" checked>
+                                    <span class="switch-slider"></span>
+                                </label>
+                                <span class="switch-label">Aktif</span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Telefon Numaraları (her satıra bir numara)</label>
+                                <textarea id="contactPhone" rows="2" placeholder="0 282 673 67 39&#10;0 544 897 12 27" style="resize:vertical;"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>E-posta</label>
+                                <input type="email" id="contactEmail" placeholder="info@ayermak.com.tr">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Adres</label>
+                            <textarea id="contactAddress" rows="2" placeholder="Firma adresi..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Social Links Section -->
+                    <div class="admin-card footer-section">
+                        <div class="section-header">
+                            <h2 class="section-title">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="18" cy="5" r="3"/>
+                                    <circle cx="6" cy="12" r="3"/>
+                                    <circle cx="18" cy="19" r="3"/>
+                                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                                </svg>
+                                Sosyal Medya Linkleri
+                            </h2>
+                            <div class="switch-container">
+                                <label class="switch">
+                                    <input type="checkbox" id="socialEnabled" checked>
+                                    <span class="switch-slider"></span>
+                                </label>
+                                <span class="switch-label">Aktif</span>
+                            </div>
+                        </div>
+                        <div id="socialLinksList" class="items-list"></div>
+                        <button type="button" class="add-btn" onclick="addSocialLink()">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"/>
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                            </svg>
+                            Sosyal Medya Ekle
+                        </button>
+                    </div>
+
+                    <!-- Menu Sections -->
+                    <div class="admin-card footer-section">
+                        <div class="section-header">
+                            <h2 class="section-title">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="8" y1="6" x2="21" y2="6"/>
+                                    <line x1="8" y1="12" x2="21" y2="12"/>
+                                    <line x1="8" y1="18" x2="21" y2="18"/>
+                                    <line x1="3" y1="6" x2="3.01" y2="6"/>
+                                    <line x1="3" y1="12" x2="3.01" y2="12"/>
+                                    <line x1="3" y1="18" x2="3.01" y2="18"/>
+                                </svg>
+                                Menü Bölümleri
+                            </h2>
+                        </div>
+                        <div id="menuSectionsList"></div>
+                        <button type="button" class="add-btn" onclick="addMenuSection()">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"/>
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                            </svg>
+                            Menü Bölümü Ekle
+                        </button>
+                    </div>
+
+                    <!-- Legal Links Section -->
+                    <div class="admin-card footer-section">
+                        <div class="section-header">
+                            <h2 class="section-title">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14 2 14 8 20 8"/>
+                                    <line x1="16" y1="13" x2="8" y2="13"/>
+                                    <line x1="16" y1="17" x2="8" y2="17"/>
+                                    <polyline points="10 9 9 9 8 9"/>
+                                </svg>
+                                Yasal Linkler
+                            </h2>
+                            <div class="switch-container">
+                                <label class="switch">
+                                    <input type="checkbox" id="legalEnabled" checked>
+                                    <span class="switch-slider"></span>
+                                </label>
+                                <span class="switch-label">Aktif</span>
+                            </div>
+                        </div>
+                        <div id="legalLinksList" class="items-list"></div>
+                        <button type="button" class="add-btn" onclick="addLegalLink()">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"/>
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                            </svg>
+                            Yasal Link Ekle
+                        </button>
+                    </div>
+
+                    <!-- Copyright Section -->
+                    <div class="admin-card footer-section">
+                        <div class="section-header">
+                            <h2 class="section-title">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M14.83 14.83a4 4 0 1 1 0-5.66"/>
+                                </svg>
+                                Telif Hakkı
+                            </h2>
+                        </div>
+                        <div class="form-group">
+                            <label>Telif Hakkı Metni</label>
+                            <input type="text" id="copyrightText" placeholder="© {year} AYERMAK. Tüm hakları saklıdır.">
+                            <p class="help-text">{year} otomatik olarak güncel yıl ile değiştirilir.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preview Sidebar -->
+                <div class="sticky-preview">
+                    <div class="admin-card">
+                        <div class="card-header" style="margin-bottom: 16px; padding-bottom: 12px;">
+                            <h3 class="card-title">Önizleme</h3>
+                        </div>
+                        <div class="preview-box" id="footerPreview">
+                            <!-- Preview will be rendered here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/admin-sidebar.js"></script>
+    <script src="/js/admin.js"></script>
+    <script src="/js/admin-footer.js"></script>
+</body>
+
+</html>
+

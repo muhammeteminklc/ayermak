@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AYERMAK Tarım Makineleri - Kaliteli tarım ekipmanları üreticisi">
+    <title>AYERMAK Tarım Makineleri</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/images/ayermak.png" type="image/png">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section - Agriplot Style -->
+    <section class="agriplot-hero" id="heroSection">
+        <div class="agriplot-hero-content">
+            <span class="agriplot-hero-badge" id="heroBadge">
+                <i data-lucide="grid-3x3"></i>
+                <span id="heroBadgeText"></span>
+            </span>
+            <h1 class="agriplot-hero-title" id="heroTitle"></h1>
+            <p class="agriplot-hero-desc" id="heroDesc"></p>
+            <div class="agriplot-hero-buttons">
+                <a href="/tr/urunler" class="agriplot-btn-primary" id="heroPrimaryBtn"></a>
+                <a href="/tr/iletisim" class="agriplot-btn-secondary" id="heroSecondaryBtn"></a>
+            </div>
+        </div>
+        <div class="agriplot-hero-image">
+            <img src="/images/homepage/hero-field.jpg" alt="Tarla" id="heroBgImage">
+        </div>
+    </section>
+
+    <!-- Feature Cards Section - Focofirm Style -->
+    <section class="focofirm-features" id="featureCardsSection">
+        <div class="container">
+            <div class="focofirm-features-grid">
+                <!-- Sol Kart -->
+                <div class="focofirm-feature-card" id="featureCard1">
+                    <div class="focofirm-feature-content">
+                        <h3 class="focofirm-feature-title" data-i18n-html="homepage.feature1Title">Daha Güçlü Bitkiler İçin <span class="highlight">Toprak Sağlığını</span> Geliştirme</h3>
+                        <p class="focofirm-feature-desc" data-i18n="homepage.feature1Desc">Sağlıklı toprak, sürdürülebilir uygulamalar sayesinde güçlü bitkiler yetiştirir.</p>
+                    </div>
+                    <div class="focofirm-feature-image">
+                        <img src="/images/homepage/feature1.png" alt="Feature 1">
+                    </div>
+                </div>
+
+                <!-- Orta Metin -->
+                <div class="focofirm-features-center">
+                    <h2 class="focofirm-features-title" data-i18n-html="homepage.featuresTitle">
+                        Transforming Agriculture<br>with Smart Solutions For<br><span class="highlight">Sustainable Future</span>
+                    </h2>
+                </div>
+
+                <!-- Sağ Kart -->
+                <div class="focofirm-feature-card" id="featureCard2">
+                    <div class="focofirm-feature-content">
+                        <h3 class="focofirm-feature-title" data-i18n-html="homepage.feature2Title">Teknolojiyle <span class="highlight">Entegre Tarım</span></h3>
+                        <p class="focofirm-feature-desc" data-i18n="homepage.feature2Desc">Teknoloji entegreli tarım, küresel çiftçiliği devrimleştiriyor.</p>
+                    </div>
+                    <div class="focofirm-feature-image">
+                        <img src="/images/homepage/feature2.png" alt="Feature 2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="focofirm-products" id="featuredProductsSection">
+        <div class="container">
+            <div class="focofirm-section-header">
+                <h2 class="focofirm-section-title" id="featuredTitle">Öne Çıkan Ürünleri İncelemek İster misiniz?</h2>
+                <p class="focofirm-section-subtitle" id="featuredSubtitle">AYERMAK ürünleri ile kalite ve güç bir arada.</p>
+            </div>
+            <div class="focofirm-products-wrapper">
+                <div class="focofirm-products-grid" id="featuredProductsGrid">
+                    <!-- Ürünler dinamik olarak yüklenecek -->
+                </div>
+                <div class="focofirm-view-all-side">
+                    <a href="/tr/urunler" class="focofirm-view-all-btn-nh" id="viewAllProductsBtn">
+                        <span data-i18n="homepage.viewAll">Tümü</span>
+                        <div class="nh-arrow-circle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="9 6 15 12 9 18"></polyline>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog/News Section -->
+    <section class="focofirm-blog" id="blogSection">
+        <div class="container">
+            <div class="focofirm-blog-header">
+                <h2 class="focofirm-blog-title" data-i18n-html="homepage.blogTitle">
+                    Blogumuz Aracılığıyla <span class="highlight">Tarımın Geleceğini</span> Keşfediyoruz
+                </h2>
+            </div>
+            <div class="focofirm-blog-grid" id="blogGrid">
+                <!-- Blog kartları dinamik olarak yüklenecek -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Stats Section -->
+    <section class="homepage-stats" id="statsSection">
+        <div class="container">
+            <div class="homepage-stats-grid" id="statsGrid">
+                <!-- İstatistikler dinamik olarak yüklenecek -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="homepage-contact-cta" id="contactCtaSection">
+        <div class="container">
+            <div class="homepage-contact-cta-content">
+                <h2 class="homepage-contact-cta-title" id="ctaTitle">Sizden Haber Bekliyoruz!</h2>
+                <p class="homepage-contact-cta-text" id="ctaText">Sorularınız veya ek bilgi için
+                    bize ulaşmaktan çekinmeyin. Size yardımcı olmak için buradayız.</p>
+                <a href="/tr/iletisim" class="homepage-contact-btn" id="ctaBtn">İLETİŞİM</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="/js/i18n.js"></script>
+    <script src="/js/layout.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/homepage.js"></script>
+    <script src="/js/announcement.js"></script>
+</body>
+
+</html>

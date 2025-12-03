@@ -1,0 +1,74 @@
+{
+  "hero": {
+    "badge": {
+      "tr": "İLETİŞİM",
+      "en": "CONTACT",
+      "ru": "КОНТАКТЫ"
+    },
+    "title": {
+      "tr": "Bize Ulaşın",
+      "en": "Get in Touch",
+      "ru": "Свяжитесь с нами"
+    },
+    "subtitle": {
+      "tr": "Sorularınız için bizimle iletişime geçin",
+      "en": "Feel free to reach out to us with any questions",
+      "ru": "Свяжитесь с нами по любым вопросам"
+    }
+  },
+  "info": {
+    "title": {
+      "tr": "Bize Ulaşın",
+      "en": "Get in Touch",
+      "ru": "Свяжитесь с нами"
+    },
+    "address": {
+      "tr": "Çorlu Çerkezköy Yolu Üzeri\nYulaflı Cad. No: 88\nERGENE / TEKİRDAĞ",
+      "en": "Çorlu Çerkezköy Road\nYulaflı St. No: 88\nERGENE / TEKİRDAĞ, Turkey",
+      "ru": "Дорога Чорлу Черкезкёй\nУл. Юлафлы № 88\nЭРГЕНЕ / ТЕКИРДАГ, Турция"
+    },
+    "addressLabel": {
+      "tr": "Adres",
+      "en": "Address",
+      "ru": "Адрес"
+    },
+    "phones": [
+      { "number": "+90 282 673 67 39", "label": { "tr": "Sabit Hat", "en": "Landline", "ru": "Стационарный" } },
+      { "number": "+90 544 897 12 27", "label": { "tr": "Mobil", "en": "Mobile", "ru": "Мобильный" } }
+    ],
+    "phoneLabel": {
+      "tr": "Telefon",
+      "en": "Phone",
+      "ru": "Телефон"
+    },
+    "email": "info@ayermak.com",
+    "emailLabel": {
+      "tr": "E-posta",
+      "en": "Email",
+      "ru": "Эл. почта"
+    }
+  },
+  "form": {
+    "title": {
+      "tr": "Mesaj Gönderin",
+      "en": "Send a Message",
+      "ru": "Отправить сообщение"
+    },
+    "labels": {
+      "name": { "tr": "Adınız Soyadınız", "en": "Your Name", "ru": "Ваше имя" },
+      "email": { "tr": "E-posta Adresiniz", "en": "Your Email", "ru": "Ваш email" },
+      "phone": { "tr": "Telefon Numaranız", "en": "Your Phone", "ru": "Ваш телефон" },
+      "message": { "tr": "Mesajınız", "en": "Your Message", "ru": "Ваше сообщение" },
+      "send": { "tr": "Mesaj Gönder", "en": "Send Message", "ru": "Отправить" }
+    },
+    "successMessage": {
+      "tr": "Mesajınız gönderildi! En kısa sürede size dönüş yapacağız.",
+      "en": "Your message has been sent! We will get back to you as soon as possible.",
+      "ru": "Ваше сообщение отправлено! Мы свяжемся с вами в ближайшее время."
+    }
+  },
+  "map": {
+    "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001.532408469131!2d27.8481648!3d41.210166799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b4de6eb7cb8015%3A0x3181e0dc4f48d24e!2sAysa%C3%A7%20M%C3%BChendislik%20Sa%C3%A7%20Metal%20Demir%20San.%20Tic%20Ltd.%20%C5%9Eti!5e0!3m2!1sen!2str!4v1764692454663!5m2!1sen!2str"
+  },
+  "updatedAt": "2025-12-02T10:00:00.000Z"
+}

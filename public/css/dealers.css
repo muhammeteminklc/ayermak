@@ -1,0 +1,983 @@
+/* ===== MODERN DEALERS PAGE STYLES ===== */
+
+/* SVG Size Fixes */
+.dealers-map-icon svg {
+    width: 32px !important;
+    height: 32px !important;
+}
+
+.certificate-card-date svg,
+.certificate-card-download svg {
+    width: 16px !important;
+    height: 16px !important;
+}
+
+.no-data svg {
+    width: 80px !important;
+    height: 80px !important;
+}
+
+/* ===== MODERN MAP MARKERS ===== */
+.modern-marker {
+    position: relative;
+}
+
+.marker-dot {
+    width: 14px;
+    height: 14px;
+    background: #FABF1E;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    transition: transform 0.2s ease;
+}
+
+.modern-marker:hover .marker-dot {
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.marker-pulse {
+    width: 40px;
+    height: 40px;
+    background: rgba(250, 191, 30, 0.25);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 2s ease-out infinite;
+    z-index: 1;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* ===== MODERN POPUP STYLES ===== */
+.leaflet-popup-content-wrapper {
+    border-radius: 16px !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12) !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border: none !important;
+}
+
+.leaflet-popup-content {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-width: 220px !important;
+    max-width: 280px !important;
+}
+
+.leaflet-popup-tip {
+    background: #fff !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+.leaflet-popup-close-button {
+    top: 12px !important;
+    right: 12px !important;
+    width: 24px !important;
+    height: 24px !important;
+    background: #f5f5f5 !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 16px !important;
+    color: #666 !important;
+    transition: all 0.2s ease !important;
+}
+
+.leaflet-popup-close-button:hover {
+    background: #1a1a1a !important;
+    color: #fff !important;
+}
+
+.modern-popup {
+    padding: 20px;
+}
+
+.modern-popup-header {
+    margin-bottom: 8px;
+}
+
+.modern-popup-badge {
+    display: inline-block;
+    background: rgba(250, 191, 30, 0.12);
+    color: #b8860b;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.modern-popup-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 6px 0;
+    line-height: 1.3;
+}
+
+.modern-popup-address {
+    font-size: 13px;
+    color: #666;
+    margin: 0 0 16px 0;
+    line-height: 1.5;
+}
+
+.modern-popup-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.modern-popup-btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+    border-radius: 10px;
+    color: #666;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.modern-popup-btn:hover {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+.modern-popup-btn.primary {
+    background: #FABF1E;
+    color: #1a1a1a;
+}
+
+.modern-popup-btn.primary:hover {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+/* ===== MODERN ZOOM CONTROLS ===== */
+.leaflet-control-zoom {
+    border: none !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+}
+
+.leaflet-control-zoom a {
+    width: 36px !important;
+    height: 36px !important;
+    line-height: 36px !important;
+    background: #fff !important;
+    color: #1a1a1a !important;
+    border: none !important;
+    font-size: 18px !important;
+    font-weight: 300 !important;
+    transition: all 0.2s ease !important;
+}
+
+.leaflet-control-zoom a:hover {
+    background: #f5f5f5 !important;
+    color: #1a1a1a !important;
+}
+
+.leaflet-control-zoom a:first-child {
+    border-radius: 12px 12px 0 0 !important;
+}
+
+.leaflet-control-zoom a:last-child {
+    border-radius: 0 0 12px 12px !important;
+}
+
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+    border-bottom: 1px solid #f0f0f0 !important;
+}
+
+/* Attribution */
+.leaflet-control-attribution {
+    background: rgba(255, 255, 255, 0.85) !important;
+    padding: 4px 10px !important;
+    font-size: 10px !important;
+    color: #999 !important;
+    border-radius: 8px !important;
+    margin: 8px !important;
+}
+
+.leaflet-control-attribution a {
+    color: #666 !important;
+}
+
+/* Dealers Hero Section */
+.dealers-hero {
+    position: relative;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 50%, #0f0f0f 100%);
+    overflow: hidden;
+    margin-top: 78px;
+}
+
+.dealers-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(ellipse at 30% 50%, rgba(250, 191, 30, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 50%, rgba(250, 191, 30, 0.1) 0%, transparent 50%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.6;
+}
+
+.dealers-hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.dealers-hero-badge {
+    display: inline-block;
+    background: var(--primary-yellow);
+    color: #1a1a1a;
+    padding: 8px 28px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 24px;
+    animation: fadeInUp 0.6s ease;
+}
+
+.dealers-hero-title {
+    font-size: clamp(36px, 5vw, 54px);
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+    animation: fadeInUp 0.6s ease 0.1s both;
+}
+
+.dealers-hero-subtitle {
+    font-size: clamp(16px, 2vw, 20px);
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+    animation: fadeInUp 0.6s ease 0.2s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Dealers Maps Section */
+.dealers-maps-section {
+    background: #f8f8f8;
+    padding: 80px 0;
+}
+
+.dealers-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.dealers-map-wrapper {
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f0f0;
+}
+
+.dealers-map-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 50px;
+    background: linear-gradient(135deg, #fafafa 0%, #fff 100%);
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.dealers-map-icon {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+    background: linear-gradient(135deg, var(--primary-yellow) 0%, #e6a800 100%);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(250, 191, 30, 0.35);
+}
+
+.dealers-map-icon.international {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.dealers-map-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke: #fff;
+    stroke-width: 2;
+}
+
+.dealers-map-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 0 0 6px 0;
+    letter-spacing: -0.5px;
+}
+
+.dealers-map-subtitle {
+    font-size: 15px;
+    color: #666;
+    margin: 0;
+}
+
+/* Map Container */
+.dealers-map {
+    width: 100%;
+    height: 400px;
+    background: #f9fafb;
+    position: relative;
+}
+
+/* ===== MODERN DEALERS LIST ===== */
+.dealers-list {
+    padding: 24px 40px 40px;
+    background: #fafafa;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+}
+
+/* Modern Dealer Card */
+.modern-dealer-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #f0f0f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.modern-dealer-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-color: #e8e8e8;
+}
+
+.modern-dealer-indicator {
+    width: 4px;
+    height: 100%;
+    background: #FABF1E;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 0 4px 4px 0;
+    transform: scaleY(0);
+    transition: transform 0.25s ease;
+}
+
+.modern-dealer-card:hover .modern-dealer-indicator {
+    transform: scaleY(1);
+}
+
+.modern-dealer-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.modern-dealer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+
+.modern-dealer-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.modern-dealer-city {
+    font-size: 11px;
+    font-weight: 500;
+    color: #b8860b;
+    background: rgba(250, 191, 30, 0.1);
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.modern-dealer-address {
+    font-size: 13px;
+    color: #666;
+    margin: 0 0 12px 0;
+    line-height: 1.5;
+}
+
+/* Contact Info Section */
+.modern-dealer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.modern-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #555;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    padding: 4px 0;
+}
+
+.modern-contact-item:hover {
+    color: #FABF1E;
+}
+
+.modern-contact-item svg {
+    width: 14px;
+    height: 14px;
+    min-width: 14px;
+    stroke: #999;
+    transition: stroke 0.2s ease;
+}
+
+.modern-contact-item:hover svg {
+    stroke: #FABF1E;
+}
+
+.modern-contact-item span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Footer Section */
+.modern-dealer-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.modern-website-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #888;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.modern-website-link:hover {
+    color: #1a1a1a;
+}
+
+.modern-website-link svg {
+    width: 14px;
+    height: 14px;
+    stroke: #888;
+    transition: stroke 0.2s ease;
+}
+
+.modern-website-link:hover svg {
+    stroke: #1a1a1a;
+}
+
+.modern-dealer-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.modern-action-btn {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+    border-radius: 8px;
+    color: #666;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.modern-action-btn:hover {
+    background: #FABF1E;
+    color: #1a1a1a;
+}
+
+.modern-view-map {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+    font-size: 12px;
+    font-weight: 500;
+    color: #999;
+    transition: color 0.2s ease;
+}
+
+.modern-dealer-card:hover .modern-view-map {
+    color: #FABF1E;
+}
+
+/* Certificates Section */
+.certificates-section {
+    background: linear-gradient(135deg, #fff 0%, #fafafa 100%);
+    padding: 80px 0 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+.certificates-section::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(250, 191, 30, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.certificates-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.certificates-badge {
+    display: inline-block;
+    background: rgba(250, 191, 30, 0.1);
+    color: var(--primary-yellow);
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(250, 191, 30, 0.2);
+}
+
+.section-title {
+    font-size: clamp(32px, 4vw, 44px);
+    font-weight: 900;
+    color: #1a1a1a;
+    margin: 0 0 12px 0;
+    letter-spacing: -1px;
+}
+
+.section-subtitle {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 32px;
+}
+
+.certificate-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+    position: relative;
+}
+
+.certificate-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-yellow), #e6a800);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.certificate-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+    border-color: rgba(250, 191, 30, 0.3);
+}
+
+.certificate-card:hover::before {
+    transform: scaleX(1);
+}
+
+.certificate-card-image {
+    width: 100%;
+    height: 280px;
+    background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.certificate-card-image::before {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 180px;
+    font-weight: 900;
+    color: rgba(250, 191, 30, 0.05);
+    z-index: 0;
+}
+
+.certificate-card-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.certificate-card:hover .certificate-card-image img {
+    transform: scale(1.05);
+}
+
+.certificate-card-content {
+    padding: 28px;
+}
+
+.certificate-card-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 10px 0;
+    line-height: 1.3;
+}
+
+.certificate-card-description {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 16px 0;
+    line-height: 1.6;
+}
+
+.certificate-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.certificate-card-date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #888;
+}
+
+.certificate-card-date svg {
+    width: 16px;
+    height: 16px;
+    stroke: var(--primary-yellow);
+}
+
+.certificate-card-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: var(--primary-yellow);
+    color: #1a1a1a;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.certificate-card-download:hover {
+    background: #1a1a1a;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.certificate-card-download svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* No Data State */
+.no-data {
+    text-align: center;
+    padding: 60px 20px;
+    color: #999;
+}
+
+.no-data svg {
+    width: 80px;
+    height: 80px;
+    stroke: #ddd;
+    margin-bottom: 20px;
+}
+
+.no-data h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #666;
+    margin: 0 0 8px 0;
+}
+
+.no-data p {
+    font-size: 14px;
+    color: #999;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .dealers-container {
+        padding: 0 30px;
+    }
+
+    .certificates-container {
+        padding: 0 30px;
+    }
+
+    .dealers-map-header {
+        padding: 30px 35px;
+    }
+
+    .dealers-list {
+        padding: 20px 30px 30px;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .dealers-hero {
+        height: 280px;
+        margin-top: 70px;
+    }
+
+    .dealers-hero-title {
+        font-size: 32px;
+    }
+
+    .dealers-hero-subtitle {
+        font-size: 16px;
+    }
+
+    .dealers-maps-section {
+        padding: 50px 0;
+    }
+
+    .dealers-container {
+        padding: 0 20px;
+        gap: 40px;
+    }
+
+    .certificates-container {
+        padding: 0 20px;
+    }
+
+    .dealers-map-wrapper {
+        border-radius: 18px;
+    }
+
+    .dealers-map-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px;
+    }
+
+    .dealers-map-icon {
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+    }
+
+    .dealers-map-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .dealers-map-title {
+        font-size: 24px;
+    }
+
+    .dealers-map {
+        height: 350px;
+    }
+
+    .dealers-list {
+        padding: 16px;
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .modern-dealer-card {
+        padding: 16px 20px;
+    }
+
+    .modern-dealer-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .modern-dealer-city {
+        align-self: flex-start;
+    }
+
+    .certificates-section {
+        padding: 60px 0 80px;
+    }
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .certificates-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 24px;
+    }
+
+    .certificate-card-image {
+        height: 220px;
+    }
+
+    .certificate-card-content {
+        padding: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dealers-hero {
+        height: 240px;
+    }
+
+    .dealers-hero-badge {
+        padding: 6px 20px;
+        font-size: 10px;
+    }
+
+    .dealers-hero-title {
+        font-size: 26px;
+    }
+
+    .dealers-hero-subtitle {
+        font-size: 14px;
+    }
+
+    .dealers-map {
+        height: 300px;
+    }
+
+    .modern-dealer-name {
+        font-size: 14px;
+    }
+
+    .modern-dealer-address {
+        font-size: 12px;
+    }
+
+    .modern-contact-item {
+        font-size: 12px;
+    }
+
+    .modern-contact-item span {
+        max-width: 180px;
+    }
+
+    .modern-dealer-footer {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .modern-action-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .modern-view-map span {
+        display: none;
+    }
+
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certificate-card-title {
+        font-size: 18px;
+    }
+}
+

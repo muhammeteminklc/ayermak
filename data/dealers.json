@@ -1,0 +1,84 @@
+{
+  "domestic": [
+    {
+      "id": "1",
+      "name": "Ankara Bayi",
+      "address": "Kızılcahamam Yolu 5. km",
+      "city": "Ankara",
+      "country": "Türkiye",
+      "phone": "+90 312 000 00 00",
+      "email": "ankara@ayermak.com",
+      "latitude": "39.933400",
+      "longitude": "32.859700",
+      "website": "",
+      "image": "/images/dealers/image-1764295531028-324572893.jpeg",
+      "type": "domestic"
+    },
+    {
+      "id": "2",
+      "name": "İstanbul Bayi",
+      "address": "Organize Sanayi Bölgesi",
+      "city": "İstanbul",
+      "country": "Türkiye",
+      "phone": "+90 212 000 00 00",
+      "email": "istanbul@ayermak.com",
+      "latitude": 41.0082,
+      "longitude": 28.9784,
+      "website": "",
+      "image": ""
+    },
+    {
+      "id": "",
+      "type": "domestic",
+      "latitude": "40.866564",
+      "longitude": "29.327574",
+      "name": "Deneme Bayii",
+      "city": "İstanbul",
+      "country": "Türkiye",
+      "address": "Tuzla, Nazik Sk. No: 48, 34953",
+      "phone": "",
+      "email": "",
+      "website": "",
+      "image": ""
+    },
+    {
+      "id": "",
+      "type": "domestic",
+      "latitude": "39.823702",
+      "longitude": "43.091211",
+      "name": "Ağrı Bayii",
+      "city": "Ağrı",
+      "country": "Türkiye",
+      "address": "Ağrı - Kağızman Yolu",
+      "phone": "+0212 521 32 21",
+      "email": "admin@example.com",
+      "website": "https://www.ayermak.com",
+      "image": ""
+    }
+  ],
+  "international": [
+    {
+      "id": "3",
+      "name": "Germany Dealer",
+      "address": "Industriestraße 123",
+      "city": "Berlin",
+      "country": "Germany",
+      "phone": "+49 30 000 0000",
+      "email": "berlin@ayermak.com",
+      "latitude": 52.52,
+      "longitude": 13.405,
+      "website": "",
+      "image": ""
+    }
+  ],
+  "certificates": [
+    {
+      "id": "1",
+      "title": "ISO 9001 Sertifikası",
+      "description": "Kalite Yönetim Sistemi Sertifikası",
+      "image": "/images/certificates/image-1764296309617-100355017.png",
+      "file": "",
+      "date": "2024-01-15"
+    }
+  ]
+}

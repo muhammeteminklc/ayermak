@@ -1,0 +1,33 @@
+{
+  "id": "announcement-1764697118724",
+  "enabled": true,
+  "image": "announcement-1764687736305-604855930.jpeg",
+  "title": {
+    "tr": "Yeni Modelimiz Yayında",
+    "en": "Construction machines",
+    "ru": ""
+  },
+  "description": {
+    "tr": "Son teknolojiyle hazırlanan modelimiz yayında!",
+    "en": "",
+    "ru": ""
+  },
+  "button": {
+    "text": {
+      "tr": "Ürünü İncele",
+      "en": "Details",
+      "ru": "Подробности"
+    },
+    "links": {
+      "tr": "/tr/urunler",
+      "en": "/tr/urunler",
+      "ru": "/tr/urunler"
+    }
+  },
+  "displaySettings": {
+    "maxViewsPerUser": 3,
+    "resetIntervalMinutes": 180
+  },
+  "updatedAt": "2025-12-02T17:38:38.724Z",
+  "regenerateId": true
+}

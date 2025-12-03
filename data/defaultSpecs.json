@@ -1,0 +1,281 @@
+{
+  "specs": [
+    {
+      "key": "model",
+      "icon": "tag",
+      "labels": {
+        "tr": "Model (Tip)",
+        "en": "Model (Type)",
+        "ru": "Модель (Тип)"
+      },
+      "defaultUnit": { "tr": "", "en": "", "ru": "" }
+    },
+    {
+      "key": "workingWidth",
+      "icon": "move-horizontal",
+      "labels": {
+        "tr": "Çalışma Genişliği",
+        "en": "Working Width",
+        "ru": "Рабочая ширина"
+      },
+      "defaultUnit": { "tr": "m", "en": "m", "ru": "м" }
+    },
+    {
+      "key": "isGenisligi",
+      "icon": "ruler",
+      "labels": {
+        "tr": "İş Genişliği",
+        "en": "Working Width",
+        "ru": "Ширина обработки"
+      },
+      "defaultUnit": { "tr": "mm", "en": "mm", "ru": "мм" }
+    },
+    {
+      "key": "diskSayisi",
+      "icon": "disc",
+      "labels": {
+        "tr": "Disk Sayısı",
+        "en": "Disc Count",
+        "ru": "Количество дисков"
+      },
+      "defaultUnit": { "tr": "adet", "en": "pcs", "ru": "шт" }
+    },
+    {
+      "key": "diskCapi",
+      "icon": "circle",
+      "labels": {
+        "tr": "Disk Çapı",
+        "en": "Disc Diameter",
+        "ru": "Диаметр диска"
+      },
+      "defaultUnit": { "tr": "mm", "en": "mm", "ru": "мм" }
+    },
+    {
+      "key": "diskAraMesafe",
+      "icon": "space",
+      "labels": {
+        "tr": "Disk Ara Mesafe",
+        "en": "Disc Spacing",
+        "ru": "Межосевое расстояние"
+      },
+      "defaultUnit": { "tr": "mm", "en": "mm", "ru": "мм" }
+    },
+    {
+      "key": "yatakSayisi",
+      "icon": "settings",
+      "labels": {
+        "tr": "Yatak Sayısı",
+        "en": "Bearing Count",
+        "ru": "Количество подшипников"
+      },
+      "defaultUnit": { "tr": "adet", "en": "pcs", "ru": "шт" }
+    },
+    {
+      "key": "anaSaseEbat",
+      "icon": "square",
+      "labels": {
+        "tr": "Ana Şasi Ebatları",
+        "en": "Main Chassis Dimensions",
+        "ru": "Размеры основной рамы"
+      },
+      "defaultUnit": { "tr": "mm", "en": "mm", "ru": "мм" }
+    },
+    {
+      "key": "azamiAgirlik",
+      "icon": "weight",
+      "labels": {
+        "tr": "Azami Ağırlık",
+        "en": "Maximum Weight",
+        "ru": "Максимальный вес"
+      },
+      "defaultUnit": { "tr": "kg", "en": "kg", "ru": "кг" }
+    },
+    {
+      "key": "diskSaseEbat",
+      "icon": "layers",
+      "labels": {
+        "tr": "Disk Şasi Ebatları",
+        "en": "Disc Chassis Dimensions",
+        "ru": "Размеры рамы дисков"
+      },
+      "defaultUnit": { "tr": "mm", "en": "mm", "ru": "мм" }
+    },
+    {
+      "key": "toplamUzunluk",
+      "icon": "arrow-right",
+      "labels": {
+        "tr": "Toplam Uzunluk",
+        "en": "Total Length",
+        "ru": "Общая длина"
+      },
+      "defaultUnit": { "tr": "mm", "en": "mm", "ru": "мм" }
+    },
+    {
+      "key": "toplamYukseklik",
+      "icon": "arrow-up",
+      "labels": {
+        "tr": "Toplam Yükseklik",
+        "en": "Total Height",
+        "ru": "Общая высота"
+      },
+      "defaultUnit": { "tr": "mm", "en": "mm", "ru": "мм" }
+    },
+    {
+      "key": "toplamGenislik",
+      "icon": "move-horizontal",
+      "labels": {
+        "tr": "Toplam Genişlik",
+        "en": "Total Width",
+        "ru": "Общая ширина"
+      },
+      "defaultUnit": { "tr": "mm", "en": "mm", "ru": "мм" }
+    },
+    {
+      "key": "calismaGucu",
+      "icon": "zap",
+      "labels": {
+        "tr": "Çalışma Gücü",
+        "en": "Working Power",
+        "ru": "Рабочая мощность"
+      },
+      "defaultUnit": { "tr": "hp/kW", "en": "hp/kW", "ru": "л.с./кВт" }
+    },
+    {
+      "key": "ayakSayisi",
+      "icon": "anchor",
+      "labels": {
+        "tr": "Ayak Sayısı",
+        "en": "Leg Count",
+        "ru": "Количество ног"
+      },
+      "defaultUnit": { "tr": "adet", "en": "pcs", "ru": "шт" }
+    },
+    {
+      "key": "calismaDerinligi",
+      "icon": "arrow-down",
+      "labels": {
+        "tr": "Çalışma Derinliği",
+        "en": "Working Depth",
+        "ru": "Глубина обработки"
+      },
+      "defaultUnit": { "tr": "mm", "en": "mm", "ru": "мм" }
+    },
+    {
+      "key": "ayakMesafesi",
+      "icon": "git-commit-horizontal",
+      "labels": {
+        "tr": "Ayak Mesafesi",
+        "en": "Leg Spacing",
+        "ru": "Расстояние между ногами"
+      },
+      "defaultUnit": { "tr": "mm", "en": "mm", "ru": "мм" }
+    },
+    {
+      "key": "gerekliGuc",
+      "icon": "gauge",
+      "labels": {
+        "tr": "Gerekli Güç",
+        "en": "Required Power",
+        "ru": "Требуемая мощность"
+      },
+      "defaultUnit": { "tr": "HP", "en": "HP", "ru": "л.с." }
+    },
+    {
+      "key": "kapasite",
+      "icon": "box",
+      "labels": {
+        "tr": "Kapasite",
+        "en": "Capacity",
+        "ru": "Грузоподъемность"
+      },
+      "defaultUnit": { "tr": "ton", "en": "ton", "ru": "т" }
+    },
+    {
+      "key": "uzunluk",
+      "icon": "ruler",
+      "labels": {
+        "tr": "Uzunluk",
+        "en": "Length",
+        "ru": "Длина"
+      },
+      "defaultUnit": { "tr": "mm", "en": "mm", "ru": "мм" }
+    },
+    {
+      "key": "genislik",
+      "icon": "ruler",
+      "labels": {
+        "tr": "Genişlik",
+        "en": "Width",
+        "ru": "Ширина"
+      },
+      "defaultUnit": { "tr": "mm", "en": "mm", "ru": "мм" }
+    },
+    {
+      "key": "kapakYuksekligi",
+      "icon": "chevron-up",
+      "labels": {
+        "tr": "Kapak Yüksekliği",
+        "en": "Lid Height",
+        "ru": "Высота крышки"
+      },
+      "defaultUnit": { "tr": "mm", "en": "mm", "ru": "мм" }
+    },
+    {
+      "key": "ilaveYuksekligi",
+      "icon": "plus-circle",
+      "labels": {
+        "tr": "İlave Yüksekliği",
+        "en": "Extension Height",
+        "ru": "Высота надставки"
+      },
+      "defaultUnit": { "tr": "mm", "en": "mm", "ru": "мм" }
+    },
+    {
+      "key": "lastikEbadi",
+      "icon": "circle-dot",
+      "labels": {
+        "tr": "Lastik Ebadı",
+        "en": "Tire Size",
+        "ru": "Размер шин"
+      },
+      "defaultUnit": { "tr": "", "en": "", "ru": "" }
+    },
+    {
+      "key": "arisUzunlugu",
+      "icon": "link",
+      "labels": {
+        "tr": "Arış Uzunluğu",
+        "en": "Drawbar Length",
+        "ru": "Длина дышла"
+      },
+      "defaultUnit": { "tr": "mm", "en": "mm", "ru": "мм" }
+    },
+    {
+      "key": "pistonSistemi",
+      "icon": "cylinder",
+      "labels": {
+        "tr": "Piston Sistemi",
+        "en": "Piston System",
+        "ru": "Поршневая система"
+      },
+      "defaultUnit": { "tr": "", "en": "", "ru": "" }
+    },
+    {
+      "key": "frenSistemi",
+      "icon": "octagon",
+      "labels": {
+        "tr": "Fren Sistemi",
+        "en": "Brake System",
+        "ru": "Тормозная система"
+      },
+      "defaultUnit": { "tr": "", "en": "", "ru": "" }
+    }
+  ],
+  "categories": [
+    { "id": "measurement", "tr": "Ölçüm", "en": "Measurement", "ru": "Измерение", "icons": ["ruler", "move-horizontal", "arrow-right", "arrow-up", "arrow-down", "space"] },
+    { "id": "power", "tr": "Güç", "en": "Power", "ru": "Мощность", "icons": ["zap", "gauge", "settings"] },
+    { "id": "structure", "tr": "Yapı", "en": "Structure", "ru": "Конструкция", "icons": ["square", "layers", "box", "cylinder"] },
+    { "id": "wheel", "tr": "Tekerlek/Disk", "en": "Wheel/Disc", "ru": "Колесо/Диск", "icons": ["disc", "circle", "circle-dot"] },
+    { "id": "general", "tr": "Genel", "en": "General", "ru": "Общее", "icons": ["tag", "anchor", "link", "octagon", "plus-circle", "chevron-up", "git-commit-horizontal", "weight"] }
+  ]
+}

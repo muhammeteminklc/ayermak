@@ -1,0 +1,887 @@
+{
+  "products": [
+    {
+      "id": "patlatma",
+      "slug": {
+        "tr": "patlatma",
+        "en": "subsoiler",
+        "ru": "glubokorykhlitel"
+      },
+      "defaultImage": "ürün1.png",
+      "category": "patlatma",
+      "order": 1,
+      "specs": {
+        "workingWidth": {
+          "icon": "move-horizontal",
+          "values": {
+            "tr": {
+              "value": "3.0",
+              "unit": "m"
+            },
+            "en": {
+              "value": "3.0",
+              "unit": "m"
+            },
+            "ru": {
+              "value": "3.0",
+              "unit": "м"
+            }
+          }
+        },
+        "workingDepth": {
+          "icon": "arrow-down",
+          "values": {
+            "tr": {
+              "value": "45-60",
+              "unit": "cm"
+            },
+            "en": {
+              "value": "45-60",
+              "unit": "cm"
+            },
+            "ru": {
+              "value": "45-60",
+              "unit": "см"
+            }
+          }
+        },
+        "legCount": {
+          "icon": "anchor",
+          "values": {
+            "tr": {
+              "value": "5",
+              "unit": "adet"
+            },
+            "en": {
+              "value": "5",
+              "unit": "pcs"
+            },
+            "ru": {
+              "value": "5",
+              "unit": "шт"
+            }
+          }
+        },
+        "weight": {
+          "icon": "weight",
+          "values": {
+            "tr": {
+              "value": "1200",
+              "unit": "kg"
+            },
+            "en": {
+              "value": "1200",
+              "unit": "kg"
+            },
+            "ru": {
+              "value": "1200",
+              "unit": "кг"
+            }
+          }
+        }
+      },
+      "details": {
+        "tableColumns": [
+          {
+            "key": "width",
+            "unit": "m"
+          },
+          {
+            "key": "legs",
+            "unit": "Adet"
+          },
+          {
+            "key": "power",
+            "unit": "HPs"
+          },
+          {
+            "key": "weight",
+            "unit": "kg"
+          }
+        ],
+        "models": [
+          {
+            "id": "aym-p300",
+            "name": "AYM-P300",
+            "image": null,
+            "specs": {
+              "width": "2.5",
+              "legs": "3",
+              "power": "70",
+              "weight": "800"
+            }
+          },
+          {
+            "id": "aym-p400",
+            "name": "AYM-P400",
+            "image": null,
+            "specs": {
+              "width": "3.0",
+              "legs": "4",
+              "power": "90",
+              "weight": "1000"
+            }
+          },
+          {
+            "id": "aym-p500",
+            "name": "AYM-P500",
+            "image": null,
+            "specs": {
+              "width": "3.0",
+              "legs": "5",
+              "power": "110",
+              "weight": "1200"
+            }
+          },
+          {
+            "id": "aym-p600",
+            "name": "AYM-P600",
+            "image": null,
+            "specs": {
+              "width": "3.5",
+              "legs": "6",
+              "power": "130",
+              "weight": "1400"
+            }
+          },
+          {
+            "id": "aym-p700",
+            "name": "AYM-P700",
+            "image": null,
+            "specs": {
+              "width": "4.0",
+              "legs": "7",
+              "power": "150",
+              "weight": "1600"
+            }
+          }
+        ],
+        "technical": {
+          "ayakYapisi": "ayakYapisi",
+          "derinlikAyari": "derinlikAyari",
+          "saseYapisi": "saseYapisi"
+        },
+        "videoUrl": null,
+        "gallery": [],
+        "documents": [
+          {
+            "name": {
+              "tr": "Ürün kataolog",
+              "en": "product catolog",
+              "ru": "Каталог продукции"
+            },
+            "file": "1764283733288-191892788.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "id": "diskli-kultivator",
+      "slug": {
+        "tr": "diskli-kultivator",
+        "en": "disc-cultivator",
+        "ru": "diskovyy-kultivator"
+      },
+      "defaultImage": "ürün2.png",
+      "category": "kultivator",
+      "order": 2,
+      "specs": {
+        "discCount": {
+          "icon": "cylinder",
+          "values": {
+            "tr": {
+              "value": "24",
+              "unit": "adet"
+            },
+            "en": {
+              "value": "24",
+              "unit": "pcs"
+            },
+            "ru": {
+              "value": "24",
+              "unit": "шт"
+            }
+          }
+        },
+        "workingWidth": {
+          "icon": "move-horizontal",
+          "values": {
+            "tr": {
+              "value": "3.0",
+              "unit": "m"
+            },
+            "en": {
+              "value": "3.0",
+              "unit": "m"
+            },
+            "ru": {
+              "value": "3.0",
+              "unit": "м"
+            }
+          }
+        },
+        "weight": {
+          "icon": "weight",
+          "values": {
+            "tr": {
+              "value": "1850",
+              "unit": "kg"
+            },
+            "en": {
+              "value": "1850",
+              "unit": "kg"
+            },
+            "ru": {
+              "value": "1850",
+              "unit": "кг"
+            }
+          }
+        }
+      },
+      "details": {
+        "tableColumns": [
+          {
+            "key": "genislik",
+            "unit": "mm",
+            "icon": "ruler",
+            "highlighted": false
+          },
+          {
+            "key": "discs",
+            "unit": "Adet",
+            "icon": "battery-charging",
+            "highlighted": false
+          },
+          {
+            "key": "power",
+            "unit": "HP",
+            "highlighted": true
+          },
+          {
+            "key": "weight",
+            "unit": "kg"
+          }
+        ],
+        "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "models": [
+          {
+            "id": "ck-2501",
+            "name": "CK 2501",
+            "image": "1764274229229-75595642.png",
+            "specs": {
+              "discs": "20",
+              "power": "70",
+              "weight": "1150",
+              "genislik": "2.5"
+            }
+          },
+          {
+            "id": "ck-3001",
+            "name": "CK 3001",
+            "image": "1764274258010-485803440.png",
+            "specs": {
+              "discs": "24",
+              "power": "90",
+              "weight": "1350",
+              "genislik": "3.0"
+            }
+          },
+          {
+            "id": "ck-3501",
+            "name": "CK 3501",
+            "image": "1764274266814-301069872.jpg",
+            "specs": {
+              "discs": "28",
+              "power": "110",
+              "weight": "1450",
+              "genislik": "3.5"
+            }
+          },
+          {
+            "id": "ck-4001",
+            "name": "CK 4001",
+            "image": "1764274273808-545279351.png",
+            "specs": {
+              "discs": "32",
+              "power": "130",
+              "weight": "1600",
+              "genislik": "4.0"
+            }
+          },
+          {
+            "id": "ckplus-4001",
+            "name": "CKPLUS 4001",
+            "image": null,
+            "specs": {
+              "discs": "32",
+              "power": "130",
+              "weight": "2100",
+              "genislik": "4.0"
+            }
+          },
+          {
+            "id": "ckplus-5001",
+            "name": "CKPLUS 5001",
+            "image": null,
+            "specs": {
+              "discs": "40",
+              "power": "145",
+              "weight": "2670",
+              "genislik": "5.0"
+            }
+          },
+          {
+            "id": "ckplus-6001",
+            "name": "CKPLUS 6001",
+            "image": null,
+            "specs": {
+              "discs": "48",
+              "power": "160",
+              "weight": "2750",
+              "genislik": "6.0"
+            }
+          },
+          {
+            "id": "ckplus-7001",
+            "name": "CKPLUS 7001",
+            "image": null,
+            "specs": {
+              "discs": "56",
+              "power": "175",
+              "weight": "2850",
+              "genislik": "7.0"
+            }
+          }
+        ],
+        "technical": {
+          "rulmanSistemi": {
+            "icon": "layers"
+          },
+          "diskBaglantisi": {
+            "icon": "anchor"
+          },
+          "diskAcilari": "diskAcilari",
+          "diskYapisi": "diskYapisi",
+          "merdaneSistemi": "merdaneSistemi",
+          "calismaHizi": "calismaHizi"
+        },
+        "rollers": [
+          {
+            "id": "lastik-halkali",
+            "icon": "arrow-down"
+          },
+          {
+            "id": "kafesli",
+            "icon": "git-commit-horizontal"
+          },
+          {
+            "id": "disli",
+            "icon": "zap"
+          }
+        ],
+        "gallery": [
+          "1764268549531-146624545.jpeg",
+          "1764268552323-121364665.jpeg"
+        ],
+        "documents": [
+          {
+            "name": "Ayemark Katalog",
+            "file": "1764283733288-191892788.pdf"
+          }
+        ],
+        "videoTitle": {
+          "tr": "Ürün Tanıtımı",
+          "en": "Product Introduction",
+          "ru": "Презентация продукта"
+        },
+        "videoSubtitle": {
+          "tr": "Ürünü izleyin",
+          "en": "Watch Product in Action",
+          "ru": "Смотрите наш продукт в работе"
+        },
+        "featureIcons": [
+          "battery-charging",
+          "square",
+          "plus-circle",
+          "plus-circle",
+          "plus-circle",
+          "plus-circle",
+          "plus-circle"
+        ]
+      },
+      "categoryIcon": "package"
+    },
+    {
+      "id": "tandem-romork",
+      "slug": {
+        "tr": "tandem-romork",
+        "en": "tandem-trailer",
+        "ru": "tandemnyy-pritsep"
+      },
+      "defaultImage": "ürün3.png",
+      "category": "romork",
+      "order": 3,
+      "specs": {
+        "capacity": {
+          "icon": "box",
+          "values": {
+            "tr": {
+              "value": "12",
+              "unit": "ton"
+            },
+            "en": {
+              "value": "12",
+              "unit": "ton"
+            },
+            "ru": {
+              "value": "12",
+              "unit": "т"
+            }
+          }
+        },
+        "volume": {
+          "icon": "box",
+          "values": {
+            "tr": {
+              "value": "14",
+              "unit": "m³"
+            },
+            "en": {
+              "value": "14",
+              "unit": "m³"
+            },
+            "ru": {
+              "value": "14",
+              "unit": "м³"
+            }
+          }
+        },
+        "axleCount": {
+          "icon": "git-commit-horizontal",
+          "values": {
+            "tr": {
+              "value": "2",
+              "unit": "adet"
+            },
+            "en": {
+              "value": "2",
+              "unit": "pcs"
+            },
+            "ru": {
+              "value": "2",
+              "unit": "шт"
+            }
+          }
+        },
+        "tireSize": {
+          "icon": "circle-dot",
+          "values": {
+            "tr": {
+              "value": "11.5/80-15.3",
+              "unit": ""
+            },
+            "en": {
+              "value": "11.5/80-15.3",
+              "unit": ""
+            },
+            "ru": {
+              "value": "11.5/80-15.3",
+              "unit": ""
+            }
+          }
+        }
+      },
+      "details": {
+        "tableColumns": [
+          {
+            "key": "capacity",
+            "unit": "Ton"
+          },
+          {
+            "key": "volume",
+            "unit": "m³"
+          },
+          {
+            "key": "axles",
+            "unit": "Adet"
+          },
+          {
+            "key": "tires",
+            "unit": ""
+          },
+          {
+            "key": "motor_gucu",
+            "unit": "HP"
+          }
+        ],
+        "models": [
+          {
+            "id": "aym-tr8",
+            "name": "AYM-TR8",
+            "image": null,
+            "specs": {
+              "capacity": "8",
+              "volume": "10",
+              "axles": "2",
+              "tires": "10.0/75-15.3",
+              "motor_gucu": "13"
+            }
+          },
+          {
+            "id": "aym-tr10",
+            "name": "AYM-TR10",
+            "image": null,
+            "specs": {
+              "capacity": "10",
+              "volume": "12",
+              "axles": "2",
+              "tires": "11.5/80-15.3",
+              "motor_gucu": "15"
+            }
+          },
+          {
+            "id": "aym-tr12",
+            "name": "AYM-TR12",
+            "image": null,
+            "specs": {
+              "capacity": "12",
+              "volume": "14",
+              "axles": "2",
+              "tires": "11.5/80-15.3",
+              "motor_gucu": "12"
+            }
+          },
+          {
+            "id": "aym-tr14",
+            "name": "AYM-TR14",
+            "image": null,
+            "specs": {
+              "capacity": "14",
+              "volume": "16",
+              "axles": "2",
+              "tires": "385/65-22.5",
+              "motor_gucu": "14"
+            }
+          }
+        ],
+        "technical": {
+          "kasaYapisi": "kasaYapisi",
+          "devirmeSystem": "devirmeSystem",
+          "frenSistemi": "frenSistemi"
+        },
+        "videoUrl": null,
+        "gallery": [],
+        "documents": []
+      }
+    },
+    {
+      "id": "dingilli-romork",
+      "slug": {
+        "tr": "dingilli-romork",
+        "en": "single-axle-trailer",
+        "ru": "odnoosnyy-pritsep"
+      },
+      "defaultImage": "ürün4.png",
+      "category": "romork",
+      "order": 4,
+      "specs": {
+        "capacity": {
+          "icon": "box",
+          "values": {
+            "tr": {
+              "value": "8",
+              "unit": "ton"
+            },
+            "en": {
+              "value": "8",
+              "unit": "ton"
+            },
+            "ru": {
+              "value": "8",
+              "unit": "т"
+            }
+          }
+        },
+        "volume": {
+          "icon": "box",
+          "values": {
+            "tr": {
+              "value": "10",
+              "unit": "m³"
+            },
+            "en": {
+              "value": "10",
+              "unit": "m³"
+            },
+            "ru": {
+              "value": "10",
+              "unit": "м³"
+            }
+          }
+        },
+        "axleCount": {
+          "icon": "git-commit-horizontal",
+          "values": {
+            "tr": {
+              "value": "1",
+              "unit": "adet"
+            },
+            "en": {
+              "value": "1",
+              "unit": "pcs"
+            },
+            "ru": {
+              "value": "1",
+              "unit": "шт"
+            }
+          }
+        },
+        "tipping": {
+          "icon": "arrow-up",
+          "values": {
+            "tr": {
+              "value": "3",
+              "unit": "yön"
+            },
+            "en": {
+              "value": "3",
+              "unit": "dir"
+            },
+            "ru": {
+              "value": "3",
+              "unit": "напр."
+            }
+          }
+        }
+      },
+      "details": {
+        "tableColumns": [
+          {
+            "key": "capacity",
+            "unit": "Ton"
+          },
+          {
+            "key": "volume",
+            "unit": "m³"
+          },
+          {
+            "key": "tipping",
+            "unit": ""
+          },
+          {
+            "key": "tires",
+            "unit": ""
+          }
+        ],
+        "models": [
+          {
+            "id": "aym-sr5",
+            "name": "AYM-SR5",
+            "image": null,
+            "specs": {
+              "capacity": "5",
+              "volume": "6",
+              "tipping": "3 Yön",
+              "tires": "10.0/75-15.3"
+            }
+          },
+          {
+            "id": "aym-sr6",
+            "name": "AYM-SR6",
+            "image": null,
+            "specs": {
+              "capacity": "6",
+              "volume": "8",
+              "tipping": "3 Yön",
+              "tires": "10.0/75-15.3"
+            }
+          },
+          {
+            "id": "aym-sr8",
+            "name": "AYM-SR8",
+            "image": null,
+            "specs": {
+              "capacity": "8",
+              "volume": "10",
+              "tipping": "3 Yön",
+              "tires": "11.5/80-15.3"
+            }
+          },
+          {
+            "id": "aym-sr10",
+            "name": "AYM-SR10",
+            "image": null,
+            "specs": {
+              "capacity": "10",
+              "volume": "12",
+              "tipping": "3 Yön",
+              "tires": "11.5/80-15.3"
+            }
+          }
+        ],
+        "technical": {
+          "kasaYapisi": "kasaYapisi",
+          "devirmeSystem": "devirmeSystem",
+          "frenSistemi": "frenSistemi"
+        },
+        "videoUrl": null,
+        "gallery": [],
+        "documents": []
+      }
+    },
+    {
+      "id": "tiller",
+      "slug": {
+        "tr": "tirmik",
+        "en": "tiller",
+        "ru": "pochvoobrabatyvayushchaya-borona"
+      },
+      "defaultImage": "ürün5.jpg",
+      "category": "tiller",
+      "order": 5,
+      "specs": {
+        "tineCount": {
+          "icon": "anchor",
+          "values": {
+            "tr": {
+              "value": "13",
+              "unit": "adet"
+            },
+            "en": {
+              "value": "13",
+              "unit": "pcs"
+            },
+            "ru": {
+              "value": "13",
+              "unit": "шт"
+            }
+          }
+        },
+        "workingWidth": {
+          "icon": "move-horizontal",
+          "values": {
+            "tr": {
+              "value": "3.0",
+              "unit": "m"
+            },
+            "en": {
+              "value": "3.0",
+              "unit": "m"
+            },
+            "ru": {
+              "value": "3.0",
+              "unit": "м"
+            }
+          }
+        },
+        "workingDepth": {
+          "icon": "arrow-down",
+          "values": {
+            "tr": {
+              "value": "15-25",
+              "unit": "cm"
+            },
+            "en": {
+              "value": "15-25",
+              "unit": "cm"
+            },
+            "ru": {
+              "value": "15-25",
+              "unit": "см"
+            }
+          }
+        },
+        "weight": {
+          "icon": "weight",
+          "values": {
+            "tr": {
+              "value": "450",
+              "unit": "kg"
+            },
+            "en": {
+              "value": "450",
+              "unit": "kg"
+            },
+            "ru": {
+              "value": "450",
+              "unit": "кг"
+            }
+          }
+        }
+      },
+      "details": {
+        "tableColumns": [
+          {
+            "key": "width",
+            "unit": "m"
+          },
+          {
+            "key": "tines",
+            "unit": "Adet"
+          },
+          {
+            "key": "power",
+            "unit": "HP"
+          },
+          {
+            "key": "weight",
+            "unit": "kg"
+          }
+        ],
+        "models": [
+          {
+            "id": "aym-t200",
+            "name": "AYM-T200",
+            "image": null,
+            "specs": {
+              "width": "2.0",
+              "tines": "9",
+              "power": "45",
+              "weight": "320"
+            }
+          },
+          {
+            "id": "aym-t250",
+            "name": "AYM-T250",
+            "image": null,
+            "specs": {
+              "width": "2.5",
+              "tines": "11",
+              "power": "55",
+              "weight": "380"
+            }
+          },
+          {
+            "id": "aym-t300",
+            "name": "AYM-T300",
+            "image": null,
+            "specs": {
+              "width": "3.0",
+              "tines": "13",
+              "power": "65",
+              "weight": "450"
+            }
+          },
+          {
+            "id": "aym-t350",
+            "name": "AYM-T350",
+            "image": null,
+            "specs": {
+              "width": "3.5",
+              "tines": "15",
+              "power": "75",
+              "weight": "520"
+            }
+          }
+        ],
+        "technical": {
+          "tirmikYapisi": "tirmikYapisi",
+          "derinlikAyari": "derinlikAyari"
+        },
+        "videoUrl": null,
+        "gallery": [],
+        "documents": []
+      }
+    }
+  ]
+}

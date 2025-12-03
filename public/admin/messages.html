@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYERMAK Admin - Mesajlar</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/admin-urun.css">
+    <link rel="icon" href="/images/ayermak.png" type="image/png">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .messages-container {
+            padding: 20px;
+        }
+
+        .messages-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .messages-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .unread-badge {
+            background: #ef4444;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .messages-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .message-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            border-left: 4px solid #ddd;
+            transition: all 0.2s ease;
+        }
+
+        .message-card.unread {
+            border-left-color: #fabf1e;
+            background: #fffef8;
+        }
+
+        .message-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .message-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .message-sender {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .message-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .message-contact {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .message-contact a {
+            color: #b8860b;
+            text-decoration: none;
+        }
+
+        .message-contact a:hover {
+            text-decoration: underline;
+        }
+
+        .message-date {
+            font-size: 12px;
+            color: #999;
+            white-space: nowrap;
+        }
+
+        .message-body {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.6;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            white-space: pre-wrap;
+        }
+
+        .message-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .message-btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .message-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .message-btn.read-btn {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .message-btn.read-btn:hover {
+            background: #c8e6c9;
+        }
+
+        .message-btn.delete-btn {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        .message-btn.delete-btn:hover {
+            background: #ffcdd2;
+        }
+
+        .message-btn.reply-btn {
+            background: #e3f2fd;
+            color: #1565c0;
+        }
+
+        .message-btn.reply-btn:hover {
+            background: #bbdefb;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+        }
+
+        .empty-state svg {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 20px;
+            stroke: #ddd;
+        }
+
+        .empty-state h3 {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .empty-state p {
+            font-size: 14px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+        }
+
+        /* Email Settings Styles */
+        .email-settings-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .email-settings-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .email-settings-header h2 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin: 0;
+        }
+
+        .email-settings-header h2 svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .email-toggle-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .email-toggle-icon.open {
+            transform: rotate(180deg);
+        }
+
+        .email-settings-body {
+            display: none;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            margin-top: 20px;
+        }
+
+        .email-settings-body.open {
+            display: block;
+        }
+
+        .email-form-group {
+            margin-bottom: 20px;
+        }
+
+        .email-form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .email-form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+        }
+
+        .email-form-group input:focus {
+            outline: none;
+            border-color: #fabf1e;
+            box-shadow: 0 0 0 3px rgba(250, 191, 30, 0.15);
+        }
+
+        .email-form-group small {
+            display: block;
+            font-size: 12px;
+            color: #999;
+            margin-top: 6px;
+        }
+
+        .email-form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .email-toggle-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .email-toggle {
+            position: relative;
+            width: 50px;
+            height: 26px;
+            background: #ddd;
+            border-radius: 13px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .email-toggle.active {
+            background: #22c55e;
+        }
+
+        .email-toggle::after {
+            content: '';
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            background: white;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .email-toggle.active::after {
+            transform: translateX(24px);
+        }
+
+        .email-toggle-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .email-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .email-btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .email-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .email-btn.primary {
+            background: #fabf1e;
+            color: #1a1a1a;
+        }
+
+        .email-btn.primary:hover {
+            background: #e6a800;
+        }
+
+        .email-btn.secondary {
+            background: #e3f2fd;
+            color: #1565c0;
+        }
+
+        .email-btn.secondary:hover {
+            background: #bbdefb;
+        }
+
+        .email-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .email-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .email-status.enabled {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .email-status.disabled {
+            background: #fff3e0;
+            color: #e65100;
+        }
+
+        @media (max-width: 768px) {
+            .email-form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .message-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .message-actions {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body class="admin-body">
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <div id="adminSidebar" data-active="messages"></div>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <div class="messages-container">
+                <!-- Email Settings -->
+                <div class="email-settings-card">
+                    <div class="email-settings-header" onclick="toggleEmailSettings()">
+                        <h2>
+                            <i data-lucide="settings"></i>
+                            E-posta Bildirim Ayarları
+                        </h2>
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <div id="emailStatusBadge" class="email-status disabled">
+                                <i data-lucide="mail-x"></i>
+                                Bildirimler kapalı
+                            </div>
+                            <i data-lucide="chevron-down" class="email-toggle-icon" id="emailToggleIcon"></i>
+                        </div>
+                    </div>
+                    <div class="email-settings-body" id="emailSettingsBody">
+                        <div class="email-toggle-wrapper" style="margin-bottom: 25px;">
+                            <div class="email-toggle" id="emailEnabledToggle" onclick="toggleEmailEnabled(event)"></div>
+                            <span class="email-toggle-label">E-posta bildirimlerini etkinleştir</span>
+                        </div>
+
+                        <div class="email-form-row">
+                            <div class="email-form-group">
+                                <label for="resendApiKey">Resend API Anahtarı</label>
+                                <input type="password" id="resendApiKey" placeholder="re_xxxxxxxx...">
+                                <small>Resend.com'dan API anahtarınızı alabilirsiniz</small>
+                            </div>
+                            <div class="email-form-group">
+                                <label for="notifyEmail">Bildirim E-posta Adresi</label>
+                                <input type="email" id="notifyEmail" placeholder="admin@example.com">
+                                <small>Mesajlar bu adrese gönderilecek</small>
+                            </div>
+                        </div>
+
+                        <div class="email-form-row">
+                            <div class="email-form-group">
+                                <label for="fromEmail">Gönderen Adres</label>
+                                <input type="text" id="fromEmail" placeholder="AYERMAK <onboarding@resend.dev>">
+                                <small>Doğrulanmış domain veya onboarding@resend.dev</small>
+                            </div>
+                            <div class="email-form-group">
+                                <label for="emailSubject">E-posta Konusu</label>
+                                <input type="text" id="emailSubject" placeholder="Yeni İletişim Formu Mesajı">
+                            </div>
+                        </div>
+
+                        <div class="email-actions">
+                            <button class="email-btn primary" onclick="saveEmailSettings()">
+                                <i data-lucide="save"></i>
+                                Kaydet
+                            </button>
+                            <button class="email-btn secondary" onclick="testEmail()">
+                                <i data-lucide="send"></i>
+                                Test E-postası Gönder
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="messages-header">
+                    <h1 class="messages-title">
+                        <i data-lucide="mail"></i>
+                        Gelen Mesajlar
+                    </h1>
+                    <span class="unread-badge" id="unreadBadge" style="display: none;">0 okunmamış</span>
+                </div>
+
+                <div id="messagesList" class="messages-list">
+                    <div class="loading">
+                        <i data-lucide="loader-2" class="spin"></i>
+                        Yükleniyor...
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/admin-sidebar.js"></script>
+    <script src="/js/admin.js"></script>
+    <script src="/js/toast.js?v=3"></script>
+    <script src="/js/admin-messages.js?v=3"></script>
+</body>
+
+</html>

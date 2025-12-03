@@ -1,0 +1,947 @@
+{
+  "tr": {
+    "nav": {
+      "home": "Anasayfa",
+      "products": "Ürünler",
+      "dealers": "Bayilerimiz",
+      "news": "Haberler",
+      "about": "Hakkımızda",
+      "contact": "İletişim",
+      "allProducts": "Tüm Ürünler"
+    },
+    "categories": {
+      "patlatma": "PATLATMA",
+      "kultivator": "KÜLTİVATÖR",
+      "romork": "RÖMORK",
+      "tiller": "TİLLER",
+      "deneme": "deneme kategori"
+    },
+    "productNames": {
+      "patlatma": "Patlatma",
+      "diskli-kultivator": "Diskli Kültivatör",
+      "tandem-romork": "Tandem Tır Tipi Römork",
+      "dingilli-romork": "Dingilli Sofralı Römork",
+      "tiller": "Tiller"
+    },
+    "productShortNames": {
+      "patlatma": "Patlatma",
+      "diskli-kultivator": "Kültivatör",
+      "tandem-romork": "Tandem",
+      "dingilli-romork": "Dingilli",
+      "tiller": "Tiller"
+    },
+    "productDescriptions": {
+      "patlatma": "Sert ve sıkışmış toprakları derin işleyerek havalandıran, su geçirgenliğini artıran profesyonel tarım ekipmanı.",
+      "diskli-kultivator": "Anız ve bitki artıklarını parçalayarak toprağı ideal tohum yatağı hazırlığına getiren yüksek performanslı kültivatör.",
+      "tandem-romork": "Yüksek kapasiteli taşımacılık için tasarlanmış, dayanıklı ve güvenilir tandem dingilli römork.",
+      "dingilli-romork": "Çok yönlü devrilme özelliği ile pratik boşaltma imkanı sunan tek dingilli römork.",
+      "tiller": "Toprak işleme ve karıştırma için ideal, verimli ve dayanıklı tiller ekipmanı."
+    },
+    "products": {
+      "patlatma": {
+        "features": [
+          "Sert ve sıkışmış toprakları derinlemesine işler",
+          "Su geçirgenliğini artırarak kök gelişimini destekler",
+          "Güçlendirilmiş ayak yapısı ile uzun ömürlü kullanım",
+          "Hidrolik derinlik ayarı ile kolay kullanım",
+          "Yüksek kırılma mukavemeti"
+        ],
+        "technical": {
+          "ayakYapisi": "Özel alaşımlı çelikten üretilmiş, yüksek aşınma direncine sahip patlatma ayakları. Kolay değiştirilebilir uç sistemi.",
+          "derinlikAyari": "Hidrolik kontrollü derinlik ayar sistemi. 45-60 cm arasında ayarlanabilir çalışma derinliği.",
+          "saseYapisi": "Ağır hizmet tipi güçlendirilmiş şase. Yüksek mukavemetli kaynaklı konstrüksiyon."
+        }
+      },
+      "diskli-kultivator": {
+        "features": [
+          "Anız ve bitki artıklarını parçalayarak toprağı ideal şekilde karıştırır",
+          "Mısır, saman gibi yüzey atıklarını parçalar",
+          "Otlak ve nadas arazilerin gevşetilmesinde etkili",
+          "Organik gübrelerin toprağa karıştırılmasında kullanılır",
+          "Toprak şartlarına göre 15 km/s hıza kadar çıkabilir",
+          "Emsallerine göre daha az güç gerektirir - yakıt tasarrufu sağlar",
+          "Güçlendirilmiş şase ve iskelet yapısı"
+        ],
+        "technical": {
+          "rulmanSistemi": "Ömür boyu bakım gerektirmeyen yataklama sistemi. Merkezde çift sıra açılı temas bilyası, kaset tipi çelik contalar ve 2 parça O-ring sızdırmazlık sistemi",
+          "diskBaglantisi": "Her disk şaseye bağımsız olarak bağlı. 4 adet kauçuk silindir blok ile darbe emici süspansiyon sistemi",
+          "diskAcilari": "Ön disklerde 17°, arka disklerde 14° kesme açısı. Diskler arası mesafe 250mm standart",
+          "diskYapisi": "460mm veya 510mm çap seçenekleri. Çentikli veya düz tip diskler",
+          "merdaneSistemi": "Hidrolik kontrollü merdane sistemi. Yükseklik ve işleme derinliği hidrolik ayarlı",
+          "calismaHizi": "Yüksek hızda çalışma kapasitesi - 15 km/s'e kadar"
+        },
+        "rollers": {
+          "lastik-halkali": {
+            "type": "Lastik Halkalı Merdane",
+            "desc": "Ekim öncesi tohum yatağı hazırlığı için ideal, nemi muhafaza eder"
+          },
+          "kafesli": {
+            "type": "Kafesli (Borulu) Merdane",
+            "desc": "Kesek kırmak ve düzeltmek için kullanılır"
+          },
+          "disli": {
+            "type": "Dişli Merdane",
+            "desc": "Sebzecilikte kullanılır, tam yüzey sıkıştırması sağlar"
+          }
+        }
+      },
+      "tandem-romork": {
+        "features": [
+          "Yüksek taşıma kapasitesi",
+          "Güçlendirilmiş şase yapısı",
+          "Kolay manevra kabiliyeti",
+          "Uzun ömürlü lastikler",
+          "Hidrolik devrilme sistemi"
+        ],
+        "technical": {
+          "kasaYapisi": "Yüksek mukavemetli çelik sacdan üretilmiş kasa. Güçlendirilmiş köşe bağlantıları.",
+          "devirmeSystem": "Tek silindirli hidrolik devrilme sistemi. Geri devrilme açısı 50°.",
+          "frenSistemi": "Hidrolik fren sistemi. Tüm tekerleklerde fren."
+        }
+      },
+      "dingilli-romork": {
+        "features": [
+          "3 yönlü devrilme özelliği",
+          "Kompakt tasarım",
+          "Kolay kullanım",
+          "Dayanıklı yapı",
+          "Ekonomik fiyat"
+        ],
+        "technical": {
+          "kasaYapisi": "Yüksek mukavemetli çelik sacdan üretilmiş kasa. Güçlendirilmiş köşe bağlantıları.",
+          "devirmeSystem": "Çift silindirli 3 yönlü devrilme sistemi. Devrilme açısı 50°.",
+          "frenSistemi": "Mekanik el freni sistemi."
+        }
+      },
+      "tiller": {
+        "features": [
+          "Etkili toprak karıştırma",
+          "Ayarlanabilir çalışma derinliği",
+          "Dayanıklı tırmık yapısı",
+          "Hafif ve manevra kabiliyeti yüksek",
+          "Ekonomik işletme maliyeti"
+        ],
+        "technical": {
+          "tirmikYapisi": "Özel alaşımlı çelikten üretilmiş S tipi tırmıklar. Yüksek aşınma direnci.",
+          "derinlikAyari": "Mekanik derinlik ayar sistemi. 15-25 cm arası ayarlanabilir."
+        }
+      }
+    },
+    "specs": {
+      "workingWidth": "ÇALIŞMA GENİŞLİĞİ",
+      "workingDepth": "ÇALIŞMA DERİNLİĞİ",
+      "legCount": "AYAK SAYISI",
+      "weight": "AĞIRLIK",
+      "discCount": "DİSK SAYISI",
+      "discDiameter": "DİSK ÇAPI",
+      "capacity": "KAPASİTE",
+      "volume": "HACİM",
+      "axleCount": "DİNGİL SAYISI",
+      "tireSize": "LASTİK BOYUTU",
+      "tipping": "DEVİRME",
+      "tineCount": "TIRMIK SAYISI"
+    },
+    "modelSpecs": {
+      "width": "Genişlik",
+      "discs": "Disk",
+      "power": "Güç",
+      "weight": "Ağırlık",
+      "legs": "Ayak",
+      "tines": "Tırmık",
+      "capacity": "Kapasite",
+      "volume": "Hacim",
+      "axles": "Dingil",
+      "tires": "Lastik",
+      "tipping": "Devrilme",
+      "motor_gucu": "Motor Gücü",
+      "genislik": "Genişlik"
+    },
+    "homepage": {
+      "viewProduct": "Ürünü İncele",
+      "viewAll": "Tümü",
+      "viewAllProducts": "Tüm Ürünleri Gör",
+      "readMore": "Devamını Oku",
+      "newProduct": "YENİ ÜRÜN",
+      "latestNews": "SON HABER",
+      "heroSubtitle": "Sürdürülebilir Tarım İle<br>Daha Yeşil Bir Gelecek",
+      "heroMainTitle": "TARIM",
+      "feature1Title": "Daha Güçlü Bitkiler İçin <span class=\"highlight\">Toprak Sağlığını</span> Geliştirme",
+      "feature1Desc": "Sağlıklı toprak, sürdürülebilir uygulamalar sayesinde güçlü bitkiler yetiştirir.",
+      "feature2Title": "Verimli Üretim İçin <span class=\"highlight\">Teknolojiyle Entegre</span> Tarım",
+      "feature2Desc": "Modern teknoloji ile entegre tarım, çiftçiliği dönüştürüyor.",
+      "featuresTitle": "Tarımı Akıllı Çözümlerle<br>Dönüştürüyoruz<br><span class=\"highlight\">Sürdürülebilir Gelecek</span>",
+      "learnMore": "DAHA FAZLA",
+      "missionText": "<em>AYERMAK</em> olarak, tarımı sürdürülebilir uygulamalar ve yenilikçi teknolojilerle devrimleştiriyoruz. Çevresel yönetim ve topluluk güçlendirmeye bağlı olarak, tarımı sürdürülebilir ve müreffeh bir geleceğe yönlendirmeyi hedefliyoruz.",
+      "partnersTitle": "İş Ortaklarımız",
+      "videoSubtitle": "Sürdürülebilir",
+      "blogTitle": "Blogumuz Aracılığıyla <span class=\"highlight\">Tarımın</span><br><span class=\"highlight\">Geleceğini</span> Keşfediyoruz",
+      "contactTitle": "Sizden Haber Bekliyoruz!",
+      "contactText": "Sorularınız veya ek bilgi için bize ulaşmaktan çekinmeyin. Size yardımcı olmak için buradayız.",
+      "contactBtn": "İLETİŞİM"
+    },
+    "general": {
+      "allProducts": "Tüm Ürünler",
+      "viewDetails": "Detayları Gör",
+      "specifications": "Teknik Özellikler",
+      "loading": "Yükleniyor..."
+    },
+    "details": {
+      "features": "Özellikler",
+      "featuresBadge": "ÖZELLİKLER",
+      "featuresTitle": "Neden Bu Ürün?",
+      "featuresSubtitle": "Üstün kalite ve performansın buluştuğu nokta",
+      "technical": "Teknik Bilgiler",
+      "models": "Modeller ve Teknik Özellikler",
+      "model": "Model",
+      "rollers": "Merdane Seçenekleri",
+      "gallery": "Galeri",
+      "documents": "Dökümanlar",
+      "downloadCatalog": "Kataloğu İndir",
+      "catalogDescription": "Detaylı teknik bilgiler ve özellikler için kataloğumuzu indirin"
+    },
+    "technicalLabels": {
+      "rulmanSistemi": "Rulman Sistemi",
+      "diskBaglantisi": "Disk Bağlantısı",
+      "diskAcilari": "Disk Açıları",
+      "diskYapisi": "Disk Yapısı",
+      "merdaneSistemi": "Merdane Sistemi",
+      "calismaHizi": "Çalışma Hızı",
+      "ayakYapisi": "Ayak Yapısı",
+      "derinlikAyari": "Derinlik Ayarı",
+      "saseYapisi": "Şase Yapısı",
+      "kasaYapisi": "Kasa Yapısı",
+      "devirmeSystem": "Devrilme Sistemi",
+      "frenSistemi": "Fren Sistemi",
+      "tirmikYapisi": "Tırmık Yapısı"
+    },
+    "admin": {
+      "login": "Giriş Yap",
+      "logout": "Çıkış Yap",
+      "username": "Kullanıcı Adı",
+      "password": "Şifre",
+      "dashboard": "Kontrol Paneli",
+      "products": "Ürünler",
+      "translations": "Çeviriler",
+      "save": "Kaydet",
+      "cancel": "İptal",
+      "delete": "Sil",
+      "edit": "Düzenle",
+      "add": "Ekle",
+      "confirmDelete": "Silmek istediğinize emin misiniz?",
+      "productEditor": "Ürün Düzenleyici",
+      "general": "Genel",
+      "media": "Medya",
+      "options": "Seçenekler",
+      "addModel": "Model Ekle",
+      "addFeature": "Özellik Ekle",
+      "addTechnical": "Teknik Bilgi Ekle",
+      "addRoller": "Merdane Ekle",
+      "addDocument": "Döküman Ekle",
+      "uploadImage": "Fotoğraf Yükle",
+      "uploadPdf": "PDF Yükle",
+      "missingTranslation": "Eksik Çeviri",
+      "translationWarning": "Bazı alanların çevirisi eksik"
+    },
+    "features": {
+      "quality": "Kaliteli Üretim",
+      "qualityDesc": "En yüksek kalite standartlarında üretim yapıyoruz. Dayanıklı ve uzun ömürlü tarım makineleri.",
+      "innovation": "Yenilikçi Tasarım",
+      "innovationDesc": "Modern teknoloji ve yenilikçi mühendislik ile verimli çözümler sunuyoruz.",
+      "support": "Teknik Destek",
+      "supportDesc": "Satış sonrası teknik destek ve yedek parça garantisi ile yanınızdayız."
+    },
+    "cta": {
+      "title": "Ürünlerimizi Keşfedin",
+      "text": "Tarım makineleri ihtiyaçlarınız için doğru çözümü bulun. Tüm ürünlerimizi inceleyin.",
+      "button": "Tüm Ürünler"
+    },
+    "video": {
+      "badge": "VİDEO",
+      "title": "Ürün Tanıtımı",
+      "subtitle": "Ürünümüzü çalışırken izleyin"
+    },
+    "specLabels": {
+      "capacity": "Çalışma Genişliği",
+      "discCount": "Disk Sayısı",
+      "workingWidth": "ÇALIŞMA GENİŞLİĞİ",
+      "workingDepth": "ÇALIŞMA DERİNLİĞİ",
+      "legCount": "AYAK SAYISI",
+      "weight": "AĞIRLIK",
+      "volume": "HACİM",
+      "axleCount": "DİNGİL SAYISI",
+      "tireSize": "LASTİK BOYUTU",
+      "tipping": "DEVİRME",
+      "tineCount": "TIRMIK SAYISI"
+    },
+    "productsPage": {
+      "badge": "ÜRÜN KATALOĞU",
+      "title": "Tarım Makinelerimiz",
+      "subtitle": "Kaliteli ve güvenilir tarım ekipmanları",
+      "allProducts": "Tümü",
+      "viewDetails": "Detayları Gör",
+      "romorkCategory": "Römork"
+    },
+    "footer": {
+      "tagline": "Tarımın Gücü, Makinenin Kalitesi",
+      "products": "Ürünler",
+      "allProducts": "Tüm Ürünler",
+      "corporate": "Kurumsal",
+      "about": "Hakkımızda",
+      "quality": "Kalite Politikamız",
+      "career": "Kariyer",
+      "contact": "İletişim",
+      "copyright": "© 2024 AYERMAK Tarım Makineleri. Tüm hakları saklıdır."
+    },
+    "newsPage": {
+      "badge": "GÜNCEL",
+      "title": "Haberler & Duyurular",
+      "subtitle": "En son gelişmeler ve yenilikler",
+      "readMore": "Devamını Oku",
+      "backToNews": "Haberlere Dön",
+      "noNews": "Henüz haber bulunmuyor."
+    },
+    "dealers": {
+      "badge": "BAYİLERİMİZ",
+      "title": "Dünya Çapında Bayilerimiz",
+      "subtitle": "AYERMAK ürünlerini bulabileceğiniz yetkili bayilerimiz",
+      "domesticTitle": "Türkiye Bayilerimiz",
+      "domesticSubtitle": "Yurt içi yetkili satış ve servis noktalarımız",
+      "internationalTitle": "Uluslararası Bayilerimiz",
+      "internationalSubtitle": "Dünya genelindeki yetkili distribütörlerimiz",
+      "certificatesBadge": "SERTİFİKALARIMIZ",
+      "certificatesTitle": "Bayi Sertifikaları",
+      "certificatesSubtitle": "Uluslararası standartlara uygun belgelendirmelerimiz",
+      "viewOnMap": "Haritada Gör"
+    }
+  },
+  "en": {
+    "nav": {
+      "home": "Home",
+      "products": "Products",
+      "dealers": "Dealers",
+      "news": "News",
+      "about": "About",
+      "contact": "Contact",
+      "allProducts": "All Products"
+    },
+    "categories": {
+      "patlatma": "SUBSOILER",
+      "kultivator": "CULTIVATOR",
+      "romork": "TRAILER",
+      "tiller": "TILLER",
+      "deneme": "try"
+    },
+    "productNames": {
+      "patlatma": "Subsoiler",
+      "diskli-kultivator": "Disc Cultivator",
+      "tandem-romork": "Tandem Truck Type Trailer",
+      "dingilli-romork": "Single Axle Tipping Trailer",
+      "tiller": "Tiller"
+    },
+    "productShortNames": {
+      "patlatma": "Subsoiler",
+      "diskli-kultivator": "Cultivator",
+      "tandem-romork": "Tandem",
+      "dingilli-romork": "Axle",
+      "tiller": "Tiller"
+    },
+    "productDescriptions": {
+      "patlatma": "Professional agricultural equipment that aerates hard and compacted soils through deep tillage, improving water permeability.",
+      "diskli-kultivator": "High-performance cultivator that breaks down stubble and plant residues to prepare ideal seedbed conditions.",
+      "tandem-romork": "Durable and reliable tandem axle trailer designed for high-capacity transportation needs.",
+      "dingilli-romork": "Single axle trailer with versatile tipping feature for practical unloading operations.",
+      "tiller": "Efficient and durable tiller equipment ideal for soil cultivation and mixing."
+    },
+    "products": {
+      "patlatma": {
+        "features": [
+          "Deep cultivation of hard and compacted soils",
+          "Supports root development by improving water permeability",
+          "Long-lasting use with reinforced leg structure",
+          "Easy operation with hydraulic depth adjustment",
+          "High breaking resistance"
+        ],
+        "technical": {
+          "ayakYapisi": "Subsoiler legs made of special alloy steel with high wear resistance. Easy-to-replace tip system.",
+          "derinlikAyari": "Hydraulic controlled depth adjustment system. Working depth adjustable between 45-60 cm.",
+          "saseYapisi": "Heavy-duty reinforced chassis. High-strength welded construction."
+        }
+      },
+      "diskli-kultivator": {
+        "features": [
+          "Ideally mixes soil by breaking down stubble and plant residues",
+          "Breaks down surface residues such as corn and straw",
+          "Effective in loosening pasture and fallow lands",
+          "Used for mixing organic fertilizers into the soil",
+          "Can reach speeds up to 15 km/h depending on soil conditions",
+          "Requires less power than its peers - fuel savings",
+          "Reinforced chassis and frame structure"
+        ],
+        "technical": {
+          "rulmanSistemi": "Lifetime maintenance-free bearing system. Double row angular contact ball bearings in center, cassette type steel seals and 2-piece O-ring sealing system",
+          "diskBaglantisi": "Each disc independently attached to chassis. Shock absorbing suspension system with 4 rubber cylinder blocks",
+          "diskAcilari": "17° cutting angle on front discs, 14° on rear discs. 250mm standard disc spacing",
+          "diskYapisi": "460mm or 510mm diameter options. Notched or plain type discs",
+          "merdaneSistemi": "Hydraulically controlled roller system. Height and working depth hydraulically adjustable",
+          "calismaHizi": "High-speed working capacity - up to 15 km/h"
+        },
+        "rollers": {
+          "lastik-halkali": {
+            "type": "Rubber Ring Roller",
+            "desc": "Ideal for seedbed preparation before sowing, retains moisture"
+          },
+          "kafesli": {
+            "type": "Cage (Tube) Roller",
+            "desc": "Used for breaking and leveling clods"
+          },
+          "disli": {
+            "type": "Toothed Roller",
+            "desc": "Used in vegetable cultivation, provides full surface compaction"
+          }
+        }
+      },
+      "tandem-romork": {
+        "features": [
+          "High carrying capacity",
+          "Reinforced chassis structure",
+          "Easy maneuverability",
+          "Long-lasting tires",
+          "Hydraulic tipping system"
+        ],
+        "technical": {
+          "kasaYapisi": "Body made of high-strength steel sheet. Reinforced corner connections.",
+          "devirmeSystem": "Single cylinder hydraulic tipping system. Rear tipping angle 50°.",
+          "frenSistemi": "Hydraulic braking system. Brakes on all wheels."
+        }
+      },
+      "dingilli-romork": {
+        "features": [
+          "3-way tipping feature",
+          "Compact design",
+          "Easy to use",
+          "Durable construction",
+          "Economical price"
+        ],
+        "technical": {
+          "kasaYapisi": "Body made of high-strength steel sheet. Reinforced corner connections.",
+          "devirmeSystem": "Double cylinder 3-way tipping system. Tipping angle 50°.",
+          "frenSistemi": "Mechanical hand brake system."
+        }
+      },
+      "tiller": {
+        "features": [
+          "Effective soil mixing",
+          "Adjustable working depth",
+          "Durable tine structure",
+          "Lightweight and highly maneuverable",
+          "Economical operating cost"
+        ],
+        "technical": {
+          "tirmikYapisi": "S-type tines made of special alloy steel. High wear resistance.",
+          "derinlikAyari": "Mechanical depth adjustment system. Adjustable between 15-25 cm."
+        }
+      }
+    },
+    "specs": {
+      "workingWidth": "WORKING WIDTH",
+      "workingDepth": "WORKING DEPTH",
+      "legCount": "LEG COUNT",
+      "weight": "WEIGHT",
+      "discCount": "DISC COUNT",
+      "discDiameter": "DISC DIAMETER",
+      "capacity": "CAPACITY",
+      "volume": "VOLUME",
+      "axleCount": "AXLE COUNT",
+      "tireSize": "TIRE SIZE",
+      "tipping": "TIPPING",
+      "tineCount": "TINE COUNT"
+    },
+    "modelSpecs": {
+      "width": "Width",
+      "discs": "Discs",
+      "power": "Power",
+      "weight": "Weight",
+      "legs": "Legs",
+      "tines": "Tines",
+      "capacity": "Capacity",
+      "volume": "Volume",
+      "axles": "Axles",
+      "tires": "Tires",
+      "tipping": "Tipping",
+      "motor_gucu": "Power",
+      "genislik": "Width"
+    },
+    "homepage": {
+      "viewProduct": "View Product",
+      "viewAll": "All",
+      "viewAllProducts": "View All Products",
+      "readMore": "Read More",
+      "newProduct": "NEW PRODUCT",
+      "latestNews": "LATEST NEWS",
+      "heroSubtitle": "Cultivating a Greener Future<br>Through Sustainable",
+      "heroMainTitle": "AGRICULTURE",
+      "feature1Title": "Enhancing <span class=\"highlight\">Soil Health</span> For Stronger Plants",
+      "feature1Desc": "Healthy soil ensures strong plants through sustainable practices.",
+      "feature2Title": "Efficient Production Through <span class=\"highlight\">Technology Integrated</span> Farming",
+      "feature2Desc": "Modern technology integrated farming transforms agriculture.",
+      "featuresTitle": "Transforming Agriculture<br>with Smart Solutions For<br><span class=\"highlight\">Sustainable Future</span>",
+      "learnMore": "LEARN MORE",
+      "missionText": "At <em>AYERMAK</em>, we revolutionize agriculture with sustainable practices and innovative technologies. Committed to environmental stewardship and community empowerment, we aim to lead farming towards a sustainable and prosperous future.",
+      "partnersTitle": "Our Partners",
+      "videoSubtitle": "Sustainable",
+      "blogTitle": "We Explore The <span class=\"highlight\">Future of</span><br><span class=\"highlight\">Agriculture</span> Through Our Blog",
+      "contactTitle": "We Look Forward To Hear From You!",
+      "contactText": "Feel free to reach out to us for any questions or additional information. We're here to help.",
+      "contactBtn": "CONTACT US"
+    },
+    "general": {
+      "allProducts": "All Products",
+      "viewDetails": "View Details",
+      "specifications": "Specifications",
+      "loading": "Loading..."
+    },
+    "details": {
+      "features": "Features",
+      "featuresBadge": "FEATURES",
+      "featuresTitle": "Why This Product?",
+      "featuresSubtitle": "Where superior quality meets performance",
+      "technical": "Technical Information",
+      "models": "Models and Technical Specifications",
+      "model": "Model",
+      "rollers": "Roller Options",
+      "gallery": "Gallery",
+      "documents": "Documents",
+      "downloadCatalog": "Download Catalog",
+      "catalogDescription": "Download our catalog for detailed technical information and specifications"
+    },
+    "technicalLabels": {
+      "rulmanSistemi": "Bearing System",
+      "diskBaglantisi": "Disc Connection",
+      "diskAcilari": "Disc Angles",
+      "diskYapisi": "Disc Structure",
+      "merdaneSistemi": "Roller System",
+      "calismaHizi": "Working Speed",
+      "ayakYapisi": "Leg Structure",
+      "derinlikAyari": "Depth Adjustment",
+      "saseYapisi": "Chassis Structure",
+      "kasaYapisi": "Body Structure",
+      "devirmeSystem": "Tipping System",
+      "frenSistemi": "Brake System",
+      "tirmikYapisi": "Tine Structure"
+    },
+    "admin": {
+      "login": "Login",
+      "logout": "Logout",
+      "username": "Username",
+      "password": "Password",
+      "dashboard": "Dashboard",
+      "products": "Products",
+      "translations": "Translations",
+      "save": "Save",
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "edit": "Edit",
+      "add": "Add",
+      "confirmDelete": "Are you sure you want to delete?",
+      "productEditor": "Product Editor",
+      "general": "General",
+      "media": "Media",
+      "options": "Options",
+      "addModel": "Add Model",
+      "addFeature": "Add Feature",
+      "addTechnical": "Add Technical Info",
+      "addRoller": "Add Roller",
+      "addDocument": "Add Document",
+      "uploadImage": "Upload Image",
+      "uploadPdf": "Upload PDF",
+      "missingTranslation": "Missing Translation",
+      "translationWarning": "Some fields are missing translations"
+    },
+    "features": {
+      "quality": "Quality Production",
+      "qualityDesc": "We manufacture to the highest quality standards. Durable and long-lasting agricultural machinery.",
+      "innovation": "Innovative Design",
+      "innovationDesc": "We offer efficient solutions with modern technology and innovative engineering.",
+      "support": "Technical Support",
+      "supportDesc": "We are with you with after-sales technical support and spare parts warranty."
+    },
+    "cta": {
+      "title": "Discover Our Products",
+      "text": "Find the right solution for your agricultural machinery needs. Browse all our products.",
+      "button": "All Products"
+    },
+    "video": {
+      "badge": "VIDEO",
+      "title": "Product Introduction",
+      "subtitle": "Watch our product in action"
+    },
+    "specLabels": {
+      "capacity": "Working Width",
+      "discCount": "Disc Count",
+      "workingWidth": "WORKING WIDTH",
+      "workingDepth": "WORKING DEPTH",
+      "legCount": "LEG COUNT",
+      "weight": "WEIGHT",
+      "volume": "VOLUME",
+      "axleCount": "AXLE COUNT",
+      "tireSize": "TIRE SIZE",
+      "tipping": "TIPPING",
+      "tineCount": "TINE COUNT"
+    },
+    "productsPage": {
+      "badge": "PRODUCT CATALOG",
+      "title": "Our Agricultural Machinery",
+      "subtitle": "Quality and reliable agricultural equipment",
+      "allProducts": "All",
+      "viewDetails": "View Details",
+      "romorkCategory": "Trailer"
+    },
+    "footer": {
+      "tagline": "Power of Agriculture, Quality of Machinery",
+      "products": "Products",
+      "allProducts": "All Products",
+      "corporate": "Corporate",
+      "about": "About Us",
+      "quality": "Quality Policy",
+      "career": "Career",
+      "contact": "Contact",
+      "copyright": "© 2024 AYERMAK Agricultural Machinery. All rights reserved."
+    },
+    "newsPage": {
+      "badge": "LATEST",
+      "title": "News & Announcements",
+      "subtitle": "Latest developments and innovations",
+      "readMore": "Read More",
+      "backToNews": "Back to News",
+      "noNews": "No news found yet."
+    },
+    "dealers": {
+      "badge": "OUR DEALERS",
+      "title": "Our Dealers Worldwide",
+      "subtitle": "Authorized dealers where you can find AYERMAK products",
+      "domesticTitle": "Our Dealers in Turkey",
+      "domesticSubtitle": "Authorized domestic sales and service points",
+      "internationalTitle": "Our International Dealers",
+      "internationalSubtitle": "Authorized distributors worldwide",
+      "certificatesBadge": "CERTIFICATES",
+      "certificatesTitle": "Dealer Certificates",
+      "certificatesSubtitle": "Certifications compliant with international standards",
+      "viewOnMap": "View on Map"
+    }
+  },
+  "ru": {
+    "nav": {
+      "home": "Главная",
+      "products": "Продукция",
+      "dealers": "Дилеры",
+      "news": "Новости",
+      "about": "О нас",
+      "contact": "Контакты",
+      "allProducts": "Все продукты"
+    },
+    "categories": {
+      "patlatma": "ГЛУБОКОРЫХЛИТЕЛЬ",
+      "kultivator": "КУЛЬТИВАТОР",
+      "romork": "ПРИЦЕП",
+      "tiller": "КУЛЬТИВАТОР",
+      "deneme": "tryrusca"
+    },
+    "productNames": {
+      "patlatma": "Глубокорыхлитель",
+      "diskli-kultivator": "Дисковый культиватор",
+      "tandem-romork": "Тандемный прицеп",
+      "dingilli-romork": "Одноосный прицеп",
+      "tiller": "Культиватор"
+    },
+    "productShortNames": {
+      "patlatma": "Рыхлитель",
+      "diskli-kultivator": "Культив.",
+      "tandem-romork": "Тандем",
+      "dingilli-romork": "Одноосн.",
+      "tiller": "Тиллер"
+    },
+    "productDescriptions": {
+      "patlatma": "Профессиональное сельскохозяйственное оборудование для глубокой обработки твёрдых и уплотнённых почв, улучшающее водопроницаемость.",
+      "diskli-kultivator": "Высокопроизводительный культиватор, измельчающий стерню и растительные остатки для подготовки идеального посевного ложа.",
+      "tandem-romork": "Прочный и надёжный тандемный прицеп, разработанный для перевозки грузов большой вместимости.",
+      "dingilli-romork": "Одноосный прицеп с многосторонней функцией опрокидывания для удобной разгрузки.",
+      "tiller": "Эффективное и долговечное оборудование для обработки и перемешивания почвы."
+    },
+    "products": {
+      "patlatma": {
+        "features": [
+          "Глубокая обработка твёрдых и уплотнённых почв",
+          "Поддержка развития корней за счёт улучшения водопроницаемости",
+          "Долговечное использование с усиленной конструкцией ног",
+          "Простое управление с гидравлической регулировкой глубины",
+          "Высокая прочность на излом"
+        ],
+        "technical": {
+          "ayakYapisi": "Рыхлительные ноги из специального легированного стала с высокой износостойкостью. Легко заменяемая система наконечников.",
+          "derinlikAyari": "Гидравлическая система регулировки глубины. Рабочая глубина регулируется от 45 до 60 см.",
+          "saseYapisi": "Усиленная рама тяжёлого типа. Высокопрочная сварная конструкция."
+        }
+      },
+      "diskli-kultivator": {
+        "features": [
+          "Идеально перемешивает почву, измельчая стерню и растительные остатки",
+          "Измельчает поверхностные остатки кукурузы, соломы и др.",
+          "Эффективен при рыхлении пастбищ и залежных земель",
+          "Используется для заделки органических удобрений в почву",
+          "Скорость работы до 15 км/ч в зависимости от условий почвы",
+          "Требует меньше мощности чем аналоги - экономия топлива",
+          "Усиленная рама и каркасная конструкция"
+        ],
+        "technical": {
+          "rulmanSistemi": "Подшипниковая система, не требующая обслуживания. Двухрядные радиально-упорные шарикоподшипники в центре, кассетные стальные уплотнения и 2-компонентная система O-ring",
+          "diskBaglantisi": "Каждый диск независимо прикреплён к раме. Амортизирующая подвеска с 4 резиновыми цилиндрическими блоками",
+          "diskAcilari": "Угол резания 17° на передних дисках, 14° на задних. Стандартное расстояние между дисками 250 мм",
+          "diskYapisi": "Варианты диаметра 460 мм или 510 мм. Зубчатые или гладкие диски",
+          "merdaneSistemi": "Гидравлически управляемая роликовая система. Высота и глубина обработки регулируются гидравлически",
+          "calismaHizi": "Высокоскоростная рабочая способность - до 15 км/ч"
+        },
+        "rollers": {
+          "lastik-halkali": {
+            "type": "Резиновый кольцевой каток",
+            "desc": "Идеален для подготовки посевного ложа, сохраняет влагу"
+          },
+          "kafesli": {
+            "type": "Клетчатый (трубчатый) каток",
+            "desc": "Используется для разбивания и выравнивания комков"
+          },
+          "disli": {
+            "type": "Зубчатый каток",
+            "desc": "Используется в овощеводстве, обеспечивает полное уплотнение поверхности"
+          }
+        }
+      },
+      "tandem-romork": {
+        "features": [
+          "Высокая грузоподъёмность",
+          "Усиленная конструкция рамы",
+          "Лёгкая маневренность",
+          "Долговечные шины",
+          "Гидравлическая система опрокидывания"
+        ],
+        "technical": {
+          "kasaYapisi": "Кузов из высокопрочного стального листа. Усиленные угловые соединения.",
+          "devirmeSystem": "Одноцилиндровая гидравлическая система опрокидывания. Угол заднего опрокидывания 50°.",
+          "frenSistemi": "Гидравлическая тормозная система. Тормоза на всех колёсах."
+        }
+      },
+      "dingilli-romork": {
+        "features": [
+          "3-стороннее опрокидывание",
+          "Компактный дизайн",
+          "Простота использования",
+          "Прочная конструкция",
+          "Экономичная цена"
+        ],
+        "technical": {
+          "kasaYapisi": "Кузов из высокопрочного стального листа. Усиленные угловые соединения.",
+          "devirmeSystem": "Двухцилиндровая 3-сторонняя система опрокидывания. Угол опрокидывания 50°.",
+          "frenSistemi": "Механический ручной тормоз."
+        }
+      },
+      "tiller": {
+        "features": [
+          "Эффективное перемешивание почвы",
+          "Регулируемая глубина обработки",
+          "Прочная конструкция зубьев",
+          "Лёгкий и высокоманевренный",
+          "Экономичные эксплуатационные расходы"
+        ],
+        "technical": {
+          "tirmikYapisi": "S-образные зубья из специального легированного стала. Высокая износостойкость.",
+          "derinlikAyari": "Механическая система регулировки глубины. Регулируется от 15 до 25 см."
+        }
+      }
+    },
+    "specs": {
+      "workingWidth": "РАБОЧАЯ ШИРИНА",
+      "workingDepth": "РАБОЧАЯ ГЛУБИНА",
+      "legCount": "КОЛ-ВО НОГ",
+      "weight": "ВЕС",
+      "discCount": "КОЛ-ВО ДИСКОВ",
+      "discDiameter": "ДИАМЕТР ДИСКА",
+      "capacity": "ГРУЗОПОДЪЕМНОСТЬ",
+      "volume": "ОБЪЕМ",
+      "axleCount": "КОЛ-ВО ОСЕЙ",
+      "tireSize": "РАЗМЕР ШИН",
+      "tipping": "ОПРОКИДЫВАНИЕ",
+      "tineCount": "КОЛ-ВО ЗУБЬЕВ"
+    },
+    "modelSpecs": {
+      "width": "Ширина",
+      "discs": "Диски",
+      "power": "Мощность",
+      "weight": "Вес",
+      "legs": "Ноги",
+      "tines": "Зубья",
+      "capacity": "Грузоподъёмность",
+      "volume": "Объём",
+      "axles": "Оси",
+      "tires": "Шины",
+      "tipping": "Опрокидывание",
+      "motor_gucu": "Мощность",
+      "genislik": "Ширина"
+    },
+    "homepage": {
+      "viewProduct": "Посмотреть продукт",
+      "viewAll": "Все",
+      "viewAllProducts": "Смотреть все продукты",
+      "readMore": "Читать далее",
+      "newProduct": "НОВЫЙ ПРОДУКТ",
+      "latestNews": "ПОСЛЕДНИЕ НОВОСТИ",
+      "heroSubtitle": "Выращивание более зеленого будущего<br>через устойчивое",
+      "heroMainTitle": "СЕЛЬСКОЕ ХОЗЯЙСТВО",
+      "feature1Title": "Улучшение <span class=\"highlight\">здоровья почвы</span> для более крепких растений",
+      "feature1Desc": "Здоровая почва обеспечивает крепкие растения благодаря устойчивым методам.",
+      "feature2Title": "Эффективное Производство Через <span class=\"highlight\">Технологически Интегрированное</span> Земледелие",
+      "feature2Desc": "Современные технологии в земледелии трансформируют сельское хозяйство.",
+      "featuresTitle": "Преобразование сельского хозяйства<br>с умными решениями для<br><span class=\"highlight\">Устойчивого будущего</span>",
+      "learnMore": "ПОДРОБНЕЕ",
+      "missionText": "В <em>AYERMAK</em> мы революционизируем сельское хозяйство с помощью устойчивых методов и инновационных технологий. Приверженные охране окружающей среды и расширению прав сообществ, мы стремимся вести земледелие к устойчивому и процветающему будущему.",
+      "partnersTitle": "Наши партнеры",
+      "videoSubtitle": "Устойчивое",
+      "blogTitle": "Мы исследуем <span class=\"highlight\">будущее</span><br><span class=\"highlight\">сельского хозяйства</span> через наш блог",
+      "contactTitle": "Мы с нетерпением ждем вашего отклика!",
+      "contactText": "Не стесняйтесь обращаться к нам с любыми вопросами или за дополнительной информацией. Мы здесь, чтобы помочь.",
+      "contactBtn": "СВЯЗАТЬСЯ"
+    },
+    "general": {
+      "allProducts": "Все продукты",
+      "viewDetails": "Подробнее",
+      "specifications": "Характеристики",
+      "loading": "Загрузка..."
+    },
+    "details": {
+      "features": "Особенности",
+      "featuresBadge": "ОСОБЕННОСТИ",
+      "featuresTitle": "Почему этот продукт?",
+      "featuresSubtitle": "Там, где высокое качество сочетается с производительностью",
+      "technical": "Техническая информация",
+      "models": "Модели и технические характеристики",
+      "model": "Модель",
+      "rollers": "Варианты катков",
+      "gallery": "Галерея",
+      "documents": "Документы",
+      "downloadCatalog": "Скачать каталог",
+      "catalogDescription": "Скачайте каталог для получения подробной технической информации и характеристик"
+    },
+    "technicalLabels": {
+      "rulmanSistemi": "Подшипниковая система",
+      "diskBaglantisi": "Крепление диска",
+      "diskAcilari": "Углы дисков",
+      "diskYapisi": "Структура диска",
+      "merdaneSistemi": "Система катков",
+      "calismaHizi": "Скорость работы",
+      "ayakYapisi": "Структура ног",
+      "derinlikAyari": "Регулировка глубины",
+      "saseYapisi": "Структура рамы",
+      "kasaYapisi": "Структура кузова",
+      "devirmeSystem": "Система опрокидывания",
+      "frenSistemi": "Тормозная система",
+      "tirmikYapisi": "Структура зубьев"
+    },
+    "admin": {
+      "login": "Войти",
+      "logout": "Выйти",
+      "username": "Имя пользователя",
+      "password": "Пароль",
+      "dashboard": "Панель управления",
+      "products": "Продукция",
+      "translations": "Переводы",
+      "save": "Сохранить",
+      "cancel": "Отмена",
+      "delete": "Удалить",
+      "edit": "Редактировать",
+      "add": "Добавить",
+      "confirmDelete": "Вы уверены, что хотите удалить?",
+      "productEditor": "Редактор продукта",
+      "general": "Общее",
+      "media": "Медиа",
+      "options": "Опции",
+      "addModel": "Добавить модель",
+      "addFeature": "Добавить функцию",
+      "addTechnical": "Добавить тех. информацию",
+      "addRoller": "Добавить каток",
+      "addDocument": "Добавить документ",
+      "uploadImage": "Загрузить изображение",
+      "uploadPdf": "Загрузить PDF",
+      "missingTranslation": "Отсутствует перевод",
+      "translationWarning": "Некоторые поля не переведены"
+    },
+    "features": {
+      "quality": "Качественное производство",
+      "qualityDesc": "Мы производим по самым высоким стандартам качества. Прочная и долговечная сельскохозяйственная техника.",
+      "innovation": "Инновационный дизайн",
+      "innovationDesc": "Мы предлагаем эффективные решения с использованием современных технологий и инновационной инженерии.",
+      "support": "Техническая поддержка",
+      "supportDesc": "Мы с вами с послепродажной технической поддержкой и гарантией на запчасти."
+    },
+    "cta": {
+      "title": "Откройте наши продукты",
+      "text": "Найдите правильное решение для ваших потребностей в сельскохозяйственной технике.",
+      "button": "Все продукты"
+    },
+    "video": {
+      "badge": "ВИДЕО",
+      "title": "Презентация продукта",
+      "subtitle": "Смотрите наш продукт в работе"
+    },
+    "specLabels": {
+      "capacity": "bilmiyom",
+      "discCount": "bilmiyom",
+      "workingWidth": "РАБОЧАЯ ШИРИНА",
+      "workingDepth": "РАБОЧАЯ ГЛУБИНА",
+      "legCount": "КОЛ-ВО НОГ",
+      "weight": "ВЕС",
+      "volume": "ОБЪЕМ",
+      "axleCount": "КОЛ-ВО ОСЕЙ",
+      "tireSize": "РАЗМЕР ШИН",
+      "tipping": "ОПРОКИДЫВАНИЕ",
+      "tineCount": "КОЛ-ВО ЗУБЬЕВ"
+    },
+    "productsPage": {
+      "badge": "КАТАЛОГ ПРОДУКЦИИ",
+      "title": "Наша сельхозтехника",
+      "subtitle": "Качественное и надежное сельскохозяйственное оборудование",
+      "allProducts": "Все",
+      "viewDetails": "Подробнее",
+      "romorkCategory": "Прицеп"
+    },
+    "footer": {
+      "tagline": "Сила сельского хозяйства, качество техники",
+      "products": "Продукция",
+      "allProducts": "Все продукты",
+      "corporate": "Корпоративный",
+      "about": "О нас",
+      "quality": "Политика качества",
+      "career": "Карьера",
+      "contact": "Контакты",
+      "copyright": "© 2024 AYERMAK Сельскохозяйственная техника. Все права защищены."
+    },
+    "newsPage": {
+      "badge": "АКТУАЛЬНО",
+      "title": "Новости и Объявления",
+      "subtitle": "Последние разработки и инновации",
+      "readMore": "Читать далее",
+      "backToNews": "Назад к новостям",
+      "noNews": "Новости пока не найдены."
+    },
+    "dealers": {
+      "badge": "НАШИ ДИЛЕРЫ",
+      "title": "Наши дилеры по всему миру",
+      "subtitle": "Авторизованные дилеры, где можно найти продукты AYERMAK",
+      "domesticTitle": "Наши дилеры в Турции",
+      "domesticSubtitle": "Авторизованные внутренние точки продаж и обслуживания",
+      "internationalTitle": "Наши международные дилеры",
+      "internationalSubtitle": "Авторизованные дистрибьюторы по всему миру",
+      "certificatesBadge": "СЕРТИФИКАТЫ",
+      "certificatesTitle": "Дилерские сертификаты",
+      "certificatesSubtitle": "Сертификация в соответствии с международными стандартами",
+      "viewOnMap": "На карте"
+    }
+  }
+}
