@@ -1005,7 +1005,19 @@ window.editColumn = function (index) {
     if (!col) return;
 
     setValue('columnKey', col.key || '');
-    setValue('columnUnit', col.unit || '');
+
+    // Handle both old (string) and new (object) unit format
+    if (typeof col.unit === 'object') {
+        setValue('columnUnitTr', col.unit.tr || '');
+        setValue('columnUnitEn', col.unit.en || '');
+        setValue('columnUnitRu', col.unit.ru || '');
+    } else {
+        // Legacy: single string unit - put in all fields
+        setValue('columnUnitTr', col.unit || '');
+        setValue('columnUnitEn', col.unit || '');
+        setValue('columnUnitRu', col.unit || '');
+    }
+
     setValue('columnLabelTr', translationsData.tr?.modelSpecs?.[col.key] || '');
     setValue('columnLabelEn', translationsData.en?.modelSpecs?.[col.key] || '');
     setValue('columnLabelRu', translationsData.ru?.modelSpecs?.[col.key] || '');
@@ -1027,7 +1039,9 @@ window.editColumn = function (index) {
 
 function saveColumn() {
     const labelTr = document.getElementById('columnLabelTr')?.value?.trim();
-    const unit = document.getElementById('columnUnit')?.value?.trim() || '';
+    const unitTr = document.getElementById('columnUnitTr')?.value?.trim() || '';
+    const unitEn = document.getElementById('columnUnitEn')?.value?.trim() || unitTr;
+    const unitRu = document.getElementById('columnUnitRu')?.value?.trim() || unitTr;
     const labelEn = document.getElementById('columnLabelEn')?.value?.trim() || labelTr;
     const labelRu = document.getElementById('columnLabelRu')?.value?.trim() || labelTr;
     const highlighted = document.getElementById('columnHighlight')?.checked === true;
@@ -1057,6 +1071,9 @@ function saveColumn() {
             counter++;
         }
     }
+
+    // Build unit object (multilingual)
+    const unit = { tr: unitTr, en: unitEn, ru: unitRu };
 
     const column = { key, unit, icon, highlighted };
 

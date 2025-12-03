@@ -84,19 +84,19 @@
         "tableColumns": [
           {
             "key": "width",
-            "unit": "m"
+            "unit": {"tr": "m", "en": "m", "ru": "м"}
           },
           {
             "key": "legs",
-            "unit": "Adet"
+            "unit": {"tr": "Adet", "en": "pcs", "ru": "шт"}
           },
           {
             "key": "power",
-            "unit": "HPs"
+            "unit": {"tr": "HP", "en": "HP", "ru": "л.с."}
           },
           {
             "key": "weight",
-            "unit": "kg"
+            "unit": {"tr": "kg", "en": "kg", "ru": "кг"}
           }
         ],
         "models": [
@@ -242,24 +242,24 @@
         "tableColumns": [
           {
             "key": "genislik",
-            "unit": "mm",
+            "unit": {"tr": "mm", "en": "mm", "ru": "мм"},
             "icon": "ruler",
             "highlighted": false
           },
           {
             "key": "discs",
-            "unit": "Adet",
+            "unit": {"tr": "Adet", "en": "pcs", "ru": "шт"},
             "icon": "battery-charging",
             "highlighted": false
           },
           {
             "key": "power",
-            "unit": "HP",
+            "unit": {"tr": "HP", "en": "HP", "ru": "л.с."},
             "highlighted": true
           },
           {
             "key": "weight",
-            "unit": "kg"
+            "unit": {"tr": "kg", "en": "kg", "ru": "кг"}
           }
         ],
         "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
@@ -495,23 +495,23 @@
         "tableColumns": [
           {
             "key": "capacity",
-            "unit": "Ton"
+            "unit": {"tr": "Ton", "en": "Ton", "ru": "т"}
           },
           {
             "key": "volume",
-            "unit": "m³"
+            "unit": {"tr": "m³", "en": "m³", "ru": "м³"}
           },
           {
             "key": "axles",
-            "unit": "Adet"
+            "unit": {"tr": "Adet", "en": "pcs", "ru": "шт"}
           },
           {
             "key": "tires",
-            "unit": ""
+            "unit": {"tr": "", "en": "", "ru": ""}
           },
           {
             "key": "motor_gucu",
-            "unit": "HP"
+            "unit": {"tr": "HP", "en": "HP", "ru": "л.с."}
           }
         ],
         "models": [
@@ -658,19 +658,19 @@
         "tableColumns": [
           {
             "key": "capacity",
-            "unit": "Ton"
+            "unit": {"tr": "Ton", "en": "Ton", "ru": "т"}
           },
           {
             "key": "volume",
-            "unit": "m³"
+            "unit": {"tr": "m³", "en": "m³", "ru": "м³"}
           },
           {
             "key": "tipping",
-            "unit": ""
+            "unit": {"tr": "", "en": "", "ru": ""}
           },
           {
             "key": "tires",
-            "unit": ""
+            "unit": {"tr": "", "en": "", "ru": ""}
           }
         ],
         "models": [
@@ -813,19 +813,19 @@
         "tableColumns": [
           {
             "key": "width",
-            "unit": "m"
+            "unit": {"tr": "m", "en": "m", "ru": "м"}
           },
           {
             "key": "tines",
-            "unit": "Adet"
+            "unit": {"tr": "Adet", "en": "pcs", "ru": "шт"}
           },
           {
             "key": "power",
-            "unit": "HP"
+            "unit": {"tr": "HP", "en": "HP", "ru": "л.с."}
           },
           {
             "key": "weight",
-            "unit": "kg"
+            "unit": {"tr": "kg", "en": "kg", "ru": "кг"}
           }
         ],
         "models": [

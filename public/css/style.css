@@ -1188,7 +1188,7 @@ a.category-item {
 
 .models-table th {
     padding: 18px 24px;
-    text-align: left;
+    text-align: center;
     font-weight: 600;
     font-size: 12px;
     color: #fff;
@@ -1201,6 +1201,7 @@ a.category-item {
     font-size: 14px;
     color: #444;
     border-bottom: 1px solid #f0f0f0;
+    text-align: center;
 }
 
 .models-table tbody tr.even {
@@ -1227,6 +1228,66 @@ a.category-item {
     border-radius: 20px;
     font-weight: 700;
     font-size: 12px;
+}
+
+/* Models Table - Mobile Horizontal Scroll with Sticky First Column */
+@media (max-width: 768px) {
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 12px;
+        border: 1px solid #e8e8e8;
+    }
+
+    .models-table {
+        min-width: 550px;
+    }
+
+    .models-table th,
+    .models-table td {
+        padding: 12px 14px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    .models-table th:first-child,
+    .models-table td:first-child {
+        position: sticky;
+        left: 0;
+        z-index: 1;
+        min-width: 90px;
+        box-shadow: 2px 0 4px rgba(0,0,0,0.06);
+    }
+
+    .models-table thead th:first-child {
+        background: #1a1a1a;
+    }
+
+    .models-table tbody tr.even td:first-child {
+        background: #fafafa;
+    }
+
+    .models-table tbody tr.odd td:first-child {
+        background: #fff;
+    }
+
+    .power-badge {
+        font-size: 10px;
+        padding: 3px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .models-table th,
+    .models-table td {
+        padding: 10px 12px;
+        font-size: 11px;
+    }
+
+    .models-table th:first-child,
+    .models-table td:first-child {
+        min-width: 80px;
+    }
 }
 
 /* ===== VIDEO SECTION - COMPACT & AESTHETIC ===== */

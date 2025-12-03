@@ -129,24 +129,32 @@ function generateDetailsHTML(details, category, productId) {
         const modelsTitle = window.i18n?.t('details.models') || 'Modeller ve Teknik Ozellikler';
         const modelLabel = window.i18n?.t('details.model') || 'Model';
 
-        // Generate table headers dynamically
+        // Generate table headers dynamically (without units)
         let tableHeaders = `<th>${modelLabel}</th>`;
+        const columnLabels = [modelLabel]; // Store labels for mobile data-label
         tableColumns.forEach(col => {
             const label = window.i18n?.getModelSpecLabel(col.key) || col.key;
-            const unit = col.unit ? ` <small>(${col.unit})</small>` : '';
-            tableHeaders += `<th>${label}${unit}</th>`;
+            columnLabels.push(label);
+            tableHeaders += `<th>${label}</th>`;
         });
 
-        // Generate table rows dynamically
+        // Generate table rows dynamically with units in cell values
+        const currentLang = window.i18n?.currentLang || 'tr';
         const tableRows = details.models.map((m, i) => {
-            let cells = `<td><strong>${m.name}</strong></td>`;
-            tableColumns.forEach(col => {
-                const value = m.specs?.[col.key] || '-';
+            let cells = `<td data-label="${modelLabel}"><strong>${m.name}</strong></td>`;
+            tableColumns.forEach((col, idx) => {
+                const rawValue = m.specs?.[col.key] || '-';
+                // Support both object {tr: "m", en: "m"} and string "m" formats
+                const unit = typeof col.unit === 'object'
+                    ? (col.unit[currentLang] || col.unit.tr || '')
+                    : (col.unit || '');
+                const valueWithUnit = rawValue !== '-' && unit ? `${rawValue} ${unit}` : rawValue;
+                const dataLabel = columnLabels[idx + 1];
                 // Special styling for highlighted columns
                 if (col.highlighted) {
-                    cells += `<td><span class="power-badge">${value}</span></td>`;
+                    cells += `<td data-label="${dataLabel}"><span class="power-badge">${valueWithUnit}</span></td>`;
                 } else {
-                    cells += `<td>${value}</td>`;
+                    cells += `<td data-label="${dataLabel}">${valueWithUnit}</td>`;
                 }
             });
             return `<tr class="${i % 2 === 0 ? 'even' : 'odd'}">${cells}</tr>`;
@@ -724,13 +732,20 @@ function updateProductForModel(model, productImage, baseImage, tableColumns, pro
             tableColumns.forEach(col => {
                 const value = model.specs[col.key];
                 if (value !== undefined && value !== null && value !== '') {
+                    // Handle both object {tr, en, ru} and string unit formats
+                    const getUnit = (lang) => {
+                        if (typeof col.unit === 'object') {
+                            return col.unit[lang] || col.unit.tr || '';
+                        }
+                        return col.unit || '';
+                    };
                     // Create multi-language format for generateSpecsHTML compatibility
                     combinedSpecs[col.key] = {
                         icon: col.icon || 'tag',
                         values: {
-                            tr: { value: String(value), unit: col.unit || '' },
-                            en: { value: String(value), unit: col.unit || '' },
-                            ru: { value: String(value), unit: col.unit || '' }
+                            tr: { value: String(value), unit: getUnit('tr') },
+                            en: { value: String(value), unit: getUnit('en') },
+                            ru: { value: String(value), unit: getUnit('ru') }
                         }
                     };
                 }
