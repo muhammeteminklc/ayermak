@@ -377,6 +377,19 @@ function setupEventListeners() {
 function setupFileUploads() {
     setupUploadZone('defaultImageUpload', 'defaultImageInput', 'defaultImagePreview', 'defaultImage');
     setupUploadZone('modelImageUpload', 'modelImageInput', 'modelImagePreview', 'modelImage');
+
+    // Reset model image button handler
+    const resetBtn = document.getElementById('resetModelImageBtn');
+    if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+            // Clear model image
+            setValue('modelImage', '');
+            const preview = document.getElementById('modelImagePreview');
+            if (preview) preview.innerHTML = '';
+            // Hide reset button
+            resetBtn.style.display = 'none';
+        });
+    }
 }
 
 function setupUploadZone(zoneId, inputId, previewId, hiddenId) {
@@ -421,6 +434,12 @@ async function handleFileUpload(file, previewId, hiddenId) {
         const preview = document.getElementById(previewId);
         if (preview) {
             preview.innerHTML = `<img src="/images/products/${filename}" alt="Preview">`;
+        }
+
+        // Show reset button when model image is uploaded
+        if (hiddenId === 'modelImage') {
+            const resetBtn = document.getElementById('resetModelImageBtn');
+            if (resetBtn) resetBtn.style.display = 'flex';
         }
     }
 }
@@ -520,7 +539,8 @@ function renderColumns() {
 
     container.innerHTML = columns.map((col, index) => {
         const label = translationsData.tr?.modelSpecs?.[col.key] || col.key;
-        const unitText = col.unit ? `(${col.unit})` : '';
+        const unitDisplay = typeof col.unit === 'object' ? (col.unit.tr || '') : (col.unit || '');
+        const unitText = unitDisplay ? `(${unitDisplay})` : '';
         const highlightBadge = col.highlighted ? '<span class="highlight-badge">VURGULU</span>' : '';
         return `
             <div class="column-item" data-index="${index}">
@@ -566,7 +586,8 @@ function renderModelsTable() {
 
     columns.forEach(col => {
         const label = translationsData.tr?.modelSpecs?.[col.key] || col.key;
-        html += `<th>${label}${col.unit ? `<small>(${col.unit})</small>` : ''}</th>`;
+        const unitDisplay = typeof col.unit === 'object' ? (col.unit.tr || '') : (col.unit || '');
+        html += `<th>${label}${unitDisplay ? `<small>(${unitDisplay})</small>` : ''}</th>`;
     });
 
     html += '<th class="actions-cell">Islemler</th>';
@@ -575,8 +596,9 @@ function renderModelsTable() {
     models.forEach((model, index) => {
         html += '<tr>';
         html += `<td class="model-image-cell">`;
-        if (model.image) {
-            html += `<img src="/images/products/${model.image}" alt="${model.name}">`;
+        const displayImage = model.image || productData.defaultImage;
+        if (displayImage) {
+            html += `<img src="/images/products/${displayImage}" alt="${model.name}">`;
         } else {
             html += `<div class="model-image-placeholder"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg></div>`;
         }
@@ -1476,6 +1498,10 @@ function openModelModal() {
     const preview = document.getElementById('modelImagePreview');
     if (preview) preview.innerHTML = '';
 
+    // Hide reset button for new models
+    const resetBtn = document.getElementById('resetModelImageBtn');
+    if (resetBtn) resetBtn.style.display = 'none';
+
     // Render dynamic spec inputs based on tableColumns
     renderModelSpecInputs({});
 
@@ -1498,6 +1524,12 @@ window.editModel = function (index) {
         preview.innerHTML = model.image
             ? `<img src="/images/products/${model.image}" alt="${model.name}">`
             : '';
+    }
+
+    // Show/hide reset button based on whether model has custom image
+    const resetBtn = document.getElementById('resetModelImageBtn');
+    if (resetBtn) {
+        resetBtn.style.display = model.image ? 'flex' : 'none';
     }
 
     // Render dynamic spec inputs with existing values

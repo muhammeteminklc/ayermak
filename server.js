@@ -29,6 +29,15 @@ app.use('/images', express.static(path.join(__dirname, 'public', 'images')));
 app.use('/components', express.static(path.join(__dirname, 'public', 'components')));
 app.use('/admin', express.static(path.join(__dirname, 'public', 'admin')));
 
+// Serve favicon
+app.get('/favicon.png', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'favicon.png'));
+});
+
+app.get('/favicon.ico', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'favicon.ico'));
+});
+
 // Serve data files (for defaultSpecs.json etc.)
 app.use('/data', express.static(path.join(__dirname, 'data')));
 

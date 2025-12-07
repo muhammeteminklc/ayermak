@@ -1048,7 +1048,7 @@ async function initProductDetailPage() {
                     currentProduct.details.models,
                     categoryBar,
                     productImage,
-                    currentProduct.image,
+                    currentProduct.defaultImage || currentProduct.image,
                     currentProduct.details.tableColumns || [],
                     currentProduct.specs || {}
                 );

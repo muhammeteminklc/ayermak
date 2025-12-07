@@ -1091,6 +1091,33 @@
     background: #fecaca;
 }
 
+/* Reset Image Button */
+.btn-reset-image {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    margin-top: 10px;
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fcd34d;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-reset-image:hover {
+    background: #fde68a;
+    border-color: #fbbf24;
+}
+
+.btn-reset-image svg {
+    stroke: currentColor;
+    fill: none;
+}
+
 /* Modal */
 .modal-overlay {
     position: fixed;

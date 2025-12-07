@@ -84,19 +84,35 @@
         "tableColumns": [
           {
             "key": "width",
-            "unit": {"tr": "m", "en": "m", "ru": "м"}
+            "unit": {
+              "tr": "m",
+              "en": "m",
+              "ru": "м"
+            }
           },
           {
             "key": "legs",
-            "unit": {"tr": "Adet", "en": "pcs", "ru": "шт"}
+            "unit": {
+              "tr": "Adet",
+              "en": "pcs",
+              "ru": "шт"
+            }
           },
           {
             "key": "power",
-            "unit": {"tr": "HP", "en": "HP", "ru": "л.с."}
+            "unit": {
+              "tr": "HP",
+              "en": "HP",
+              "ru": "л.с."
+            }
           },
           {
             "key": "weight",
-            "unit": {"tr": "kg", "en": "kg", "ru": "кг"}
+            "unit": {
+              "tr": "kg",
+              "en": "kg",
+              "ru": "кг"
+            }
           }
         ],
         "models": [
@@ -242,24 +258,40 @@
         "tableColumns": [
           {
             "key": "genislik",
-            "unit": {"tr": "mm", "en": "mm", "ru": "мм"},
+            "unit": {
+              "tr": "mm",
+              "en": "mm",
+              "ru": "мм"
+            },
             "icon": "ruler",
             "highlighted": false
           },
           {
             "key": "discs",
-            "unit": {"tr": "Adet", "en": "pcs", "ru": "шт"},
+            "unit": {
+              "tr": "Adet",
+              "en": "pcs",
+              "ru": "шт"
+            },
             "icon": "battery-charging",
             "highlighted": false
           },
           {
             "key": "power",
-            "unit": {"tr": "HP", "en": "HP", "ru": "л.с."},
+            "unit": {
+              "tr": "HP",
+              "en": "HP",
+              "ru": "л.с."
+            },
             "highlighted": true
           },
           {
             "key": "weight",
-            "unit": {"tr": "kg", "en": "kg", "ru": "кг"}
+            "unit": {
+              "tr": "kg",
+              "en": "kg",
+              "ru": "кг"
+            }
           }
         ],
         "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
@@ -278,34 +310,34 @@
           {
             "id": "ck-3001",
             "name": "CK 3001",
-            "image": "1764274258010-485803440.png",
+            "image": null,
             "specs": {
+              "genislik": "3.0",
               "discs": "24",
               "power": "90",
-              "weight": "1350",
-              "genislik": "3.0"
+              "weight": "1350"
             }
           },
           {
             "id": "ck-3501",
             "name": "CK 3501",
-            "image": "1764274266814-301069872.jpg",
+            "image": null,
             "specs": {
+              "genislik": "3.5",
               "discs": "28",
               "power": "110",
-              "weight": "1450",
-              "genislik": "3.5"
+              "weight": "1450"
             }
           },
           {
             "id": "ck-4001",
             "name": "CK 4001",
-            "image": "1764274273808-545279351.png",
+            "image": null,
             "specs": {
+              "genislik": "4.0",
               "discs": "32",
               "power": "130",
-              "weight": "1600",
-              "genislik": "4.0"
+              "weight": "1600"
             }
           },
           {
@@ -495,23 +527,43 @@
         "tableColumns": [
           {
             "key": "capacity",
-            "unit": {"tr": "Ton", "en": "Ton", "ru": "т"}
+            "unit": {
+              "tr": "Ton",
+              "en": "Ton",
+              "ru": "т"
+            }
           },
           {
             "key": "volume",
-            "unit": {"tr": "m³", "en": "m³", "ru": "м³"}
+            "unit": {
+              "tr": "m³",
+              "en": "m³",
+              "ru": "м³"
+            }
           },
           {
             "key": "axles",
-            "unit": {"tr": "Adet", "en": "pcs", "ru": "шт"}
+            "unit": {
+              "tr": "Adet",
+              "en": "pcs",
+              "ru": "шт"
+            }
           },
           {
             "key": "tires",
-            "unit": {"tr": "", "en": "", "ru": ""}
+            "unit": {
+              "tr": "",
+              "en": "",
+              "ru": ""
+            }
           },
           {
             "key": "motor_gucu",
-            "unit": {"tr": "HP", "en": "HP", "ru": "л.с."}
+            "unit": {
+              "tr": "HP",
+              "en": "HP",
+              "ru": "л.с."
+            }
           }
         ],
         "models": [
@@ -658,19 +710,35 @@
         "tableColumns": [
           {
             "key": "capacity",
-            "unit": {"tr": "Ton", "en": "Ton", "ru": "т"}
+            "unit": {
+              "tr": "Ton",
+              "en": "Ton",
+              "ru": "т"
+            }
           },
           {
             "key": "volume",
-            "unit": {"tr": "m³", "en": "m³", "ru": "м³"}
+            "unit": {
+              "tr": "m³",
+              "en": "m³",
+              "ru": "м³"
+            }
           },
           {
             "key": "tipping",
-            "unit": {"tr": "", "en": "", "ru": ""}
+            "unit": {
+              "tr": "",
+              "en": "",
+              "ru": ""
+            }
           },
           {
             "key": "tires",
-            "unit": {"tr": "", "en": "", "ru": ""}
+            "unit": {
+              "tr": "",
+              "en": "",
+              "ru": ""
+            }
           }
         ],
         "models": [
@@ -813,19 +881,35 @@
         "tableColumns": [
           {
             "key": "width",
-            "unit": {"tr": "m", "en": "m", "ru": "м"}
+            "unit": {
+              "tr": "m",
+              "en": "m",
+              "ru": "м"
+            }
           },
           {
             "key": "tines",
-            "unit": {"tr": "Adet", "en": "pcs", "ru": "шт"}
+            "unit": {
+              "tr": "Adet",
+              "en": "pcs",
+              "ru": "шт"
+            }
           },
           {
             "key": "power",
-            "unit": {"tr": "HP", "en": "HP", "ru": "л.с."}
+            "unit": {
+              "tr": "HP",
+              "en": "HP",
+              "ru": "л.с."
+            }
           },
           {
             "key": "weight",
-            "unit": {"tr": "kg", "en": "kg", "ru": "кг"}
+            "unit": {
+              "tr": "kg",
+              "en": "kg",
+              "ru": "кг"
+            }
           }
         ],
         "models": [
