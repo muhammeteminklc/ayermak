@@ -832,7 +832,7 @@
         "en": "tiller",
         "ru": "pochvoobrabatyvayushchaya-borona"
       },
-      "defaultImage": "ürün5.jpg",
+      "defaultImage": "1765218588074-768661122.png",
       "category": "tiller",
       "order": 5,
       "specs": {
@@ -993,6 +993,347 @@
         "videoUrl": null,
         "gallery": [],
         "documents": []
+      },
+      "categoryIcon": "package"
+    },
+    {
+      "id": "lazer-tesfiye",
+      "slug": {
+        "tr": "lazer-tesfiye",
+        "en": "laser-leveling",
+        "ru": "lazernoe-vyravnivanie"
+      },
+      "defaultImage": "1765219629127-893939192.png",
+      "category": "lazer-tesfiye",
+      "categoryIcon": "focus",
+      "order": 6,
+      "specs": {},
+      "details": {
+        "tableColumns": [
+          {
+            "key": "workingWidth",
+            "unit": {
+              "tr": "m",
+              "en": "m",
+              "ru": "м"
+            },
+            "icon": "ruler",
+            "highlighted": false
+          },
+          {
+            "key": "power",
+            "unit": {
+              "tr": "HP",
+              "en": "HP",
+              "ru": "л.с."
+            },
+            "icon": "zap",
+            "highlighted": true
+          },
+          {
+            "key": "weight",
+            "unit": {
+              "tr": "kg",
+              "en": "kg",
+              "ru": "кг"
+            },
+            "icon": "weight",
+            "highlighted": false
+          }
+        ],
+        "models": [
+          {
+            "id": "ls-400",
+            "name": "LS 400",
+            "image": null,
+            "specs": {
+              "workingWidth": "4.0",
+              "power": "100",
+              "weight": "2920"
+            }
+          },
+          {
+            "id": "ls-500",
+            "name": "LS 500",
+            "image": null,
+            "specs": {
+              "workingWidth": "5.0",
+              "power": "125",
+              "weight": "3480"
+            }
+          },
+          {
+            "id": "ls-501",
+            "name": "LS 501",
+            "image": null,
+            "specs": {
+              "workingWidth": "5.0",
+              "power": "125",
+              "weight": "2970"
+            }
+          },
+          {
+            "id": "ls-600",
+            "name": "LS 600",
+            "image": null,
+            "specs": {
+              "workingWidth": "6.0",
+              "power": "150",
+              "weight": "3520"
+            }
+          }
+        ],
+        "technical": {
+          "dingilSistemi": {
+            "icon": "git-branch"
+          },
+          "saseYapisi": {
+            "icon": "box"
+          },
+          "hidrolikSistem": {
+            "icon": "droplets"
+          },
+          "lazerKontrol": {
+            "icon": "focus"
+          },
+          "guvenlikOzellikleri": {
+            "icon": "shield-check"
+          }
+        },
+        "videoUrl": null,
+        "videoTitle": {
+          "tr": "Lazer Tesfiye Makinesi Çalışma Videosu",
+          "en": "Laser Leveling Machine Working Video",
+          "ru": "Видео работы лазерной планировочной машины"
+        },
+        "videoSubtitle": {
+          "tr": "Hassas arazi tesviye performansını izleyin",
+          "en": "Watch precise land leveling performance",
+          "ru": "Смотрите точную планировку земли"
+        },
+        "gallery": [],
+        "documents": [],
+        "featureIcons": [
+          "git-branch",
+          "box",
+          "wrench",
+          "fuel",
+          "focus",
+          "sliders-horizontal",
+          "truck",
+          "toggle-right",
+          "triangle-alert",
+          "droplets",
+          "waves"
+        ]
+      }
+    },
+    {
+      "id": "goble-diskaro",
+      "slug": {
+        "tr": "goble-diskaro",
+        "en": "goble-disc-harrow",
+        "ru": "gobel-diskovaya-borona"
+      },
+      "defaultImage": "1765221738940-67236015.png",
+      "category": "goble-diskaro",
+      "categoryIcon": "disc",
+      "order": 7,
+      "specs": {
+        "discDiameter": {
+          "icon": "circle",
+          "values": {
+            "tr": {
+              "value": "560 - 610",
+              "unit": "mm"
+            },
+            "en": {
+              "value": "560 - 610",
+              "unit": "mm"
+            },
+            "ru": {
+              "value": "560 - 610",
+              "unit": "мм"
+            }
+          }
+        },
+        "discSpacing": {
+          "icon": "move-horizontal",
+          "values": {
+            "tr": {
+              "value": "230",
+              "unit": "mm"
+            },
+            "en": {
+              "value": "230",
+              "unit": "mm"
+            },
+            "ru": {
+              "value": "230",
+              "unit": "мм"
+            }
+          }
+        }
+      },
+      "details": {
+        "tableColumns": [
+          {
+            "key": "diskCount",
+            "unit": {
+              "tr": "Adet",
+              "en": "pcs",
+              "ru": "шт"
+            },
+            "icon": "disc",
+            "highlighted": false
+          },
+          {
+            "key": "workingWidth",
+            "unit": {
+              "tr": "mm",
+              "en": "mm",
+              "ru": "мм"
+            },
+            "icon": "ruler",
+            "highlighted": false
+          },
+          {
+            "key": "weight",
+            "unit": {
+              "tr": "kg",
+              "en": "kg",
+              "ru": "кг"
+            },
+            "icon": "weight",
+            "highlighted": false
+          },
+          {
+            "key": "power",
+            "unit": {
+              "tr": "HP",
+              "en": "HP",
+              "ru": "л.с."
+            },
+            "icon": "zap",
+            "highlighted": true
+          }
+        ],
+        "models": [
+          {
+            "id": "g0501",
+            "name": "G0501",
+            "image": null,
+            "specs": {
+              "diskCount": "20",
+              "workingWidth": "2190",
+              "weight": "1600",
+              "power": "65-75"
+            }
+          },
+          {
+            "id": "g0753",
+            "name": "G0753",
+            "image": null,
+            "specs": {
+              "diskCount": "22",
+              "workingWidth": "2450",
+              "weight": "1680",
+              "power": "75-85"
+            }
+          },
+          {
+            "id": "g1001",
+            "name": "G1001",
+            "image": null,
+            "specs": {
+              "diskCount": "24",
+              "workingWidth": "2730",
+              "weight": "1760",
+              "power": "95-105"
+            }
+          },
+          {
+            "id": "g1251",
+            "name": "G1251",
+            "image": null,
+            "specs": {
+              "diskCount": "26",
+              "workingWidth": "3000",
+              "weight": "1980",
+              "power": "105-115"
+            }
+          },
+          {
+            "id": "g1501",
+            "name": "G1501",
+            "image": null,
+            "specs": {
+              "diskCount": "28",
+              "workingWidth": "3200",
+              "weight": "2100",
+              "power": "120-130"
+            }
+          },
+          {
+            "id": "g1751",
+            "name": "G1751",
+            "image": null,
+            "specs": {
+              "diskCount": "30",
+              "workingWidth": "3400",
+              "weight": "2150",
+              "power": "130-145"
+            }
+          },
+          {
+            "id": "g2001",
+            "name": "G2001",
+            "image": null,
+            "specs": {
+              "diskCount": "32",
+              "workingWidth": "3680",
+              "weight": "2310",
+              "power": "145-155"
+            }
+          }
+        ],
+        "technical": {
+          "hidrolikPiston": {
+            "icon": "cylinder"
+          },
+          "teraziKolu": {
+            "icon": "scale"
+          },
+          "ciziKapatici": {
+            "icon": "disc-3"
+          },
+          "yatakYapisi": {
+            "icon": "cog"
+          }
+        },
+        "videoUrl": null,
+        "videoTitle": {
+          "tr": "Goble Diskaro Çalışma Videosu",
+          "en": "Goble Disc Harrow Working Video",
+          "ru": "Видео работы дисковой бороны Gobel"
+        },
+        "videoSubtitle": {
+          "tr": "Toprak işleme performansını izleyin",
+          "en": "Watch soil cultivation performance",
+          "ru": "Смотрите производительность обработки почвы"
+        },
+        "gallery": [],
+        "documents": [],
+        "featureIcons": [
+          "wheat",
+          "mountain",
+          "sun",
+          "sprout",
+          "cylinder",
+          "scale",
+          "disc-3",
+          "cog"
+        ]
       }
     }
   ]

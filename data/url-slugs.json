@@ -25,6 +25,16 @@
       "en": "dealers",
       "ru": "dilery"
     },
+    "dealers-domestic": {
+      "tr": "bayiler/yurt-ici",
+      "en": "dealers/domestic",
+      "ru": "dilery/vnutrennie"
+    },
+    "dealers-international": {
+      "tr": "bayiler/yurt-disi",
+      "en": "dealers/international",
+      "ru": "dilery/mezhdunarodnye"
+    },
     "contact": {
       "tr": "iletisim",
       "en": "contact",
@@ -56,6 +66,16 @@
       "tr": "tiller",
       "en": "tiller",
       "ru": "kultivator-tiller"
+    },
+    "lazer-tesfiye": {
+      "tr": "lazer-tesfiye",
+      "en": "laser-leveling",
+      "ru": "lazernoe-vyravnivanie"
+    },
+    "goble-diskaro": {
+      "tr": "goble-diskaro",
+      "en": "goble-disc-harrow",
+      "ru": "gobel-diskovaya-borona"
     }
   }
 }

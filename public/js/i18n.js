@@ -12,6 +12,8 @@ class I18n {
             news: { tr: 'haberler', en: 'news', ru: 'novosti' },
             about: { tr: 'hakkimizda', en: 'about', ru: 'o-nas' },
             dealers: { tr: 'bayiler', en: 'dealers', ru: 'dilery' },
+            'dealers-domestic': { tr: 'bayiler/yurt-ici', en: 'dealers/domestic', ru: 'dilery/vnutrennie' },
+            'dealers-international': { tr: 'bayiler/yurt-disi', en: 'dealers/international', ru: 'dilery/mezhdunarodnye' },
             contact: { tr: 'iletisim', en: 'contact', ru: 'kontakt' }
         };
 
@@ -188,6 +190,15 @@ class I18n {
         }
 
         const pageSlug = parts[1];
+
+        // First, check for nested slugs (e.g., bayiler/yurt-ici)
+        if (parts.length >= 3) {
+            const nestedPageId = this.getPageIdFromNestedSlug(parts[1], parts[2], lang);
+            if (nestedPageId) {
+                return { lang, pageId: nestedPageId };
+            }
+        }
+
         const pageId = this.getPageIdFromSlug(pageSlug, lang);
 
         if (parts.length === 2) {
@@ -204,7 +215,7 @@ class I18n {
         return { lang, pageId, slug: detailSlug };
     }
 
-    // Get page ID from slug
+    // Get page ID from slug (supports nested slugs like 'bayiler/yurt-ici')
     getPageIdFromSlug(slug, lang) {
         for (const [pageId, langSlugs] of Object.entries(this.pageSlugs)) {
             if (langSlugs[lang] === slug) {
@@ -212,6 +223,12 @@ class I18n {
             }
         }
         return null;
+    }
+
+    // Get page ID from nested slug parts
+    getPageIdFromNestedSlug(part1, part2, lang) {
+        const nestedSlug = `${part1}/${part2}`;
+        return this.getPageIdFromSlug(nestedSlug, lang);
     }
 
     // Get product ID from slug

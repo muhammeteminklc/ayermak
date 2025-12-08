@@ -86,6 +86,8 @@ function getHtmlFile(pageId) {
         'news-detail': 'news-detail.html',
         'about': 'about.html',
         'dealers': 'dealers.html',
+        'dealers-domestic': 'dealers-domestic.html',
+        'dealers-international': 'dealers-international.html',
         'contact': 'iletisim.html'
     };
     return fileMap[pageId] || 'index.html';

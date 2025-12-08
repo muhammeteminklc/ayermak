@@ -229,7 +229,7 @@
 /* Dealers Hero Section */
 .dealers-hero {
     position: relative;
-    height: 350px;
+    height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -259,31 +259,23 @@
 }
 
 .dealers-hero-badge {
-    display: inline-block;
-    background: var(--primary-yellow);
-    color: #1a1a1a;
-    padding: 8px 28px;
-    border-radius: 50px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    margin-bottom: 24px;
-    animation: fadeInUp 0.6s ease;
+    display: none;
 }
 
 .dealers-hero-title {
-    font-size: clamp(36px, 5vw, 54px);
+    font-size: 32px;
     font-weight: 900;
     color: #fff;
-    margin-bottom: 16px;
+    margin-bottom: 0;
     letter-spacing: -1px;
     animation: fadeInUp 0.6s ease 0.1s both;
 }
 
 .dealers-hero-subtitle {
-    font-size: clamp(16px, 2vw, 20px);
+    font-size: 15px;
     color: rgba(255, 255, 255, 0.7);
     font-weight: 400;
+    margin-top: 8px;
     animation: fadeInUp 0.6s ease 0.2s both;
 }
 
@@ -825,16 +817,12 @@
 
 @media (max-width: 768px) {
     .dealers-hero {
-        height: 280px;
+        height: 130px;
         margin-top: 70px;
     }
 
     .dealers-hero-title {
-        font-size: 32px;
-    }
-
-    .dealers-hero-subtitle {
-        font-size: 16px;
+        font-size: 28px;
     }
 
     .dealers-maps-section {
@@ -922,20 +910,11 @@
 
 @media (max-width: 480px) {
     .dealers-hero {
-        height: 240px;
-    }
-
-    .dealers-hero-badge {
-        padding: 6px 20px;
-        font-size: 10px;
+        height: 120px;
     }
 
     .dealers-hero-title {
-        font-size: 26px;
-    }
-
-    .dealers-hero-subtitle {
-        font-size: 14px;
+        font-size: 24px;
     }
 
     .dealers-map {

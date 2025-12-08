@@ -8,26 +8,123 @@ const COMPONENT_FALLBACKS = {
         <nav class="nav-menu nav-menu-center">
             <div class="nav-links">
                 <a href="/" class="nav-link" data-nav-page="home" data-i18n="nav.home">Anasayfa</a>
-                <a href="/tr/urunler" class="nav-link" data-nav-page="products" data-i18n="nav.products">Ürünler</a>
-                <a href="/tr/bayiler" class="nav-link" data-nav-page="dealers" data-i18n="nav.dealers">Bayilerimiz</a>
+                <div class="nav-dropdown">
+                    <a href="/tr/urunler" class="nav-link has-dropdown" data-nav-page="products" data-i18n="nav.products">
+                        Ürünler
+                        <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <div class="mega-dropdown">
+                        <div class="mega-categories">
+                            <a href="/tr/urunler/patlatma" class="mega-category active" data-category="patlatma">
+                                <span data-i18n="categories.patlatma">Patlatma</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            </a>
+                            <a href="/tr/urunler/kultivator" class="mega-category" data-category="kultivator">
+                                <span data-i18n="categories.kultivator">Kültüvatör</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            </a>
+                            <a href="/tr/urunler/romork" class="mega-category" data-category="romork">
+                                <span data-i18n="categories.romork">Römork</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            </a>
+                            <a href="/tr/urunler/tiller" class="mega-category" data-category="tiller">
+                                <span data-i18n="categories.tiller">Tiller</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            </a>
+                            <a href="/tr/urunler/lazer-tesfiye" class="mega-category" data-category="lazer-tesfiye">
+                                <span data-i18n="categories.lazer-tesfiye">Lazer Tesfiye</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            </a>
+                            <a href="/tr/urunler/goble-diskaro" class="mega-category" data-category="goble-diskaro">
+                                <span data-i18n="categories.goble-diskaro">Goble Diskaro</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            </a>
+                            <a href="/tr/urunler" class="mega-view-all">
+                                <span data-i18n="nav.allProducts">Tüm Ürünler</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </a>
+                        </div>
+                        <div class="mega-products">
+                            <div class="mega-product-list active" data-products="patlatma">
+                                <a href="/tr/urunler/patlatma" class="mega-product-item">
+                                    <img src="/images/products/ürün1.png" alt="Patlatma">
+                                    <span data-i18n="productNames.patlatma">Patlatma</span>
+                                </a>
+                            </div>
+                            <div class="mega-product-list" data-products="kultivator">
+                                <a href="/tr/urunler/diskli-kultivatort" class="mega-product-item">
+                                    <img src="/images/products/ürün2.png" alt="Diskli Kültüvatör">
+                                    <span data-i18n="productNames.diskli-kultivator">Diskli Kültüvatör</span>
+                                </a>
+                            </div>
+                            <div class="mega-product-list" data-products="romork">
+                                <a href="/tr/urunler/tandem-romork" class="mega-product-item">
+                                    <img src="/images/products/ürün3.png" alt="Tandem Römork">
+                                    <span data-i18n="productShortNames.tandem-romork">Tandem Römork</span>
+                                </a>
+                                <a href="/tr/urunler/dingilli-romork" class="mega-product-item">
+                                    <img src="/images/products/ürün4.png" alt="Dingilli Römork">
+                                    <span data-i18n="productShortNames.dingilli-romork">Dingilli Römork</span>
+                                </a>
+                            </div>
+                            <div class="mega-product-list" data-products="tiller">
+                                <a href="/tr/urunler/tiller" class="mega-product-item">
+                                    <img src="/images/products/tiller.png" alt="Tiller">
+                                    <span data-i18n="productNames.tiller">Tiller</span>
+                                </a>
+                            </div>
+                            <div class="mega-product-list" data-products="lazer-tesfiye">
+                                <a href="/tr/urunler/lazer-tesfiye" class="mega-product-item">
+                                    <img src="/images/products/lazer-tesfiye.png" alt="Lazer Tesfiye">
+                                    <span data-i18n="productNames.lazer-tesfiye">Lazer Tesfiye</span>
+                                </a>
+                            </div>
+                            <div class="mega-product-list" data-products="goble-diskaro">
+                                <a href="/tr/urunler/goble-diskaro" class="mega-product-item">
+                                    <img src="/images/products/goble-diskaro.png" alt="Goble Diskaro">
+                                    <span data-i18n="productNames.goble-diskaro">Goble Diskaro</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-dropdown dealers-nav-dropdown">
+                    <a href="/tr/bayiler/yurt-ici" class="nav-link has-dropdown" data-nav-page="dealers-domestic" data-i18n="nav.dealers">
+                        Bayilerimiz
+                        <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <div class="dealers-dropdown">
+                        <a href="/tr/bayiler/yurt-ici" class="dealers-dropdown-item" data-nav-page="dealers-domestic">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <span data-i18n="nav.dealersDomestic">Yurt İçi Bayiler</span>
+                        </a>
+                        <a href="/tr/bayiler/yurt-disi" class="dealers-dropdown-item" data-nav-page="dealers-international">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                            <span data-i18n="nav.dealersInternational">Yurt Dışı Bayiler</span>
+                        </a>
+                    </div>
+                </div>
                 <a href="/tr/hakkimizda" class="nav-link" data-nav-page="about" data-i18n="nav.about">Hakkımızda</a>
                 <a href="/tr/haberler" class="nav-link" data-nav-page="news" data-i18n="nav.news">Haberler</a>
                 <a href="/tr/iletisim" class="nav-link" data-nav-page="contact" data-i18n="nav.contact">İletişim</a>
             </div>
             <div class="mobile-lang-selector">
-                <span class="mobile-lang-label">Dil / Language</span>
                 <div class="mobile-lang-buttons">
-                    <a href="/tr/" class="mobile-lang-btn" data-lang="tr">Türkçe</a>
-                    <a href="/en/" class="mobile-lang-btn" data-lang="en">English</a>
-                    <a href="/ru/" class="mobile-lang-btn" data-lang="ru">Русский</a>
+                    <a href="/tr/" class="mobile-lang-btn" data-lang="tr" title="Türkçe">🇹🇷</a>
+                    <a href="/en/" class="mobile-lang-btn" data-lang="en" title="English">🇬🇧</a>
+                    <a href="/ru/" class="mobile-lang-btn" data-lang="ru" title="Русский">🇷🇺</a>
                 </div>
             </div>
         </nav>
         <div class="header-right">
             <div class="language-selector">
-                <a href="/tr/" class="lang-btn" data-lang="tr">TR</a>
-                <a href="/en/" class="lang-btn" data-lang="en">EN</a>
-                <a href="/ru/" class="lang-btn" data-lang="ru">RU</a>
+                <a href="/tr/" class="lang-btn" data-lang="tr" title="Türkçe">🇹🇷</a>
+                <a href="/en/" class="lang-btn" data-lang="en" title="English">🇬🇧</a>
+                <a href="/ru/" class="lang-btn" data-lang="ru" title="Русский">🇷🇺</a>
             </div>
         </div>
         <button class="mobile-menu-btn" aria-label="Menu">
@@ -295,49 +392,94 @@ function initHeaderScroll() {
 // Mega Dropdown Menu Initialization
 function initMegaMenu() {
     const navDropdown = document.querySelector('.nav-dropdown');
-    if (!navDropdown) return;
 
-    const categories = navDropdown.querySelectorAll('.mega-category');
-    const productLists = navDropdown.querySelectorAll('.mega-product-list');
-    const dropdownLink = navDropdown.querySelector('.has-dropdown');
+    // Products Mega Dropdown
+    if (navDropdown) {
+        const categories = navDropdown.querySelectorAll('.mega-category');
+        const productLists = navDropdown.querySelectorAll('.mega-product-list');
+        const dropdownLink = navDropdown.querySelector('.has-dropdown');
 
-    // Category hover - show related products
-    categories.forEach(category => {
-        category.addEventListener('mouseenter', () => {
-            const targetCategory = category.dataset.category;
+        // Update mega menu images from products.json
+        updateMegaMenuImages();
 
-            // Update active category
-            categories.forEach(c => c.classList.remove('active'));
-            category.classList.add('active');
+        // Category hover - show related products
+        categories.forEach(category => {
+            category.addEventListener('mouseenter', () => {
+                const targetCategory = category.dataset.category;
 
-            // Show related products
-            productLists.forEach(list => {
-                list.classList.remove('active');
-                if (list.dataset.products === targetCategory) {
-                    list.classList.add('active');
-                }
+                // Update active category
+                categories.forEach(c => c.classList.remove('active'));
+                category.classList.add('active');
+
+                // Show related products
+                productLists.forEach(list => {
+                    list.classList.remove('active');
+                    if (list.dataset.products === targetCategory) {
+                        list.classList.add('active');
+                    }
+                });
             });
         });
-    });
 
-    // Mobile: Toggle dropdown on click
-    if (dropdownLink) {
-        dropdownLink.addEventListener('click', (e) => {
-            if (window.innerWidth <= 1024) {
-                e.preventDefault();
-                navDropdown.classList.toggle('open');
+        // Mobile: Toggle dropdown on click
+        if (dropdownLink) {
+            dropdownLink.addEventListener('click', (e) => {
+                if (window.innerWidth <= 1024) {
+                    e.preventDefault();
+                    navDropdown.classList.toggle('open');
+                }
+            });
+        }
+
+        // Close dropdown when clicking outside (mobile)
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 1024 && navDropdown) {
+                if (!navDropdown.contains(e.target)) {
+                    navDropdown.classList.remove('open');
+                }
             }
         });
     }
 
-    // Close dropdown when clicking outside (mobile)
-    document.addEventListener('click', (e) => {
-        if (window.innerWidth <= 1024 && navDropdown) {
-            if (!navDropdown.contains(e.target)) {
-                navDropdown.classList.remove('open');
-            }
-        }
-    });
+}
+
+// Update mega menu product images from products.json
+async function updateMegaMenuImages() {
+    try {
+        const response = await fetch('/api/products');
+        if (!response.ok) return;
+
+        const data = await response.json();
+        // API returns array directly, not {products: [...]}
+        const products = Array.isArray(data) ? data : (data.products || []);
+
+        // Update each product image in mega menu
+        products.forEach(product => {
+            if (!product.defaultImage) return;
+
+            const imgPath = `/images/products/${product.defaultImage}`;
+            const productId = product.id;
+            const slugTr = product.slug?.tr || productId;
+            const slugEn = product.slug?.en || productId;
+            const slugRu = product.slug?.ru || productId;
+
+            // Find all mega-product-item links that match this product
+            const allProductItems = document.querySelectorAll('.mega-product-item');
+            allProductItems.forEach(link => {
+                const href = link.getAttribute('href') || '';
+                // Check if href contains product id or any of its slugs
+                if (href.includes(productId) || href.includes(slugTr) || href.includes(slugEn) || href.includes(slugRu)) {
+                    const img = link.querySelector('img');
+                    if (img) {
+                        img.src = imgPath;
+                        img.alt = productId;
+                    }
+                }
+            });
+        });
+    } catch (error) {
+        console.warn('Could not update mega menu images:', error);
+    }
 }
 
 // Yeni Drill-Down Mobil Menü Sistemi

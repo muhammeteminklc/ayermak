@@ -510,6 +510,8 @@ function getCategoryDefaultIcon(category) {
         'kultivator': 'disc-3',
         'romork': 'truck',
         'tiller': 'grip',
+        'lazer-tesfiye': 'focus',
+        'goble-diskaro': 'disc',
         'default': 'package'
     };
     return defaultIcons[category.toLowerCase()] || defaultIcons.default;

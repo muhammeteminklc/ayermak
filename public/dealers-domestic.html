@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yurt İçi Bayilerimiz - AYERMAK Tarım Makineleri</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/dealers.css">
+    <link rel="icon" href="/favicon.png?v=2" type="image/png">
+    <link rel="shortcut icon" href="/favicon.ico?v=2">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Dealers Hero Section -->
+    <section class="dealers-hero">
+        <div class="dealers-hero-bg"></div>
+        <div class="dealers-hero-content">
+            <div class="dealers-hero-badge" data-i18n="dealers.domesticBadge">YURT İÇİ BAYİLER</div>
+            <h1 class="dealers-hero-title" data-i18n="dealers.domesticHeroTitle">Türkiye Bayilerimiz</h1>
+            <p class="dealers-hero-subtitle" data-i18n="dealers.domesticHeroSubtitle">Yurt içinde AYERMAK ürünlerini bulabileceğiniz yetkili bayilerimiz</p>
+        </div>
+    </section>
+
+    <!-- Dealers Maps Section -->
+    <section class="dealers-maps-section">
+        <div class="dealers-container">
+            <!-- Domestic Dealers -->
+            <div class="dealers-map-wrapper">
+                <div class="dealers-map-header">
+                    <div class="dealers-map-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="dealers-map-title" data-i18n="dealers.domesticTitle">Türkiye Bayilerimiz</h2>
+                        <p class="dealers-map-subtitle" data-i18n="dealers.domesticSubtitle">Yurt içi yetkili satış ve servis noktalarımız</p>
+                    </div>
+                </div>
+                <div id="domesticMap" class="dealers-map"></div>
+                <div class="dealers-list" id="domesticDealers"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section class="certificates-section">
+        <div class="certificates-container">
+            <div class="section-header">
+                <div class="certificates-badge" data-i18n="dealers.certificatesBadge">SERTİFİKALARIMIZ</div>
+                <h2 class="section-title" data-i18n="dealers.certificatesTitle">Bayi Sertifikaları</h2>
+                <p class="section-subtitle" data-i18n="dealers.certificatesSubtitle">Uluslararası standartlara uygun belgelendirmelerimiz</p>
+            </div>
+            <div class="certificates-grid" id="certificatesGrid">
+                <!-- Certificates will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script src="/js/i18n.js"></script>
+    <script src="/js/layout.js"></script>
+    <script src="/js/dealers.js"></script>
+</body>
+
+</html>

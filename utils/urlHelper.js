@@ -165,7 +165,7 @@ function getFullUrl(pageId, lang, params = {}) {
 
 /**
  * Reverse lookup: find page ID from slug
- * @param {string} slug - URL slug
+ * @param {string} slug - URL slug (can be nested like 'bayiler/yurt-ici')
  * @param {string} lang - Language code
  * @returns {string|null} Page ID or null if not found
  */
@@ -179,6 +179,18 @@ function getPageIdFromSlug(slug, lang) {
     }
 
     return null;
+}
+
+/**
+ * Try to find page ID from nested slug (e.g., 'bayiler/yurt-ici')
+ * @param {string} part1 - First part of slug (e.g., 'bayiler')
+ * @param {string} part2 - Second part of slug (e.g., 'yurt-ici')
+ * @param {string} lang - Language code
+ * @returns {string|null} Page ID or null if not found
+ */
+function getPageIdFromNestedSlug(part1, part2, lang) {
+    const nestedSlug = `${part1}/${part2}`;
+    return getPageIdFromSlug(nestedSlug, lang);
 }
 
 /**
@@ -284,6 +296,16 @@ function parseLocalizedUrl(urlPath) {
     }
 
     const pageSlug = parts[1];
+
+    // First, check for nested slugs (e.g., bayiler/yurt-ici)
+    if (parts.length >= 3) {
+        const nestedPageId = getPageIdFromNestedSlug(parts[1], parts[2], lang);
+        if (nestedPageId) {
+            // This is a nested page like dealers-domestic or dealers-international
+            return { lang, pageId: nestedPageId, slug: null };
+        }
+    }
+
     const pageId = getPageIdFromSlug(pageSlug, lang);
 
     if (!pageId) {
@@ -352,6 +374,7 @@ module.exports = {
     getLocalizedUrl,
     getFullUrl,
     getPageIdFromSlug,
+    getPageIdFromNestedSlug,
     getProductIdFromSlug,
     getAllLanguageUrls,
     detectLanguageFromHeader,

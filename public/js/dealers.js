@@ -4,43 +4,65 @@ let domesticMap, internationalMap;
 let domesticMarkers = [];
 let internationalMarkers = [];
 
+// Get page type from server-injected data
+function getPageType() {
+    if (window.__PAGE_DATA__ && window.__PAGE_DATA__.pageId) {
+        return window.__PAGE_DATA__.pageId;
+    }
+    // Fallback: check URL
+    const path = window.location.pathname;
+    if (path.includes('yurt-ici') || path.includes('domestic') || path.includes('vnutrennie')) {
+        return 'dealers-domestic';
+    }
+    if (path.includes('yurt-disi') || path.includes('international') || path.includes('mezhdunarodnye')) {
+        return 'dealers-international';
+    }
+    return 'dealers'; // Default: show both
+}
+
 // Initialize maps
 function initMaps() {
+    const pageType = getPageType();
+
     // Modern minimal map style - CartoDB Positron (light, clean)
     const mapTiles = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
     const mapAttribution = '&copy; <a href="https://carto.com/attributions">CARTO</a>';
 
-    // Domestic Map - Centered on Turkey
-    domesticMap = L.map('domesticMap', {
-        zoomControl: false,
-        scrollWheelZoom: true,
-        attributionControl: false
-    }).setView([39.0, 35.0], 6);
+    // Initialize domestic map if element exists
+    const domesticMapEl = document.getElementById('domesticMap');
+    if (domesticMapEl && (pageType === 'dealers-domestic' || pageType === 'dealers')) {
+        domesticMap = L.map('domesticMap', {
+            zoomControl: false,
+            scrollWheelZoom: true,
+            attributionControl: false
+        }).setView([39.0, 35.0], 6);
 
-    L.tileLayer(mapTiles, {
-        attribution: mapAttribution,
-        maxZoom: 18,
-        subdomains: 'abcd'
-    }).addTo(domesticMap);
+        L.tileLayer(mapTiles, {
+            attribution: mapAttribution,
+            maxZoom: 18,
+            subdomains: 'abcd'
+        }).addTo(domesticMap);
 
-    // Add minimal zoom control
-    L.control.zoom({ position: 'bottomright' }).addTo(domesticMap);
+        L.control.zoom({ position: 'bottomright' }).addTo(domesticMap);
+    }
 
-    // International Map - World view
-    internationalMap = L.map('internationalMap', {
-        zoomControl: false,
-        scrollWheelZoom: true,
-        attributionControl: false
-    }).setView([25.0, 20.0], 2);
+    // Initialize international map if element exists
+    const internationalMapEl = document.getElementById('internationalMap');
+    if (internationalMapEl && (pageType === 'dealers-international' || pageType === 'dealers')) {
+        internationalMap = L.map('internationalMap', {
+            zoomControl: false,
+            scrollWheelZoom: true,
+            attributionControl: false
+        }).setView([25.0, 20.0], 2);
 
-    L.tileLayer(mapTiles, {
-        attribution: mapAttribution,
-        maxZoom: 18,
-        subdomains: 'abcd'
-    }).addTo(internationalMap);
+        L.tileLayer(mapTiles, {
+            attribution: mapAttribution,
+            maxZoom: 18,
+            subdomains: 'abcd'
+        }).addTo(internationalMap);
 
-    // Add minimal zoom control
-    L.control.zoom({ position: 'bottomright' }).addTo(internationalMap);
+        L.control.zoom({ position: 'bottomright' }).addTo(internationalMap);
+    }
 
     // Load dealers data
     loadDealers();
@@ -48,32 +70,52 @@ function initMaps() {
 
 // Load all dealers
 async function loadDealers() {
+    const pageType = getPageType();
+
     try {
         const response = await fetch('/api/dealers');
         const data = await response.json();
 
-        if (data.domestic && data.domestic.length > 0) {
-            renderDealers(data.domestic, 'domestic');
-        } else {
-            showNoData('domesticDealers', 'Henüz yurt içi bayi eklenmemiş.');
+        // Load domestic dealers if on domestic page or combined page
+        const domesticContainer = document.getElementById('domesticDealers');
+        if (domesticContainer && (pageType === 'dealers-domestic' || pageType === 'dealers')) {
+            if (data.domestic && data.domestic.length > 0) {
+                renderDealers(data.domestic, 'domestic');
+            } else {
+                showNoData('domesticDealers', 'Henüz yurt içi bayi eklenmemiş.');
+            }
         }
 
-        if (data.international && data.international.length > 0) {
-            renderDealers(data.international, 'international');
-        } else {
-            showNoData('internationalDealers', 'Henüz yurt dışı bayi eklenmemiş.');
+        // Load international dealers if on international page or combined page
+        const internationalContainer = document.getElementById('internationalDealers');
+        if (internationalContainer && (pageType === 'dealers-international' || pageType === 'dealers')) {
+            if (data.international && data.international.length > 0) {
+                renderDealers(data.international, 'international');
+            } else {
+                showNoData('internationalDealers', 'Henüz yurt dışı bayi eklenmemiş.');
+            }
         }
 
-        if (data.certificates && data.certificates.length > 0) {
-            renderCertificates(data.certificates);
-        } else {
-            showNoData('certificatesGrid', 'Henüz sertifika eklenmemiş.');
+        // Always load certificates
+        const certificatesContainer = document.getElementById('certificatesGrid');
+        if (certificatesContainer) {
+            if (data.certificates && data.certificates.length > 0) {
+                renderCertificates(data.certificates);
+            } else {
+                showNoData('certificatesGrid', 'Henüz sertifika eklenmemiş.');
+            }
         }
     } catch (error) {
         console.error('Error loading dealers:', error);
-        showNoData('domesticDealers', 'Bayiler yüklenirken bir hata oluştu.');
-        showNoData('internationalDealers', 'Bayiler yüklenirken bir hata oluştu.');
-        showNoData('certificatesGrid', 'Sertifikalar yüklenirken bir hata oluştu.');
+        if (document.getElementById('domesticDealers')) {
+            showNoData('domesticDealers', 'Bayiler yüklenirken bir hata oluştu.');
+        }
+        if (document.getElementById('internationalDealers')) {
+            showNoData('internationalDealers', 'Bayiler yüklenirken bir hata oluştu.');
+        }
+        if (document.getElementById('certificatesGrid')) {
+            showNoData('certificatesGrid', 'Sertifikalar yüklenirken bir hata oluştu.');
+        }
     }
 }
 

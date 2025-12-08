@@ -4,6 +4,8 @@
       "home": "Anasayfa",
       "products": "Ürünler",
       "dealers": "Bayilerimiz",
+      "dealersDomestic": "Yurt İçi Bayiler",
+      "dealersInternational": "Yurt Dışı Bayiler",
       "news": "Haberler",
       "about": "Hakkımızda",
       "contact": "İletişim",
@@ -14,6 +16,8 @@
       "kultivator": "KÜLTİVATÖR",
       "romork": "RÖMORK",
       "tiller": "TİLLER",
+      "lazer-tesfiye": "LAZER TESFİYE",
+      "goble-diskaro": "GOBLE DİSKARO",
       "deneme": "deneme kategori"
     },
     "productNames": {
@@ -21,21 +25,27 @@
       "diskli-kultivator": "Diskli Kültivatör",
       "tandem-romork": "Tandem Tır Tipi Römork",
       "dingilli-romork": "Dingilli Sofralı Römork",
-      "tiller": "Tiller"
+      "tiller": "Tiller",
+      "lazer-tesfiye": "Lazer Tesfiye",
+      "goble-diskaro": "Goble Diskaro"
     },
     "productShortNames": {
       "patlatma": "Patlatma",
       "diskli-kultivator": "Kültivatör",
       "tandem-romork": "Tandem",
       "dingilli-romork": "Dingilli",
-      "tiller": "Tiller"
+      "tiller": "Tiller",
+      "lazer-tesfiye": "Tesfiye",
+      "goble-diskaro": "Diskaro"
     },
     "productDescriptions": {
       "patlatma": "Sert ve sıkışmış toprakları derin işleyerek havalandıran, su geçirgenliğini artıran profesyonel tarım ekipmanı.",
       "diskli-kultivator": "Anız ve bitki artıklarını parçalayarak toprağı ideal tohum yatağı hazırlığına getiren yüksek performanslı kültivatör.",
       "tandem-romork": "Yüksek kapasiteli taşımacılık için tasarlanmış, dayanıklı ve güvenilir tandem dingilli römork.",
       "dingilli-romork": "Çok yönlü devrilme özelliği ile pratik boşaltma imkanı sunan tek dingilli römork.",
-      "tiller": "Toprak işleme ve karıştırma için ideal, verimli ve dayanıklı tiller ekipmanı."
+      "tiller": "Toprak işleme ve karıştırma için ideal, verimli ve dayanıklı tiller ekipmanı.",
+      "lazer-tesfiye": "Lazer kontrol sistemi ile hassas arazi tesviyesi yapan, sulama verimliliğini artıran ve homojen tarla hazırlığı sağlayan profesyonel tarım ekipmanı.",
+      "goble-diskaro": "Hasat sonrası sap parçalama, kesek kırma ve kurak dönem toprak işleme için tasarlanmış çekilir tip ağır hizmet goble diskaro."
     },
     "products": {
       "patlatma": {
@@ -131,6 +141,46 @@
           "tirmikYapisi": "Özel alaşımlı çelikten üretilmiş S tipi tırmıklar. Yüksek aşınma direnci.",
           "derinlikAyari": "Mekanik derinlik ayar sistemi. 15-25 cm arası ayarlanabilir."
         }
+      },
+      "lazer-tesfiye": {
+        "features": [
+          "Teleskopik Dingil (4m ve altı): Krom kaplı rodlar ve toz önleyici keçeler, bakım gerektirmez",
+          "Akordiyon Dingil (5m ve üzeri): Çok güçlü şase, maksimum genişlikte hassasiyet kaybı yok",
+          "4 ana parçaya bölünmüş montaj, cıvata ile monte, kolay bakım ve parça değişimi",
+          "%30 daha az güç tüketimi - yakıt tasarrufu",
+          "Lazer kontrolü ile hızlı ve hassas tesviye",
+          "Operatör kabininden eğim kontrolü",
+          "Malzemenin tek seferde doğru yere taşınması, işçilik tasarrufu",
+          "Kabin içi kontrol - ayar gerektirmeden açılıp kapanma",
+          "Arkada reflektörler ve denge ayakları (güvenlik)",
+          "Homojen tarla hazırlığı, sulama verimliliği",
+          "Drenaj ve erozyon kontrolü"
+        ],
+        "technical": {
+          "dingilSistemi": "4m ve altı modellerde teleskopik dingil: Krom kaplı rodlar ve toz önleyici keçeler ile bakım gerektirmeyen yapı. 5m ve üzeri modellerde akordiyon dingil: Ekstra güçlü şase ile maksimum genişlikte bile hassasiyet kaybı yaşanmaz.",
+          "saseYapisi": "4 ana parçaya bölünmüş modüler tasarım. Cıvata ile monte edilen yapı sayesinde kolay bakım ve parça değişimi imkanı.",
+          "hidrolikSistem": "Kabin içinden kontrol edilebilen hidrolik sistem. Ayar gerektirmeden açılıp kapanma özelliği ile kullanım kolaylığı.",
+          "lazerKontrol": "Lazer kontrol sistemi ile hızlı ve hassas tesviye. Operatör kabininden eğim kontrolü imkanı.",
+          "guvenlikOzellikleri": "Arkada yüksek çözünürlüklü reflektörler ve denge ayakları. Trafik güvenliği ve park halinde devrilme önleme."
+        }
+      },
+      "goble-diskaro": {
+        "features": [
+          "Ayçiçeği, çeltik ve buğday saplarını parçalama",
+          "Toprakta oluşan kesekleri kırma ve toprağı inceltme",
+          "Kurak dönemde keseksiz toprak işlemesi",
+          "Tohum yatağı hazırlığı - başka makineye gerek yok",
+          "Hidrolik piston ile kolay dönüş ve taşıma",
+          "Terazi kolu ile hızlı denge ayarı",
+          "Çizi çukuru kapatıcı disk (konsey)",
+          "Çelik döküm yatak yapısı - uzun ömürlü"
+        ],
+        "technical": {
+          "hidrolikPiston": "Traktörden kumanda edilerek tarla sonlarındaki dönüşlerin ve makinenin yol durumunda taşınmasının kolayca yapılmasını sağlar.",
+          "teraziKolu": "Makinenin toprak yapısına göre dengesini hızlı ve kolay bir şekilde ayarlamaya yarayan özel bir koldur.",
+          "ciziKapatici": "Tarlada oluşan çizi çukurlarını kapatmak için ilave bir disk (konsey) bulunur.",
+          "yatakYapisi": "Çelik döküm yatak yapısı sayesinde yataklar uzun ömürlü ve dayanıklıdır."
+        }
       }
     },
     "specs": {
@@ -140,12 +190,14 @@
       "weight": "AĞIRLIK",
       "discCount": "DİSK SAYISI",
       "discDiameter": "DİSK ÇAPI",
+      "discSpacing": "DİSK ARA MESAFESİ",
       "capacity": "KAPASİTE",
       "volume": "HACİM",
       "axleCount": "DİNGİL SAYISI",
       "tireSize": "LASTİK BOYUTU",
       "tipping": "DEVİRME",
-      "tineCount": "TIRMIK SAYISI"
+      "tineCount": "TIRMIK SAYISI",
+      "requiredPower": "GEREKLİ GÜÇ"
     },
     "modelSpecs": {
       "width": "Genişlik",
@@ -160,7 +212,9 @@
       "tires": "Lastik",
       "tipping": "Devrilme",
       "motor_gucu": "Motor Gücü",
-      "genislik": "Genişlik"
+      "genislik": "Genişlik",
+      "diskCount": "Disk Sayısı",
+      "workingWidth": "İş Genişliği"
     },
     "homepage": {
       "viewProduct": "Ürünü İncele",
@@ -218,7 +272,15 @@
       "kasaYapisi": "Kasa Yapısı",
       "devirmeSystem": "Devrilme Sistemi",
       "frenSistemi": "Fren Sistemi",
-      "tirmikYapisi": "Tırmık Yapısı"
+      "tirmikYapisi": "Tırmık Yapısı",
+      "dingilSistemi": "Dingil Sistemi",
+      "hidrolikSistem": "Hidrolik Sistem",
+      "lazerKontrol": "Lazer Kontrol Sistemi",
+      "guvenlikOzellikleri": "Güvenlik Özellikleri",
+      "hidrolikPiston": "Hidrolik Piston",
+      "teraziKolu": "Terazi Kolu",
+      "ciziKapatici": "Çizi Çukuru Kapatıcı",
+      "yatakYapisi": "Yatak Yapısı"
     },
     "admin": {
       "login": "Giriş Yap",
@@ -310,10 +372,16 @@
       "badge": "BAYİLERİMİZ",
       "title": "Dünya Çapında Bayilerimiz",
       "subtitle": "AYERMAK ürünlerini bulabileceğiniz yetkili bayilerimiz",
+      "domesticBadge": "YURT İÇİ BAYİLER",
       "domesticTitle": "Türkiye Bayilerimiz",
       "domesticSubtitle": "Yurt içi yetkili satış ve servis noktalarımız",
+      "domesticHeroTitle": "Türkiye Bayilerimiz",
+      "domesticHeroSubtitle": "Yurt içinde AYERMAK ürünlerini bulabileceğiniz yetkili bayilerimiz",
+      "internationalBadge": "YURT DIŞI BAYİLER",
       "internationalTitle": "Uluslararası Bayilerimiz",
       "internationalSubtitle": "Dünya genelindeki yetkili distribütörlerimiz",
+      "internationalHeroTitle": "Uluslararası Bayilerimiz",
+      "internationalHeroSubtitle": "Dünya genelinde AYERMAK ürünlerini bulabileceğiniz yetkili distribütörlerimiz",
       "certificatesBadge": "SERTİFİKALARIMIZ",
       "certificatesTitle": "Bayi Sertifikaları",
       "certificatesSubtitle": "Uluslararası standartlara uygun belgelendirmelerimiz",
@@ -325,6 +393,8 @@
       "home": "Home",
       "products": "Products",
       "dealers": "Dealers",
+      "dealersDomestic": "Domestic Dealers",
+      "dealersInternational": "International Dealers",
       "news": "News",
       "about": "About",
       "contact": "Contact",
@@ -335,6 +405,8 @@
       "kultivator": "CULTIVATOR",
       "romork": "TRAILER",
       "tiller": "TILLER",
+      "lazer-tesfiye": "LASER LEVELING",
+      "goble-diskaro": "GOBLE DISC HARROW",
       "deneme": "try"
     },
     "productNames": {
@@ -342,21 +414,27 @@
       "diskli-kultivator": "Disc Cultivator",
       "tandem-romork": "Tandem Truck Type Trailer",
       "dingilli-romork": "Single Axle Tipping Trailer",
-      "tiller": "Tiller"
+      "tiller": "Tiller",
+      "lazer-tesfiye": "Laser Leveler",
+      "goble-diskaro": "Goble Disc Harrow"
     },
     "productShortNames": {
       "patlatma": "Subsoiler",
       "diskli-kultivator": "Cultivator",
       "tandem-romork": "Tandem",
       "dingilli-romork": "Axle",
-      "tiller": "Tiller"
+      "tiller": "Tiller",
+      "lazer-tesfiye": "Leveler",
+      "goble-diskaro": "Disc Harrow"
     },
     "productDescriptions": {
       "patlatma": "Professional agricultural equipment that aerates hard and compacted soils through deep tillage, improving water permeability.",
       "diskli-kultivator": "High-performance cultivator that breaks down stubble and plant residues to prepare ideal seedbed conditions.",
       "tandem-romork": "Durable and reliable tandem axle trailer designed for high-capacity transportation needs.",
       "dingilli-romork": "Single axle trailer with versatile tipping feature for practical unloading operations.",
-      "tiller": "Efficient and durable tiller equipment ideal for soil cultivation and mixing."
+      "tiller": "Efficient and durable tiller equipment ideal for soil cultivation and mixing.",
+      "lazer-tesfiye": "Professional agricultural equipment for precise land leveling with laser control system, improving irrigation efficiency and providing uniform field preparation.",
+      "goble-diskaro": "Trailed heavy-duty goble disc harrow designed for post-harvest stalk shredding, clod breaking and dry season soil cultivation."
     },
     "products": {
       "patlatma": {
@@ -452,6 +530,46 @@
           "tirmikYapisi": "S-type tines made of special alloy steel. High wear resistance.",
           "derinlikAyari": "Mechanical depth adjustment system. Adjustable between 15-25 cm."
         }
+      },
+      "lazer-tesfiye": {
+        "features": [
+          "Telescopic Axle (4m and below): Chrome-plated rods and dust-proof seals, maintenance-free",
+          "Accordion Axle (5m and above): Extra strong chassis, no precision loss at maximum width",
+          "4-piece modular assembly, bolt-mounted for easy maintenance and part replacement",
+          "30% less power consumption - fuel savings",
+          "Fast and precise leveling with laser control",
+          "Slope control from operator cabin",
+          "Material transported to correct location in one pass, labor savings",
+          "In-cabin control - opens and closes without adjustment",
+          "Rear reflectors and balance feet (safety)",
+          "Uniform field preparation, irrigation efficiency",
+          "Drainage and erosion control"
+        ],
+        "technical": {
+          "dingilSistemi": "Telescopic axle for models 4m and below: Maintenance-free structure with chrome-plated rods and dust-proof seals. Accordion axle for models 5m and above: Extra strong chassis ensures no precision loss even at maximum width.",
+          "saseYapisi": "Modular design divided into 4 main parts. Bolt-mounted structure allows easy maintenance and part replacement.",
+          "hidrolikSistem": "Hydraulic system controllable from cabin. Opens and closes without adjustment for ease of use.",
+          "lazerKontrol": "Fast and precise leveling with laser control system. Slope control capability from operator cabin.",
+          "guvenlikOzellikleri": "High-resolution reflectors and balance feet at the rear. Traffic safety and tip-over prevention when parked."
+        }
+      },
+      "goble-diskaro": {
+        "features": [
+          "Shredding sunflower, rice and wheat stalks",
+          "Breaking clods and refining soil",
+          "Clod-free soil cultivation in dry season",
+          "Seedbed preparation - no other machine needed",
+          "Easy turning and transport with hydraulic piston",
+          "Quick balance adjustment with leveling arm",
+          "Furrow closing disc (coulter)",
+          "Cast steel bearing structure - long lasting"
+        ],
+        "technical": {
+          "hidrolikPiston": "Controlled from the tractor for easy turns at field ends and transport in road position.",
+          "teraziKolu": "A special arm for quick and easy balance adjustment according to soil conditions.",
+          "ciziKapatici": "An additional disc (coulter) for closing furrows created in the field.",
+          "yatakYapisi": "Long-lasting and durable bearings thanks to cast steel bearing structure."
+        }
       }
     },
     "specs": {
@@ -461,12 +579,14 @@
       "weight": "WEIGHT",
       "discCount": "DISC COUNT",
       "discDiameter": "DISC DIAMETER",
+      "discSpacing": "DISC SPACING",
       "capacity": "CAPACITY",
       "volume": "VOLUME",
       "axleCount": "AXLE COUNT",
       "tireSize": "TIRE SIZE",
       "tipping": "TIPPING",
-      "tineCount": "TINE COUNT"
+      "tineCount": "TINE COUNT",
+      "requiredPower": "REQUIRED POWER"
     },
     "modelSpecs": {
       "width": "Width",
@@ -481,7 +601,10 @@
       "tires": "Tires",
       "tipping": "Tipping",
       "motor_gucu": "Power",
-      "genislik": "Width"
+      "genislik": "Width",
+      "requiredPower": "Required Power",
+      "diskCount": "Disc Count",
+      "workingWidth": "Working Width"
     },
     "homepage": {
       "viewProduct": "View Product",
@@ -539,7 +662,15 @@
       "kasaYapisi": "Body Structure",
       "devirmeSystem": "Tipping System",
       "frenSistemi": "Brake System",
-      "tirmikYapisi": "Tine Structure"
+      "tirmikYapisi": "Tine Structure",
+      "dingilSistemi": "Axle System",
+      "hidrolikSistem": "Hydraulic System",
+      "lazerKontrol": "Laser Control System",
+      "guvenlikOzellikleri": "Safety Features",
+      "hidrolikPiston": "Hydraulic Piston",
+      "teraziKolu": "Leveling Arm",
+      "ciziKapatici": "Furrow Closer",
+      "yatakYapisi": "Bearing Structure"
     },
     "admin": {
       "login": "Login",
@@ -631,10 +762,16 @@
       "badge": "OUR DEALERS",
       "title": "Our Dealers Worldwide",
       "subtitle": "Authorized dealers where you can find AYERMAK products",
+      "domesticBadge": "DOMESTIC DEALERS",
       "domesticTitle": "Our Dealers in Turkey",
       "domesticSubtitle": "Authorized domestic sales and service points",
+      "domesticHeroTitle": "Our Dealers in Turkey",
+      "domesticHeroSubtitle": "Authorized dealers where you can find AYERMAK products in Turkey",
+      "internationalBadge": "INTERNATIONAL DEALERS",
       "internationalTitle": "Our International Dealers",
       "internationalSubtitle": "Authorized distributors worldwide",
+      "internationalHeroTitle": "Our International Dealers",
+      "internationalHeroSubtitle": "Authorized distributors where you can find AYERMAK products worldwide",
       "certificatesBadge": "CERTIFICATES",
       "certificatesTitle": "Dealer Certificates",
       "certificatesSubtitle": "Certifications compliant with international standards",
@@ -646,6 +783,8 @@
       "home": "Главная",
       "products": "Продукция",
       "dealers": "Дилеры",
+      "dealersDomestic": "Дилеры в Турции",
+      "dealersInternational": "Международные дилеры",
       "news": "Новости",
       "about": "О нас",
       "contact": "Контакты",
@@ -656,6 +795,8 @@
       "kultivator": "КУЛЬТИВАТОР",
       "romork": "ПРИЦЕП",
       "tiller": "КУЛЬТИВАТОР",
+      "lazer-tesfiye": "ЛАЗЕРНЫЙ ПЛАНИРОВЩИК",
+      "goble-diskaro": "ДИСКОВАЯ БОРОНА GOBEL",
       "deneme": "tryrusca"
     },
     "productNames": {
@@ -663,21 +804,27 @@
       "diskli-kultivator": "Дисковый культиватор",
       "tandem-romork": "Тандемный прицеп",
       "dingilli-romork": "Одноосный прицеп",
-      "tiller": "Культиватор"
+      "tiller": "Культиватор",
+      "lazer-tesfiye": "Лазерный планировщик",
+      "goble-diskaro": "Дисковая борона Gobel"
     },
     "productShortNames": {
       "patlatma": "Рыхлитель",
       "diskli-kultivator": "Культив.",
       "tandem-romork": "Тандем",
       "dingilli-romork": "Одноосн.",
-      "tiller": "Тиллер"
+      "tiller": "Тиллер",
+      "lazer-tesfiye": "Планир.",
+      "goble-diskaro": "Дисковая"
     },
     "productDescriptions": {
       "patlatma": "Профессиональное сельскохозяйственное оборудование для глубокой обработки твёрдых и уплотнённых почв, улучшающее водопроницаемость.",
       "diskli-kultivator": "Высокопроизводительный культиватор, измельчающий стерню и растительные остатки для подготовки идеального посевного ложа.",
       "tandem-romork": "Прочный и надёжный тандемный прицеп, разработанный для перевозки грузов большой вместимости.",
       "dingilli-romork": "Одноосный прицеп с многосторонней функцией опрокидывания для удобной разгрузки.",
-      "tiller": "Эффективное и долговечное оборудование для обработки и перемешивания почвы."
+      "tiller": "Эффективное и долговечное оборудование для обработки и перемешивания почвы.",
+      "lazer-tesfiye": "Профессиональное сельскохозяйственное оборудование для точной планировки земли с лазерной системой управления, повышающее эффективность орошения и обеспечивающее однородную подготовку поля.",
+      "goble-diskaro": "Тяжёлая прицепная дисковая борона для измельчения стеблей после уборки урожая, разбивания комков и обработки почвы в засушливый сезон."
     },
     "products": {
       "patlatma": {
@@ -773,6 +920,46 @@
           "tirmikYapisi": "S-образные зубья из специального легированного стала. Высокая износостойкость.",
           "derinlikAyari": "Механическая система регулировки глубины. Регулируется от 15 до 25 см."
         }
+      },
+      "lazer-tesfiye": {
+        "features": [
+          "Телескопическая ось (4м и меньше): Хромированные штоки и пылезащитные уплотнения, не требует обслуживания",
+          "Аккордеонная ось (5м и больше): Сверхпрочная рама, без потери точности на максимальной ширине",
+          "Модульная сборка из 4 основных частей, болтовое крепление для легкого обслуживания и замены деталей",
+          "На 30% меньше потребление энергии - экономия топлива",
+          "Быстрая и точная планировка с лазерным управлением",
+          "Контроль уклона из кабины оператора",
+          "Материал доставляется в нужное место за один проход, экономия труда",
+          "Управление из кабины - открывается и закрывается без регулировки",
+          "Задние отражатели и балансировочные опоры (безопасность)",
+          "Однородная подготовка поля, эффективность орошения",
+          "Дренаж и контроль эрозии"
+        ],
+        "technical": {
+          "dingilSistemi": "Телескопическая ось для моделей 4м и меньше: Не требующая обслуживания конструкция с хромированными штоками и пылезащитными уплотнениями. Аккордеонная ось для моделей 5м и больше: Сверхпрочная рама обеспечивает отсутствие потери точности даже на максимальной ширине.",
+          "saseYapisi": "Модульная конструкция, разделенная на 4 основные части. Болтовое крепление обеспечивает легкое обслуживание и замену деталей.",
+          "hidrolikSistem": "Гидравлическая система с управлением из кабины. Открывается и закрывается без регулировки для удобства использования.",
+          "lazerKontrol": "Быстрая и точная планировка с системой лазерного управления. Возможность контроля уклона из кабины оператора.",
+          "guvenlikOzellikleri": "Светоотражатели высокого разрешения и балансировочные опоры сзади. Безопасность на дороге и предотвращение опрокидывания при парковке."
+        }
+      },
+      "goble-diskaro": {
+        "features": [
+          "Измельчение стеблей подсолнечника, риса и пшеницы",
+          "Разбивание комков и измельчение почвы",
+          "Обработка почвы без комков в засушливый сезон",
+          "Подготовка посевного ложа - не нужна другая техника",
+          "Лёгкий поворот и транспортировка с гидравлическим поршнем",
+          "Быстрая регулировка баланса рычагом",
+          "Диск для закрытия борозд (сошник)",
+          "Литая стальная конструкция подшипников - долговечность"
+        ],
+        "technical": {
+          "hidrolikPiston": "Управление с трактора для лёгких поворотов в конце поля и транспортировки в дорожном положении.",
+          "teraziKolu": "Специальный рычаг для быстрой и лёгкой регулировки баланса в зависимости от состояния почвы.",
+          "ciziKapatici": "Дополнительный диск (сошник) для закрытия борозд, образующихся на поле.",
+          "yatakYapisi": "Долговечные и прочные подшипники благодаря литой стальной конструкции."
+        }
       }
     },
     "specs": {
@@ -782,12 +969,14 @@
       "weight": "ВЕС",
       "discCount": "КОЛ-ВО ДИСКОВ",
       "discDiameter": "ДИАМЕТР ДИСКА",
+      "discSpacing": "РАССТОЯНИЕ МЕЖДУ ДИСКАМИ",
       "capacity": "ГРУЗОПОДЪЕМНОСТЬ",
       "volume": "ОБЪЕМ",
       "axleCount": "КОЛ-ВО ОСЕЙ",
       "tireSize": "РАЗМЕР ШИН",
       "tipping": "ОПРОКИДЫВАНИЕ",
-      "tineCount": "КОЛ-ВО ЗУБЬЕВ"
+      "tineCount": "КОЛ-ВО ЗУБЬЕВ",
+      "requiredPower": "ТРЕБУЕМАЯ МОЩНОСТЬ"
     },
     "modelSpecs": {
       "width": "Ширина",
@@ -802,7 +991,10 @@
       "tires": "Шины",
       "tipping": "Опрокидывание",
       "motor_gucu": "Мощность",
-      "genislik": "Ширина"
+      "genislik": "Ширина",
+      "requiredPower": "Требуемая мощность",
+      "diskCount": "Кол-во дисков",
+      "workingWidth": "Рабочая ширина"
     },
     "homepage": {
       "viewProduct": "Посмотреть продукт",
@@ -860,7 +1052,15 @@
       "kasaYapisi": "Структура кузова",
       "devirmeSystem": "Система опрокидывания",
       "frenSistemi": "Тормозная система",
-      "tirmikYapisi": "Структура зубьев"
+      "tirmikYapisi": "Структура зубьев",
+      "dingilSistemi": "Система осей",
+      "hidrolikSistem": "Гидравлическая система",
+      "lazerKontrol": "Система лазерного управления",
+      "guvenlikOzellikleri": "Функции безопасности",
+      "hidrolikPiston": "Гидравлический поршень",
+      "teraziKolu": "Рычаг балансировки",
+      "ciziKapatici": "Закрыватель борозд",
+      "yatakYapisi": "Конструкция подшипников"
     },
     "admin": {
       "login": "Войти",
@@ -952,10 +1152,16 @@
       "badge": "НАШИ ДИЛЕРЫ",
       "title": "Наши дилеры по всему миру",
       "subtitle": "Авторизованные дилеры, где можно найти продукты AYERMAK",
+      "domesticBadge": "ДИЛЕРЫ В ТУРЦИИ",
       "domesticTitle": "Наши дилеры в Турции",
       "domesticSubtitle": "Авторизованные внутренние точки продаж и обслуживания",
+      "domesticHeroTitle": "Наши дилеры в Турции",
+      "domesticHeroSubtitle": "Авторизованные дилеры, где можно найти продукты AYERMAK в Турции",
+      "internationalBadge": "МЕЖДУНАРОДНЫЕ ДИЛЕРЫ",
       "internationalTitle": "Наши международные дилеры",
       "internationalSubtitle": "Авторизованные дистрибьюторы по всему миру",
+      "internationalHeroTitle": "Наши международные дилеры",
+      "internationalHeroSubtitle": "Авторизованные дистрибьюторы, где можно найти продукты AYERMAK по всему миру",
       "certificatesBadge": "СЕРТИФИКАТЫ",
       "certificatesTitle": "Дилерские сертификаты",
       "certificatesSubtitle": "Сертификация в соответствии с международными стандартами",

@@ -11,9 +11,9 @@
     opacity: 1;
 }
 
-/* Hero Override - products-hero'yu biraz uzatma */
+/* Hero Override - kompakt hero */
 .about-hero.products-hero {
-    height: 350px;
+    height: 150px;
 }
 
 /* Story Section - Clean & Minimal */
@@ -353,7 +353,7 @@
 
 @media (max-width: 768px) {
     .about-hero.products-hero {
-        height: 280px;
+        height: 120px;
     }
 
     .story-section,
@@ -391,7 +391,7 @@
 
 @media (max-width: 480px) {
     .about-hero.products-hero {
-        height: 220px;
+        height: 110px;
     }
 
     .stats-grid {
