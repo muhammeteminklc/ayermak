@@ -56,6 +56,58 @@
             margin-bottom: 1.5rem;
         }
 
+        .news-detail-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin: 2rem 0 1rem;
+            color: var(--text-color);
+        }
+
+        .news-detail-content h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem;
+            color: var(--text-color);
+        }
+
+        .news-detail-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .news-detail-content blockquote {
+            border-left: 4px solid var(--primary-color, #e53935);
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            color: #666;
+            font-style: italic;
+            background: #f9f9f9;
+            padding: 1rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .news-detail-content ul,
+        .news-detail-content ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+        }
+
+        .news-detail-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .news-detail-content a {
+            color: var(--primary-color, #e53935);
+            text-decoration: underline;
+        }
+
+        .news-detail-content iframe {
+            max-width: 100%;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
         .back-btn {
             display: inline-flex;
             align-items: center;
@@ -164,8 +216,15 @@
 
             document.title = `${title} - AYERMAK`;
 
-            // Format content paragraphs
-            const formattedContent = content.split('\n').map(p => p.trim() ? `<p>${p}</p>` : '').join('');
+            // Check if content is HTML or plain text
+            let formattedContent;
+            if (content.includes('<') && content.includes('>')) {
+                // HTML content - use directly
+                formattedContent = content;
+            } else {
+                // Plain text - convert to HTML paragraphs (backwards compatibility)
+                formattedContent = content.split('\n').map(p => p.trim() ? `<p>${p}</p>` : '').join('');
+            }
 
             document.getElementById('newsDetailContent').innerHTML = `
                 <header class="news-detail-header">
