@@ -1070,15 +1070,6 @@ async function initProductDetailPage() {
             detailsSection.style.display = 'none';
         }
 
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') {
-                window.location.href = window.i18n?.getProductUrl(prevProduct.id) || `/tr/urunler/${prevProduct.id}`;
-            } else if (e.key === 'ArrowRight') {
-                window.location.href = window.i18n?.getProductUrl(nextProduct.id) || `/tr/urunler/${nextProduct.id}`;
-            }
-        });
-
     } catch (error) {
         console.error('Error loading product detail:', error);
     }

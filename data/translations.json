@@ -40,16 +40,22 @@
     "products": {
       "patlatma": {
         "features": [
-          "Sert ve sıkışmış toprakları derinlemesine işler",
-          "Su geçirgenliğini artırarak kök gelişimini destekler",
-          "Güçlendirilmiş ayak yapısı ile uzun ömürlü kullanım",
-          "Hidrolik derinlik ayarı ile kolay kullanım",
-          "Yüksek kırılma mukavemeti"
+          "Güçlendirilmiş şase ve iskelet yapısı ile yüksek dayanıklılık",
+          "5, 7 ve 9 ayaklı model seçenekleri",
+          "Her ayakta 4 adet takılıp sökülebilen özel alaşımlı kesici bıçak",
+          "Emniyet cıvatası ile taş ve yabancı cisimlerden koruma",
+          "Park halinde devrilmeyi önleyen denge ayakları",
+          "Trafikte güvenlik için yüksek çözünürlüklü reflektörler",
+          "2 adet ayarlı çift merdane (patenci) ile toprak keseklerini parçalama",
+          "50 cm derinliğe kadar toprak işleme kapasitesi",
+          "Taban taşını kırarak su geçirgenliğini artırma"
         ],
         "technical": {
-          "ayakYapisi": "Özel alaşımlı çelikten üretilmiş, yüksek aşınma direncine sahip patlatma ayakları. Kolay değiştirilebilir uç sistemi.",
-          "derinlikAyari": "Hidrolik kontrollü derinlik ayar sistemi. 45-60 cm arasında ayarlanabilir çalışma derinliği.",
-          "saseYapisi": "Ağır hizmet tipi güçlendirilmiş şase. Yüksek mukavemetli kaynaklı konstrüksiyon."
+          "ayakYapisi": "Özel alaşımlı çelikten üretilmiş ayaklar. Her ayakta 4 adet takılıp sökülebilen, aşınmaya dayanıklı kesici bıçak.",
+          "derinlikAyari": "450 mm çalışma derinliği. 460 mm ayak aralığı ile etkili toprak işleme.",
+          "saseYapisi": "Emsallerine göre daha güçlü ve dayanıklı şase yapısı. Ağır hizmet tipi güçlendirilmiş konstrüksiyon.",
+          "emniyetSistemi": "Taş ve sert cisimlere karşı koruma sağlayan emniyet cıvataları. Zorlanma anında kırılarak makineyi korur.",
+          "merdaneSistemi": "Arkada 2 adet ayarlı çift merdane (patenci). Derin sürüm sonrası toprak keseklerini parçalar."
         }
       },
       "diskli-kultivator": {
@@ -355,16 +361,22 @@
     "products": {
       "patlatma": {
         "features": [
-          "Deep cultivation of hard and compacted soils",
-          "Supports root development by improving water permeability",
-          "Long-lasting use with reinforced leg structure",
-          "Easy operation with hydraulic depth adjustment",
-          "High breaking resistance"
+          "High durability with reinforced chassis and frame structure",
+          "Available in 5, 7, and 9 leg model options",
+          "4 removable special alloy cutting blades on each leg",
+          "Safety bolt protection against rocks and foreign objects",
+          "Balance legs to prevent tipping when parked",
+          "High-resolution reflectors for road safety",
+          "2 adjustable double rollers for breaking soil clods",
+          "Soil cultivation capacity up to 50 cm depth",
+          "Breaks hardpan layer to improve water permeability"
         ],
         "technical": {
-          "ayakYapisi": "Subsoiler legs made of special alloy steel with high wear resistance. Easy-to-replace tip system.",
-          "derinlikAyari": "Hydraulic controlled depth adjustment system. Working depth adjustable between 45-60 cm.",
-          "saseYapisi": "Heavy-duty reinforced chassis. High-strength welded construction."
+          "ayakYapisi": "Legs made of special alloy steel. 4 removable wear-resistant cutting blades on each leg.",
+          "derinlikAyari": "450 mm working depth. Effective soil cultivation with 460 mm leg spacing.",
+          "saseYapisi": "Stronger and more durable chassis compared to competitors. Heavy-duty reinforced construction.",
+          "emniyetSistemi": "Safety bolts for protection against rocks and hard objects. Breaks under stress to protect the machine.",
+          "merdaneSistemi": "2 adjustable double rollers at the rear. Breaks soil clods after deep tillage."
         }
       },
       "diskli-kultivator": {
@@ -670,16 +682,22 @@
     "products": {
       "patlatma": {
         "features": [
-          "Глубокая обработка твёрдых и уплотнённых почв",
-          "Поддержка развития корней за счёт улучшения водопроницаемости",
-          "Долговечное использование с усиленной конструкцией ног",
-          "Простое управление с гидравлической регулировкой глубины",
-          "Высокая прочность на излом"
+          "Высокая прочность благодаря усиленному шасси и раме",
+          "Доступны модели с 5, 7 и 9 стойками",
+          "4 съемных режущих ножа из специального сплава на каждой стойке",
+          "Защита предохранительным болтом от камней и посторонних предметов",
+          "Опорные стойки для предотвращения опрокидывания при парковке",
+          "Светоотражатели высокого разрешения для безопасности на дороге",
+          "2 регулируемых двойных катка для разбивания комьев почвы",
+          "Глубина обработки почвы до 50 см",
+          "Разрушает плужную подошву для улучшения водопроницаемости"
         ],
         "technical": {
-          "ayakYapisi": "Рыхлительные ноги из специального легированного стала с высокой износостойкостью. Легко заменяемая система наконечников.",
-          "derinlikAyari": "Гидравлическая система регулировки глубины. Рабочая глубина регулируется от 45 до 60 см.",
-          "saseYapisi": "Усиленная рама тяжёлого типа. Высокопрочная сварная конструкция."
+          "ayakYapisi": "Стойки из специальной легированной стали. 4 съемных износостойких режущих ножа на каждой стойке.",
+          "derinlikAyari": "Рабочая глубина 450 мм. Эффективная обработка почвы с расстоянием между стойками 460 мм.",
+          "saseYapisi": "Более прочное и долговечное шасси по сравнению с аналогами. Усиленная конструкция для тяжелых условий.",
+          "emniyetSistemi": "Предохранительные болты для защиты от камней и твердых предметов. Ломаются при перегрузке для защиты машины.",
+          "merdaneSistemi": "2 регулируемых двойных катка сзади. Разбивают комья почвы после глубокой вспашки."
         }
       },
       "diskli-kultivator": {

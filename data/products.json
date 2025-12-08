@@ -15,15 +15,15 @@
           "icon": "move-horizontal",
           "values": {
             "tr": {
-              "value": "3.0",
+              "value": "2.6 - 4.5",
               "unit": "m"
             },
             "en": {
-              "value": "3.0",
+              "value": "2.6 - 4.5",
               "unit": "m"
             },
             "ru": {
-              "value": "3.0",
+              "value": "2.6 - 4.5",
               "unit": "м"
             }
           }
@@ -32,16 +32,16 @@
           "icon": "arrow-down",
           "values": {
             "tr": {
-              "value": "45-60",
-              "unit": "cm"
+              "value": "450",
+              "unit": "mm"
             },
             "en": {
-              "value": "45-60",
-              "unit": "cm"
+              "value": "450",
+              "unit": "mm"
             },
             "ru": {
-              "value": "45-60",
-              "unit": "см"
+              "value": "450",
+              "unit": "мм"
             }
           }
         },
@@ -49,15 +49,15 @@
           "icon": "anchor",
           "values": {
             "tr": {
-              "value": "5",
+              "value": "5 - 9",
               "unit": "adet"
             },
             "en": {
-              "value": "5",
+              "value": "5 - 9",
               "unit": "pcs"
             },
             "ru": {
-              "value": "5",
+              "value": "5 - 9",
               "unit": "шт"
             }
           }
@@ -66,15 +66,15 @@
           "icon": "weight",
           "values": {
             "tr": {
-              "value": "1200",
+              "value": "1350 - 1940",
               "unit": "kg"
             },
             "en": {
-              "value": "1200",
+              "value": "1350 - 1940",
               "unit": "kg"
             },
             "ru": {
-              "value": "1200",
+              "value": "1350 - 1940",
               "unit": "кг"
             }
           }
@@ -88,7 +88,9 @@
               "tr": "m",
               "en": "m",
               "ru": "м"
-            }
+            },
+            "icon": "ruler",
+            "highlighted": false
           },
           {
             "key": "legs",
@@ -96,7 +98,9 @@
               "tr": "Adet",
               "en": "pcs",
               "ru": "шт"
-            }
+            },
+            "icon": "anchor",
+            "highlighted": false
           },
           {
             "key": "power",
@@ -104,7 +108,9 @@
               "tr": "HP",
               "en": "HP",
               "ru": "л.с."
-            }
+            },
+            "icon": "zap",
+            "highlighted": true
           },
           {
             "key": "weight",
@@ -112,73 +118,84 @@
               "tr": "kg",
               "en": "kg",
               "ru": "кг"
-            }
+            },
+            "icon": "weight",
+            "highlighted": false
           }
         ],
         "models": [
           {
-            "id": "aym-p300",
-            "name": "AYM-P300",
+            "id": "p-5000",
+            "name": "P-5000",
             "image": null,
             "specs": {
-              "width": "2.5",
-              "legs": "3",
-              "power": "70",
-              "weight": "800"
-            }
-          },
-          {
-            "id": "aym-p400",
-            "name": "AYM-P400",
-            "image": null,
-            "specs": {
-              "width": "3.0",
-              "legs": "4",
-              "power": "90",
-              "weight": "1000"
-            }
-          },
-          {
-            "id": "aym-p500",
-            "name": "AYM-P500",
-            "image": null,
-            "specs": {
-              "width": "3.0",
+              "width": "2.6",
               "legs": "5",
-              "power": "110",
-              "weight": "1200"
+              "power": "100",
+              "weight": "1350"
             }
           },
           {
-            "id": "aym-p600",
-            "name": "AYM-P600",
+            "id": "p-7000",
+            "name": "P-7000",
             "image": null,
             "specs": {
               "width": "3.5",
-              "legs": "6",
+              "legs": "7",
               "power": "130",
-              "weight": "1400"
+              "weight": "1640"
             }
           },
           {
-            "id": "aym-p700",
-            "name": "AYM-P700",
+            "id": "p-9000",
+            "name": "P-9000",
             "image": null,
             "specs": {
-              "width": "4.0",
-              "legs": "7",
-              "power": "150",
-              "weight": "1600"
+              "width": "4.5",
+              "legs": "9",
+              "power": "160",
+              "weight": "1940"
             }
           }
         ],
         "technical": {
-          "ayakYapisi": "ayakYapisi",
-          "derinlikAyari": "derinlikAyari",
-          "saseYapisi": "saseYapisi"
+          "ayakYapisi": {
+            "icon": "anchor"
+          },
+          "derinlikAyari": {
+            "icon": "arrow-down-to-line"
+          },
+          "saseYapisi": {
+            "icon": "box"
+          },
+          "emniyetSistemi": {
+            "icon": "shield-check"
+          },
+          "merdaneSistemi": {
+            "icon": "circle-dot"
+          }
         },
-        "videoUrl": null,
-        "gallery": [],
+        "videoUrl": "https://www.youtube.com/watch?v=06vCVURcYF0",
+        "videoTitle": {
+          "tr": "Patlatma Makinesi Çalışma Videosu",
+          "en": "Subsoiler Machine Working Video",
+          "ru": "Видео работы глубокорыхлителя"
+        },
+        "videoSubtitle": {
+          "tr": "Taban taşı kırma ve derin toprak işleme performansını izleyin",
+          "en": "Watch the hardpan breaking and deep tillage performance",
+          "ru": "Смотрите процесс разрушения плужной подошвы и глубокой обработки почвы"
+        },
+        "gallery": [
+          "patlatma-gallery-1.jpg",
+          "patlatma-gallery-2.jpg",
+          "patlatma-gallery-3.jpg",
+          "patlatma-gallery-4.jpg",
+          "patlatma-gallery-5.jpg",
+          "patlatma-gallery-6.jpg",
+          "patlatma-gallery-7.jpg",
+          "patlatma-gallery-8.jpg"
+        ],
         "documents": [
           {
             "name": {
@@ -188,6 +205,17 @@
             },
             "file": "1764283733288-191892788.pdf"
           }
+        ],
+        "featureIcons": [
+          "shield",
+          "sliders-horizontal",
+          "swords",
+          "shield-check",
+          "scale",
+          "sun",
+          "circle-dot",
+          "arrow-down-to-line",
+          "droplets"
         ]
       }
     },
