@@ -22,9 +22,9 @@
     },
     "productNames": {
       "patlatma": "Patlatma",
-      "diskli-kultivator": "Diskli Kültivatör",
+      "diskli-kultivator": "Kompakt Diskli Kültivatör",
       "tandem-romork": "Tandem Tır Tipi Römork",
-      "dingilli-romork": "Dingilli Sofralı Römork",
+      "dingilli-romork": "2 Dingilli Sofralı Römork",
       "tiller": "Tiller",
       "lazer-tesfiye": "Lazer Tesfiye",
       "goble-diskaro": "Goble Diskaro"
@@ -40,10 +40,10 @@
     },
     "productDescriptions": {
       "patlatma": "Sert ve sıkışmış toprakları derin işleyerek havalandıran, su geçirgenliğini artıran profesyonel tarım ekipmanı.",
-      "diskli-kultivator": "Anız ve bitki artıklarını parçalayarak toprağı ideal tohum yatağı hazırlığına getiren yüksek performanslı kültivatör.",
-      "tandem-romork": "Yüksek kapasiteli taşımacılık için tasarlanmış, dayanıklı ve güvenilir tandem dingilli römork.",
-      "dingilli-romork": "Çok yönlü devrilme özelliği ile pratik boşaltma imkanı sunan tek dingilli römork.",
-      "tiller": "Toprak işleme ve karıştırma için ideal, verimli ve dayanıklı tiller ekipmanı.",
+      "diskli-kultivator": "Sığ sürümde yüksek hız ve modern tarım ihtiyaçları için tasarlanmış, CK (Asılır) ve CK PLUS (Yarı Çekilir) serili kompakt diskli kültivatör. Anız parçalama, tohum yatağı hazırlığı ve toprak işlemede üstün performans.",
+      "tandem-romork": "10-12 ton taşıma kapasiteli, 4 kademeli piston ve hidrolik fren sistemli, yüksek hacimli tandem dingilli tır tipi römork.",
+      "dingilli-romork": "10 ton kapasiteli, ön dingili döner (sofralı) yapısıyla kolay manevra sağlayan, 4 kademeli piston ve hidrolik fren sistemli 2 dingilli römork.",
+      "tiller": "Toprağı devirmeden 25 cm derinliğe kadar işleyen, çift sarımlı kare kesitli yayları ile titreşim etkisiyle çalışan ağır tip helezon yaylı kültivatör. Silisyum mangan alaşımlı ıslah çeliği ayaklarıyla yüksek dayanıklılık.",
       "lazer-tesfiye": "Lazer kontrol sistemi ile hassas arazi tesviyesi yapan, sulama verimliliğini artıran ve homojen tarla hazırlığı sağlayan profesyonel tarım ekipmanı.",
       "goble-diskaro": "Hasat sonrası sap parçalama, kesek kırma ve kurak dönem toprak işleme için tasarlanmış çekilir tip ağır hizmet goble diskaro."
     },
@@ -70,21 +70,24 @@
       },
       "diskli-kultivator": {
         "features": [
-          "Anız ve bitki artıklarını parçalayarak toprağı ideal şekilde karıştırır",
-          "Mısır, saman gibi yüzey atıklarını parçalar",
-          "Otlak ve nadas arazilerin gevşetilmesinde etkili",
-          "Organik gübrelerin toprağa karıştırılmasında kullanılır",
-          "Toprak şartlarına göre 15 km/s hıza kadar çıkabilir",
-          "Emsallerine göre daha az güç gerektirir - yakıt tasarrufu sağlar",
-          "Güçlendirilmiş şase ve iskelet yapısı"
+          "Toprak şartlarına göre 15 km/s hıza kadar çalışma kapasitesi",
+          "Yüksek çalışma oranları ve düşük yakıt tüketimi",
+          "Anız ve bitki artıklarını (mısır, saman vb.) parçalayarak toprağı ideal şekilde karıştırır",
+          "Ön disklerde 17°, arka disklerde 14° kesme açısı ile etkili parçalama",
+          "Bağımsız süspansiyon - her disk kauçuk rulo yaylarla şaseye bağlı",
+          "Ömür boyu bakım gerektirmeyen yataklama sistemi",
+          "3-5 cm hassas derinlikte sığ anız işleme - tohum çimlenmesini artırır",
+          "Nadas alanlarında 5-7 cm derinliğe inerek toprağı gevşetir",
+          "CK PLUS serisi: Tekerlekler üzerinde ağırlık, fren sistemi ile 40 km/s hıza izin verir"
         ],
         "technical": {
-          "rulmanSistemi": "Ömür boyu bakım gerektirmeyen yataklama sistemi. Merkezde çift sıra açılı temas bilyası, kaset tipi çelik contalar ve 2 parça O-ring sızdırmazlık sistemi",
-          "diskBaglantisi": "Her disk şaseye bağımsız olarak bağlı. 4 adet kauçuk silindir blok ile darbe emici süspansiyon sistemi",
-          "diskAcilari": "Ön disklerde 17°, arka disklerde 14° kesme açısı. Diskler arası mesafe 250mm standart",
-          "diskYapisi": "460mm veya 510mm çap seçenekleri. Çentikli veya düz tip diskler",
-          "merdaneSistemi": "Hidrolik kontrollü merdane sistemi. Yükseklik ve işleme derinliği hidrolik ayarlı",
-          "calismaHizi": "Yüksek hızda çalışma kapasitesi - 15 km/s'e kadar"
+          "rulmanSistemi": "Ömür boyu bakım gerektirmeyen yataklama sistemi. Göbeklerde çift sıralı bilye, kaset tipi çelik contalar ile sızdırmazlık - yağ eklemeye gerek yok",
+          "diskBaglantisi": "Her disk şaseye kauçuk rulo yaylarla (kauçuk silindir bloklar) bağımsız olarak bağlı. Sert cisimlere çarpma anında darbeleri emer ve disklerin zemin hattını takip etmesini sağlar",
+          "diskAcilari": "Ön disklerde 17°, arka disklerde 14° kesme açısı ile toprağı ve bitki atıklarını en etkili şekilde parçalar ve karıştırır",
+          "diskYapisi": "460-560 mm çapında çentikli düz tip diskler. Diskler arası mesafe 250mm standart",
+          "merdaneSistemi": "Hidrolik kontrollü merdane sistemi. Lastik Halkalı (nemi korur), Kafesli (kesek kırar), Dişli (tam yüzey sıkıştırması) seçenekleri",
+          "calismaHizi": "Yüksek hızda çalışma kapasitesi - toprak şartlarına göre 15 km/s'e kadar. İstenilen toprak işleme kalitesini yakalar",
+          "tasimaSistemi": "CK PLUS serisi: Makine ağırlığı tekerlekler üzerinde, toprağa batışı artırır. Taşıma genişliği 3-3.5m aralığında ayarlanabilir. Fren sistemi opsiyonu ile 40 km/s hıza izin verilir"
         },
         "rollers": {
           "lastik-halkali": {
@@ -92,7 +95,7 @@
             "desc": "Ekim öncesi tohum yatağı hazırlığı için ideal, nemi muhafaza eder"
           },
           "kafesli": {
-            "type": "Kafesli (Borulu) Merdane",
+            "type": "Kafesli Merdane",
             "desc": "Kesek kırmak ve düzeltmek için kullanılır"
           },
           "disli": {
@@ -103,43 +106,62 @@
       },
       "tandem-romork": {
         "features": [
-          "Yüksek taşıma kapasitesi",
-          "Güçlendirilmiş şase yapısı",
-          "Kolay manevra kabiliyeti",
-          "Uzun ömürlü lastikler",
-          "Hidrolik devrilme sistemi"
+          "10-12 ton taşıma kapasitesi ile ağır yükleri güvenle taşıyın",
+          "3 katlı ilave sistemle kasa yüksekliğini ihtiyaca göre ayarlayın",
+          "4 kademeli hidrolik piston ile tam dolu kasayı kolayca boşaltın",
+          "Tüm tekerleklerde hidrolik fren ile güvenli sürüş ve durma",
+          "Tandem dingil yapısı sayesinde dengesiz yüklerde bile stabil kalın",
+          "Geniş profil lastikler ile tarlada batmadan çalışın",
+          "Uzun ok tasarımı ile dar alanlarda rahat manevra yapın",
+          "220 cm genişlik ile tek seferde daha fazla yük taşıyın"
         ],
         "technical": {
-          "kasaYapisi": "Yüksek mukavemetli çelik sacdan üretilmiş kasa. Güçlendirilmiş köşe bağlantıları.",
-          "devirmeSystem": "Tek silindirli hidrolik devrilme sistemi. Geri devrilme açısı 50°.",
-          "frenSistemi": "Hidrolik fren sistemi. Tüm tekerleklerde fren."
+          "kasaYapisi": "Yüksek mukavemetli çelik sacdan üretilmiş kasa. 60 cm sabit kapak yüksekliği, 3 katlı ilave ile toplam 165 cm yükseklik. Güçlendirilmiş köşe bağlantıları.",
+          "devirmeSystem": "4 kademeli hidrolik piston sistemi. Yüksek kaldırma kapasitesi ve güvenli devrilme açısı.",
+          "frenSistemi": "Hidrolik fren sistemi. Tüm tekerleklerde fren ile güvenli taşıma ve durma.",
+          "dingilYapisi": "Bağımsız tandem dingil yapısı. Dengesiz yüklerde bile stabil sürüş sağlar.",
+          "ilaveYuksekligi": "35+35+35 cm (3 katlı) ilave yükseklik sistemi. Kapasiteye göre ayarlanabilir kasa hacmi."
         }
       },
       "dingilli-romork": {
         "features": [
-          "3 yönlü devrilme özelliği",
-          "Kompakt tasarım",
-          "Kolay kullanım",
-          "Dayanıklı yapı",
-          "Ekonomik fiyat"
+          "10 ton kapasiteyle hasat döneminde ağır yükleri tek seferde taşıyın",
+          "Döner ön dingil (sofra) sayesinde traktörün arkasında 360° dönüş yapabilme imkanı",
+          "60 cm kapak + 2x35 cm ilave ile silaj ve saman gibi hacimli ürünleri taşıyın",
+          "4 kademeli hidrolik piston ile 10 tonluk yükü güvenle ve hızlıca boşaltın",
+          "Hidrolik fren sistemi sayesinde yüklü halde güvenli durma ve iniş kontrolü",
+          "12,5/80-15,3 ebatlı geniş tabanlı lastiklerle yumuşak tarlalarda batmadan çalışın",
+          "500x200 cm kasa boyutlarıyla tek seferde maksimum yük taşıma kapasitesi",
+          "180 cm ok (arış) uzunluğu ile traktöre dengeli bağlantı ve güvenli taşıma"
         ],
         "technical": {
-          "kasaYapisi": "Yüksek mukavemetli çelik sacdan üretilmiş kasa. Güçlendirilmiş köşe bağlantıları.",
-          "devirmeSystem": "Çift silindirli 3 yönlü devrilme sistemi. Devrilme açısı 50°.",
-          "frenSistemi": "Mekanik el freni sistemi."
+          "kasaYapisi": "Yüksek mukavemetli çelik sacdan üretilmiş kasa. 60 cm sabit kapak yüksekliği, 35+35 cm çift katlı ilave ile toplam 130 cm yükseklik. Güçlendirilmiş köşe bağlantıları ile uzun ömür.",
+          "devirmeSystem": "4 kademeli teleskopik hidrolik piston. Yüksek kaldırma gücü sayesinde 10 tonluk yükü güvenli açıyla boşaltır. Tam dolu kasada bile sorunsuz çalışma.",
+          "frenSistemi": "Tüm tekerleklerde hidrolik fren sistemi. Yüklü halde traktörün frenlemesine yardımcı olur, yokuşlarda güvenli durma ve kontrollü iniş sağlar.",
+          "dingilYapisi": "Ön dingil döner (sofralı) tasarım. Dar alanlarda ve tarla içinde kolay manevra imkanı. Traktör arkasında 360° dönüş kabiliyeti.",
+          "ilaveYuksekligi": "35+35 cm çift katlı ilave sistemi. Silaj, pamuk, saman gibi hacimli ürünlerin taşınması için kasa yüksekliği ihtiyaca göre ayarlanabilir."
         }
       },
       "tiller": {
         "features": [
-          "Etkili toprak karıştırma",
-          "Ayarlanabilir çalışma derinliği",
-          "Dayanıklı tırmık yapısı",
-          "Hafif ve manevra kabiliyeti yüksek",
-          "Ekonomik işletme maliyeti"
+          "25 cm derinliğe kadar toprağı devirmeden işler, kabartır ve karıştırır",
+          "Çift sarımlı kare kesitli yaylar sayesinde titreşim etkisiyle toprağı yırtar ve işler",
+          "Titreşim etkisi ile toprağın oksijen ve mineralce zenginleşmesini sağlar",
+          "Toprağın nemini ve tavını koruyan özel yapı",
+          "Yüksek çatı yapısı ve geniş ayak aralıkları ile anız işlerken tıkanma yapmaz",
+          "2 veya 3 sıralı ayak düzeni seçenekleri",
+          "Ağır ve otlanmış topraklar için dar uç demiri veya kazayağı seçenekleri",
+          "Opsiyonel merdane ile topraktaki kesekleri kırma imkanı",
+          "Opsiyonel derinlik tekeri ile hassas derinlik ayarı",
+          "Hidrolik katlanır modeller ile karayolunda kolay taşıma ve park halinde az yer kaplama"
         ],
         "technical": {
-          "tirmikYapisi": "Özel alaşımlı çelikten üretilmiş S tipi tırmıklar. Yüksek aşınma direnci.",
-          "derinlikAyari": "Mekanik derinlik ayar sistemi. 15-25 cm arası ayarlanabilir."
+          "ayakMalzemesi": "Isıl işlemden geçmiş, özel silisyum mangan alaşımlı ıslah çeliğinden üretilmiş ayaklar. 30x30 mm kare kesitli profil yapısı ile yüksek dayanıklılık.",
+          "calismaDerinligi": "25 cm derinliğe kadar toprak işleme kapasitesi. Toprağı devirmeden kabartır ve karıştırır.",
+          "titresimSistemi": "Çift sarımlı kare kesitli yaylar ile titreşim etkisi. Toprağı yırtarak işler, oksijen ve mineral zenginleşmesi sağlar.",
+          "ucDemiri": "Ağır ve otlanmış toprak koşullarında dar uç demiri veya kazayağı seçenekleri kullanılabilir.",
+          "opsiyonelEkipman": "Kesek kırmak için merdane ve hassas derinlik ayarı için derinlik tekeri opsiyonel olarak eklenebilir.",
+          "hidrolikKatlama": "Hidrolik katlama sistemi ile karayolunda taşıma kolaylığı. Tam kapanır özelliği ile park halinde az yer kaplar."
         }
       },
       "lazer-tesfiye": {
@@ -197,7 +219,9 @@
       "tireSize": "LASTİK BOYUTU",
       "tipping": "DEVİRME",
       "tineCount": "TIRMIK SAYISI",
-      "requiredPower": "GEREKLİ GÜÇ"
+      "requiredPower": "GEREKLİ GÜÇ",
+      "workingSpeed": "ÇALIŞMA HIZI",
+      "pistonStage": "PİSTON KADEMESİ"
     },
     "modelSpecs": {
       "width": "Genişlik",
@@ -214,7 +238,13 @@
       "motor_gucu": "Motor Gücü",
       "genislik": "Genişlik",
       "diskCount": "Disk Sayısı",
-      "workingWidth": "İş Genişliği"
+      "workingWidth": "Çalışma Genişliği",
+      "ayakSayisi": "Ayak Sayısı",
+      "length": "Uzunluk",
+      "sideHeight": "Kapak Yüksekliği",
+      "workingDepth": "Çalışma Derinliği",
+      "legSection": "Ayak Kesiti",
+      "rowCount": "Sıra Sayısı"
     },
     "homepage": {
       "viewProduct": "Ürünü İncele",
@@ -280,7 +310,16 @@
       "hidrolikPiston": "Hidrolik Piston",
       "teraziKolu": "Terazi Kolu",
       "ciziKapatici": "Çizi Çukuru Kapatıcı",
-      "yatakYapisi": "Yatak Yapısı"
+      "yatakYapisi": "Yatak Yapısı",
+      "tasimaSistemi": "Taşıma Sistemi",
+      "dingilYapisi": "Dingil Yapısı",
+      "ilaveYuksekligi": "İlave Yükseklik",
+      "ayakMalzemesi": "Ayak Malzemesi",
+      "calismaDerinligi": "Çalışma Derinliği",
+      "titresimSistemi": "Titreşim Sistemi",
+      "ucDemiri": "Uç Demiri",
+      "opsiyonelEkipman": "Opsiyonel Ekipman",
+      "hidrolikKatlama": "Hidrolik Katlama"
     },
     "admin": {
       "login": "Giriş Yap",
@@ -329,17 +368,19 @@
       "subtitle": "Ürünümüzü çalışırken izleyin"
     },
     "specLabels": {
-      "capacity": "Çalışma Genişliği",
+      "capacity": "KAPASİTE",
       "discCount": "Disk Sayısı",
-      "workingWidth": "ÇALIŞMA GENİŞLİĞİ",
       "workingDepth": "ÇALIŞMA DERİNLİĞİ",
-      "legCount": "AYAK SAYISI",
-      "weight": "AĞIRLIK",
       "volume": "HACİM",
       "axleCount": "DİNGİL SAYISI",
       "tireSize": "LASTİK BOYUTU",
       "tipping": "DEVİRME",
-      "tineCount": "TIRMIK SAYISI"
+      "tineCount": "TIRMIK SAYISI",
+      "legSection": "AYAK KESİTİ",
+      "rowCount": "SIRA SAYISI",
+      "tipOptions": "UÇ DEMİRİ",
+      "optionalEquipment": "OPSİYONEL EKİPMAN",
+      "hydraulicFolding": "HİDROLİK KATLAMA"
     },
     "productsPage": {
       "badge": "ÜRÜN KATALOĞU",
@@ -411,9 +452,9 @@
     },
     "productNames": {
       "patlatma": "Subsoiler",
-      "diskli-kultivator": "Disc Cultivator",
+      "diskli-kultivator": "Compact Disc Cultivator",
       "tandem-romork": "Tandem Truck Type Trailer",
-      "dingilli-romork": "Single Axle Tipping Trailer",
+      "dingilli-romork": "2 Axle Trailer with Turntable",
       "tiller": "Tiller",
       "lazer-tesfiye": "Laser Leveler",
       "goble-diskaro": "Goble Disc Harrow"
@@ -423,16 +464,16 @@
       "diskli-kultivator": "Cultivator",
       "tandem-romork": "Tandem",
       "dingilli-romork": "Axle",
-      "tiller": "Tiller",
+      "tiller": "Cultivator",
       "lazer-tesfiye": "Leveler",
       "goble-diskaro": "Disc Harrow"
     },
     "productDescriptions": {
       "patlatma": "Professional agricultural equipment that aerates hard and compacted soils through deep tillage, improving water permeability.",
-      "diskli-kultivator": "High-performance cultivator that breaks down stubble and plant residues to prepare ideal seedbed conditions.",
-      "tandem-romork": "Durable and reliable tandem axle trailer designed for high-capacity transportation needs.",
-      "dingilli-romork": "Single axle trailer with versatile tipping feature for practical unloading operations.",
-      "tiller": "Efficient and durable tiller equipment ideal for soil cultivation and mixing.",
+      "diskli-kultivator": "Compact disc cultivator designed for high speed and modern farming needs in shallow tillage, with CK (Mounted) and CK PLUS (Semi-Trailed) series. Superior performance in stubble shredding, seedbed preparation and soil cultivation.",
+      "tandem-romork": "10-12 ton capacity tandem axle truck-type trailer with 4-stage piston and hydraulic brake system.",
+      "dingilli-romork": "10 ton capacity 2 axle trailer with rotating front axle (turntable) for easy maneuvering, 4-stage piston and hydraulic brake system.",
+      "tiller": "Heavy duty coil spring cultivator that works soil up to 25 cm depth without turning, operating with vibration effect through double-wound square section springs. High durability with silicon-manganese alloy tempered steel legs.",
       "lazer-tesfiye": "Professional agricultural equipment for precise land leveling with laser control system, improving irrigation efficiency and providing uniform field preparation.",
       "goble-diskaro": "Trailed heavy-duty goble disc harrow designed for post-harvest stalk shredding, clod breaking and dry season soil cultivation."
     },
@@ -459,21 +500,24 @@
       },
       "diskli-kultivator": {
         "features": [
-          "Ideally mixes soil by breaking down stubble and plant residues",
-          "Breaks down surface residues such as corn and straw",
-          "Effective in loosening pasture and fallow lands",
-          "Used for mixing organic fertilizers into the soil",
-          "Can reach speeds up to 15 km/h depending on soil conditions",
-          "Requires less power than its peers - fuel savings",
-          "Reinforced chassis and frame structure"
+          "Working capacity up to 15 km/h depending on soil conditions",
+          "High working rates and low fuel consumption",
+          "Ideally mixes soil by breaking down stubble and plant residues (corn, straw, etc.)",
+          "Effective shredding with 17° cutting angle on front discs, 14° on rear discs",
+          "Independent suspension - each disc connected to chassis with rubber roller springs",
+          "Lifetime maintenance-free bearing system",
+          "Shallow stubble cultivation at 3-5 cm precise depth - increases seed germination",
+          "Loosens soil to 5-7 cm depth in fallow areas",
+          "CK PLUS series: Weight on wheels, brake system allows up to 40 km/h speed"
         ],
         "technical": {
-          "rulmanSistemi": "Lifetime maintenance-free bearing system. Double row angular contact ball bearings in center, cassette type steel seals and 2-piece O-ring sealing system",
-          "diskBaglantisi": "Each disc independently attached to chassis. Shock absorbing suspension system with 4 rubber cylinder blocks",
-          "diskAcilari": "17° cutting angle on front discs, 14° on rear discs. 250mm standard disc spacing",
-          "diskYapisi": "460mm or 510mm diameter options. Notched or plain type discs",
-          "merdaneSistemi": "Hydraulically controlled roller system. Height and working depth hydraulically adjustable",
-          "calismaHizi": "High-speed working capacity - up to 15 km/h"
+          "rulmanSistemi": "Lifetime maintenance-free bearing system. Double row ball bearings in hubs, cassette type steel seals for sealing - no oil addition required",
+          "diskBaglantisi": "Each disc independently connected to chassis with rubber roller springs (rubber cylinder blocks). Absorbs impacts when hitting hard objects and ensures discs follow ground contour",
+          "diskAcilari": "17° cutting angle on front discs, 14° on rear discs for most effective soil and plant residue shredding and mixing",
+          "diskYapisi": "460-560 mm diameter notched flat type discs. Standard 250mm disc spacing",
+          "merdaneSistemi": "Hydraulically controlled roller system. Rubber Ring (retains moisture), Cage (breaks clods), Tooth Packer (full surface compaction) options",
+          "calismaHizi": "High-speed working capacity - up to 15 km/h depending on soil conditions. Achieves desired soil cultivation quality",
+          "tasimaSistemi": "CK PLUS series: Machine weight on wheels, increases soil penetration. Transport width adjustable between 3-3.5m. Optional brake system allows up to 40 km/h speed"
         },
         "rollers": {
           "lastik-halkali": {
@@ -481,54 +525,73 @@
             "desc": "Ideal for seedbed preparation before sowing, retains moisture"
           },
           "kafesli": {
-            "type": "Cage (Tube) Roller",
+            "type": "Cage Roller",
             "desc": "Used for breaking and leveling clods"
           },
           "disli": {
-            "type": "Toothed Roller",
+            "type": "Tooth Packer Roller",
             "desc": "Used in vegetable cultivation, provides full surface compaction"
           }
         }
       },
       "tandem-romork": {
         "features": [
-          "High carrying capacity",
-          "Reinforced chassis structure",
-          "Easy maneuverability",
-          "Long-lasting tires",
-          "Hydraulic tipping system"
+          "Safely transport heavy loads with 10-12 ton carrying capacity",
+          "Adjust body height according to your needs with 3-layer extension system",
+          "Easily unload a fully loaded body with 4-stage hydraulic piston",
+          "Safe driving and stopping with hydraulic brakes on all wheels",
+          "Stay stable even with unbalanced loads thanks to tandem axle structure",
+          "Work in fields without sinking with wide profile tires",
+          "Maneuver comfortably in tight spaces with long drawbar design",
+          "Carry more load in a single trip with 220 cm width"
         ],
         "technical": {
-          "kasaYapisi": "Body made of high-strength steel sheet. Reinforced corner connections.",
-          "devirmeSystem": "Single cylinder hydraulic tipping system. Rear tipping angle 50°.",
-          "frenSistemi": "Hydraulic braking system. Brakes on all wheels."
+          "kasaYapisi": "Body made of high-strength steel sheet. 60 cm fixed side height, 165 cm total with 3-layer extensions. Reinforced corner connections.",
+          "devirmeSystem": "4-stage hydraulic piston system. High lifting capacity and safe tipping angle.",
+          "frenSistemi": "Hydraulic brake system. Safe transport and stopping with brakes on all wheels.",
+          "dingilYapisi": "Independent tandem axle structure. Provides stable driving even with unbalanced loads.",
+          "ilaveYuksekligi": "35+35+35 cm (3-layer) extension height system. Adjustable body volume according to capacity."
         }
       },
       "dingilli-romork": {
         "features": [
-          "3-way tipping feature",
-          "Compact design",
-          "Easy to use",
-          "Durable construction",
-          "Economical price"
+          "Transport heavy loads in a single trip during harvest with 10 ton capacity",
+          "360° rotation capability behind the tractor thanks to rotating front axle (turntable)",
+          "Transport bulky products like silage and straw with 60 cm side + 2x35 cm extensions",
+          "Safely and quickly unload 10 ton load with 4-stage hydraulic piston",
+          "Safe stopping and descent control when loaded thanks to hydraulic brake system",
+          "Work in soft fields without sinking with 12.5/80-15.3 wide base tires",
+          "Maximum load capacity in single trip with 500x200 cm body dimensions",
+          "Balanced connection to tractor and safe transport with 180 cm drawbar length"
         ],
         "technical": {
-          "kasaYapisi": "Body made of high-strength steel sheet. Reinforced corner connections.",
-          "devirmeSystem": "Double cylinder 3-way tipping system. Tipping angle 50°.",
-          "frenSistemi": "Mechanical hand brake system."
+          "kasaYapisi": "Body manufactured from high-strength steel sheet. 60 cm fixed side height, 35+35 cm double-layer extension for 130 cm total height. Reinforced corner connections for long service life.",
+          "devirmeSystem": "4-stage telescopic hydraulic piston. High lifting power safely unloads 10 ton load at optimal angle. Trouble-free operation even with fully loaded body.",
+          "frenSistemi": "Hydraulic brake system on all wheels. Assists tractor braking when loaded, provides safe stopping on slopes and controlled descent.",
+          "dingilYapisi": "Rotating front axle (turntable) design. Easy maneuvering in tight spaces and within fields. 360° rotation capability behind the tractor.",
+          "ilaveYuksekligi": "35+35 cm double-layer extension system. Body height adjustable according to needs for transporting bulky products like silage, cotton, and straw."
         }
       },
       "tiller": {
         "features": [
-          "Effective soil mixing",
-          "Adjustable working depth",
-          "Durable tine structure",
-          "Lightweight and highly maneuverable",
-          "Economical operating cost"
+          "Works soil up to 25 cm depth without turning - loosens and mixes",
+          "Vibration effect tears and works soil through double-wound square section springs",
+          "Vibration enriches soil with oxygen and minerals",
+          "Special structure preserves soil moisture and tilth",
+          "No clogging when working stubble thanks to high roof structure and wide leg spacing",
+          "2 or 3 row leg arrangement options",
+          "Narrow tip or goosefoot options for heavy and grassy soils",
+          "Optional roller for breaking soil clods",
+          "Optional depth wheel for precise depth adjustment",
+          "Hydraulic folding models for easy road transport and compact parking"
         ],
         "technical": {
-          "tirmikYapisi": "S-type tines made of special alloy steel. High wear resistance.",
-          "derinlikAyari": "Mechanical depth adjustment system. Adjustable between 15-25 cm."
+          "ayakMalzemesi": "Legs made from heat-treated special silicon-manganese alloy tempered steel. 30x30 mm square section profile structure for high durability.",
+          "calismaDerinligi": "Soil cultivation capacity up to 25 cm depth. Loosens and mixes soil without turning.",
+          "titresimSistemi": "Vibration effect with double-wound square section springs. Tears and works soil, provides oxygen and mineral enrichment.",
+          "ucDemiri": "Narrow tip or goosefoot options can be used in heavy and grassy soil conditions.",
+          "opsiyonelEkipman": "Roller for breaking clods and depth wheel for precise depth adjustment can be added optionally.",
+          "hidrolikKatlama": "Hydraulic folding system for easy road transport. Full closing feature takes up less space when parked."
         }
       },
       "lazer-tesfiye": {
@@ -586,7 +649,9 @@
       "tireSize": "TIRE SIZE",
       "tipping": "TIPPING",
       "tineCount": "TINE COUNT",
-      "requiredPower": "REQUIRED POWER"
+      "requiredPower": "REQUIRED POWER",
+      "workingSpeed": "WORKING SPEED",
+      "pistonStage": "PISTON STAGE"
     },
     "modelSpecs": {
       "width": "Width",
@@ -604,7 +669,14 @@
       "genislik": "Width",
       "requiredPower": "Required Power",
       "diskCount": "Disc Count",
-      "workingWidth": "Working Width"
+      "workingWidth": "Working Width",
+      "ayakSayisi": "Leg Count",
+      "workingSpeed": "Working Speed",
+      "length": "Length",
+      "sideHeight": "Side Height",
+      "workingDepth": "Working Depth",
+      "legSection": "Leg Section",
+      "rowCount": "Row Count"
     },
     "homepage": {
       "viewProduct": "View Product",
@@ -670,7 +742,16 @@
       "hidrolikPiston": "Hydraulic Piston",
       "teraziKolu": "Leveling Arm",
       "ciziKapatici": "Furrow Closer",
-      "yatakYapisi": "Bearing Structure"
+      "yatakYapisi": "Bearing Structure",
+      "tasimaSistemi": "Transport System",
+      "dingilYapisi": "Axle Structure",
+      "ilaveYuksekligi": "Extension Height",
+      "ayakMalzemesi": "Leg Material",
+      "calismaDerinligi": "Working Depth",
+      "titresimSistemi": "Vibration System",
+      "ucDemiri": "Tip Type",
+      "opsiyonelEkipman": "Optional Equipment",
+      "hidrolikKatlama": "Hydraulic Folding"
     },
     "admin": {
       "login": "Login",
@@ -719,17 +800,19 @@
       "subtitle": "Watch our product in action"
     },
     "specLabels": {
-      "capacity": "Working Width",
+      "capacity": "CAPACITY",
       "discCount": "Disc Count",
-      "workingWidth": "WORKING WIDTH",
       "workingDepth": "WORKING DEPTH",
-      "legCount": "LEG COUNT",
-      "weight": "WEIGHT",
       "volume": "VOLUME",
       "axleCount": "AXLE COUNT",
       "tireSize": "TIRE SIZE",
       "tipping": "TIPPING",
-      "tineCount": "TINE COUNT"
+      "tineCount": "TINE COUNT",
+      "legSection": "LEG SECTION",
+      "rowCount": "ROW COUNT",
+      "tipOptions": "TIP OPTIONS",
+      "optionalEquipment": "OPTIONAL EQUIPMENT",
+      "hydraulicFolding": "HYDRAULIC FOLDING"
     },
     "productsPage": {
       "badge": "PRODUCT CATALOG",
@@ -803,8 +886,8 @@
       "patlatma": "Глубокорыхлитель",
       "diskli-kultivator": "Дисковый культиватор",
       "tandem-romork": "Тандемный прицеп",
-      "dingilli-romork": "Одноосный прицеп",
-      "tiller": "Культиватор",
+      "dingilli-romork": "2-осный прицеп с поворотной осью",
+      "tiller": "Tiller",
       "lazer-tesfiye": "Лазерный планировщик",
       "goble-diskaro": "Дисковая борона Gobel"
     },
@@ -820,9 +903,9 @@
     "productDescriptions": {
       "patlatma": "Профессиональное сельскохозяйственное оборудование для глубокой обработки твёрдых и уплотнённых почв, улучшающее водопроницаемость.",
       "diskli-kultivator": "Высокопроизводительный культиватор, измельчающий стерню и растительные остатки для подготовки идеального посевного ложа.",
-      "tandem-romork": "Прочный и надёжный тандемный прицеп, разработанный для перевозки грузов большой вместимости.",
-      "dingilli-romork": "Одноосный прицеп с многосторонней функцией опрокидывания для удобной разгрузки.",
-      "tiller": "Эффективное и долговечное оборудование для обработки и перемешивания почвы.",
+      "tandem-romork": "Тандемный прицеп грузоподъёмностью 10-12 тонн с 4-ступенчатым поршнем и гидравлической тормозной системой.",
+      "dingilli-romork": "2-осный прицеп грузоподъёмностью 10 тонн с поворотной передней осью для лёгкого маневрирования, 4-ступенчатым поршнем и гидравлической тормозной системой.",
+      "tiller": "Тяжёлый пружинный культиватор, обрабатывающий почву на глубину до 25 см без оборота пласта, работающий с вибрационным эффектом благодаря двойным квадратным пружинам. Высокая прочность благодаря стойкам из закалённой стали с кремний-марганцевым сплавом.",
       "lazer-tesfiye": "Профессиональное сельскохозяйственное оборудование для точной планировки земли с лазерной системой управления, повышающее эффективность орошения и обеспечивающее однородную подготовку поля.",
       "goble-diskaro": "Тяжёлая прицепная дисковая борона для измельчения стеблей после уборки урожая, разбивания комков и обработки почвы в засушливый сезон."
     },
@@ -882,43 +965,62 @@
       },
       "tandem-romork": {
         "features": [
-          "Высокая грузоподъёмность",
-          "Усиленная конструкция рамы",
-          "Лёгкая маневренность",
-          "Долговечные шины",
-          "Гидравлическая система опрокидывания"
+          "Безопасная перевозка тяжёлых грузов с грузоподъёмностью 10-12 тонн",
+          "Регулируйте высоту кузова по потребности с 3-слойной системой надставок",
+          "Легко разгружайте полный кузов с 4-ступенчатым гидравлическим поршнем",
+          "Безопасное движение и остановка с гидравлическими тормозами на всех колёсах",
+          "Стабильность даже при неравномерной нагрузке благодаря тандемной конструкции осей",
+          "Работайте на полях без проваливания с широкопрофильными шинами",
+          "Комфортное маневрирование в узких местах с длинным дышлом",
+          "Перевозите больше груза за один рейс с шириной 220 см"
         ],
         "technical": {
-          "kasaYapisi": "Кузов из высокопрочного стального листа. Усиленные угловые соединения.",
-          "devirmeSystem": "Одноцилиндровая гидравлическая система опрокидывания. Угол заднего опрокидывания 50°.",
-          "frenSistemi": "Гидравлическая тормозная система. Тормоза на всех колёсах."
+          "kasaYapisi": "Кузов из высокопрочного стального листа. Высота борта 60 см, с 3-слойными надставками всего 165 см. Усиленные угловые соединения.",
+          "devirmeSystem": "4-ступенчатая гидравлическая поршневая система. Высокая грузоподъёмность и безопасный угол опрокидывания.",
+          "frenSistemi": "Гидравлическая тормозная система. Безопасная транспортировка и остановка с тормозами на всех колёсах.",
+          "dingilYapisi": "Независимая тандемная конструкция осей. Обеспечивает стабильное движение даже при неравномерной нагрузке.",
+          "ilaveYuksekligi": "35+35+35 см (3-слойная) система надставок. Регулируемый объём кузова в зависимости от грузоподъёмности."
         }
       },
       "dingilli-romork": {
         "features": [
-          "3-стороннее опрокидывание",
-          "Компактный дизайн",
-          "Простота использования",
-          "Прочная конструкция",
-          "Экономичная цена"
+          "Перевозите тяжёлые грузы за один рейс в сезон уборки с грузоподъёмностью 10 тонн",
+          "Возможность поворота на 360° позади трактора благодаря поворотной передней оси",
+          "Перевозите объёмные грузы: силос и солому с бортом 60 см + надставками 2x35 см",
+          "Безопасно и быстро разгружайте 10-тонный груз 4-ступенчатым гидравлическим поршнем",
+          "Безопасная остановка и контроль спуска при нагрузке благодаря гидравлической тормозной системе",
+          "Работайте на мягких полях без проваливания с широкими шинами 12,5/80-15,3",
+          "Максимальная грузоподъёмность за один рейс с размерами кузова 500x200 см",
+          "Сбалансированное соединение с трактором и безопасная транспортировка с дышлом 180 см"
         ],
         "technical": {
-          "kasaYapisi": "Кузов из высокопрочного стального листа. Усиленные угловые соединения.",
-          "devirmeSystem": "Двухцилиндровая 3-сторонняя система опрокидывания. Угол опрокидывания 50°.",
-          "frenSistemi": "Механический ручной тормоз."
+          "kasaYapisi": "Кузов из высокопрочного стального листа. Высота борта 60 см, двухслойные надставки 35+35 см для общей высоты 130 см. Усиленные угловые соединения для длительного срока службы.",
+          "devirmeSystem": "4-ступенчатый телескопический гидравлический поршень. Высокая подъёмная сила безопасно разгружает 10-тонный груз под оптимальным углом. Бесперебойная работа даже с полностью загруженным кузовом.",
+          "frenSistemi": "Гидравлическая тормозная система на всех колёсах. Помогает торможению трактора при нагрузке, обеспечивает безопасную остановку на склонах и контролируемый спуск.",
+          "dingilYapisi": "Поворотная передняя ось (с поворотным кругом). Лёгкое маневрирование в узких местах и на поле. Возможность поворота на 360° позади трактора.",
+          "ilaveYuksekligi": "Двухслойная система надставок 35+35 см. Высота кузова регулируется по потребности для перевозки объёмных грузов: силоса, хлопка и соломы."
         }
       },
       "tiller": {
         "features": [
-          "Эффективное перемешивание почвы",
-          "Регулируемая глубина обработки",
-          "Прочная конструкция зубьев",
-          "Лёгкий и высокоманевренный",
-          "Экономичные эксплуатационные расходы"
+          "Обрабатывает почву на глубину до 25 см без оборота пласта - рыхлит и перемешивает",
+          "Вибрационный эффект разрывает и обрабатывает почву благодаря двойным квадратным пружинам",
+          "Вибрация обогащает почву кислородом и минералами",
+          "Специальная конструкция сохраняет влагу и структуру почвы",
+          "Не забивается при обработке стерни благодаря высокой конструкции рамы и широкому расстоянию между стойками",
+          "Варианты 2- или 3-рядного расположения стоек",
+          "Узкие наконечники или гусиные лапки для тяжёлых и задернованных почв",
+          "Опциональный каток для разбивания комков",
+          "Опциональное глубинное колесо для точной регулировки глубины",
+          "Гидравлически складывающиеся модели для лёгкой транспортировки и компактной парковки"
         ],
         "technical": {
-          "tirmikYapisi": "S-образные зубья из специального легированного стала. Высокая износостойкость.",
-          "derinlikAyari": "Механическая система регулировки глубины. Регулируется от 15 до 25 см."
+          "ayakMalzemesi": "Стойки из термообработанной закалённой стали со специальным кремний-марганцевым сплавом. Профиль квадратного сечения 30x30 мм для высокой прочности.",
+          "calismaDerinligi": "Глубина обработки почвы до 25 см. Рыхлит и перемешивает почву без оборота пласта.",
+          "titresimSistemi": "Вибрационный эффект благодаря двойным квадратным пружинам. Разрывает и обрабатывает почву, обеспечивает обогащение кислородом и минералами.",
+          "ucDemiri": "Узкие наконечники или гусиные лапки могут использоваться в тяжёлых и задернованных почвенных условиях.",
+          "opsiyonelEkipman": "Опционально может быть добавлен каток для разбивания комков и глубинное колесо для точной регулировки глубины.",
+          "hidrolikKatlama": "Гидравлическая складная система для лёгкой транспортировки по дорогам. Функция полного складывания занимает меньше места при парковке."
         }
       },
       "lazer-tesfiye": {
@@ -976,7 +1078,8 @@
       "tireSize": "РАЗМЕР ШИН",
       "tipping": "ОПРОКИДЫВАНИЕ",
       "tineCount": "КОЛ-ВО ЗУБЬЕВ",
-      "requiredPower": "ТРЕБУЕМАЯ МОЩНОСТЬ"
+      "requiredPower": "ТРЕБУЕМАЯ МОЩНОСТЬ",
+      "pistonStage": "СТУПЕНЬ ПОРШНЯ"
     },
     "modelSpecs": {
       "width": "Ширина",
@@ -994,7 +1097,13 @@
       "genislik": "Ширина",
       "requiredPower": "Требуемая мощность",
       "diskCount": "Кол-во дисков",
-      "workingWidth": "Рабочая ширина"
+      "workingWidth": "Рабочая ширина",
+      "ayakSayisi": "Количество ног",
+      "length": "Длина",
+      "sideHeight": "Высота борта",
+      "workingDepth": "Рабочая глубина",
+      "legSection": "Сечение стойки",
+      "rowCount": "Кол-во рядов"
     },
     "homepage": {
       "viewProduct": "Посмотреть продукт",
@@ -1060,7 +1169,15 @@
       "hidrolikPiston": "Гидравлический поршень",
       "teraziKolu": "Рычаг балансировки",
       "ciziKapatici": "Закрыватель борозд",
-      "yatakYapisi": "Конструкция подшипников"
+      "yatakYapisi": "Конструкция подшипников",
+      "dingilYapisi": "Конструкция осей",
+      "ilaveYuksekligi": "Высота надставок",
+      "ayakMalzemesi": "Материал стоек",
+      "calismaDerinligi": "Рабочая глубина",
+      "titresimSistemi": "Вибрационная система",
+      "ucDemiri": "Тип наконечника",
+      "opsiyonelEkipman": "Дополнительное оборудование",
+      "hidrolikKatlama": "Гидравлическое складывание"
     },
     "admin": {
       "login": "Войти",
@@ -1109,12 +1226,9 @@
       "subtitle": "Смотрите наш продукт в работе"
     },
     "specLabels": {
-      "capacity": "bilmiyom",
-      "discCount": "bilmiyom",
-      "workingWidth": "РАБОЧАЯ ШИРИНА",
+      "capacity": "ГРУЗОПОДЪЁМНОСТЬ",
+      "discCount": "КОЛ-ВО ДИСКОВ",
       "workingDepth": "РАБОЧАЯ ГЛУБИНА",
-      "legCount": "КОЛ-ВО НОГ",
-      "weight": "ВЕС",
       "volume": "ОБЪЕМ",
       "axleCount": "КОЛ-ВО ОСЕЙ",
       "tireSize": "РАЗМЕР ШИН",
