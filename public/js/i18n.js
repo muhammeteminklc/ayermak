@@ -513,16 +513,129 @@ class I18n {
 
     // Update navigation links to use localized URLs
     updateNavigationLinks() {
-        // Update main navigation links
+        const lang = this.currentLang;
+        const productsSlug = this.getPageSlug('products', lang);
+
+        // 1. Update main navigation links (data-nav-page)
         document.querySelectorAll('[data-nav-page]').forEach(el => {
             const pageId = el.getAttribute('data-nav-page');
-            el.href = this.getLocalizedUrl(pageId, this.currentLang);
+            el.href = this.getLocalizedUrl(pageId, lang);
         });
 
-        // Update product links
+        // 2. Update product links (data-product-link)
         document.querySelectorAll('[data-product-link]').forEach(el => {
             const productId = el.getAttribute('data-product-link');
-            el.href = this.getProductUrl(productId);
+            el.href = this.getProductUrl(productId, lang);
+        });
+
+        // 3. Update mega category links (.mega-category)
+        document.querySelectorAll('.mega-category').forEach(el => {
+            const category = el.getAttribute('data-category');
+            if (category) {
+                // Get product slug if exists, otherwise use category as-is
+                const productSlug = this.getProductSlug(category, lang);
+                el.href = `/${lang}/${productsSlug}/${productSlug}`;
+            }
+        });
+
+        // 4. Update "All Products" links (.mega-view-all)
+        document.querySelectorAll('.mega-view-all').forEach(el => {
+            el.href = this.getProductsUrl(lang);
+        });
+
+        // 5. Update mega product item links (.mega-product-item)
+        document.querySelectorAll('.mega-product-item').forEach(el => {
+            const href = el.getAttribute('href');
+            if (href) {
+                // Extract slug from URL and convert to correct language
+                const parts = href.split('/').filter(Boolean);
+                if (parts.length >= 3) {
+                    const slugPart = parts[parts.length - 1];
+                    // Find product ID from any language slug
+                    const productId = this.findProductIdBySlug(slugPart);
+                    if (productId) {
+                        el.href = this.getProductUrl(productId, lang);
+                    } else {
+                        // If product not found, just update language prefix
+                        el.href = `/${lang}/${productsSlug}/${slugPart}`;
+                    }
+                }
+            }
+        });
+
+        // 6. Update mobile menu links
+        this.updateMobileMenuLinks(lang, productsSlug);
+    }
+
+    // Update mobile menu links to use localized URLs
+    updateMobileMenuLinks(lang, productsSlug) {
+        // Update mobile "View All" links
+        document.querySelectorAll('.mobile-view-all').forEach(el => {
+            const href = el.getAttribute('href');
+            if (href) {
+                const parts = href.split('/').filter(Boolean);
+                if (parts.length > 2) {
+                    // Category page: /tr/urunler/patlatma
+                    const slugPart = parts[parts.length - 1];
+                    const productSlug = this.getProductSlug(slugPart, lang);
+                    el.href = `/${lang}/${productsSlug}/${productSlug}`;
+                } else {
+                    // Main products page: /tr/urunler
+                    el.href = this.getProductsUrl(lang);
+                }
+            }
+        });
+
+        // Update mobile panel product/category links
+        document.querySelectorAll('.mobile-panel a.mobile-menu-item').forEach(el => {
+            const href = el.getAttribute('href');
+            if (!href || href === '#' || href === '/') return;
+
+            // Skip if already processed by data-nav-page
+            if (el.getAttribute('data-nav-page')) return;
+            // Skip view-all links (already processed above)
+            if (el.classList.contains('mobile-view-all')) return;
+
+            const parts = href.split('/').filter(Boolean);
+            if (parts.length < 2) return;
+
+            // Check for product links: /tr/urunler/...
+            if (parts[1] === 'urunler' || parts[1] === 'products' || parts[1] === 'produkty') {
+                if (parts.length > 2) {
+                    const slugPart = parts[2];
+                    // Try to find product ID
+                    const productId = this.findProductIdBySlug(slugPart);
+                    if (productId) {
+                        el.href = this.getProductUrl(productId, lang);
+                    } else {
+                        // Treat as category
+                        const productSlug = this.getProductSlug(slugPart, lang);
+                        el.href = `/${lang}/${productsSlug}/${productSlug}`;
+                    }
+                } else {
+                    el.href = this.getProductsUrl(lang);
+                }
+            }
+            // Check for dealer links: /tr/bayiler/...
+            else if (parts[1] === 'bayiler' || parts[1] === 'dealers' || parts[1] === 'dilery') {
+                if (parts.length > 2) {
+                    if (parts[2] === 'yurt-ici' || parts[2] === 'domestic' || parts[2] === 'vnutrennie') {
+                        el.href = this.getLocalizedUrl('dealers-domestic', lang);
+                    } else if (parts[2] === 'yurt-disi' || parts[2] === 'international' || parts[2] === 'mezhdunarodnye') {
+                        el.href = this.getLocalizedUrl('dealers-international', lang);
+                    }
+                }
+            }
+            // Check for other pages: /tr/hakkimizda, /tr/haberler, /tr/iletisim
+            else if (parts[1] === 'hakkimizda' || parts[1] === 'about' || parts[1] === 'o-nas') {
+                el.href = this.getLocalizedUrl('about', lang);
+            }
+            else if (parts[1] === 'haberler' || parts[1] === 'news' || parts[1] === 'novosti') {
+                el.href = this.getLocalizedUrl('news', lang);
+            }
+            else if (parts[1] === 'iletisim' || parts[1] === 'contact' || parts[1] === 'kontakt') {
+                el.href = this.getLocalizedUrl('contact', lang);
+            }
         });
     }
 

@@ -54,7 +54,7 @@ const COMPONENT_FALLBACKS = {
                                 </a>
                             </div>
                             <div class="mega-product-list" data-products="kultivator">
-                                <a href="/tr/urunler/diskli-kultivatort" class="mega-product-item">
+                                <a href="/tr/urunler/diskli-kultivator" class="mega-product-item">
                                     <img src="/images/products/ürün2.png" alt="Diskli Kültüvatör">
                                     <span data-i18n="productNames.diskli-kultivator">Diskli Kültüvatör</span>
                                 </a>
@@ -445,43 +445,324 @@ function initMegaMenu() {
 
 }
 
-// Update mega menu product images from products.json
+// Build mega menu dynamically from products API
 async function updateMegaMenuImages() {
     try {
         const response = await fetch('/api/products');
         if (!response.ok) return;
 
         const data = await response.json();
-        // API returns array directly, not {products: [...]}
         const products = Array.isArray(data) ? data : (data.products || []);
 
-        // Update each product image in mega menu
+        // Sort products by order
+        products.sort((a, b) => (a.order || 0) - (b.order || 0));
+
+        // Group products by category
+        const categories = {};
+        const categoryOrder = [];
+
         products.forEach(product => {
-            if (!product.defaultImage) return;
+            const cat = product.category || 'other';
+            if (!categories[cat]) {
+                categories[cat] = [];
+                categoryOrder.push(cat);
+            }
+            categories[cat].push(product);
+        });
 
-            const imgPath = `/images/products/${product.defaultImage}`;
-            const productId = product.id;
-            const slugTr = product.slug?.tr || productId;
-            const slugEn = product.slug?.en || productId;
-            const slugRu = product.slug?.ru || productId;
+        // Build desktop mega menu
+        buildDesktopMegaMenu(categories, categoryOrder, products);
 
-            // Find all mega-product-item links that match this product
-            const allProductItems = document.querySelectorAll('.mega-product-item');
-            allProductItems.forEach(link => {
-                const href = link.getAttribute('href') || '';
-                // Check if href contains product id or any of its slugs
-                if (href.includes(productId) || href.includes(slugTr) || href.includes(slugEn) || href.includes(slugRu)) {
-                    const img = link.querySelector('img');
-                    if (img) {
-                        img.src = imgPath;
-                        img.alt = productId;
-                    }
+        // Build mobile menu panels
+        buildMobilePanelMenu(categories, categoryOrder, products);
+
+        // Update navigation links for current language
+        if (window.i18n) {
+            window.i18n.updateNavigationLinks();
+        }
+
+    } catch (error) {
+        console.warn('Could not build dynamic menu:', error);
+    }
+}
+
+// Build desktop mega dropdown menu
+function buildDesktopMegaMenu(categories, categoryOrder, products) {
+    const megaCategories = document.querySelector('.mega-categories');
+    const megaProducts = document.querySelector('.mega-products');
+
+    if (!megaCategories || !megaProducts) return;
+
+    const lang = window.i18n?.currentLang || 'tr';
+    const productsSlug = window.i18n?.getPageSlug('products', lang) || 'urunler';
+
+    // Build categories list
+    let categoriesHtml = '';
+    categoryOrder.forEach((cat, index) => {
+        const isActive = index === 0 ? ' active' : '';
+        const categoryName = window.i18n?.t(`categories.${cat}`) || cat;
+        const productSlug = window.i18n?.getProductSlug(cat, lang) || cat;
+
+        categoriesHtml += `
+            <a href="/${lang}/${productsSlug}/${productSlug}" class="mega-category${isActive}" data-category="${cat}">
+                <span data-i18n="categories.${cat}">${categoryName}</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+        `;
+    });
+
+    // Add "All Products" link
+    const allProductsText = window.i18n?.t('nav.allProducts') || 'Tüm Ürünler';
+    categoriesHtml += `
+        <a href="/${lang}/${productsSlug}" class="mega-view-all">
+            <span data-i18n="nav.allProducts">${allProductsText}</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+        </a>
+    `;
+
+    megaCategories.innerHTML = categoriesHtml;
+
+    // Build products lists for each category
+    let productsHtml = '';
+    categoryOrder.forEach((cat, index) => {
+        const isActive = index === 0 ? ' active' : '';
+        const categoryProducts = categories[cat];
+
+        let productItems = '';
+        categoryProducts.forEach(product => {
+            const productName = window.i18n?.t(`productNames.${product.id}`) ||
+                               window.i18n?.t(`productShortNames.${product.id}`) ||
+                               product.id;
+            const productSlug = window.i18n?.getProductSlug(product.id, lang) || product.id;
+            const imgPath = product.defaultImage ? `/images/products/${product.defaultImage}` : '/images/products/placeholder.png';
+
+            productItems += `
+                <a href="/${lang}/${productsSlug}/${productSlug}" class="mega-product-item" data-product-id="${product.id}">
+                    <img src="${imgPath}" alt="${productName}" loading="lazy">
+                    <span data-i18n="productNames.${product.id}">${productName}</span>
+                </a>
+            `;
+        });
+
+        productsHtml += `
+            <div class="mega-product-list${isActive}" data-products="${cat}">
+                ${productItems}
+            </div>
+        `;
+    });
+
+    megaProducts.innerHTML = productsHtml;
+
+    // Re-initialize category hover behavior
+    initMegaCategoryHover();
+}
+
+// Initialize mega menu category hover behavior
+function initMegaCategoryHover() {
+    const navDropdown = document.querySelector('.nav-dropdown');
+    if (!navDropdown) return;
+
+    const categories = navDropdown.querySelectorAll('.mega-category');
+    const productLists = navDropdown.querySelectorAll('.mega-product-list');
+
+    categories.forEach(category => {
+        category.addEventListener('mouseenter', () => {
+            const targetCategory = category.dataset.category;
+
+            categories.forEach(c => c.classList.remove('active'));
+            category.classList.add('active');
+
+            productLists.forEach(list => {
+                list.classList.remove('active');
+                if (list.dataset.products === targetCategory) {
+                    list.classList.add('active');
                 }
             });
         });
-    } catch (error) {
-        console.warn('Could not update mega menu images:', error);
-    }
+    });
+}
+
+// Build mobile panel menu dynamically
+function buildMobilePanelMenu(categories, categoryOrder, products) {
+    const container = document.querySelector('.mobile-menu-container');
+    if (!container) return;
+
+    const lang = window.i18n?.currentLang || 'tr';
+    const productsSlug = window.i18n?.getPageSlug('products', lang) || 'urunler';
+
+    // Find or create the products panel
+    let productsPanel = container.querySelector('[data-panel="products"]');
+    if (!productsPanel) return;
+
+    const panelContent = productsPanel.querySelector('.mobile-panel-content');
+    if (!panelContent) return;
+
+    // Build category buttons
+    let buttonsHtml = '';
+    categoryOrder.forEach(cat => {
+        const categoryName = window.i18n?.t(`categories.${cat}`) || cat;
+        buttonsHtml += `
+            <button class="mobile-menu-item has-submenu" data-target="cat-${cat}">
+                <span data-i18n="categories.${cat}">${categoryName}</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        `;
+    });
+
+    // Add "View All Products" link
+    const viewAllText = window.i18n?.t('nav.viewAllProducts') || 'Tüm Ürünleri Gör';
+    buttonsHtml += `
+        <a href="/${lang}/${productsSlug}" class="mobile-menu-item mobile-view-all">
+            <span>${viewAllText}</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+        </a>
+    `;
+
+    panelContent.innerHTML = buttonsHtml;
+
+    // Build/update category panels
+    categoryOrder.forEach(cat => {
+        const categoryProducts = categories[cat];
+        const categoryName = window.i18n?.t(`categories.${cat}`) || cat;
+        const categorySlug = window.i18n?.getProductSlug(cat, lang) || cat;
+
+        let panelEl = container.querySelector(`[data-panel="cat-${cat}"]`);
+
+        // Build product links for this category
+        let productLinks = '';
+        categoryProducts.forEach(product => {
+            const productName = window.i18n?.t(`productNames.${product.id}`) ||
+                               window.i18n?.t(`productShortNames.${product.id}`) ||
+                               product.id;
+            const productSlug = window.i18n?.getProductSlug(product.id, lang) || product.id;
+
+            productLinks += `
+                <a href="/${lang}/${productsSlug}/${productSlug}" class="mobile-menu-item" data-product-id="${product.id}">
+                    <span data-i18n="productNames.${product.id}">${productName}</span>
+                </a>
+            `;
+        });
+
+        // Add "View All" link for this category
+        const viewAllCatText = window.i18n?.t('nav.viewAll') || 'Tümünü Gör';
+        productLinks += `
+            <a href="/${lang}/${productsSlug}/${categorySlug}" class="mobile-menu-item mobile-view-all">
+                <span>${viewAllCatText}</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        `;
+
+        if (panelEl) {
+            // Update existing panel
+            const content = panelEl.querySelector('.mobile-panel-content');
+            if (content) content.innerHTML = productLinks;
+
+            // Update title
+            const title = panelEl.querySelector('.mobile-panel-title');
+            if (title) {
+                title.textContent = categoryName;
+                title.setAttribute('data-i18n', `categories.${cat}`);
+            }
+        } else {
+            // Create new panel
+            const panelHtml = `
+                <div class="mobile-panel" data-panel="cat-${cat}">
+                    <div class="mobile-panel-header">
+                        <button class="mobile-back-btn" data-target="products">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                            <span>Geri</span>
+                        </button>
+                        <span class="mobile-panel-title" data-i18n="categories.${cat}">${categoryName}</span>
+                    </div>
+                    <div class="mobile-panel-content">
+                        ${productLinks}
+                    </div>
+                </div>
+            `;
+            container.insertAdjacentHTML('beforeend', panelHtml);
+        }
+    });
+
+    // Remove old category panels that no longer exist
+    const existingPanels = container.querySelectorAll('[data-panel^="cat-"]');
+    existingPanels.forEach(panel => {
+        const panelCat = panel.dataset.panel.replace('cat-', '');
+        if (!categoryOrder.includes(panelCat)) {
+            panel.remove();
+        }
+    });
+
+    // Re-initialize mobile panel event handlers
+    reinitMobilePanelHandlers();
+}
+
+// Re-initialize mobile panel event handlers after dynamic update
+function reinitMobilePanelHandlers() {
+    const container = document.querySelector('.mobile-menu-container');
+    if (!container) return;
+
+    const panels = container.querySelectorAll('.mobile-panel');
+    const submenuBtns = container.querySelectorAll('.has-submenu');
+    const backBtns = container.querySelectorAll('.mobile-back-btn');
+
+    const showPanel = (panelName) => {
+        panels.forEach(panel => {
+            panel.classList.remove('active');
+            if (panel.dataset.panel === panelName) {
+                panel.classList.add('active');
+            }
+        });
+    };
+
+    // Submenu buttons
+    submenuBtns.forEach(btn => {
+        // Remove existing listeners by cloning
+        const newBtn = btn.cloneNode(true);
+        btn.parentNode.replaceChild(newBtn, btn);
+
+        newBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = newBtn.dataset.target;
+            if (target) showPanel(target);
+        });
+    });
+
+    // Back buttons
+    backBtns.forEach(btn => {
+        const newBtn = btn.cloneNode(true);
+        btn.parentNode.replaceChild(newBtn, btn);
+
+        newBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = newBtn.dataset.target;
+            if (target) showPanel(target);
+        });
+    });
+
+    // Link clicks close menu
+    container.querySelectorAll('a.mobile-menu-item').forEach(link => {
+        link.addEventListener('click', () => {
+            container.classList.remove('active');
+            document.body.style.overflow = '';
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            if (menuBtn) menuBtn.classList.remove('active');
+        });
+    });
 }
 
 // Yeni Drill-Down Mobil Menü Sistemi
