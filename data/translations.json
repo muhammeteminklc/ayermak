@@ -877,7 +877,7 @@
       "patlatma": "ГЛУБОКОРЫХЛИТЕЛЬ",
       "kultivator": "КУЛЬТИВАТОР",
       "romork": "ПРИЦЕП",
-      "tiller": "КУЛЬТИВАТОР",
+      "tiller": "ТИЛЛЕР",
       "lazer-tesfiye": "ЛАЗЕРНЫЙ ПЛАНИРОВЩИК",
       "goble-diskaro": "ДИСКОВАЯ БОРОНА GOBEL",
       "deneme": "tryrusca"
@@ -887,7 +887,7 @@
       "diskli-kultivator": "Дисковый культиватор",
       "tandem-romork": "Тандемный прицеп",
       "dingilli-romork": "2-осный прицеп с поворотной осью",
-      "tiller": "Tiller",
+      "tiller": "Тиллер",
       "lazer-tesfiye": "Лазерный планировщик",
       "goble-diskaro": "Дисковая борона Gobel"
     },

@@ -527,8 +527,8 @@ class I18n {
     }
 
     setupLanguageSelector() {
-        // Handle both desktop (.lang-btn) and mobile (.mobile-lang-btn) language buttons
-        const buttons = Array.from(document.querySelectorAll('.lang-btn, .mobile-lang-btn'));
+        // Handle desktop dropdown (.lang-option), mobile (.mobile-lang-btn), and legacy (.lang-btn)
+        const buttons = Array.from(document.querySelectorAll('.lang-option, .mobile-lang-btn, .lang-btn'));
         if (!buttons.length) return;
 
         const clones = buttons.map(btn => {
@@ -550,13 +550,39 @@ class I18n {
 
     updateLanguageButtons(scope = document) {
         const root = scope && typeof scope.querySelectorAll === 'function' ? scope : document;
-        // Handle both desktop (.lang-btn) and mobile (.mobile-lang-btn) language buttons
+
+        // Handle desktop dropdown options (.lang-option)
+        root.querySelectorAll('.lang-option').forEach(btn => {
+            const lang = btn.getAttribute('data-lang');
+            btn.classList.toggle('active', lang === this.currentLang);
+            btn.href = this.getSwitchLanguageUrl(lang);
+        });
+
+        // Handle mobile (.mobile-lang-btn) and legacy (.lang-btn)
         root.querySelectorAll('.lang-btn, .mobile-lang-btn').forEach(btn => {
             const lang = btn.getAttribute('data-lang');
             btn.classList.toggle('active', lang === this.currentLang);
-
-            // Update href for SEO-friendly language switching
             btn.href = this.getSwitchLanguageUrl(lang);
+        });
+
+        // Update desktop dropdown current language display
+        this.updateLanguageDropdownCurrent();
+    }
+
+    updateLanguageDropdownCurrent() {
+        const langData = {
+            'tr': { flag: '🇹🇷', code: 'TR' },
+            'en': { flag: '🇬🇧', code: 'EN' },
+            'ru': { flag: '🇷🇺', code: 'RU' }
+        };
+
+        const current = langData[this.currentLang] || langData['tr'];
+
+        document.querySelectorAll('.lang-current').forEach(btn => {
+            const flagEl = btn.querySelector('.lang-flag');
+            const codeEl = btn.querySelector('.lang-code');
+            if (flagEl) flagEl.textContent = current.flag;
+            if (codeEl) codeEl.textContent = current.code;
         });
     }
 
@@ -647,20 +673,38 @@ window.i18n = new I18n();
 // Apply saved language to buttons immediately (for first visit with no cache)
 (function () {
     const currentLang = window.i18n.currentLang;
-    // Update buttons immediately (both desktop and mobile)
-    document.querySelectorAll('.lang-btn, .mobile-lang-btn').forEach(btn => {
+    const langData = {
+        'tr': { flag: '🇹🇷', code: 'TR' },
+        'en': { flag: '🇬🇧', code: 'EN' },
+        'ru': { flag: '🇷🇺', code: 'RU' }
+    };
+    const current = langData[currentLang] || langData['tr'];
+
+    // Update dropdown options and legacy buttons
+    document.querySelectorAll('.lang-option, .lang-btn, .mobile-lang-btn').forEach(btn => {
         const lang = btn.getAttribute('data-lang');
-        if (lang === currentLang) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
+        btn.classList.toggle('active', lang === currentLang);
     });
-    // Also run on DOMContentLoaded for buttons not yet in DOM
+
+    // Update dropdown current display
+    document.querySelectorAll('.lang-current').forEach(btn => {
+        const flagEl = btn.querySelector('.lang-flag');
+        const codeEl = btn.querySelector('.lang-code');
+        if (flagEl) flagEl.textContent = current.flag;
+        if (codeEl) codeEl.textContent = current.code;
+    });
+
+    // Also run on DOMContentLoaded for elements not yet in DOM
     document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('.lang-btn, .mobile-lang-btn').forEach(btn => {
+        document.querySelectorAll('.lang-option, .lang-btn, .mobile-lang-btn').forEach(btn => {
             const lang = btn.getAttribute('data-lang');
             btn.classList.toggle('active', lang === currentLang);
+        });
+        document.querySelectorAll('.lang-current').forEach(btn => {
+            const flagEl = btn.querySelector('.lang-flag');
+            const codeEl = btn.querySelector('.lang-code');
+            if (flagEl) flagEl.textContent = current.flag;
+            if (codeEl) codeEl.textContent = current.code;
         });
     }, { once: true });
 })();

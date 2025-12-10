@@ -166,12 +166,30 @@
             </div>
         </nav>
 
-        <!-- Dil Seçici -->
+        <!-- Dil Seçici - Desktop Dropdown -->
         <div class="header-right">
-            <div class="language-selector">
-                <a href="/tr/" class="lang-btn" data-lang="tr" title="Türkçe">🇹🇷</a>
-                <a href="/en/" class="lang-btn" data-lang="en" title="English">🇬🇧</a>
-                <a href="/ru/" class="lang-btn" data-lang="ru" title="Русский">🇷🇺</a>
+            <div class="language-dropdown">
+                <button class="lang-current" aria-label="Dil seçin">
+                    <span class="lang-flag" data-lang="tr">🇹🇷</span>
+                    <span class="lang-code">TR</span>
+                    <svg class="lang-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="lang-menu">
+                    <a href="/tr/" class="lang-option" data-lang="tr">
+                        <span class="lang-flag">🇹🇷</span>
+                        <span class="lang-name">Türkçe</span>
+                    </a>
+                    <a href="/en/" class="lang-option" data-lang="en">
+                        <span class="lang-flag">🇬🇧</span>
+                        <span class="lang-name">English</span>
+                    </a>
+                    <a href="/ru/" class="lang-option" data-lang="ru">
+                        <span class="lang-flag">🇷🇺</span>
+                        <span class="lang-name">Русский</span>
+                    </a>
+                </div>
             </div>
         </div>
 

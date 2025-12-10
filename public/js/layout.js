@@ -379,8 +379,10 @@ function initHeaderScroll() {
         const currentScroll = window.pageYOffset;
         if (currentScroll > 100) {
             header.classList.add('scrolled');
+            document.body.classList.add('header-scrolled');
         } else {
             header.classList.remove('scrolled');
+            document.body.classList.remove('header-scrolled');
         }
     };
 
