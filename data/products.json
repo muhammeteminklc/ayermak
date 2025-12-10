@@ -910,7 +910,11 @@
         "models": [
           {
             "id": "tiller",
-            "name": "Tiller",
+            "name": {
+              "tr": "Tiller",
+              "en": "Tiller",
+              "ru": "Тиллер"
+            },
             "image": null,
             "specs": {
               "workingDepth": "25",

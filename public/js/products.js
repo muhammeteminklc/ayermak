@@ -692,11 +692,14 @@ function generateModelSliderHTML(models, currentIndex = 0) {
             </button>
             <div class="model-slider-wrapper">
                 <div class="model-slider-track">
-                    ${models.map((model, index) => `
+                    ${models.map((model, index) => {
+                        const currentLang = window.i18n?.currentLang || 'tr';
+                        const modelName = typeof model.name === 'object' ? (model.name[currentLang] || model.name.tr || model.name.en) : model.name;
+                        return `
                         <div class="model-item ${index === currentIndex ? 'active' : ''}" data-index="${index}">
-                            <span class="model-name">${model.name}</span>
+                            <span class="model-name">${modelName}</span>
                         </div>
-                    `).join('')}
+                    `}).join('')}
                 </div>
             </div>
             <button class="model-slider-nav next" aria-label="Next model">
@@ -711,7 +714,9 @@ function updateProductForModel(model, productImage, baseImage, tableColumns, pro
     // Update title to show model name
     const productModel = document.querySelector('.product-model');
     if (productModel) {
-        productModel.textContent = model.name;
+        const currentLang = window.i18n?.currentLang || 'tr';
+        const modelName = typeof model.name === 'object' ? (model.name[currentLang] || model.name.tr || model.name.en) : model.name;
+        productModel.textContent = modelName;
     }
 
     // Update product image if model has its own image
