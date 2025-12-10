@@ -476,9 +476,10 @@ async function updateMegaMenuImages() {
         // Build mobile menu panels
         buildMobilePanelMenu(categories, categoryOrder, products);
 
-        // Update navigation links for current language
+        // Update navigation links and apply translations
         if (window.i18n) {
             window.i18n.updateNavigationLinks();
+            window.i18n.updatePageLanguage();
         }
 
     } catch (error) {
@@ -617,10 +618,9 @@ function buildMobilePanelMenu(categories, categoryOrder, products) {
     });
 
     // Add "View All Products" link
-    const viewAllText = window.i18n?.t('nav.viewAllProducts') || 'Tüm Ürünleri Gör';
     buttonsHtml += `
         <a href="/${lang}/${productsSlug}" class="mobile-menu-item mobile-view-all">
-            <span>${viewAllText}</span>
+            <span data-i18n="homepage.viewAllProducts">Tüm Ürünleri Gör</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
@@ -654,10 +654,9 @@ function buildMobilePanelMenu(categories, categoryOrder, products) {
         });
 
         // Add "View All" link for this category
-        const viewAllCatText = window.i18n?.t('nav.viewAll') || 'Tümünü Gör';
         productLinks += `
             <a href="/${lang}/${productsSlug}/${categorySlug}" class="mobile-menu-item mobile-view-all">
-                <span>${viewAllCatText}</span>
+                <span data-i18n="homepage.viewAll">Tümünü Gör</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
